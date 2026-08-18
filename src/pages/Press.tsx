@@ -36,6 +36,7 @@ const slots = [
   { slug: "news", layout: "wide" as const },
   { slug: "vox-pop", layout: "square" as const },
   { slug: "interviews", layout: "square" as const },
+  { slug: "podcast", layout: "square" as const },
   { slug: "speeches", layout: "tall" as const },
   { slug: "op-ed", layout: "square" as const },
   { slug: "cartoons", layout: "square" as const },

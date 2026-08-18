@@ -205,8 +205,13 @@ export const committees: Committee[] = [
     description:
       "The Logistics Committee coordinates the operational execution of TESMUN XIV, ensuring every session runs precisely as planned.",
     board: {
-      headOf: { name: "Kushal Poudel", role: "Head of Logistics" },
-      coHeadOf: { name: "Prasina Moktan", role: "Head of Logistics" },
+      headOf: { name: "Rudraksh Devkota", role: "Overall Manager" },
+      coHeadOf: { name: "Yugesh Adhikari", role: "Material Head" },
+      deputyHeadOf: [
+        { name: "Arbin Dhital", role: "Top Floor Incharge" },
+        { name: "Harshid Bhetwal", role: "Second Floor Incharge" },
+        { name: "Sushan Shrestha", role: "First Floor Incharge" },
+      ],
     },
     logo: "/images/logistic.png",
   },
@@ -282,7 +287,7 @@ export const coordinators: Person[] = [
   },
 ];
 
-export const conferenceDate = new Date("2026-08-29T09:00:00+05:45");
+export const conferenceDate = new Date("2026-08-31T09:00:00+05:45");
 
 export const allocationsSheet =
   "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=2111183706#gid=2111183706";
