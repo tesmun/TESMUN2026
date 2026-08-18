@@ -14,10 +14,12 @@ import Press from "@/pages/Press";
 import PressSection from "@/pages/PressSection";
 import Resources from "@/pages/Resources";
 import TeamMember from "@/pages/TeamMember";
+import Seo from "@/components/Seo";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <Seo />
       <Routes>
         <Route element={<PageShell />}>
           <Route path="/" element={<Home />} />
