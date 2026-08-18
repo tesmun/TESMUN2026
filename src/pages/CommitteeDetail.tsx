@@ -129,8 +129,8 @@ function ITDetail({ committee }: { committee: Committee }) {
       </section>
       <Divider />
 
-      <section className="px-6 py-16 md:px-10">
-        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 md:gap-16">
+      <section className="px-6 py-20 md:px-10">
+        <div className="mx-auto grid max-w-7xl gap-12 sm:grid-cols-2 md:gap-20">
           {[
             { name: "Suyog Acharya", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
             { name: "Swastik Manandar", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
@@ -154,14 +154,14 @@ function ITDetail({ committee }: { committee: Committee }) {
             <Eyebrow className="text-silver/80">Specialist Leads</Eyebrow>
             <h2 className="font-display mt-3 text-3xl text-white sm:text-4xl">Web, Video &amp; Graphics</h2>
           </Reveal>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/gallery-library.jpg" },
               { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/gallery-library.jpg" },
               { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery-debate.jpg" },
               { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/cartoon-1.png" },
-            ].map((lead) => (
-              <div key={lead.role} className="flex flex-col">
+            ].map((lead, index) => (
+              <div key={lead.role} className={`flex flex-col ${index === 3 ? "lg:col-span-2 lg:col-start-2" : ""}`}>
                 <Reveal>
                   <div className="relative aspect-[4/5] overflow-hidden bg-navy">
                     <img src={lead.image} alt={lead.role} className="photo-fill" />
@@ -175,8 +175,8 @@ function ITDetail({ committee }: { committee: Committee }) {
           </div>
         </div>
       </section>
-      <section className="px-6 pb-16 md:px-10">
-        <div className="mx-auto max-w-7xl space-y-8">
+      <section className="px-6 pb-20 md:px-10">
+        <div className="mx-auto max-w-7xl space-y-12">
           {[
             ["Web Designing Members", ["Sulav Sapkota", "Abin Man Singh", "Rinesh Karki"]],
             ["Video Editing Members", ["Anish Rana", "Pratyush Rayamajhi"]],
@@ -187,7 +187,7 @@ function ITDetail({ committee }: { committee: Committee }) {
               <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {(members as string[]).map((member) => (
                   <div key={member} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
-                    <PersonPlaceholder name={member} className="h-16 w-16 shrink-0 rounded-full" />
+                    <PersonPlaceholder name={member} className="h-24 w-24 shrink-0 rounded-full" />
                     <span className="text-sm text-white/80">{member}</span>
                   </div>
                 ))}
@@ -239,10 +239,10 @@ function PressDetail({ committee }: { committee: Committee }) {
         </div>
       </section>
       <Divider />
-      <section className="px-6 py-16 md:px-10">
+      <section className="px-6 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <Eyebrow className="text-silver/80">Committee-wise chief reporters</Eyebrow>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["HRC", "Anishka Kuikel", "Sambriddhi Phuyal"],
               ["ECOSOC", "Shreni Chapagai", "Alishka Kuikel"],
@@ -257,7 +257,7 @@ function PressDetail({ committee }: { committee: Committee }) {
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {reporters.map((reporter) => (
                     <div key={reporter} className="flex items-center gap-3">
-                      <PersonPlaceholder name={reporter} className="h-14 w-14 shrink-0 rounded-full" />
+                      <PersonPlaceholder name={reporter} className="h-20 w-20 shrink-0 rounded-full" />
                       <span className="text-sm leading-snug text-white/80">{reporter}</span>
                     </div>
                   ))}

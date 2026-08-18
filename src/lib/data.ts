@@ -223,6 +223,7 @@ export const committees: Committee[] = [
       ],
     },
     logo: "/images/it.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/itbackground-MXcwGwIq7WZ2S12jkrDGGFk9g12Hz4.png",
   },
   {
     slug: "press",
