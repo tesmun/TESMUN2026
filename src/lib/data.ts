@@ -218,8 +218,8 @@ export const committees: Committee[] = [
     board: {
       headOf: { name: "Yubin KC", role: "Head of IT" },
       deputyHeadOf: [
-        { name: "Suyog Acharya", role: "Deputy Head of IT" },
-        { name: "Saksham Adhikari", role: "Deputy Head of IT" },
+        { name: "Suyog Acharya", role: "Deputy Head" },
+        { name: "Swastik Manandar", role: "Deputy Head" },
       ],
     },
     logo: "/images/it.png",

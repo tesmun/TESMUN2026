@@ -66,11 +66,6 @@ function CommitteeHero({ committee }: { committee: Committee }) {
         </Reveal>
         <Reveal delay={0.16}>
           <p className="mt-4 text-xs uppercase tracking-[0.28em] text-silver">{committee.abbr}</p>
-        {committee.board.chair?.testimonial && (
-          <p className="mt-7 max-w-2xl border-t border-gold/40 pt-5 font-display text-lg leading-relaxed text-warm sm:text-xl">
-            “{committee.board.chair.testimonial}”
-          </p>
-        )}
         </Reveal>
       </div>
     </section>
@@ -137,8 +132,8 @@ function ITDetail({ committee }: { committee: Committee }) {
       <section className="px-6 py-16 md:px-10">
         <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 md:gap-16">
           {[
-            { name: "Suyog Acharya", role: "Deputy Head of IT", text: "Working alongside the Head of IT, Suyog ensures the conference platform remains stable, responsive and accessible to every delegate and visitor." },
-            { name: "Saksham Adhikari", role: "Deputy Head of IT", text: "Saksham supports the technical workflow behind the website and digital media, helping translate creative ideas into reliable conference experiences." },
+            { name: "Suyog Acharya", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
+            { name: "Swastik Manandar", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
           ].map((person) => (
             <div key={person.name} className="flex flex-col">
               <Reveal>
@@ -161,9 +156,10 @@ function ITDetail({ committee }: { committee: Committee }) {
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              { name: "John Doe", role: "Website Designing Lead", image: "/images/gallery-library.jpg" },
-              { name: "John Doe", role: "Video Editing Lead", image: "/images/gallery-debate.jpg" },
-              { name: "John Doe", role: "Graphics Designing Lead", image: "/images/cartoon-1.png" },
+              { name: "Saksham Adhikari", role: "IT/Press Coordinator", image: "/images/gallery-library.jpg" },
+              { name: "Timothy Rajiv Kandel", role: "Web Designing Lead", image: "/images/gallery-library.jpg" },
+              { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery-debate.jpg" },
+              { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/cartoon-1.png" },
             ].map((lead) => (
               <div key={lead.role} className="flex flex-col">
                 <Reveal>
@@ -179,7 +175,22 @@ function ITDetail({ committee }: { committee: Committee }) {
           </div>
         </div>
       </section>
-
+      <section className="px-6 pb-16 md:px-10">
+        <div className="mx-auto max-w-7xl space-y-8">
+          {[
+            ["Web Designing Members", ["Sulav Sapkota", "Abin Man Singh", "Rinesh Karki"]],
+            ["Video Editing Members", ["Anish Rana", "Pratyush Rayamajhi"]],
+            ["Graphics Members", ["Shivam Bharati", "Aarush Bajracharya", "Bibek Devkota"]],
+          ].map(([label, members]) => (
+            <div key={label as string} className="border-t border-white/15 pt-5">
+              <p className="text-[10px] uppercase tracking-[0.16em] text-gold">{label as string}</p>
+              <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
+                {(members as string[]).map((member) => <span key={member}>{member}</span>)}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       <div className="bg-navy-deep pb-10 text-center">
         <Link to="/committees" className="text-xs uppercase tracking-[0.14em] text-silver hover:text-white">
           ← Back to Committees
@@ -194,7 +205,7 @@ function PressDetail({ committee }: { committee: Committee }) {
     { name: "Dechen Hira Tamang", role: "Chief Editor", reverse: false, text: "As Chief Editor, Dechen Hira Tamang leads the Press Committee in covering every committee session, interview and behind-the-scenes moment of TESMUN XIV." },
     { name: "Siddhartha Basnet", role: "Deputy Chief Editor", reverse: true, text: "Siddhartha supports editorial planning and works with reporters to ensure each publication reflects the depth and diversity of the conference." },
     { name: "Simran Devkota", role: "Deputy Chief Editor", reverse: false, text: "Simran coordinates press coverage across sessions, helping writers and photographers capture the urgency and nuance of every debate." },
-    { name: "John Doe", role: "Deputy Chief Editor", reverse: true, text: "This deputy editor position will be announced when the Press Desk finalises its roster." },
+    { name: "Renesha Maharjan", role: "Deputy Chief Editor", reverse: true, text: "Renesha supports editorial planning and helps coordinate reporting across every committee session." },
   ];
 
   return (
@@ -220,6 +231,30 @@ function PressDetail({ committee }: { committee: Committee }) {
               {index < editors.length - 1 && <Divider className="mt-16" />}
             </div>
           ))}
+        </div>
+      </section>
+      <Divider />
+      <section className="px-6 py-16 md:px-10">
+        <div className="mx-auto max-w-7xl">
+          <Eyebrow className="text-silver/80">Committee-wise chief reporters</Eyebrow>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["HRC", "Anishka Kuikel", "Sambriddhi Phuyal"],
+              ["ECOSOC", "Shreni Chapagai", "Alishka Kuikel"],
+              ["UNEP", "Ranish Mahat"],
+              ["DISEC", "Osang Ghising", "Shubam Shrestha"],
+              ["LP I", "Krishna Shrestha", "Aarush Katuwal"],
+              ["LP II", "Pari Maharjan"],
+              ["LP III", "Aashiya Shrestha"],
+            ].map(([committeeName, ...reporters]) => (
+              <div key={committeeName} className="border border-white/10 bg-navy px-5 py-4">
+                <p className="text-[10px] uppercase tracking-[0.18em] text-gold">{committeeName}</p>
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-white/80">
+                  {reporters.map((reporter) => <span key={reporter}>{reporter}</span>)}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

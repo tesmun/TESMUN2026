@@ -1,33 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import BorderGlow from "@/components/BorderGlow";
-import Grainient from "@/components/Grainient";
 import { getNewspaperArticle, relatedNewspaperArticles, sessions } from "@/lib/newspaper-data";
 import { getNewsArticle, newsArticles } from "@/lib/press-data";
-
-const grainientProps = {
-  color1: "#123b72",
-  color2: "#0d2a4a",
-  color3: "#B497CF",
-  timeSpeed: 0.25,
-  colorBalance: 0.0,
-  warpStrength: 1.0,
-  warpFrequency: 5.0,
-  warpSpeed: 2.0,
-  warpAmplitude: 50.0,
-  blendAngle: 0.0,
-  blendSoftness: 0.05,
-  rotationAmount: 500.0,
-  noiseScale: 2.0,
-  grainAmount: 0.1,
-  grainScale: 2.0,
-  grainAnimated: false,
-  contrast: 1.5,
-  gamma: 1.0,
-  saturation: 1.0,
-  centerX: 0.0,
-  centerY: 0.0,
-  zoom: 0.9,
-};
 
 export default function NewsArticle() {
   const { articleSlug = "" } = useParams();
@@ -70,10 +44,7 @@ export default function NewsArticle() {
               </blockquote>
             )}
           </div>
-          <div className="relative mt-16 px-6 py-10">
-            <div className="absolute inset-0 -mx-6">
-              <Grainient {...grainientProps} />
-            </div>
+          <div className="relative mt-16 border-t border-navy/15 px-6 py-10">
             <p className="relative z-10 text-[11px] font-medium uppercase tracking-[0.16em] text-gold">Also in this edition</p>
             <div className="relative z-10 mt-5 grid gap-4 sm:grid-cols-3">
               {related.map((item) => (
@@ -153,10 +124,7 @@ export default function NewsArticle() {
           </figure>
         ))}
 
-        <div className="relative mt-20 px-6 py-10">
-          <div className="absolute inset-0 -mx-6">
-            <Grainient {...grainientProps} />
-          </div>
+        <div className="relative mt-20 border-t border-navy/15 px-6 py-10">
           <p className="relative z-10 text-[11px] font-medium uppercase tracking-[0.16em] text-gold">Related articles</p>
           <div className="relative z-10 mt-5 grid gap-4 sm:grid-cols-2">
             {related.map((item) => (
