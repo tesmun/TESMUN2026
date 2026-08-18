@@ -156,8 +156,8 @@ function ITDetail({ committee }: { committee: Committee }) {
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              { name: "Saksham Adhikari", role: "IT/Press Coordinator", image: "/images/gallery-library.jpg" },
-              { name: "Timothy Rajiv Kandel", role: "Web Designing Lead", image: "/images/gallery-library.jpg" },
+              { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/gallery-library.jpg" },
+              { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/gallery-library.jpg" },
               { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery-debate.jpg" },
               { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/cartoon-1.png" },
             ].map((lead) => (
@@ -184,8 +184,13 @@ function ITDetail({ committee }: { committee: Committee }) {
           ].map(([label, members]) => (
             <div key={label as string} className="border-t border-white/15 pt-5">
               <p className="text-[10px] uppercase tracking-[0.16em] text-gold">{label as string}</p>
-              <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
-                {(members as string[]).map((member) => <span key={member}>{member}</span>)}
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {(members as string[]).map((member) => (
+                  <div key={member} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
+                    <PersonPlaceholder name={member} className="h-16 w-16 shrink-0 rounded-full" />
+                    <span className="text-sm text-white/80">{member}</span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
@@ -247,10 +252,15 @@ function PressDetail({ committee }: { committee: Committee }) {
               ["LP II", "Pari Maharjan"],
               ["LP III", "Aashiya Shrestha"],
             ].map(([committeeName, ...reporters]) => (
-              <div key={committeeName} className="border border-white/10 bg-navy px-5 py-4">
+              <div key={committeeName} className="border border-white/10 bg-navy px-5 py-5">
                 <p className="text-[10px] uppercase tracking-[0.18em] text-gold">{committeeName}</p>
-                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-white/80">
-                  {reporters.map((reporter) => <span key={reporter}>{reporter}</span>)}
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {reporters.map((reporter) => (
+                    <div key={reporter} className="flex items-center gap-3">
+                      <PersonPlaceholder name={reporter} className="h-14 w-14 shrink-0 rounded-full" />
+                      <span className="text-sm leading-snug text-white/80">{reporter}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
