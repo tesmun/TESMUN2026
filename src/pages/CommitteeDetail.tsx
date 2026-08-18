@@ -35,6 +35,11 @@ function BoardRow({
               ? "This appointment will be published when the Secretariat confirms the dais."
               : `${person.name} serves as ${person.role} for this committee, guiding procedure, debate and the drafting of resolutions across the conference.`}
           </p>
+          {person.testimonial && (
+            <blockquote className="mt-8 max-w-xl border-l-2 border-gold pl-5 text-left font-display text-xl leading-relaxed text-warm sm:text-2xl">
+              “{person.testimonial}”
+            </blockquote>
+          )}
         </Reveal>
       </div>
     </section>
@@ -61,6 +66,11 @@ function CommitteeHero({ committee }: { committee: Committee }) {
         </Reveal>
         <Reveal delay={0.16}>
           <p className="mt-4 text-xs uppercase tracking-[0.28em] text-silver">{committee.abbr}</p>
+        {committee.board.chair?.testimonial && (
+          <p className="mt-7 max-w-2xl border-t border-gold/40 pt-5 font-display text-lg leading-relaxed text-warm sm:text-xl">
+            “{committee.board.chair.testimonial}”
+          </p>
+        )}
         </Reveal>
       </div>
     </section>

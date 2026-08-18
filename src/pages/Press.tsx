@@ -24,7 +24,7 @@ export default function Press() {
         alt="Editorial still from the TESMUN press desk"
         title="PRESS"
         kicker="Press Hub"
-        subtitle="Conference coverage from TESMUN XIV, produced by the International Press Corps."
+        subtitle="Conference coverage from TESMUN XIV, produced by the TESMUN Press Desk."
       />
 
       <section className="border-y border-white/10 bg-navy-deep px-6 py-20 pb-28 sm:py-28 md:px-10">

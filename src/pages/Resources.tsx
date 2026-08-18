@@ -7,9 +7,7 @@ import { Divider, Eyebrow, PageHero } from "@/components/section-parts";
 import FindAssignment from "@/components/FindAssignment";
 import { allocationsSheet, committeesByCategory } from "@/lib/data";
 
-const guideCommittees = [...committeesByCategory.national, ...committeesByCategory.international].filter(
-  (c) => c.slug !== "ipc"
-);
+const guideCommittees = [...committeesByCategory.national, ...committeesByCategory.international];
 
 const delegateHandbook = "https://drive.google.com/file/d/1O1bmZtB23QCrZeCudLt0Ph9iGLqN21Rx/view?usp=sharing";
 

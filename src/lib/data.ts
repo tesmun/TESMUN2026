@@ -72,9 +72,21 @@ export const committees: Committee[] = [
     description:
       "The second Legislative Parliament, convened to debate national legislation and constitutional matters within a simulated parliamentary chamber.",
     board: {
-      chair: { name: "Saksham Thapaliya", role: "Chair" },
-      viceChair: { name: "Diya Shrestha", role: "Vice Chair" },
-      moderator: { name: "Dijesh Niroula", role: "Moderator" },
+      chair: {
+        name: "Saksham Thapaliya",
+        role: "Chair",
+        testimonial: "The art of leadership is not in being heard, but in making others feel heard. Welcome to LP II: a room for reasoned debate, respectful challenge and practical solutions. Represent your position with confidence, listen closely, and use your words to build understanding and advance constructive change.",
+      },
+      viceChair: {
+        name: "Diya Shrestha",
+        role: "Vice Chair",
+        testimonial: "Strengthening transparency, accountability and institutional integrity requires more than identifying problems. Study Nepal’s Constitution, listen to opposing arguments, and bring solutions to the House. Debate fiercely, question fearlessly, and govern responsibly.",
+      },
+      moderator: {
+        name: "Dijesh Niroula",
+        role: "Moderator",
+        testimonial: "Every opinion matters. LP II is a place to learn, grow and find the confidence to express ideas with respect and purpose. Participate actively, challenge viewpoints thoughtfully, and work together so every delegate leaves with greater confidence than when they arrived.",
+      },
     },
     guideUrl:
       "https://docs.google.com/document/d/1Fmh1U7z4DKfvuxWAhvQThbsbfq6n-NaB/edit?usp=sharing&ouid=104158985582123597718&rtpof=true&sd=true",
@@ -89,9 +101,21 @@ export const committees: Committee[] = [
     description:
       "The third Legislative Parliament, offering delegates a parallel forum for legislative debate, coalition-building and procedural diplomacy.",
     board: {
-      chair: { name: "Binayak Babu Rana", role: "Chair" },
-      viceChair: { name: "Alisa Rijal", role: "Vice Chair" },
-      moderator: { name: "Aayushma Shrestha", role: "Moderator" },
+      chair: {
+        name: "Binayak Babu Rana",
+        role: "Chair",
+        testimonial: "LP III is more than a platform for speeches. Challenge your opponents, defend your position with evidence, form alliances and turn debate into meaningful solutions. Come prepared, come confident, and make your voice heard.",
+      },
+      viceChair: {
+        name: "Alisa Rijal",
+        role: "Vice Chair",
+        testimonial: "Do not run after awards. TESMUN is an opportunity to develop confidence, research and diplomatic skills. Ask questions, seek clarity, and remember that the dais is here to guide you as you learn and grow.",
+      },
+      moderator: {
+        name: "Aayushma Shrestha",
+        role: "Moderator",
+        testimonial: "Every delegate has the opportunity to represent leaders and ministers while building public speaking, research and consensus-building skills. Bring curiosity, evidence and a willingness to engage with Nepal’s legislative challenges.",
+      },
     },
     guideUrl: "https://docs.google.com/document/d/14ks8zy2wg8Aib0SunYwfMAxIbLR2h_Q2/edit",
     logo: "/images/committee-lp.png",
@@ -105,9 +129,21 @@ export const committees: Committee[] = [
     description:
       "The Human Rights Council addresses pressing violations and protections of fundamental human rights across the international community.",
     board: {
-      chair: { name: "Kinjal Timalsina", role: "Chair" },
-      viceChair: { name: "Saanvi K.C.", role: "Vice Chair" },
-      moderator: { name: "Kritish Ghimire", role: "Moderator" },
+      chair: {
+        name: "Kinjal Timalsina",
+        role: "Chair",
+        testimonial: "Do not be afraid to speak. HRC is a room of opposing interests, hard questions and hard facts where diplomacy begins. Research your country, understand your agenda, and be ready to adjust. The strongest contribution is the one that shifts a viewpoint or turns an argument into a solution.",
+      },
+      viceChair: {
+        name: "Saanvi K.C.",
+        role: "Vice Chair",
+        testimonial: "Your words, ideas and perspectives can shape meaningful debate. HRC demands more than knowing national policy: listen to perspectives you may not like, defend your country with preparation, and remain willing to compromise. The floor is yours.",
+      },
+      moderator: {
+        name: "Kritish Ghimire",
+        role: "Moderator",
+        testimonial: "All voices matter. Be brave, forthright and vocal as you explore the issues affecting rights and dignity everywhere. Let the committee be collaborative, respectful and meaningful—and make your contributions worthwhile.",
+      },
     },
     guideUrl: "https://docs.google.com/document/d/1PX71jgNz19kJ0Gkz4WKtTsrWafjrZucocktpdjEeYUE/edit?tab=t.0",
     logo: "/images/committee-hrc.webp",
@@ -151,26 +187,26 @@ export const committees: Committee[] = [
     description:
       "UNEP leads the global environmental agenda, guiding delegates through climate, biodiversity and sustainability negotiations.",
     board: {
-      chair: { name: "Rujal Ojha", role: "Chair" },
-      viceChair: { name: "Sankalpa Neupane", role: "Vice Chair" },
-      moderator: { name: "Unnat Aryal", role: "Moderator" },
+      chair: {
+        name: "Rujal Ojha",
+        role: "Chair",
+        testimonial: "Climate change is no longer a distant threat. Research your country’s emissions, vulnerabilities, economic capacity and climate policies. Debate firmly, negotiate wisely, and work toward solutions that balance environmental responsibility with development.",
+      },
+      viceChair: {
+        name: "Sankalpa Neupane",
+        role: "Vice Chair",
+        testimonial: "Environmental governance demands scientific evidence, historical responsibility and climate justice. Study the guide carefully, stay organised and propose solutions that are ambitious, visionary and evidence-based.",
+      },
+      moderator: {
+        name: "Unnat Aryal",
+        role: "Moderator",
+        testimonial: "Leadership requires research, critical thinking and formal diplomatic dialogue. Bring individuality, clear evidence and a willingness to solve difficult ecological and geopolitical problems together. This is a development of self as well as an academic journey.",
+      },
     },
     guideUrl:
       "https://docs.google.com/document/d/1dVN7n4nQLQ7KNc_ebO2xNRRPCkcKh40yNFKCsN4wRDM/edit?usp=sharing",
     logo: "/images/committee-unep.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unep-bzwKXmGe8oWymMIKy3k1RcpSoBgq6w.png",
-  },
-  {
-    slug: "ipc",
-    abbr: "IPC",
-    name: "International Press Corps",
-    category: "international",
-    description:
-      "The International Press Corps reports on committee proceedings, capturing the conference through news, interviews and editorial coverage.",
-    board: {
-      headOf: { name: "To be announced", role: "Head of IPC", placeholder: true },
-    },
-    logo: "/images/committee-ipc.png",
   },
   {
     slug: "it",

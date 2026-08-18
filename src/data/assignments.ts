@@ -20,5 +20,4 @@ export const assignmentCommittees: { value: string; label: string; slugs?: strin
   { value: "ecosoc", label: "ECOSOC", slugs: ["ecosoc"] },
   { value: "specialized", label: "Specialized Agencies", slugs: ["hrc", "unep"] },
   { value: "regional", label: "Regional / Specialized Bodies", slugs: ["lp1", "lp2", "lp3"] },
-  { value: "press", label: "Press Corps", slugs: ["ipc"] },
 ];
