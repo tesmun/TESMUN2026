@@ -160,8 +160,8 @@ function ITDetail({ committee }: { committee: Committee }) {
               { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/gallery-library.jpg" },
               { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery-debate.jpg" },
               { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/cartoon-1.png" },
-            ].map((lead, index) => (
-              <div key={lead.role} className={`flex flex-col ${index === 3 ? "lg:col-span-2 lg:col-start-2" : ""}`}>
+            ].map((lead) => (
+              <div key={lead.role} className="flex flex-col">
                 <Reveal>
                   <div className="relative aspect-[4/5] overflow-hidden bg-navy">
                     <img src={lead.image} alt={lead.role} className="photo-fill" />
@@ -187,8 +187,8 @@ function ITDetail({ committee }: { committee: Committee }) {
               <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {(members as string[]).map((member) => (
                   <div key={member} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
-                    <PersonPlaceholder name={member} className="h-24 w-24 shrink-0 rounded-full" />
-                    <span className="text-sm text-white/80">{member}</span>
+                    <PersonPlaceholder name={member} className="h-28 w-28 shrink-0 rounded-full" />
+                    <span className="text-lg leading-snug text-white/85">{member}</span>
                   </div>
                 ))}
               </div>
@@ -286,20 +286,27 @@ function LogisticsDetail({ committee }: { committee: Committee }) {
       <CommitteeDescription committee={committee} />
 
       <section className="px-6 py-16 md:px-10">
-        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 md:gap-16">
-          {[headOf, coHeadOf].filter(Boolean).map((person, i) => (
-            <div key={person!.name} className="flex flex-col">
-              <Reveal delay={i * 0.08}>
-                <PersonPlaceholder name={person!.name} className="mb-4 aspect-[4/5] w-full" />
-                <p className="text-[11px] uppercase tracking-[0.16em] text-silver">{person!.role}</p>
-                <h3 className="font-display mt-1 text-2xl text-white">{person!.name}</h3>
-                <p className="mt-3 max-w-sm text-sm leading-7 text-white/70">
-                  {person!.name} coordinates the operational execution of TESMUN XIV, ensuring every session, transition and venue detail runs precisely as planned.
-                </p>
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 sm:grid-cols-2">
+            {[headOf, coHeadOf].filter(Boolean).map((person, i) => (
+              <div key={person!.name} className="flex flex-col">
+                <Reveal delay={i * 0.08}>
+                  <PersonPlaceholder name={person!.name} className="mb-4 aspect-[4/5] w-full" />
+                  <p className="text-[11px] uppercase tracking-[0.16em] text-silver">{person!.role}</p>
+                  <h3 className="font-display mt-1 text-2xl text-white">{person!.name}</h3>
+                </Reveal>
+              </div>
+            ))}
+          </div>
+          <div className="mt-16 grid gap-6 sm:grid-cols-3">
+            {[...(committee.board.deputyHeadOf || []), ...(committee.board.additionalMembers || [])].map((person, i) => (
+              <Reveal key={person.name} delay={i * 0.06}>
+                <PersonPlaceholder name={person.name} className="mb-4 aspect-square w-full" />
+                <p className="text-[10px] uppercase tracking-[0.16em] text-silver">{person.role}</p>
+                <h3 className="font-display mt-1 text-xl text-white">{person.name}</h3>
               </Reveal>
-              <hr className="rule mt-10" />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
