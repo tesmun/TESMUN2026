@@ -85,17 +85,14 @@ export default function Home() {
             </h2>
             <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-ink/75 sm:text-base">
               <p>
-                It is my privilege to welcome you to the fourteenth session of the Excelsior School
-                Model United Nations. TESMUN has always been, at its heart, a space where young
-                people learn the discipline of listening, the courage of speaking, and the patience
-                of negotiation.
+                It is with immense pride and excitement I welcome you to the 14th iteration of TESMUN. TESMUN XIV is a chance to have a meaningful debate, learn communication skills, learn leadership skills, work with others, and learn about the world around us. We hope we are able to make this an interactive and learning experience for all delegates.
               </p>
               <p>
-                This year, we ask every delegate to arrive not merely to debate, but to genuinely
-                engage with perspectives unlike their own. Diplomacy is not the absence of
-                disagreement — it is the practice of disagreeing with dignity.
+                Our goal this year is to make this a meaningful experience from the start of your preparations to the end of the session. All 8 of our committees will support the discussion, negotiation and involvement among all delegates, in a realistic way, with the opportunity to contribute ideas.
               </p>
-              <p>I look forward to welcoming you to Kathmandu, and to the conversations that will shape TESMUN XIV.</p>
+              <p>
+                I look forward to welcoming you to the conference and to the conversations that will shape TESMUN XIV.
+              </p>
             </div>
             <div className="mt-8">
               <p className="font-script text-4xl text-navy">Dibas Khadka</p>

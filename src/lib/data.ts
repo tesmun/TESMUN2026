@@ -34,6 +34,7 @@ export type CommitteeBoard = {
   headOf?: Person;
   coHeadOf?: Person;
   deputyHeadOf?: Person[];
+  additionalMembers?: Person[];
 };
 
 export type Committee = {
@@ -61,8 +62,9 @@ export const committees: Committee[] = [
       viceChair: { name: "Dilasha Oli", role: "Vice Chair" },
       moderator: { name: "Sijan Neupane", role: "Moderator" },
     },
+    guideUrl: "https://docs.google.com/document/d/1q15bWChGR4lDrzNmgmZ_Q5DaFM8QDnOfn4PxaZ16s5Y/edit?tab=t.0",
     logo: "/images/committee-lp.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parliament-IaZUqdmhYeGo1XLEIYwrzF22s4SehD.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
     slug: "lp2",
@@ -91,7 +93,7 @@ export const committees: Committee[] = [
     guideUrl:
       "https://docs.google.com/document/d/1Fmh1U7z4DKfvuxWAhvQThbsbfq6n-NaB/edit?usp=sharing&ouid=104158985582123597718&rtpof=true&sd=true",
     logo: "/images/committee-lp.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parliament-IaZUqdmhYeGo1XLEIYwrzF22s4SehD.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
     slug: "lp3",
@@ -119,7 +121,7 @@ export const committees: Committee[] = [
     },
     guideUrl: "https://docs.google.com/document/d/14ks8zy2wg8Aib0SunYwfMAxIbLR2h_Q2/edit",
     logo: "/images/committee-lp.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parliament-IaZUqdmhYeGo1XLEIYwrzF22s4SehD.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
     slug: "hrc",
@@ -206,7 +208,7 @@ export const committees: Committee[] = [
     guideUrl:
       "https://docs.google.com/document/d/1dVN7n4nQLQ7KNc_ebO2xNRRPCkcKh40yNFKCsN4wRDM/edit?usp=sharing",
     logo: "/images/committee-unep.webp",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unep-bzwKXmGe8oWymMIKy3k1RcpSoBgq6w.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unepbg-jWpwDDyDFzYbH5AOqwuymBEJabA7hr.png",
   },
   {
     slug: "it",
@@ -222,8 +224,8 @@ export const committees: Committee[] = [
         { name: "Swastik Manandar", role: "Deputy Head" },
       ],
     },
-    logo: "/images/it.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/itbackground-MXcwGwIq7WZ2S12jkrDGGFk9g12Hz4.png",
+    logo: "/images/logistic.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/itbg-PsxAFmus4v6k4rns9DSS7Uy9aDS6Lr.png",
   },
   {
     slug: "press",
@@ -241,6 +243,7 @@ export const committees: Committee[] = [
       ],
     },
     logo: "/images/press.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pressbg-YXg2R0VGLD8fqATrDAtdUxsxNxXXKd.png",
   },
   {
     slug: "logistics",
@@ -250,15 +253,20 @@ export const committees: Committee[] = [
     description:
       "The Logistics Committee coordinates the operational execution of TESMUN XIV, ensuring every session runs precisely as planned.",
     board: {
-      headOf: { name: "Rudraksh Devkota", role: "Overall Manager" },
-      coHeadOf: { name: "Yugesh Adhikari", role: "Material Head" },
+      headOf: { name: "Kushal Poudel", role: "Head of Press" },
+      coHeadOf: { name: "Prasina Moktan", role: "Head of Press" },
       deputyHeadOf: [
         { name: "Arbin Dhital", role: "Top Floor Incharge" },
         { name: "Harshid Bhetwal", role: "Second Floor Incharge" },
         { name: "Sushan Shrestha", role: "First Floor Incharge" },
       ],
+      additionalMembers: [
+        { name: "Rudraksh Devkota", role: "Overall Manager" },
+        { name: "Yugesh Adhikari", role: "Material Head" },
+      ],
     },
-    logo: "/images/logistic.png",
+    logo: "/images/it.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logisticsbg-eQkpkxkwEOVS5KXSp6hsJSmRHMn6dx.png",
   },
 ];
 
