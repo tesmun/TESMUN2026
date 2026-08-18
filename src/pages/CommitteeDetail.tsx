@@ -44,7 +44,7 @@ function BoardRow({
 function CommitteeHero({ committee }: { committee: Committee }) {
   return (
     <section className="relative flex h-[65vh] min-h-[440px] w-full items-center justify-center overflow-hidden bg-navy-deep">
-      <img src="/images/committees-hero.png" alt={`${committee.name} committee hall`} className="absolute inset-0 h-full w-full object-cover opacity-45" />
+      <img src={committee.background || "/images/committees-hero.png"} alt={`${committee.name} committee background`} className="absolute inset-0 h-full w-full object-cover opacity-55" />
       <div className="navy-hero-overlay absolute inset-0" />
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
         <Reveal>

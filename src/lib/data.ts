@@ -45,6 +45,7 @@ export type Committee = {
   board: CommitteeBoard;
   guideUrl?: string;
   logo?: string;
+  background?: string;
 };
 
 export const committees: Committee[] = [
@@ -61,6 +62,7 @@ export const committees: Committee[] = [
       moderator: { name: "Sijan Neupane", role: "Moderator" },
     },
     logo: "/images/committee-lp.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parliament-IaZUqdmhYeGo1XLEIYwrzF22s4SehD.png",
   },
   {
     slug: "lp2",
@@ -77,6 +79,7 @@ export const committees: Committee[] = [
     guideUrl:
       "https://docs.google.com/document/d/1Fmh1U7z4DKfvuxWAhvQThbsbfq6n-NaB/edit?usp=sharing&ouid=104158985582123597718&rtpof=true&sd=true",
     logo: "/images/committee-lp.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parliament-IaZUqdmhYeGo1XLEIYwrzF22s4SehD.png",
   },
   {
     slug: "lp3",
@@ -92,6 +95,7 @@ export const committees: Committee[] = [
     },
     guideUrl: "https://docs.google.com/document/d/14ks8zy2wg8Aib0SunYwfMAxIbLR2h_Q2/edit",
     logo: "/images/committee-lp.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parliament-IaZUqdmhYeGo1XLEIYwrzF22s4SehD.png",
   },
   {
     slug: "hrc",
@@ -107,6 +111,7 @@ export const committees: Committee[] = [
     },
     guideUrl: "https://docs.google.com/document/d/1PX71jgNz19kJ0Gkz4WKtTsrWafjrZucocktpdjEeYUE/edit?tab=t.0",
     logo: "/images/committee-hrc.webp",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hrc-fUE6mLW3NQJXIFrgToLEWkgSiCr6ZW.png",
   },
   {
     slug: "disec",
@@ -121,6 +126,7 @@ export const committees: Committee[] = [
       moderator: { name: "Prasanna Budhathoki", role: "Moderator" },
     },
     logo: "/images/committee-disec.webp",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/disec-z3751wrQjd3yvDW9KOsx96bCkr3Ne5.png",
   },
   {
     slug: "ecosoc",
@@ -135,6 +141,7 @@ export const committees: Committee[] = [
       moderator: { name: "Kunjal Kakki", role: "Moderator" },
     },
     logo: "/images/committee-ecosoc.webp",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ecosoc-84xAxvepfKfpnbgz49vstXclzNLbae.png",
   },
   {
     slug: "unep",
@@ -151,6 +158,7 @@ export const committees: Committee[] = [
     guideUrl:
       "https://docs.google.com/document/d/1dVN7n4nQLQ7KNc_ebO2xNRRPCkcKh40yNFKCsN4wRDM/edit?usp=sharing",
     logo: "/images/committee-unep.webp",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unep-bzwKXmGe8oWymMIKy3k1RcpSoBgq6w.png",
   },
   {
     slug: "ipc",
