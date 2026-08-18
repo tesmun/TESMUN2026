@@ -2,35 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import BorderGlow from "@/components/BorderGlow";
-import Grainient from "@/components/Grainient";
 import SpecularButton from "@/components/SpecularButton";
 import { PageHero, Eyebrow } from "@/components/section-parts";
 import { pressSections } from "@/lib/press-data";
-
-const grainientProps = {
-  color1: "#123b72",
-  color2: "#0d2a4a",
-  color3: "#B497CF",
-  timeSpeed: 0.25,
-  colorBalance: 0.0,
-  warpStrength: 1.0,
-  warpFrequency: 5.0,
-  warpSpeed: 2.0,
-  warpAmplitude: 50.0,
-  blendAngle: 0.0,
-  blendSoftness: 0.05,
-  rotationAmount: 500.0,
-  noiseScale: 2.0,
-  grainAmount: 0.1,
-  grainScale: 2.0,
-  grainAnimated: false,
-  contrast: 1.5,
-  gamma: 1.0,
-  saturation: 1.0,
-  centerX: 0.0,
-  centerY: 0.0,
-  zoom: 0.9,
-};
 
 const slots = [
   { slug: "news", layout: "wide" as const },
@@ -53,14 +27,11 @@ export default function Press() {
         subtitle="Conference coverage from TESMUN XIV, produced by the International Press Corps."
       />
 
-      <section className="relative px-6 py-20 pb-28 sm:py-28 md:px-10">
-        <div className="absolute inset-0">
-          <Grainient {...grainientProps} />
-        </div>
-        <div className="relative z-10 mx-auto max-w-6xl">
+      <section className="border-y border-white/10 bg-navy-deep px-6 py-20 pb-28 sm:py-28 md:px-10">
+        <div className="mx-auto max-w-6xl">
           <Reveal className="max-w-xl">
             <Eyebrow className="text-silver/80">Coverage</Eyebrow>
-            <h2 className="font-display mt-3 text-3xl font-medium text-warm sm:text-4xl">The conference, recorded</h2>
+            <h2 className="font-display mt-3 text-3xl font-medium tracking-[-0.02em] text-warm sm:text-4xl">The conference, recorded</h2>
             <p className="mt-4 text-[15px] leading-relaxed text-silver/80">
               Six desks. One record. Choose a section to read the conference as it unfolds.
             </p>
