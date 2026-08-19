@@ -159,7 +159,7 @@ function ITDetail({ committee }: { committee: Committee }) {
               { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/gallery/normal/gallery-library.jpg" },
               { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/gallery/normal/gallery-library.jpg" },
               { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery/normal/gallery-debate.jpg" },
-              { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/gallery/accordion/cartoon-1.png" },
+              { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/press/cartoons/cartoon-1.png" },
             ].map((lead) => (
               <div key={lead.role} className="flex flex-col">
                 <Reveal>

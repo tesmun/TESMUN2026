@@ -14,7 +14,7 @@ export const secretariat = {
     name: "Dibas Khadka",
     role: "Secretary-General",
     slug: "dibas-khadka",
-    image: "/images/committees/executive-board/secgen.png",
+    image: "/images/our-team/secgen.png",
     placeholder: false,
   } as Person,
   dsg: {
@@ -224,7 +224,7 @@ export const committees: Committee[] = [
         { name: "Swastik Manandar", role: "Deputy Head" },
       ],
     },
-    logo: "/images/our-team/logistic.png",
+    logo: "/images/our-team/logistics/logistic.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/itbg-PsxAFmus4v6k4rns9DSS7Uy9aDS6Lr.png",
   },
   {
@@ -265,7 +265,7 @@ export const committees: Committee[] = [
         { name: "Yugesh Adhikari", role: "Material Head" },
       ],
     },
-    logo: "/images/our-team/it.png",
+    logo: "/images/our-team/it/it.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logisticsbg-eQkpkxkwEOVS5KXSp6hsJSmRHMn6dx.png",
   },
 ];
@@ -285,7 +285,7 @@ export const seniorLeadership: Person[] = [
     name: "Sheetal Rana",
     role: "Chairperson",
     slug: "sheetal-rana",
-    image: "/images/committees/executive-board/chairperson.png",
+    image: "/images/our-team/chairperson.png",
     testimonial:
       "It is a joy to see you all take part in the Model United Nations here at Excelsior. MUN is not just about debating global issues; it is about discovering more about yourself and how you can shape the world around you. Leadership is not about standing above others, but about building with others.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/chairperson",
@@ -294,7 +294,7 @@ export const seniorLeadership: Person[] = [
     name: "Prashant Rajak",
     role: "Principal",
     slug: "prashant-rajak",
-    image: "/images/committees/executive-board/principal.jpg",
+    image: "/images/our-team/principal.jpg",
     testimonial:
       "Engagement creates interest. Exploration leads to a new world of knowledge. Expression helps to build confidence. TESMUN sharpens public speaking, researching, reading and writing skills while developing diplomatic negotiation, conflict resolution and peace-building across the world.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/principal",
@@ -306,7 +306,7 @@ export const coordinators: Person[] = [
     name: "Govinda Gautam",
     role: "MUN Coordinator",
     slug: "govinda-gautam",
-    image: "/images/committees/executive-board/muncoordinator.jpg",
+    image: "/images/our-team/muncoordinator.jpg",
     testimonial:
       "We are proud to announce the 14th session of TESMUN at our school. TESMUN provides students with a unique opportunity to learn about Nepalese politics, international diplomacy, cross-cultural understanding, and global governance. It is a platform where young minds communicate, argue and reach a consensus over national and global issues.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/mun-coordinator",
@@ -315,7 +315,7 @@ export const coordinators: Person[] = [
     name: "Pratik Subedi",
     role: "IT Coordinator",
     slug: "pratik-subedi",
-    image: "/images/our-team/itcoordinator.jpeg",
+    image: "/images/our-team/it/itcoordinator.jpeg",
     testimonial:
       "Serving as the IT Coordinator for TESMUN 2025 has been an enriching journey. Together, we shaped the digital face of the conference through the website, ceremony videos, invitation cards and dais portfolios. What stands out most is the way technology became a bridge for creativity and diplomacy.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/it-coordinator",
@@ -324,7 +324,7 @@ export const coordinators: Person[] = [
     name: "Jitendra Basnet",
     role: "Logistics Coordinator",
     slug: "jitendra-basnet",
-    image: "/images/our-team/logisticscoordinator.png",
+    image: "/images/our-team/logistics/logisticscoordinator.png",
     testimonial:
       "Love across the world and peace against the sword. As the logistics coordinator, I expect our team to be expressive according to MUN protocols and maintain discipline while working with the committees. The key to achieving the best is friendliness and the development of suitable habits.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/logistic-coordinator",
@@ -333,7 +333,7 @@ export const coordinators: Person[] = [
     name: "Dipendra Silwal",
     role: "Press Coordinator",
     slug: "dipendra-silwal",
-    image: "/images/our-team/presscoordinator.jpg",
+    image: "/images/our-team/press/presscoordinator.jpg",
     testimonial:
       "Learning is a beautiful and transformative journey, shaped by conscious choices and enriched with knowledge and skills. TESMUN offers a vibrant palette of opportunities where students become diplomats and policymakers, grappling with the world's most pressing issues and transforming from observers into active participants in society.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/press-co-ordinator",

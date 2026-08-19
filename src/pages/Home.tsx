@@ -102,7 +102,7 @@ export default function Home() {
           <Reveal delay={0.12}>
             <motion.div style={{ y: portraitY }} className="group/img relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden md:ml-auto">
               <img
-                src="/images/committees/executive-board/secgen.png"
+                src="/images/our-team/secgen.png"
                 alt="Portrait of Dibas Khadka, Secretary-General of TESMUN XIV"
                 className="photo-fill scale-on-hover"
               />

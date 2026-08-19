@@ -67,9 +67,9 @@ export default function OurTeam() {
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              { label: "IT", href: "/committees/it", logo: "/images/our-team/logistic.png" },
+              { label: "IT", href: "/committees/it", logo: "/images/our-team/logistics/logistic.png" },
               { label: "Press", href: "/committees/press", logo: "/images/press/press.png" },
-              { label: "Logistics", href: "/committees/logistics", logo: "/images/our-team/it.png" },
+              { label: "Logistics", href: "/committees/logistics", logo: "/images/our-team/it/it.png" },
             ].map((t, i) => (
               <Reveal key={t.label} delay={i * 0.08}>
                 <Link
