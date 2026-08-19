@@ -21,7 +21,6 @@ export const secretariat = {
     name: "Abhas Kunwar",
     role: "Deputy Secretary-General",
     slug: "abhas-kunwar",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/abhas-f5UIc3udcN87an7iBvg2E2rWeEcAg6.png",
     placeholder: false,
   } as Person,
 };
@@ -59,17 +58,12 @@ export const committees: Committee[] = [
     description:
       "The first of TESMUN's three national Legislative Parliaments, deliberating on domestic policy through the lens of Nepal's parliamentary process.",
     board: {
-      chair: {
-        name: "Aakarshi Paudel",
-        role: "Chair",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aakarshi-HN3svKUIphBmLA49e1n7p9RbVEhmLz.png",
-        testimonial: "The only way to make sure people you agree with can speak is to support the rights of people you don't agree with.\n\n— Eleanor Holmes Norton\n\nGreetings, Honorable Delegates,\n\nIt is my greatest honor to welcome you all to Legislative Parliament-I at this year’s Model United Nations Conference. I am Aakarshi Paudel, and I am truly privileged to serve as your Chair. As we enter this committee, remember that you are not here merely to speak; you are here to represent. Behind every placard lies a political ideology, a constituency, and the voice of people who have entrusted you to speak on their behalf. Legislative Parliament is a space where ideas are challenged, policies are questioned, and disagreements are transformed into solutions. Our agenda brings us face-to-face with important questions surrounding freedom and responsibility, expression and accountability, protest and public order, and individual rights and collective security.\n\nI do not expect every delegate to agree with one another. In fact, I expect the opposite. Disagree. Challenge. Question. Defend. Reconsider. Negotiate. But do so with substance. Come prepared with facts, legislation, statistics, political positions, and credible sources. Know your party, understand its ideology, and most importantly, understand the people you represent. Do not be afraid to challenge another delegate, but always do so with respect and purpose.\n\nYou may be nervous, lose your words, or disagree with someone more experienced. That is completely fine. Every strong parliamentarian started somewhere. As your Chair, I promise to remain fair, impartial, and approachable, ensuring every voice receives an opportunity to be heard. Remember, you are not simply simulating Parliament; you are practicing the responsibility of democracy.\n\nSo question the government, challenge the opposition, defend your party, negotiate with your rivals, and when necessary, be willing to change your position for a better solution. Let this committee be remembered not for how many speeches were delivered, but for how many ideas were challenged, solutions were created, and voices were heard. I wish you all the very best, and I look forward to hearing you on the floor."
-      },
-      viceChair: { name: "Dilasha Oli", role: "Vice Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dilasha-bknfMdaCB8xM7cx5lFiWGN5V9r2s5p.png", testimonial: "With the warmest heart, I welcome each and every one of you to the Legislative Parliament I of TESMUN 2026. It is an absolute honour to serve as your Vice Chair, and I am genuinely excited to meet you all, hear your ideas, and watch this committee come alive through your voices. As your Vice Chair I want you to know that I am always here to help and guide you. Whether you are giving your speech with trembling hands or speaking with confidence, during a discussion every single thing you do is important. I hope we can build a committee that's not only interesting and thought-provoking but also friendly, kind and something that stays with people.\n\nSo once again, welcome to the Legislative Parliament delegates. Bring your ideas, your passion, your questions, and your willingness to learn. I cannot wait to see you all step forward, find your voices, and make this committee truly yours." },
-      moderator: { name: "Sijan Neupane", role: "Moderator", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sijan-Q1f9miJnxFuUI5G3h5UHtIvXWNiJ0y.png", testimonial: "It is my pleasure to welcome you all to Legislative Parliament-I. As your Moderator, my goal is to make this committee active, engaging, and most importantly, a space where every delegate feels confident enough to participate.\n\nYou will not always agree with one another and that is exactly what Parliament is about. Question ideas, defend your position, challenge others respectfully, and most importantly, be willing to negotiate. Whether you are an experienced delegate or stepping into MUN for the first time, your voice can influence the direction of this committee.\n\nCome prepared, stay involved, and do not be afraid to speak. I look forward to seeing you turn your research and ideas into meaningful parliamentary debate." },
+      chair: { name: "Aakarshi Paudel", role: "Chair" },
+      viceChair: { name: "Dilasha Oli", role: "Vice Chair" },
+      moderator: { name: "Sijan Neupane", role: "Moderator" },
     },
-    guideUrl: "https://docs.google.com/document/d/1q15bWChGR4lDrzNmgmZ_Q5DaFM8QDnOfn4PxaZ16s5Y/edit?tab=t.730t2ke51dw#heading=h.1w5hc8pmaz4y",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lplogo-RkZLYdYrExi02qtYsIugYCwSscHbOb.png",
+    guideUrl: "https://docs.google.com/document/d/1q15bWChGR4lDrzNmgmZ_Q5DaFM8QDnOfn4PxaZ16s5Y/edit?tab=t.0",
+    logo: "/images/committee-lp.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
@@ -83,25 +77,22 @@ export const committees: Committee[] = [
       chair: {
         name: "Saksham Thapaliya",
         role: "Chair",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sakshamthapaliya-RMRvv39ahyH4AjvZQUTdREvjzBRzfx.png",
         testimonial: "The art of leadership is not in being heard, but in making others feel heard. Welcome to LP II: a room for reasoned debate, respectful challenge and practical solutions. Represent your position with confidence, listen closely, and use your words to build understanding and advance constructive change.",
       },
       viceChair: {
         name: "Diya Shrestha",
         role: "Vice Chair",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/diya-2LXZZl4unpTvcdAZgPYXFMJVtUgMUl.png",
         testimonial: "Strengthening transparency, accountability and institutional integrity requires more than identifying problems. Study Nepal’s Constitution, listen to opposing arguments, and bring solutions to the House. Debate fiercely, question fearlessly, and govern responsibly.",
       },
       moderator: {
         name: "Dijesh Niroula",
         role: "Moderator",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dijesh-MC8uhQpbRVWQknjvshuLn823Op5s47.png",
         testimonial: "Every opinion matters. LP II is a place to learn, grow and find the confidence to express ideas with respect and purpose. Participate actively, challenge viewpoints thoughtfully, and work together so every delegate leaves with greater confidence than when they arrived.",
       },
     },
     guideUrl:
       "https://docs.google.com/document/d/1Fmh1U7z4DKfvuxWAhvQThbsbfq6n-NaB/edit?usp=sharing&ouid=104158985582123597718&rtpof=true&sd=true",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lplogo-RkZLYdYrExi02qtYsIugYCwSscHbOb.png",
+    logo: "/images/committee-lp.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
@@ -115,24 +106,21 @@ export const committees: Committee[] = [
       chair: {
         name: "Binayak Babu Rana",
         role: "Chair",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/binayak-R1itSS8jjreCJ8KztiBs8OLlW8HbSd.png",
         testimonial: "LP III is more than a platform for speeches. Challenge your opponents, defend your position with evidence, form alliances and turn debate into meaningful solutions. Come prepared, come confident, and make your voice heard.",
       },
       viceChair: {
         name: "Alisa Rijal",
         role: "Vice Chair",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alisa-zpIEj5RHLa7BEVPfhbb4S6kQUmg71T.png",
         testimonial: "Do not run after awards. TESMUN is an opportunity to develop confidence, research and diplomatic skills. Ask questions, seek clarity, and remember that the dais is here to guide you as you learn and grow.",
       },
       moderator: {
         name: "Aayushma Shrestha",
         role: "Moderator",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aayushma-UwQjGqhphI24XnVcWGSDvy9TFPpIhs.png",
         testimonial: "Every delegate has the opportunity to represent leaders and ministers while building public speaking, research and consensus-building skills. Bring curiosity, evidence and a willingness to engage with Nepal’s legislative challenges.",
       },
     },
     guideUrl: "https://docs.google.com/document/d/14ks8zy2wg8Aib0SunYwfMAxIbLR2h_Q2/edit",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lplogo-RkZLYdYrExi02qtYsIugYCwSscHbOb.png",
+    logo: "/images/committee-lp.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
@@ -146,19 +134,16 @@ export const committees: Committee[] = [
       chair: {
         name: "Kinjal Timalsina",
         role: "Chair",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kinjal-f9zXhuGCssHBezk5DrfSKUTiGTuHXa.png",
         testimonial: "Do not be afraid to speak. HRC is a room of opposing interests, hard questions and hard facts where diplomacy begins. Research your country, understand your agenda, and be ready to adjust. The strongest contribution is the one that shifts a viewpoint or turns an argument into a solution.",
       },
       viceChair: {
         name: "Saanvi K.C.",
         role: "Vice Chair",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/saanvi-d5833fzdECD0WS9RQfmBAa02tjtxdb.png",
         testimonial: "Your words, ideas and perspectives can shape meaningful debate. HRC demands more than knowing national policy: listen to perspectives you may not like, defend your country with preparation, and remain willing to compromise. The floor is yours.",
       },
       moderator: {
         name: "Kritish Ghimire",
         role: "Moderator",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kritish-UQYmhq5N893SKLfmUpnapeR5rgysiS.png",
         testimonial: "All voices matter. Be brave, forthright and vocal as you explore the issues affecting rights and dignity everywhere. Let the committee be collaborative, respectful and meaningful—and make your contributions worthwhile.",
       },
     },
@@ -174,11 +159,10 @@ export const committees: Committee[] = [
     description:
       "DISEC deliberates on matters of global disarmament, arms regulation and international security cooperation.",
     board: {
-      chair: { name: "Dhiki Khando Lama", role: "Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dhiki-rVTdFlXzwZe7joLh3SzfSIyfqVzZSp.png" },
-      viceChair: { name: "Rijan Shrestha", role: "Vice Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rijan-PdPCTvI5rHJSvL94XuA34P4uixS5oq.png" },
-      moderator: { name: "Prasanna Budhathoki", role: "Moderator", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/prasanna-sSKVmFAt3NFu1lczOmptlil5SEFp3u.png" },
+      chair: { name: "Dhiki Khando Lama", role: "Chair" },
+      viceChair: { name: "Rijan Shrestha", role: "Vice Chair" },
+      moderator: { name: "Prasanna Budhathoki", role: "Moderator" },
     },
-    guideUrl: "https://canva.link/k8coc4efih3aon9",
     logo: "/images/committee-disec.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/disec-z3751wrQjd3yvDW9KOsx96bCkr3Ne5.png",
   },
@@ -190,9 +174,9 @@ export const committees: Committee[] = [
     description:
       "ECOSOC coordinates economic, social and related work, driving dialogue on sustainable development and global cooperation.",
     board: {
-      chair: { name: "Prateek Bhattarai", role: "Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/prateek-4ocal0VPgbUeijHbz5VpgqOZ7T7caA.png" },
-      viceChair: { name: "Sima Thapa Magar", role: "Vice Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sima-7mYRmWRMoUvGbPeQNUByGO1X2osza1.png" },
-      moderator: { name: "Kunjal Kakki", role: "Moderator", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kunjal-H9yLKjZsn1K9NGh7S6JqIEpA2pSFLw.png" },
+      chair: { name: "Prateek Bhattarai", role: "Chair" },
+      viceChair: { name: "Sima Thapa Magar", role: "Vice Chair" },
+      moderator: { name: "Kunjal Kakki", role: "Moderator" },
     },
     logo: "/images/committee-ecosoc.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ecosoc-84xAxvepfKfpnbgz49vstXclzNLbae.png",
@@ -207,20 +191,17 @@ export const committees: Committee[] = [
     board: {
       chair: {
         name: "Rujal Ojha",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rujal-AQ1AtfuXFsbh6XT5xU5YVCdj0eCjTE.png",
         role: "Chair",
         testimonial: "Climate change is no longer a distant threat. Research your country’s emissions, vulnerabilities, economic capacity and climate policies. Debate firmly, negotiate wisely, and work toward solutions that balance environmental responsibility with development.",
       },
       viceChair: {
         name: "Sankalpa Neupane",
         role: "Vice Chair",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sankalpa-fQDODyMIyvlYdWLRdAH6GDYoBozufx.png",
         testimonial: "Environmental governance demands scientific evidence, historical responsibility and climate justice. Study the guide carefully, stay organised and propose solutions that are ambitious, visionary and evidence-based.",
       },
       moderator: {
         name: "Unnat Aryal",
         role: "Moderator",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnat-RrEHIWOQOPPHvbCYL8rPhTPmGxmaTG.png",
         testimonial: "Leadership requires research, critical thinking and formal diplomatic dialogue. Bring individuality, clear evidence and a willingness to solve difficult ecological and geopolitical problems together. This is a development of self as well as an academic journey.",
       },
     },
@@ -237,9 +218,9 @@ export const committees: Committee[] = [
     description:
       "The IT Committee builds and maintains the technical backbone of TESMUN XIV — from the conference website to on-site systems.",
     board: {
-      headOf: { name: "Yubin KC", role: "Head of IT", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/yubin-kO06f1FIuhcV7TXNZTNO6bNlbkr2rf.png" },
+      headOf: { name: "Yubin KC", role: "Head of IT" },
       deputyHeadOf: [
-        { name: "Suyog Acharya", role: "Deputy Head", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/suyog-xvdA6XzV8AV28WaRBtPGqr0emGggYa.png" },
+        { name: "Suyog Acharya", role: "Deputy Head" },
         { name: "Swastik Manandar", role: "Deputy Head" },
       ],
     },
@@ -256,8 +237,8 @@ export const committees: Committee[] = [
     board: {
       headOf: { name: "Dechen Hira Tamang", role: "Chief Editor" },
       deputyHeadOf: [
-        { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/siddartha-H1mUfhbcP4UKcUnarY3mqAggo9Ogw6.png" },
-        { name: "Simran Devkota", role: "Deputy Chief Editor", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/simran-jBE1jPjZVK5MwRnWHxKh4PsRZEXSUO.png" },
+        { name: "Siddhartha Basnet", role: "Deputy Chief Editor" },
+        { name: "Simran Devkota", role: "Deputy Chief Editor" },
         { name: "John Doe", role: "Deputy Chief Editor", placeholder: true },
       ],
     },
@@ -272,7 +253,7 @@ export const committees: Committee[] = [
     description:
       "The Logistics Committee coordinates the operational execution of TESMUN XIV, ensuring every session runs precisely as planned.",
     board: {
-      headOf: { name: "Kushal Poudel", role: "Head of Press", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kushal-LRs11YTPepG3wHCPte7NqQDZiJ1aii.png" },
+      headOf: { name: "Kushal Poudel", role: "Head of Press" },
       coHeadOf: { name: "Prasina Moktan", role: "Head of Press" },
       deputyHeadOf: [
         { name: "Arbin Dhital", role: "Top Floor Incharge" },
@@ -280,7 +261,7 @@ export const committees: Committee[] = [
         { name: "Sushan Shrestha", role: "First Floor Incharge" },
       ],
       additionalMembers: [
-        { name: "Rudraksh Devkota", role: "Overall Manager", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rudraksh-F5uD0T6fC6F6bHkYVSg4ERvQSCiU32.png" },
+        { name: "Rudraksh Devkota", role: "Overall Manager" },
         { name: "Yugesh Adhikari", role: "Material Head" },
       ],
     },

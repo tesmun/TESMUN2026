@@ -36,7 +36,7 @@ function BoardRow({
               : `${person.name} serves as ${person.role} for this committee, guiding procedure, debate and the drafting of resolutions across the conference.`}
           </p>
           {person.testimonial && (
-            <blockquote className="mt-8 max-w-xl border-l-2 border-gold pl-5 text-left font-display text-base leading-relaxed text-warm sm:text-lg">
+            <blockquote className="mt-8 max-w-xl border-l-2 border-gold pl-5 text-left font-display text-xl leading-relaxed text-warm sm:text-2xl">
               “{person.testimonial}”
             </blockquote>
           )}
@@ -123,7 +123,7 @@ function ITDetail({ committee }: { committee: Committee }) {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <img src={committee.board.headOf?.image} alt="Yubin KC, Head of IT" className="aspect-[4/5] w-full max-w-md object-cover" />
+            <PersonPlaceholder name="Yubin KC" className="aspect-[4/5] w-full max-w-md" />
           </Reveal>
         </div>
       </section>
@@ -132,12 +132,12 @@ function ITDetail({ committee }: { committee: Committee }) {
       <section className="px-6 py-20 md:px-10">
         <div className="mx-auto grid max-w-7xl gap-12 sm:grid-cols-2 md:gap-20">
           {[
-            { name: "Suyog Acharya", role: "Deputy Head", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/suyog-xvdA6XzV8AV28WaRBtPGqr0emGggYa.png", text: "Supporting the technical workflow behind the conference." },
+            { name: "Suyog Acharya", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
             { name: "Swastik Manandar", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
           ].map((person) => (
             <div key={person.name} className="flex flex-col">
               <Reveal>
-                {person.image ? <img src={person.image} alt={`${person.name}, ${person.role}`} className="mb-4 aspect-[4/5] w-full object-cover" /> : <PersonPlaceholder name={person.name} className="mb-4 aspect-[4/5] w-full" />}
+                <PersonPlaceholder name={person.name} className="mb-4 aspect-[4/5] w-full" />
                 <p className="text-[11px] uppercase tracking-[0.16em] text-silver">{person.role}</p>
                 <h3 className="font-display mt-1 text-2xl text-white">{person.name}</h3>
                 <p className="mt-3 max-w-sm text-sm leading-7 text-white/70">{person.text}</p>
@@ -157,7 +157,7 @@ function ITDetail({ committee }: { committee: Committee }) {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/gallery-library.jpg" },
-              { name: "Saksham Adhikari", role: "Web Designing Lead", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sakshamadhikari-ngoCNZ4ErZaydAA6haMX2gNsvxZjug.png" },
+              { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/gallery-library.jpg" },
               { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery-debate.jpg" },
               { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/cartoon-1.png" },
             ].map((lead) => (
@@ -178,17 +178,17 @@ function ITDetail({ committee }: { committee: Committee }) {
       <section className="px-6 pb-20 md:px-10">
         <div className="mx-auto max-w-7xl space-y-12">
           {[
-            ["Web Designing Members", [{ name: "Sulav Sapkota" }, { name: "Abin Man Singh" }, { name: "Rinesh Karki", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rinesh-ZjlzXbVDGYv5cccXetVFfamXWJQBA0.png" }]],
+            ["Web Designing Members", ["Sulav Sapkota", "Abin Man Singh", "Rinesh Karki"]],
             ["Video Editing Members", ["Anish Rana", "Pratyush Rayamajhi"]],
             ["Graphics Members", ["Shivam Bharati", "Aarush Bajracharya", "Bibek Devkota"]],
           ].map(([label, members]) => (
             <div key={label as string} className="border-t border-white/15 pt-5">
               <p className="text-[10px] uppercase tracking-[0.16em] text-gold">{label as string}</p>
               <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {(members as { name: string; image?: string }[]).map((member) => (
-                  <div key={member.name} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
-                    {member.image ? <img src={member.image} alt={member.name} className="h-28 w-28 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={member.name} className="h-28 w-28 shrink-0 rounded-full" />}
-                    <span className="text-lg leading-snug text-white/85">{member.name}</span>
+                {(members as string[]).map((member) => (
+                  <div key={member} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
+                    <PersonPlaceholder name={member} className="h-28 w-28 shrink-0 rounded-full" />
+                    <span className="text-lg leading-snug text-white/85">{member}</span>
                   </div>
                 ))}
               </div>
@@ -312,7 +312,7 @@ function LogisticsDetail({ committee }: { committee: Committee }) {
 
       <div className="bg-navy-deep pb-10 text-center">
         <Link to="/committees" className="text-xs uppercase tracking-[0.14em] text-silver hover:text-white">
-          ��� Back to Committees
+          ← Back to Committees
         </Link>
       </div>
     </main>
