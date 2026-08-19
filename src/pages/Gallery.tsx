@@ -34,7 +34,7 @@ export default function Gallery() {
   return (
     <main>
       <PageHero
-        image="/images/cover.png"
+        image="/images/home/cover.png"
         alt="The Excelsior School campus at night"
         title="GALLERY"
         subtitle="A visual record of TESMUN — campus, chamber and city."

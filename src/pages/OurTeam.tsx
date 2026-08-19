@@ -8,7 +8,7 @@ import { coordinators, secretariat, seniorLeadership } from "@/lib/data";
 export default function OurTeam() {
   return (
     <main>
-      <PageHero image="/images/team-hero.png" alt="An empty auditorium stage with soft navy lighting" title="OUR TEAM" />
+      <PageHero image="/images/our-team/team-hero.png" alt="An empty auditorium stage with soft navy lighting" title="OUR TEAM" />
 
       <section className="bg-warm px-6 py-20 sm:py-28 md:px-10">
         <div className="mx-auto max-w-7xl">
@@ -67,9 +67,9 @@ export default function OurTeam() {
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              { label: "IT", href: "/committees/it", logo: "/images/logistic.png" },
-              { label: "Press", href: "/committees/press", logo: "/images/press.png" },
-              { label: "Logistics", href: "/committees/logistics", logo: "/images/it.png" },
+              { label: "IT", href: "/committees/it", logo: "/images/our-team/logistic.png" },
+              { label: "Press", href: "/committees/press", logo: "/images/press/press.png" },
+              { label: "Logistics", href: "/committees/logistics", logo: "/images/our-team/it.png" },
             ].map((t, i) => (
               <Reveal key={t.label} delay={i * 0.08}>
                 <Link

@@ -13,7 +13,7 @@ export default function About() {
     <main>
       <section ref={heroRef} className="group/img relative flex h-[80vh] min-h-[520px] w-full items-center justify-center overflow-hidden bg-navy-deep">
         <motion.img
-          src="/images/aboutbackground.png"
+          src="/images/about/aboutbackground.png"
           alt="A blue-lit United Nations exhibition hall"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ y }}
@@ -36,7 +36,7 @@ export default function About() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-20">
           <Reveal>
             <div className="group/img relative aspect-[4/5] w-full overflow-hidden">
-              <img src="/images/about-purpose.png" alt="A delegate's hand resting on a wooden podium" className="photo-fill scale-on-hover" />
+              <img src="/images/about/about-purpose.png" alt="A delegate's hand resting on a wooden podium" className="photo-fill scale-on-hover" />
             </div>
           </Reveal>
           <Reveal delay={0.12}>
@@ -77,14 +77,14 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.12} className="order-1 md:order-2">
             <div className="group/img relative aspect-[4/5] w-full overflow-hidden">
-              <img src="/images/about-vision.png" alt="An empty conference table lined with chairs and flags" className="photo-fill scale-on-hover" />
+              <img src="/images/about/about-vision.png" alt="An empty conference table lined with chairs and flags" className="photo-fill scale-on-hover" />
             </div>
           </Reveal>
         </div>
       </section>
 
       <section className="relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden bg-navy-deep px-6 py-28">
-        <img src="/images/about-closing.png" alt="A grand assembly hall ceiling at blue hour" className="absolute inset-0 h-full w-full object-cover" />
+        <img src="/images/about/about-closing.png" alt="A grand assembly hall ceiling at blue hour" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-navy-deep/70" />
         <div className="relative z-10 max-w-3xl text-center">
           <TextReveal

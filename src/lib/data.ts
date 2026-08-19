@@ -14,7 +14,7 @@ export const secretariat = {
     name: "Dibas Khadka",
     role: "Secretary-General",
     slug: "dibas-khadka",
-    image: "/images/secgen.png",
+    image: "/images/committees/executive-board/secgen.png",
     placeholder: false,
   } as Person,
   dsg: {
@@ -63,7 +63,7 @@ export const committees: Committee[] = [
       moderator: { name: "Sijan Neupane", role: "Moderator" },
     },
     guideUrl: "https://docs.google.com/document/d/1q15bWChGR4lDrzNmgmZ_Q5DaFM8QDnOfn4PxaZ16s5Y/edit?tab=t.0",
-    logo: "/images/committee-lp.png",
+    logo: "/images/committees/visuals/committee-lp.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
@@ -92,7 +92,7 @@ export const committees: Committee[] = [
     },
     guideUrl:
       "https://docs.google.com/document/d/1Fmh1U7z4DKfvuxWAhvQThbsbfq6n-NaB/edit?usp=sharing&ouid=104158985582123597718&rtpof=true&sd=true",
-    logo: "/images/committee-lp.png",
+    logo: "/images/committees/visuals/committee-lp.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
@@ -120,7 +120,7 @@ export const committees: Committee[] = [
       },
     },
     guideUrl: "https://docs.google.com/document/d/14ks8zy2wg8Aib0SunYwfMAxIbLR2h_Q2/edit",
-    logo: "/images/committee-lp.png",
+    logo: "/images/committees/visuals/committee-lp.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
@@ -148,7 +148,7 @@ export const committees: Committee[] = [
       },
     },
     guideUrl: "https://docs.google.com/document/d/1PX71jgNz19kJ0Gkz4WKtTsrWafjrZucocktpdjEeYUE/edit?tab=t.0",
-    logo: "/images/committee-hrc.webp",
+    logo: "/images/committees/visuals/committee-hrc.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hrc-fUE6mLW3NQJXIFrgToLEWkgSiCr6ZW.png",
   },
   {
@@ -163,7 +163,7 @@ export const committees: Committee[] = [
       viceChair: { name: "Rijan Shrestha", role: "Vice Chair" },
       moderator: { name: "Prasanna Budhathoki", role: "Moderator" },
     },
-    logo: "/images/committee-disec.webp",
+    logo: "/images/committees/visuals/committee-disec.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/disec-z3751wrQjd3yvDW9KOsx96bCkr3Ne5.png",
   },
   {
@@ -178,7 +178,7 @@ export const committees: Committee[] = [
       viceChair: { name: "Sima Thapa Magar", role: "Vice Chair" },
       moderator: { name: "Kunjal Kakki", role: "Moderator" },
     },
-    logo: "/images/committee-ecosoc.webp",
+    logo: "/images/committees/visuals/committee-ecosoc.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ecosoc-84xAxvepfKfpnbgz49vstXclzNLbae.png",
   },
   {
@@ -207,7 +207,7 @@ export const committees: Committee[] = [
     },
     guideUrl:
       "https://docs.google.com/document/d/1dVN7n4nQLQ7KNc_ebO2xNRRPCkcKh40yNFKCsN4wRDM/edit?usp=sharing",
-    logo: "/images/committee-unep.webp",
+    logo: "/images/committees/visuals/committee-unep.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unepbg-jWpwDDyDFzYbH5AOqwuymBEJabA7hr.png",
   },
   {
@@ -224,7 +224,7 @@ export const committees: Committee[] = [
         { name: "Swastik Manandar", role: "Deputy Head" },
       ],
     },
-    logo: "/images/logistic.png",
+    logo: "/images/our-team/logistic.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/itbg-PsxAFmus4v6k4rns9DSS7Uy9aDS6Lr.png",
   },
   {
@@ -242,7 +242,7 @@ export const committees: Committee[] = [
         { name: "John Doe", role: "Deputy Chief Editor", placeholder: true },
       ],
     },
-    logo: "/images/press.png",
+    logo: "/images/press/press.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pressbg-YXg2R0VGLD8fqATrDAtdUxsxNxXXKd.png",
   },
   {
@@ -265,7 +265,7 @@ export const committees: Committee[] = [
         { name: "Yugesh Adhikari", role: "Material Head" },
       ],
     },
-    logo: "/images/it.png",
+    logo: "/images/our-team/it.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logisticsbg-eQkpkxkwEOVS5KXSp6hsJSmRHMn6dx.png",
   },
 ];
@@ -285,7 +285,7 @@ export const seniorLeadership: Person[] = [
     name: "Sheetal Rana",
     role: "Chairperson",
     slug: "sheetal-rana",
-    image: "/images/chairperson.png",
+    image: "/images/committees/executive-board/chairperson.png",
     testimonial:
       "It is a joy to see you all take part in the Model United Nations here at Excelsior. MUN is not just about debating global issues; it is about discovering more about yourself and how you can shape the world around you. Leadership is not about standing above others, but about building with others.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/chairperson",
@@ -294,7 +294,7 @@ export const seniorLeadership: Person[] = [
     name: "Prashant Rajak",
     role: "Principal",
     slug: "prashant-rajak",
-    image: "/images/principal.jpg",
+    image: "/images/committees/executive-board/principal.jpg",
     testimonial:
       "Engagement creates interest. Exploration leads to a new world of knowledge. Expression helps to build confidence. TESMUN sharpens public speaking, researching, reading and writing skills while developing diplomatic negotiation, conflict resolution and peace-building across the world.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/principal",
@@ -306,7 +306,7 @@ export const coordinators: Person[] = [
     name: "Govinda Gautam",
     role: "MUN Coordinator",
     slug: "govinda-gautam",
-    image: "/images/muncoordinator.jpg",
+    image: "/images/committees/executive-board/muncoordinator.jpg",
     testimonial:
       "We are proud to announce the 14th session of TESMUN at our school. TESMUN provides students with a unique opportunity to learn about Nepalese politics, international diplomacy, cross-cultural understanding, and global governance. It is a platform where young minds communicate, argue and reach a consensus over national and global issues.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/mun-coordinator",
@@ -315,7 +315,7 @@ export const coordinators: Person[] = [
     name: "Pratik Subedi",
     role: "IT Coordinator",
     slug: "pratik-subedi",
-    image: "/images/itcoordinator.jpeg",
+    image: "/images/our-team/itcoordinator.jpeg",
     testimonial:
       "Serving as the IT Coordinator for TESMUN 2025 has been an enriching journey. Together, we shaped the digital face of the conference through the website, ceremony videos, invitation cards and dais portfolios. What stands out most is the way technology became a bridge for creativity and diplomacy.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/it-coordinator",
@@ -324,7 +324,7 @@ export const coordinators: Person[] = [
     name: "Jitendra Basnet",
     role: "Logistics Coordinator",
     slug: "jitendra-basnet",
-    image: "/images/logisticscoordinator.png",
+    image: "/images/our-team/logisticscoordinator.png",
     testimonial:
       "Love across the world and peace against the sword. As the logistics coordinator, I expect our team to be expressive according to MUN protocols and maintain discipline while working with the committees. The key to achieving the best is friendliness and the development of suitable habits.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/logistic-coordinator",
@@ -333,7 +333,7 @@ export const coordinators: Person[] = [
     name: "Dipendra Silwal",
     role: "Press Coordinator",
     slug: "dipendra-silwal",
-    image: "/images/presscoordinator.jpg",
+    image: "/images/our-team/presscoordinator.jpg",
     testimonial:
       "Learning is a beautiful and transformative journey, shaped by conscious choices and enriched with knowledge and skills. TESMUN offers a vibrant palette of opportunities where students become diplomats and policymakers, grappling with the world's most pressing issues and transforming from observers into active participants in society.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/press-co-ordinator",
@@ -381,20 +381,20 @@ export const navLinks = [
 ];
 
 export const galleryImages = [
-  { src: "/images/cover.png", alt: "The Excelsior School campus illuminated at night for TESMUN", caption: "Campus at night" },
-  { src: "/images/about-hero.png", alt: "Cinematic view of the TESMUN about hall", caption: "The hall" },
-  { src: "/images/committees-hero.png", alt: "Committee room prepared for debate", caption: "Committee room" },
-  { src: "/images/gallery-assembly.jpg", alt: "United Nations flags along the Allée des Nations in Geneva", caption: "Allée des Nations" },
-  { src: "/images/gallery-debate.jpg", alt: "A young speaker addressing a formal discussion from a microphone", caption: "The floor" },
-  { src: "/images/gallery-kathmandu.jpg", alt: "Silhouette of people at a historic pavilion in Kirtipur, Kathmandu", caption: "Kathmandu dusk" },
-  { src: "/images/gallery-flags.jpg", alt: "A speaker at a podium during a formal conference address", caption: "The podium" },
-  { src: "/images/gallery-gavel.jpg", alt: "Close-up of a wooden gavel on a formal desk", caption: "In session" },
-  { src: "/images/gallery-library.jpg", alt: "Eyeglasses resting on a stack of research notebooks", caption: "Preparation" },
-  { src: "/images/gallery-campus.jpg", alt: "Tree-lined courtyard between academic buildings", caption: "The grounds" },
-  { src: "/images/gallery-podium.jpg", alt: "Empty conference room with a podium and rows of chairs", caption: "Before the gavel" },
-  { src: "/images/gallery-delegates.jpg", alt: "Young people seated around a formal meeting table in discussion", caption: "Delegates" },
-  { src: "/images/about-purpose.png", alt: "A delegate's hand resting on a wooden podium", caption: "The floor opens" },
-  { src: "/images/about-vision.png", alt: "An empty conference table lined with chairs and flags", caption: "Ready for session" },
-  { src: "/images/mottobg.png", alt: "Atmospheric backdrop used for the TESMUN motto", caption: "Engage · Express · Excell" },
-  { src: "/images/press-hero.png", alt: "Editorial still from the TESMUN press desk", caption: "Press desk" },
+  { src: "/images/home/cover.png", alt: "The Excelsior School campus illuminated at night for TESMUN", caption: "Campus at night" },
+  { src: "/images/about/about-hero.png", alt: "Cinematic view of the TESMUN about hall", caption: "The hall" },
+  { src: "/images/committees/visuals/committees-hero.png", alt: "Committee room prepared for debate", caption: "Committee room" },
+  { src: "/images/gallery/normal/gallery-assembly.jpg", alt: "United Nations flags along the Allée des Nations in Geneva", caption: "Allée des Nations" },
+  { src: "/images/gallery/normal/gallery-debate.jpg", alt: "A young speaker addressing a formal discussion from a microphone", caption: "The floor" },
+  { src: "/images/gallery/normal/gallery-kathmandu.jpg", alt: "Silhouette of people at a historic pavilion in Kirtipur, Kathmandu", caption: "Kathmandu dusk" },
+  { src: "/images/gallery/normal/gallery-flags.jpg", alt: "A speaker at a podium during a formal conference address", caption: "The podium" },
+  { src: "/images/gallery/normal/gallery-gavel.jpg", alt: "Close-up of a wooden gavel on a formal desk", caption: "In session" },
+  { src: "/images/gallery/normal/gallery-library.jpg", alt: "Eyeglasses resting on a stack of research notebooks", caption: "Preparation" },
+  { src: "/images/gallery/normal/gallery-campus.jpg", alt: "Tree-lined courtyard between academic buildings", caption: "The grounds" },
+  { src: "/images/gallery/normal/gallery-podium.jpg", alt: "Empty conference room with a podium and rows of chairs", caption: "Before the gavel" },
+  { src: "/images/gallery/normal/gallery-delegates.jpg", alt: "Young people seated around a formal meeting table in discussion", caption: "Delegates" },
+  { src: "/images/about/about-purpose.png", alt: "A delegate's hand resting on a wooden podium", caption: "The floor opens" },
+  { src: "/images/about/about-vision.png", alt: "An empty conference table lined with chairs and flags", caption: "Ready for session" },
+  { src: "/images/home/mottobg.png", alt: "Atmospheric backdrop used for the TESMUN motto", caption: "Engage · Express · Excell" },
+  { src: "/images/press/press-hero.png", alt: "Editorial still from the TESMUN press desk", caption: "Press desk" },
 ];

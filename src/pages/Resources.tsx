@@ -40,7 +40,7 @@ export default function Resources() {
   return (
     <main>
       <PageHero
-        image="/images/resources-hero.png"
+        image="/images/resources/resources-hero.png"
         alt="Research materials prepared for TESMUN delegates"
         title="RESOURCES"
         kicker="Delegate library"

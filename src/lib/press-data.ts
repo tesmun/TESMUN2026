@@ -27,10 +27,10 @@ export const newsArticles: NewsArticle[] = [
     ],
     author: "International Press Corps",
     date: "August 2026",
-    image: "/images/news-handshake.jpg",
+    image: "/images/press/news/session-1/day-2/news-handshake.jpg",
     caption: "Agreement, when it arrives, is usually quieter than the debate that produced it.",
     extraImages: [
-      { src: "/images/gallery-gavel.jpg", alt: "A wooden gavel resting on a formal desk after session", caption: "The gavel waits." },
+      { src: "/images/gallery/normal/gallery-gavel.jpg", alt: "A wooden gavel resting on a formal desk after session", caption: "The gavel waits." },
     ],
     pullQuote: "Consensus is not the absence of disagreement; it is the shape disagreement takes when people stay in the room.",
   },
@@ -46,10 +46,10 @@ export const newsArticles: NewsArticle[] = [
     ],
     author: "International Press Corps",
     date: "August 2026",
-    image: "/images/news-notes.jpg",
+    image: "/images/press/news/session-2/day-1/news-notes.jpg",
     caption: "The day's most consequential sentences were often written in the margins.",
     extraImages: [
-      { src: "/images/gallery-delegates.jpg", alt: "Delegates in conversation around a formal table", caption: "Work continues between motions." },
+      { src: "/images/gallery/normal/gallery-delegates.jpg", alt: "Delegates in conversation around a formal table", caption: "Work continues between motions." },
     ],
     pullQuote: "The conference is built in public, but much of its diplomacy happens in the pause before a hand rises.",
   },
@@ -65,10 +65,10 @@ export const newsArticles: NewsArticle[] = [
     ],
     author: "International Press Corps",
     date: "August 2026",
-    image: "/images/news-featured.jpg",
+    image: "/images/press/news/session-1/day-1/news-featured.jpg",
     caption: "The first edition is always a record of beginnings.",
     extraImages: [
-      { src: "/images/gallery-podium.jpg", alt: "An empty conference room with podium and chairs before the first session", caption: "Before the first statement." },
+      { src: "/images/gallery/normal/gallery-podium.jpg", alt: "An empty conference room with podium and chairs before the first session", caption: "Before the first statement." },
     ],
     pullQuote: "Every position paper is also a door: it tells the room where to enter the conversation.",
   },
@@ -155,7 +155,7 @@ export const interviews: Interview[] = [
     slug: "finding-confidence",
     title: "A delegate on finding confidence in the room",
     subject: "Delegate, General Assembly",
-    portrait: "/images/interview-portrait.jpg",
+    portrait: "/images/our-team/interview-portrait.jpg",
     youtubeUrl: "",
   },
   {
@@ -189,7 +189,7 @@ export const speeches: Speech[] = [
     speaker: "To be announced",
     role: "Speaker",
     committee: "Opening Ceremony",
-    photo: "/images/speech-portrait.jpg",
+    photo: "/images/our-team/speech-portrait.jpg",
     body: [
       "This speech will be published here once the conference record is complete. The Press Desk will add the speaker, role and full text as delivered.",
     ],
@@ -217,7 +217,7 @@ export const speeches: Speech[] = [
 ];
 
 export const opEdContributors = [
-  { name: "Dibas Khadka", role: "Secretary-General", pdf: "", photo: "/images/secgen.png" },
+  { name: "Dibas Khadka", role: "Secretary-General", pdf: "", photo: "/images/committees/executive-board/secgen.png" },
   { name: "Abhash Kunwar", role: "Deputy Secretary-General", pdf: "" },
   { name: "Anuj Jung Thapa", role: "Delegate, Human Rights Council", pdf: "" },
   { name: "Eva Shakya", role: "Delegate, Human Rights Council", pdf: "" },
@@ -226,10 +226,10 @@ export const opEdContributors = [
 ];
 
 export const cartoons = [
-  { src: "/images/cartoon-1.png", alt: "Editorial cartoon of a young diplomat at a circular table with an olive branch on a gavel" },
-  { src: "/images/cartoon-2.png", alt: "Editorial cartoon of a globe in a school blazer addressing a podium" },
-  { src: "/images/cartoon-3.png", alt: "Editorial cartoon of two country placards leaning together with a fountain pen between them" },
-  { src: "/images/cartoon-4.png", alt: "Editorial cartoon of resolution papers folding into a paper crane above a committee room" },
+  { src: "/images/gallery/accordion/cartoon-1.png", alt: "Editorial cartoon of a young diplomat at a circular table with an olive branch on a gavel" },
+  { src: "/images/gallery/accordion/cartoon-2.png", alt: "Editorial cartoon of a globe in a school blazer addressing a podium" },
+  { src: "/images/gallery/accordion/cartoon-3.png", alt: "Editorial cartoon of two country placards leaning together with a fountain pen between them" },
+  { src: "/images/gallery/accordion/cartoon-4.png", alt: "Editorial cartoon of resolution papers folding into a paper crane above a committee room" },
 ];
 
 export function getNewsArticle(slug: string) {
