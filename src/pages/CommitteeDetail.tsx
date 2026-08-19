@@ -123,7 +123,7 @@ function ITDetail({ committee }: { committee: Committee }) {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <PersonPlaceholder name="Yubin KC" className="aspect-[4/5] w-full max-w-md" />
+            <img src={committee.board.headOf?.image} alt="Yubin KC, Head of IT" className="aspect-[4/5] w-full max-w-md object-cover" />
           </Reveal>
         </div>
       </section>
@@ -312,7 +312,7 @@ function LogisticsDetail({ committee }: { committee: Committee }) {
 
       <div className="bg-navy-deep pb-10 text-center">
         <Link to="/committees" className="text-xs uppercase tracking-[0.14em] text-silver hover:text-white">
-          ← Back to Committees
+          ��� Back to Committees
         </Link>
       </div>
     </main>

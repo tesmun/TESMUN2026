@@ -58,12 +58,12 @@ export const committees: Committee[] = [
     description:
       "The first of TESMUN's three national Legislative Parliaments, deliberating on domestic policy through the lens of Nepal's parliamentary process.",
     board: {
-      chair: { name: "Aakarshi Paudel", role: "Chair" },
-      viceChair: { name: "Dilasha Oli", role: "Vice Chair" },
+      chair: { name: "Aakarshi Paudel", role: "Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aakarshi-HN3svKUIphBmLA49e1n7p9RbVEhmLz.png" },
+      viceChair: { name: "Dilasha Oli", role: "Vice Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dilasha-bknfMdaCB8xM7cx5lFiWGN5V9r2s5p.png" },
       moderator: { name: "Sijan Neupane", role: "Moderator" },
     },
     guideUrl: "https://docs.google.com/document/d/1q15bWChGR4lDrzNmgmZ_Q5DaFM8QDnOfn4PxaZ16s5Y/edit?tab=t.0",
-    logo: "/images/committee-lp.png",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lplogo-RkZLYdYrExi02qtYsIugYCwSscHbOb.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
@@ -82,17 +82,19 @@ export const committees: Committee[] = [
       viceChair: {
         name: "Diya Shrestha",
         role: "Vice Chair",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/diya-2LXZZl4unpTvcdAZgPYXFMJVtUgMUl.png",
         testimonial: "Strengthening transparency, accountability and institutional integrity requires more than identifying problems. Study Nepal’s Constitution, listen to opposing arguments, and bring solutions to the House. Debate fiercely, question fearlessly, and govern responsibly.",
       },
       moderator: {
         name: "Dijesh Niroula",
         role: "Moderator",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dijesh-MC8uhQpbRVWQknjvshuLn823Op5s47.png",
         testimonial: "Every opinion matters. LP II is a place to learn, grow and find the confidence to express ideas with respect and purpose. Participate actively, challenge viewpoints thoughtfully, and work together so every delegate leaves with greater confidence than when they arrived.",
       },
     },
     guideUrl:
       "https://docs.google.com/document/d/1Fmh1U7z4DKfvuxWAhvQThbsbfq6n-NaB/edit?usp=sharing&ouid=104158985582123597718&rtpof=true&sd=true",
-    logo: "/images/committee-lp.png",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lplogo-RkZLYdYrExi02qtYsIugYCwSscHbOb.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
@@ -106,11 +108,13 @@ export const committees: Committee[] = [
       chair: {
         name: "Binayak Babu Rana",
         role: "Chair",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/binayak-R1itSS8jjreCJ8KztiBs8OLlW8HbSd.png",
         testimonial: "LP III is more than a platform for speeches. Challenge your opponents, defend your position with evidence, form alliances and turn debate into meaningful solutions. Come prepared, come confident, and make your voice heard.",
       },
       viceChair: {
         name: "Alisa Rijal",
         role: "Vice Chair",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alisa-zpIEj5RHLa7BEVPfhbb4S6kQUmg71T.png",
         testimonial: "Do not run after awards. TESMUN is an opportunity to develop confidence, research and diplomatic skills. Ask questions, seek clarity, and remember that the dais is here to guide you as you learn and grow.",
       },
       moderator: {
@@ -120,7 +124,7 @@ export const committees: Committee[] = [
       },
     },
     guideUrl: "https://docs.google.com/document/d/14ks8zy2wg8Aib0SunYwfMAxIbLR2h_Q2/edit",
-    logo: "/images/committee-lp.png",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lplogo-RkZLYdYrExi02qtYsIugYCwSscHbOb.png",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
   },
   {
@@ -134,6 +138,7 @@ export const committees: Committee[] = [
       chair: {
         name: "Kinjal Timalsina",
         role: "Chair",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kinjal-f9zXhuGCssHBezk5DrfSKUTiGTuHXa.png",
         testimonial: "Do not be afraid to speak. HRC is a room of opposing interests, hard questions and hard facts where diplomacy begins. Research your country, understand your agenda, and be ready to adjust. The strongest contribution is the one that shifts a viewpoint or turns an argument into a solution.",
       },
       viceChair: {
@@ -144,6 +149,7 @@ export const committees: Committee[] = [
       moderator: {
         name: "Kritish Ghimire",
         role: "Moderator",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kritish-UQYmhq5N893SKLfmUpnapeR5rgysiS.png",
         testimonial: "All voices matter. Be brave, forthright and vocal as you explore the issues affecting rights and dignity everywhere. Let the committee be collaborative, respectful and meaningful—and make your contributions worthwhile.",
       },
     },
@@ -159,7 +165,7 @@ export const committees: Committee[] = [
     description:
       "DISEC deliberates on matters of global disarmament, arms regulation and international security cooperation.",
     board: {
-      chair: { name: "Dhiki Khando Lama", role: "Chair" },
+      chair: { name: "Dhiki Khando Lama", role: "Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dhiki-rVTdFlXzwZe7joLh3SzfSIyfqVzZSp.png" },
       viceChair: { name: "Rijan Shrestha", role: "Vice Chair" },
       moderator: { name: "Prasanna Budhathoki", role: "Moderator" },
     },
@@ -218,7 +224,7 @@ export const committees: Committee[] = [
     description:
       "The IT Committee builds and maintains the technical backbone of TESMUN XIV — from the conference website to on-site systems.",
     board: {
-      headOf: { name: "Yubin KC", role: "Head of IT" },
+      headOf: { name: "Yubin KC", role: "Head of IT", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/yubin-kO06f1FIuhcV7TXNZTNO6bNlbkr2rf.png" },
       deputyHeadOf: [
         { name: "Suyog Acharya", role: "Deputy Head" },
         { name: "Swastik Manandar", role: "Deputy Head" },
