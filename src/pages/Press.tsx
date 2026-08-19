@@ -20,7 +20,7 @@ export default function Press() {
   return (
     <main>
       <PageHero
-        image="/images/press-hero.png"
+        image="/images/press/press-hero.png"
         alt="Editorial still from the TESMUN press desk"
         title="PRESS"
         kicker="Press Hub"

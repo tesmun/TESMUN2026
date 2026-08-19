@@ -49,7 +49,7 @@ function BoardRow({
 function CommitteeHero({ committee }: { committee: Committee }) {
   return (
     <section className="relative flex h-[65vh] min-h-[440px] w-full items-center justify-center overflow-hidden bg-navy-deep">
-      <img src={committee.background || "/images/committees-hero.png"} alt={`${committee.name} committee background`} className="absolute inset-0 h-full w-full object-cover opacity-55" />
+      <img src={committee.background || "/images/committees/visuals/committees-hero.png"} alt={`${committee.name} committee background`} className="absolute inset-0 h-full w-full object-cover opacity-55" />
       <div className="navy-hero-overlay absolute inset-0" />
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
         <Reveal>
@@ -156,10 +156,10 @@ function ITDetail({ committee }: { committee: Committee }) {
           </Reveal>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/gallery-library.jpg" },
-              { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/gallery-library.jpg" },
-              { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery-debate.jpg" },
-              { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/cartoon-1.png" },
+              { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/gallery/normal/gallery-library.jpg" },
+              { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/gallery/normal/gallery-library.jpg" },
+              { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery/normal/gallery-debate.jpg" },
+              { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/press/cartoons/cartoon-1.png" },
             ].map((lead) => (
               <div key={lead.role} className="flex flex-col">
                 <Reveal>

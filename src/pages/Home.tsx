@@ -21,7 +21,7 @@ export default function Home() {
     <main>
       <section ref={heroRef} className="group/img relative flex h-[100svh] min-h-[640px] w-full items-center justify-center overflow-hidden bg-navy-deep">
         <motion.img
-          src="/images/cover.png"
+          src="/images/home/cover.png"
           alt="The Excelsior School campus at night, illuminated for TESMUN"
           className="absolute inset-0 h-full w-full object-cover"
           initial={{ scale: 1.03 }}
@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       <section className="relative flex min-h-[42vh] items-center justify-center overflow-hidden px-6 py-20">
-        <img src="/images/mottobg.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img src="/images/home/mottobg.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-navy-deep/62" />
         <div className="relative z-10 w-full">
           <MottoRotator />
@@ -102,7 +102,7 @@ export default function Home() {
           <Reveal delay={0.12}>
             <motion.div style={{ y: portraitY }} className="group/img relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden md:ml-auto">
               <img
-                src="/images/secgen.png"
+                src="/images/our-team/secgen.png"
                 alt="Portrait of Dibas Khadka, Secretary-General of TESMUN XIV"
                 className="photo-fill scale-on-hover"
               />
@@ -117,7 +117,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-20">
           <Reveal className="order-2 md:order-1">
             <div className="group/img relative aspect-[4/5] w-full overflow-hidden">
-              <img src="/images/about-preview.png" alt="An open notebook and fountain pen on a conference table" className="photo-fill scale-on-hover" />
+              <img src="/images/about/about-preview.png" alt="An open notebook and fountain pen on a conference table" className="photo-fill scale-on-hover" />
             </div>
           </Reveal>
           <Reveal delay={0.12} className="order-1 md:order-2">
@@ -151,7 +151,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.12}>
             <div className="group/img relative aspect-[4/5] w-full overflow-hidden">
-              <img src="/images/committees-preview.png" alt="A gavel resting beside folded country nameplates" className="photo-fill scale-on-hover" />
+              <img src="/images/committees/visuals/committees-preview.png" alt="A gavel resting beside folded country nameplates" className="photo-fill scale-on-hover" />
             </div>
           </Reveal>
         </div>

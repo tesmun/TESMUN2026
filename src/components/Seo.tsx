@@ -65,7 +65,7 @@ export default function Seo() {
       name: "TESMUN XIV",
       alternateName: "The Excelsior School Model United Nations",
       url: SITE_URL,
-      logo: `${SITE_URL}/images/munlogo.svg`,
+      logo: `${SITE_URL}/images/committees/visuals/munlogo.svg`,
       description: DEFAULT_DESCRIPTION,
       location: { "@type": "Place", name: "Kathmandu, Nepal" },
     });

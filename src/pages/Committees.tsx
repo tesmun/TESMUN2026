@@ -33,7 +33,7 @@ export default function Committees() {
   return (
     <main>
       <PageHero
-        image="/images/committeesbackground.png"
+        image="/images/committees/visuals/committeesbackground.png"
         alt="A montage of school and United Nations landmarks"
         title="COMMITTEES"
         subtitle="Explore the forums where diplomacy, debate and decision-making meet."

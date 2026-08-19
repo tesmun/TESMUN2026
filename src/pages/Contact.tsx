@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <main>
       <PageHero
-        image="/images/contact-hero.png"
+        image="/images/contact/contact-hero.png"
         alt="The Excelsior School campus approach"
         title="CONTACT"
         kicker="Get in touch"
