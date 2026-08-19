@@ -21,6 +21,7 @@ export const secretariat = {
     name: "Abhas Kunwar",
     role: "Deputy Secretary-General",
     slug: "abhas-kunwar",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/abhas-f5UIc3udcN87an7iBvg2E2rWeEcAg6.png",
     placeholder: false,
   } as Person,
 };
@@ -64,8 +65,8 @@ export const committees: Committee[] = [
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aakarshi-HN3svKUIphBmLA49e1n7p9RbVEhmLz.png",
         testimonial: "The only way to make sure people you agree with can speak is to support the rights of people you don't agree with.\n\n— Eleanor Holmes Norton\n\nGreetings, Honorable Delegates,\n\nIt is my greatest honor to welcome you all to Legislative Parliament-I at this year’s Model United Nations Conference. I am Aakarshi Paudel, and I am truly privileged to serve as your Chair. As we enter this committee, remember that you are not here merely to speak; you are here to represent. Behind every placard lies a political ideology, a constituency, and the voice of people who have entrusted you to speak on their behalf. Legislative Parliament is a space where ideas are challenged, policies are questioned, and disagreements are transformed into solutions. Our agenda brings us face-to-face with important questions surrounding freedom and responsibility, expression and accountability, protest and public order, and individual rights and collective security.\n\nI do not expect every delegate to agree with one another. In fact, I expect the opposite. Disagree. Challenge. Question. Defend. Reconsider. Negotiate. But do so with substance. Come prepared with facts, legislation, statistics, political positions, and credible sources. Know your party, understand its ideology, and most importantly, understand the people you represent. Do not be afraid to challenge another delegate, but always do so with respect and purpose.\n\nYou may be nervous, lose your words, or disagree with someone more experienced. That is completely fine. Every strong parliamentarian started somewhere. As your Chair, I promise to remain fair, impartial, and approachable, ensuring every voice receives an opportunity to be heard. Remember, you are not simply simulating Parliament; you are practicing the responsibility of democracy.\n\nSo question the government, challenge the opposition, defend your party, negotiate with your rivals, and when necessary, be willing to change your position for a better solution. Let this committee be remembered not for how many speeches were delivered, but for how many ideas were challenged, solutions were created, and voices were heard. I wish you all the very best, and I look forward to hearing you on the floor."
       },
-      viceChair: { name: "Dilasha Oli", role: "Vice Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dilasha-bknfMdaCB8xM7cx5lFiWGN5V9r2s5p.png" },
-      moderator: { name: "Sijan Neupane", role: "Moderator", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sijan-Q1f9miJnxFuUI5G3h5UHtIvXWNiJ0y.png" },
+      viceChair: { name: "Dilasha Oli", role: "Vice Chair", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dilasha-bknfMdaCB8xM7cx5lFiWGN5V9r2s5p.png", testimonial: "With the warmest heart, I welcome each and every one of you to the Legislative Parliament I of TESMUN 2026. It is an absolute honour to serve as your Vice Chair, and I am genuinely excited to meet you all, hear your ideas, and watch this committee come alive through your voices. As your Vice Chair I want you to know that I am always here to help and guide you. Whether you are giving your speech with trembling hands or speaking with confidence, during a discussion every single thing you do is important. I hope we can build a committee that's not only interesting and thought-provoking but also friendly, kind and something that stays with people.\n\nSo once again, welcome to the Legislative Parliament delegates. Bring your ideas, your passion, your questions, and your willingness to learn. I cannot wait to see you all step forward, find your voices, and make this committee truly yours." },
+      moderator: { name: "Sijan Neupane", role: "Moderator", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sijan-Q1f9miJnxFuUI5G3h5UHtIvXWNiJ0y.png", testimonial: "It is my pleasure to welcome you all to Legislative Parliament-I. As your Moderator, my goal is to make this committee active, engaging, and most importantly, a space where every delegate feels confident enough to participate.\n\nYou will not always agree with one another and that is exactly what Parliament is about. Question ideas, defend your position, challenge others respectfully, and most importantly, be willing to negotiate. Whether you are an experienced delegate or stepping into MUN for the first time, your voice can influence the direction of this committee.\n\nCome prepared, stay involved, and do not be afraid to speak. I look forward to seeing you turn your research and ideas into meaningful parliamentary debate." },
     },
     guideUrl: "https://docs.google.com/document/d/1q15bWChGR4lDrzNmgmZ_Q5DaFM8QDnOfn4PxaZ16s5Y/edit?tab=t.730t2ke51dw#heading=h.1w5hc8pmaz4y",
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lplogo-RkZLYdYrExi02qtYsIugYCwSscHbOb.png",
@@ -238,7 +239,7 @@ export const committees: Committee[] = [
     board: {
       headOf: { name: "Yubin KC", role: "Head of IT", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/yubin-kO06f1FIuhcV7TXNZTNO6bNlbkr2rf.png" },
       deputyHeadOf: [
-        { name: "Suyog Acharya", role: "Deputy Head", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/suyog-qT25Fe7En52fpP1UaDhLUS1NhkbmG3.png" },
+        { name: "Suyog Acharya", role: "Deputy Head", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/suyog-xvdA6XzV8AV28WaRBtPGqr0emGggYa.png" },
         { name: "Swastik Manandar", role: "Deputy Head" },
       ],
     },
@@ -255,8 +256,8 @@ export const committees: Committee[] = [
     board: {
       headOf: { name: "Dechen Hira Tamang", role: "Chief Editor" },
       deputyHeadOf: [
-        { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/siddartha-Erst5MTTlgVJrPD9ObWsEvDOxxqBTm.png" },
-        { name: "Simran Devkota", role: "Deputy Chief Editor", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/simran-yPkeHxRPihPtdDfThwedOcTiYWDU8C.png" },
+        { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/siddartha-H1mUfhbcP4UKcUnarY3mqAggo9Ogw6.png" },
+        { name: "Simran Devkota", role: "Deputy Chief Editor", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/simran-jBE1jPjZVK5MwRnWHxKh4PsRZEXSUO.png" },
         { name: "John Doe", role: "Deputy Chief Editor", placeholder: true },
       ],
     },
@@ -279,7 +280,7 @@ export const committees: Committee[] = [
         { name: "Sushan Shrestha", role: "First Floor Incharge" },
       ],
       additionalMembers: [
-        { name: "Rudraksh Devkota", role: "Overall Manager", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rudraksh-pwOO2CtJOgoCua6f5DubB8VpGX2l0z.png" },
+        { name: "Rudraksh Devkota", role: "Overall Manager", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rudraksh-F5uD0T6fC6F6bHkYVSg4ERvQSCiU32.png" },
         { name: "Yugesh Adhikari", role: "Material Head" },
       ],
     },
