@@ -172,10 +172,11 @@ export const committees: Committee[] = [
     description:
       "DISEC deliberates on matters of global disarmament, arms regulation and international security cooperation.",
     board: {
-      chair: { name: "Dhiki Khando Lama", role: "Chair", image: "/images/committees/executive-board/dhiki.png" },
-      viceChair: { name: "Rijan Shrestha", role: "Vice Chair", image: "/images/committees/executive-board/rijan.png" },
-      moderator: { name: "Prasanna Budhathoki", role: "Moderator", image: "/images/committees/executive-board/prasanna.png" },
+      chair: { name: "Dhiki Khando Lama", role: "Chair", image: "/images/committees/executive-board/dhiki.png", testimonial: "Welcome to DISEC. Approach every question of disarmament and international security with preparation, evidence and a willingness to understand perspectives beyond your own. Strong diplomacy begins with careful research, respectful challenge and solutions that protect both security and human life." },
+      viceChair: { name: "Rijan Shrestha", role: "Vice Chair", image: "/images/committees/executive-board/rijan.png", testimonial: "Bring curiosity, discipline and an open mind to the committee. Listen closely, defend your country with confidence and remain willing to negotiate. Every contribution can help move a difficult security conversation toward a practical resolution." },
+      moderator: { name: "Prasanna Budhathoki", role: "Moderator", image: "/images/committees/executive-board/prasanna.png", testimonial: "DISEC is a space for thoughtful debate, careful procedure and meaningful cooperation. Prepare well, question ideas respectfully and help create a committee where every delegate can participate with confidence." },
     },
+    guideUrl: "https://www.canva.com/design/DAHSQOsEVpA/lPPbgTFS3vuy55lb6MEktA/edit",
     logo: "/images/committees/visuals/committee-disec.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/disec-z3751wrQjd3yvDW9KOsx96bCkr3Ne5.png",
   },
@@ -187,10 +188,11 @@ export const committees: Committee[] = [
     description:
       "ECOSOC coordinates economic, social and related work, driving dialogue on sustainable development and global cooperation.",
     board: {
-      chair: { name: "Prateek Bhattarai", role: "Chair", image: "/images/committees/executive-board/prateek.png" },
-      viceChair: { name: "Sima Thapa Magar", role: "Vice Chair", image: "/images/committees/executive-board/sima.png" },
-      moderator: { name: "Kunjal Kakki", role: "Moderator", image: "/images/committees/executive-board/kunjal.png" },
+      chair: { name: "Prateek Bhattarai", role: "Chair", image: "/images/committees/executive-board/prateek.png", testimonial: "Welcome to ECOSOC, where economic and social policy meets the responsibility to build a fairer and more sustainable world. Research deeply, listen generously and bring solutions that connect ambition with practical action. Meaningful progress begins when every perspective is taken seriously." },
+      viceChair: { name: "Sima Thapa Magar", role: "Vice Chair", image: "/images/committees/executive-board/sima.png", testimonial: "ECOSOC rewards delegates who combine evidence with empathy. Understand your country’s priorities, engage with perspectives different from your own and work toward resolutions that communities can genuinely implement." },
+      moderator: { name: "Kunjal Kakki", role: "Moderator", image: "/images/committees/executive-board/kunjal.png", testimonial: "Come prepared to ask difficult questions and build constructive dialogue. Every speech, negotiation and amendment is an opportunity to turn complex economic and social challenges into shared solutions." },
     },
+    guideUrl: "https://docs.google.com/document/d/1N7qyNlFmbFPEWrI2E6WW5T0khS3-Xx46/edit?usp=sharing&ouid=109174747489804758640&rtpof=true&sd=true",
     logo: "/images/committees/visuals/committee-ecosoc.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ecosoc-84xAxvepfKfpnbgz49vstXclzNLbae.png",
   },
