@@ -123,7 +123,9 @@ function ITDetail({ committee }: { committee: Committee }) {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <img src="/images/our-team/it/yubin.png" alt="Yubin KC, Head of IT" className="photo-fill aspect-[4/5] w-full max-w-md" />
+            <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden bg-navy">
+              <img src="/images/our-team/it/yubin.png" alt="Yubin KC, Head of IT" className="photo-fill" />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -291,7 +293,9 @@ function LogisticsDetail({ committee }: { committee: Committee }) {
             {[headOf, coHeadOf].filter(Boolean).map((person, i) => (
               <div key={person!.name} className="flex flex-col">
                 <Reveal delay={i * 0.08}>
-                  {person!.image ? <img src={person!.image} alt={person!.name} className="photo-fill mb-4 aspect-[4/5] w-full" /> : <PersonPlaceholder name={person!.name} className="mb-4 aspect-[4/5] w-full" />}
+                  <div className="relative mb-4 aspect-[4/5] w-full overflow-hidden bg-navy">
+                  {person!.image ? <img src={person!.image} alt={person!.name} className="photo-fill" /> : <PersonPlaceholder name={person!.name} className="h-full w-full" />}
+                </div>
                   <p className="text-[11px] uppercase tracking-[0.16em] text-silver">{person!.role}</p>
                   <h3 className="font-display mt-1 text-2xl text-white">{person!.name}</h3>
                 </Reveal>
@@ -301,7 +305,9 @@ function LogisticsDetail({ committee }: { committee: Committee }) {
           <div className="mt-16 grid gap-6 sm:grid-cols-3">
             {[...(committee.board.deputyHeadOf || []), ...(committee.board.additionalMembers || [])].map((person, i) => (
               <Reveal key={person.name} delay={i * 0.06}>
-                {person.image ? <img src={person.image} alt={person.name} className="photo-fill mb-4 aspect-square w-full" /> : <PersonPlaceholder name={person.name} className="mb-4 aspect-square w-full" />}
+                <div className="relative mb-4 aspect-square w-full overflow-hidden bg-navy">
+                  {person.image ? <img src={person.image} alt={person.name} className="photo-fill" /> : <PersonPlaceholder name={person.name} className="h-full w-full" />}
+                </div>
                 <p className="text-[10px] uppercase tracking-[0.16em] text-silver">{person.role}</p>
                 <h3 className="font-display mt-1 text-xl text-white">{person.name}</h3>
               </Reveal>
