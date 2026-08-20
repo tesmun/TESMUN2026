@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import type { Person } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
-function initials(name: string) {
-  if (name.toLowerCase().includes("announced") || name.toLowerCase().includes("doe")) return "—";
-  return name
-    .trim()
+function initials(name?: string) {
+  const safeName = name?.trim() || "To Be Announced";
+  const normalizedName = safeName.toLowerCase();
+  if (normalizedName.includes("announced") || normalizedName.includes("doe")) return "—";
+  return safeName
     .split(/\s+/)
     .slice(0, 2)
     .map((p) => p[0])
@@ -13,7 +14,7 @@ function initials(name: string) {
     .toUpperCase();
 }
 
-export function PersonPlaceholder({ name, className }: { name: string; className?: string }) {
+export function PersonPlaceholder({ name, className }: { name?: string; className?: string }) {
   return (
     <div
       className={cn("relative flex items-center justify-center overflow-hidden bg-navy", className)}
