@@ -6,6 +6,7 @@ export type Person = {
   image?: string;
   testimonial?: string;
   sourceUrl?: string;
+  voice?: string;
   placeholder?: boolean;
 };
 
@@ -14,6 +15,7 @@ export const secretariat = {
     name: "Dibas Khadka",
     role: "Secretary-General",
     slug: "dibas-khadka",
+    testimonial: "TESMUN is a space where preparation, curiosity and respectful dialogue become meaningful leadership. I encourage every delegate and team member to contribute with purpose, support one another and make this conference an experience that extends beyond the sessions.",
     image: "/images/our-team/secgen.png",
     placeholder: false,
   } as Person,
@@ -21,6 +23,7 @@ export const secretariat = {
     name: "Abhas Kunwar",
     role: "Deputy Secretary-General",
     slug: "abhas-kunwar",
+    testimonial: "Every successful committee begins with people who are prepared to listen, guide and take responsibility. Bring your questions, ideas and energy to TESMUN, and help create a conference where every participant feels supported and heard.",
     image: "/images/our-team/abhas.png",
     placeholder: false,
   } as Person,
@@ -59,9 +62,9 @@ export const committees: Committee[] = [
     description:
       "The first of TESMUN's three national Legislative Parliaments, deliberating on domestic policy through the lens of Nepal's parliamentary process.",
     board: {
-      chair: { name: "Aakarshi Paudel", role: "Chair", image: "/images/committees/executive-board/aakarshi.png" },
-      viceChair: { name: "Dilasha Oli", role: "Vice Chair", image: "/images/committees/executive-board/dilasha.png" },
-      moderator: { name: "Sijan Neupane", role: "Moderator", image: "/images/committees/executive-board/sijan.png" },
+      chair: { name: "Aakarshi Paudel", role: "Chair", image: "/images/committees/executive-board/aakarshi.png", testimonial: "It is my greatest honor to welcome you all to Legislative Parliament I. You are here not merely to speak, but to represent the political ideology and people behind your placard. You may be nervous or lose your words, and that is completely fine. As your Chair, I promise to remain fair, impartial and approachable. Remember that you are practicing the responsibility of democracy, and I look forward to hearing you on the floor." },
+      viceChair: { name: "Dilasha Oli", role: "Vice Chair", image: "/images/committees/executive-board/dilasha.png", testimonial: "With the warmest heart, I welcome you to Legislative Parliament I of TESMUN 2026. I am excited to hear your ideas and watch this committee come alive through your voices. I am always here to guide you, whether you speak with trembling hands or confidence. Bring your ideas, passion, questions and willingness to learn, and make this committee truly yours." },
+      moderator: { name: "Sijan Neupane", role: "Moderator", image: "/images/committees/executive-board/sijan.png", testimonial: "It is my pleasure to welcome you to Legislative Parliament I. My goal is to make this committee active, engaging and a space where every delegate feels confident enough to participate. Question ideas, defend your position, challenge others respectfully and be willing to negotiate. Come prepared, stay involved and turn your research into meaningful parliamentary debate." },
     },
     guideUrl: "https://docs.google.com/document/d/1q15bWChGR4lDrzNmgmZ_Q5DaFM8QDnOfn4PxaZ16s5Y/edit?tab=t.0",
     logo: "/images/committees/visuals/committee-lp.png",
@@ -79,19 +82,19 @@ export const committees: Committee[] = [
         name: "Saksham Thapaliya",
         role: "Chair",
         image: "/images/committees/executive-board/sakshamthapaliya.png",
-        testimonial: "The art of leadership is not in being heard, but in making others feel heard. Welcome to LP II: a room for reasoned debate, respectful challenge and practical solutions. Represent your position with confidence, listen closely, and use your words to build understanding and advance constructive change.",
+        testimonial: "As we begin this diplomatic journey, approach the committee with an open mind and a commitment to dialogue, negotiation, compromise and cooperation. Represent your political party with confidence, challenge perspectives respectfully and remain receptive to opinions different from your own. Meaningful progress emerges when diverse ideas come together through thoughtful deliberation. Let your voice be guided by reason, diplomacy and responsibility, and use this committee as an opportunity to learn, grow and experience parliamentary diplomacy.",
       },
       viceChair: {
         name: "Diya Shrestha",
         role: "Vice Chair",
         image: "/images/committees/executive-board/diya.png",
-        testimonial: "Strengthening transparency, accountability and institutional integrity requires more than identifying problems. Study Nepal’s Constitution, listen to opposing arguments, and bring solutions to the House. Debate fiercely, question fearlessly, and govern responsibly.",
+        testimonial: "From today onward, you will be entrusted with positions and delegations in the House. Having once been a delegate, I understand the nervousness and excitement of this experience. Study Nepal’s Constitution, laws and anti-corruption mechanisms, and examine recent protests using verified information. Represent your delegation with confidence, challenge arguments with evidence, and bring practical solutions to the House.",
       },
       moderator: {
         name: "Dijesh Niroula",
         role: "Moderator",
         image: "/images/committees/executive-board/dijesh.png",
-        testimonial: "Every opinion matters. LP II is a place to learn, grow and find the confidence to express ideas with respect and purpose. Participate actively, challenge viewpoints thoughtfully, and work together so every delegate leaves with greater confidence than when they arrived.",
+        testimonial: "Every opinion matters. TESMUN is about learning, growing and gaining the confidence to express your thoughts with respect and purpose. I look forward to well-researched arguments and creative ideas. Confidence is built through participation, and every speech is a step toward becoming a better leader and communicator. I warmly welcome every delegate and wish you an enriching and memorable experience.",
       },
     },
     guideUrl:
@@ -111,19 +114,19 @@ export const committees: Committee[] = [
         name: "Binayak Babu Rana",
         role: "Chair",
         image: "/images/committees/executive-board/binayak.png",
-        testimonial: "LP III is more than a platform for speeches. Challenge your opponents, defend your position with evidence, form alliances and turn debate into meaningful solutions. Come prepared, come confident, and make your voice heard.",
+        testimonial: "It gives me immense pleasure to welcome you to Legislative Parliament III. I want to see delegates who are fearless in debate but responsible in their arguments. Challenge opponents, question decisions, defend your political position and form alliances when it benefits your cause. The strongest delegate is not always the loudest, but the one who knows when to speak and how to turn an argument into influence. Come prepared and confident, ready to make your voice heard.",
       },
       viceChair: {
         name: "Alisa Rijal",
         role: "Vice Chair",
         image: "/images/committees/executive-board/alisa.png",
-        testimonial: "Do not run after awards. TESMUN is an opportunity to develop confidence, research and diplomatic skills. Ask questions, seek clarity, and remember that the dais is here to guide you as you learn and grow.",
+        testimonial: "I am excited to work with the curious minds of Legislative Parliament III. We are here to guide you and look forward to your questions. Please do not run after awards; this MUN is an opportunity to develop confidence, research and diplomatic skills. If you can conquer your fear and speak confidently in a room full of people, you are already a winner. We are all here to learn and grow, so feel no fear and let your voice be heard.",
       },
       moderator: {
         name: "Aayushma Shrestha",
         role: "Moderator",
         image: "/images/committees/executive-board/aayushma.png",
-        testimonial: "Every delegate has the opportunity to represent leaders and ministers while building public speaking, research and consensus-building skills. Bring curiosity, evidence and a willingness to engage with Nepal’s legislative challenges.",
+        testimonial: "It is a pleasure to welcome you to Legislative Parliament III. You will explore Nepal’s legislative and parliamentary challenges while developing research, public speaking and consensus-building skills. Please reach out whenever you need help. I look forward to witnessing the insightful debates and innovative solutions you bring to the table. Together, let us make this conference memorable and enriching.",
       },
     },
     guideUrl: "https://docs.google.com/document/d/14ks8zy2wg8Aib0SunYwfMAxIbLR2h_Q2/edit",
@@ -142,19 +145,19 @@ export const committees: Committee[] = [
         name: "Kinjal Timalsina",
         role: "Chair",
         image: "/images/committees/executive-board/kinjal.png",
-        testimonial: "Do not be afraid to speak. HRC is a room of opposing interests, hard questions and hard facts where diplomacy begins. Research your country, understand your agenda, and be ready to adjust. The strongest contribution is the one that shifts a viewpoint or turns an argument into a solution.",
+        testimonial: "Do not be afraid to speak. Whether you arrive with a prepared speech, extensive research or no idea what to expect, I want you to leave HRC knowing that your voice made a difference. This is a room of opposing interests, hard questions and hard facts where diplomacy begins. Be ready to defend your nation, learn from others and turn arguments into solutions. Most importantly, be prepared to make this committee your own.",
       },
       viceChair: {
         name: "Saanvi K.C.",
         role: "Vice Chair",
         image: "/images/committees/executive-board/saanvi.png",
-        testimonial: "Your words, ideas and perspectives can shape meaningful debate. HRC demands more than knowing national policy: listen to perspectives you may not like, defend your country with preparation, and remain willing to compromise. The floor is yours.",
+        testimonial: "Your words, ideas and perspectives can shape meaningful debate. HRC demands more than knowing your country’s policies; it requires current affairs, precision and responsibility. Research your country and agenda, prepare your arguments, trust yourself and remain willing to listen. Every speech, question and resolution is an opportunity to make your voice heard.",
       },
       moderator: {
         name: "Kritish Ghimire",
         role: "Moderator",
         image: "/images/committees/executive-board/kritish.png",
-        testimonial: "All voices matter. Be brave, forthright and vocal as you explore the issues affecting rights and dignity everywhere. Let the committee be collaborative, respectful and meaningful—and make your contributions worthwhile.",
+        testimonial: "This is an opportunity to engage with critical issues affecting people’s rights and dignity everywhere. I want our discussion to be fun, collaborative, respectful and meaningful, with every voice heard. Being a delegate is more than stating facts or following procedure: be brave, forthright and vocal, challenge yourself, form bonds and learn from every moment. Make your contributions worthwhile and enjoy the process.",
       },
     },
     guideUrl: "https://docs.google.com/document/d/1PX71jgNz19kJ0Gkz4WKtTsrWafjrZucocktpdjEeYUE/edit?tab=t.0",
@@ -203,19 +206,19 @@ export const committees: Committee[] = [
         name: "Rujal Ojha",
         role: "Chair",
         image: "/images/committees/executive-board/rujal.png",
-        testimonial: "Climate change is no longer a distant threat. Research your country’s emissions, vulnerabilities, economic capacity and climate policies. Debate firmly, negotiate wisely, and work toward solutions that balance environmental responsibility with development.",
+        testimonial: "Welcome to UNEP at TESMUN 2026. Climate change is no longer a distant threat, and its responsibility is not equally shared. Research your country’s history, emissions, vulnerabilities, economic capacity and climate policies. Debate firmly, negotiate wisely and work toward solutions that balance environmental responsibility with economic development. Diplomacy is not about proving your country right; it is about finding a solution the international community can move forward with.",
       },
       viceChair: {
         name: "Sankalpa Neupane",
         role: "Vice Chair",
         image: "/images/committees/executive-board/sankalpa.png",
-        testimonial: "Environmental governance demands scientific evidence, historical responsibility and climate justice. Study the guide carefully, stay organised and propose solutions that are ambitious, visionary and evidence-based.",
+        testimonial: "Welcome to UNEP. Leadership in environmental governance demands scientific evidence, historical responsibility and climate justice. Stay organised, manage time well and maintain structured diplomatic dialogue. Your solutions should be bold, innovative, carefully reasoned and evidence-based. Thorough preparation will help you lead the debate with confidence and drive meaningful compromise.",
       },
       moderator: {
         name: "Unnat Aryal",
         role: "Moderator",
         image: "/images/committees/executive-board/unnat.png",
-        testimonial: "Leadership requires research, critical thinking and formal diplomatic dialogue. Bring individuality, clear evidence and a willingness to solve difficult ecological and geopolitical problems together. This is a development of self as well as an academic journey.",
+        testimonial: "Welcome to the UNEP session. This committee requires scientific evidence, historical knowledge and a commitment to protecting our environment. Think critically, manage your time and engage in formal diplomatic dialogue while facing complex issues with difficult answers. Research, treaties and resolutions are part of a journey that develops you academically and personally. Push one another forward and strive for greatness.",
       },
     },
     guideUrl:
@@ -231,9 +234,9 @@ export const committees: Committee[] = [
     description:
       "The IT Committee builds and maintains the technical backbone of TESMUN XIV — from the conference website to on-site systems.",
     board: {
-      headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png" },
+      headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png", testimonial: "The IT Committee turns ideas into the digital systems that carry TESMUN forward. Bring creativity, precision and a willingness to solve problems together. Every detail matters, and every contribution helps make the conference clearer, more connected and more memorable." },
       deputyHeadOf: [
-        { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png" },
+        { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png", testimonial: "Technical work is strongest when curiosity becomes collaboration. Support the workflow behind every session, stay ready to learn and help turn creative ideas into reliable systems that serve every delegate." },
         { name: "Swastik Manandar", role: "Deputy Head" },
       ],
     },
@@ -248,10 +251,10 @@ export const committees: Committee[] = [
     description:
       "The Press Committee documents TESMUN XIV in real time, producing news, vox pop, interviews and visual coverage throughout the conference.",
     board: {
-      headOf: { name: "Dechen Hira Tamang", role: "Chief Editor" },
+      headOf: { name: "Dechen Hira Tamang", role: "Chief Editor", testimonial: "The Press Committee gives the conference its living record. Observe carefully, ask thoughtful questions and tell each story with clarity, fairness and purpose. Our work is to make the ideas, people and moments of TESMUN visible." },
       deputyHeadOf: [
-        { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png" },
-        { name: "Simran Devkota", role: "Deputy Chief Editor", image: "/images/our-team/press/simran.png" },
+        { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png", testimonial: "Good press begins with attention and respect. Listen closely, verify what you learn and capture the energy of the conference in a way that is honest, engaging and meaningful." },
+        { name: "Simran Devkota", role: "Deputy Chief Editor", image: "/images/our-team/press/simran.png", testimonial: "Every interview, image and article is an opportunity to connect people with the conference. Stay curious, work thoughtfully and help create a record that reflects the voices and spirit of TESMUN." },
         { name: "John Doe", role: "Deputy Chief Editor", placeholder: true },
       ],
     },
@@ -266,7 +269,7 @@ export const committees: Committee[] = [
     description:
       "The Logistics Committee coordinates the operational execution of TESMUN XIV, ensuring every session runs precisely as planned.",
     board: {
-      headOf: { name: "Kushal Poudel", role: "Head of Logistics", image: "/images/our-team/logistics/kushal.png" },
+      headOf: { name: "Kushal Poudel", role: "Head of Logistics", image: "/images/our-team/logistics/kushal.png", testimonial: "Logistics is where preparation becomes experience. Stay organised, communicate clearly and look after the details that allow every committee to run smoothly. A successful conference is built by people who are ready to help one another." },
       coHeadOf: { name: "Prasina Moktan", role: "Head of Press" },
       deputyHeadOf: [
         { name: "Arbin Dhital", role: "Top Floor Incharge" },
@@ -274,7 +277,7 @@ export const committees: Committee[] = [
         { name: "Sushan Shrestha", role: "First Floor Incharge" },
       ],
       additionalMembers: [
-        { name: "Rudraksh Devkota", role: "Overall Manager", image: "/images/our-team/logistics/rudraksh.png" },
+        { name: "Rudraksh Devkota", role: "Overall Manager", image: "/images/our-team/logistics/rudraksh.png", testimonial: "Every moving part of the conference depends on shared responsibility. Stay attentive, support your team and take pride in the details. When we work with discipline and kindness, the whole conference becomes stronger." },
         { name: "Yugesh Adhikari", role: "Material Head" },
       ],
     },
@@ -300,7 +303,7 @@ export const seniorLeadership: Person[] = [
     slug: "sheetal-rana",
     image: "/images/our-team/chairperson.png",
     testimonial:
-      "It is a joy to see you all take part in the Model United Nations here at Excelsior. MUN is not just about debating global issues; it is about discovering more about yourself and how you can shape the world around you. Leadership is not about standing above others, but about building with others.",
+      "MUN is a place to discover yourself, build with others and learn how your voice can shape the world around you. Leadership is not about standing above others, but about building with others.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/chairperson",
   },
   {
