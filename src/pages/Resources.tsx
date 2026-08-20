@@ -9,7 +9,7 @@ import { allocationsSheet, committeesByCategory } from "@/lib/data";
 
 const guideCommittees = [...committeesByCategory.national, ...committeesByCategory.international];
 
-const delegateHandbook = "https://drive.google.com/file/d/1O1bmZtB23QCrZeCudLt0Ph9iGLqN21Rx/view?usp=sharing";
+const delegateHandbook = "https://drive.google.com/file/d/1YfoX0dHZ0EQ09_7xMzn8vlrQQn0S18bS/view?usp=sharing";
 
 const grainientProps = {
   color1: "#123b72",

@@ -36,9 +36,7 @@ function BoardRow({
               : `${person.name} serves as ${person.role} for this committee, guiding procedure, debate and the drafting of resolutions across the conference.`}
           </p>
           {person.testimonial && (
-            <blockquote className="mt-8 max-w-xl border-l-2 border-gold pl-5 text-left font-display text-xl leading-relaxed text-warm sm:text-2xl">
-              “{person.testimonial}”
-            </blockquote>
+            <p className="mt-7 max-w-xl text-left text-sm leading-6 text-warm/90 sm:text-base sm:leading-7">{person.testimonial}</p>
           )}
         </Reveal>
       </div>
