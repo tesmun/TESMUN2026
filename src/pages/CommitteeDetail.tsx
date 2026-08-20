@@ -123,7 +123,7 @@ function ITDetail({ committee }: { committee: Committee }) {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <PersonPlaceholder name="Yubin KC" className="aspect-[4/5] w-full max-w-md" />
+            <img src="/images/our-team/it/yubin.png" alt="Yubin KC, Head of IT" className="photo-fill aspect-[4/5] w-full max-w-md" />
           </Reveal>
         </div>
       </section>
@@ -132,12 +132,12 @@ function ITDetail({ committee }: { committee: Committee }) {
       <section className="px-6 py-20 md:px-10">
         <div className="mx-auto grid max-w-7xl gap-12 sm:grid-cols-2 md:gap-20">
           {[
-            { name: "Suyog Acharya", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
+            { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png", text: "Supporting the technical workflow behind the conference." },
             { name: "Swastik Manandar", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
           ].map((person) => (
             <div key={person.name} className="flex flex-col">
               <Reveal>
-                <PersonPlaceholder name={person.name} className="mb-4 aspect-[4/5] w-full" />
+                {person.image ? <img src={person.image} alt={person.name} className="mb-4 aspect-[4/5] w-full object-cover" /> : <PersonPlaceholder name={person.name} className="mb-4 aspect-[4/5] w-full" />}
                 <p className="text-[11px] uppercase tracking-[0.16em] text-silver">{person.role}</p>
                 <h3 className="font-display mt-1 text-2xl text-white">{person.name}</h3>
                 <p className="mt-3 max-w-sm text-sm leading-7 text-white/70">{person.text}</p>
@@ -157,7 +157,7 @@ function ITDetail({ committee }: { committee: Committee }) {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/gallery/normal/gallery-library.jpg" },
-              { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/gallery/normal/gallery-library.jpg" },
+              { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/our-team/it/sakshamadhikari.png" },
               { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery/normal/gallery-debate.jpg" },
               { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/press/cartoons/cartoon-1.png" },
             ].map((lead) => (
@@ -178,17 +178,17 @@ function ITDetail({ committee }: { committee: Committee }) {
       <section className="px-6 pb-20 md:px-10">
         <div className="mx-auto max-w-7xl space-y-12">
           {[
-            ["Web Designing Members", ["Sulav Sapkota", "Abin Man Singh", "Rinesh Karki"]],
+            ["Web Designing Members", [{ name: "Sulav Sapkota" }, { name: "Abin Man Singh" }, { name: "Rinesh Karki", image: "/images/our-team/it/rinesh.png" }]],
             ["Video Editing Members", ["Anish Rana", "Pratyush Rayamajhi"]],
             ["Graphics Members", ["Shivam Bharati", "Aarush Bajracharya", "Bibek Devkota"]],
           ].map(([label, members]) => (
             <div key={label as string} className="border-t border-white/15 pt-5">
               <p className="text-[10px] uppercase tracking-[0.16em] text-gold">{label as string}</p>
               <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {(members as string[]).map((member) => (
-                  <div key={member} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
-                    <PersonPlaceholder name={member} className="h-28 w-28 shrink-0 rounded-full" />
-                    <span className="text-lg leading-snug text-white/85">{member}</span>
+                {(members as { name: string; image?: string }[]).map((member) => (
+                  <div key={member.name} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
+                    {member.image ? <img src={member.image} alt={member.name} className="h-28 w-28 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={member.name} className="h-28 w-28 shrink-0 rounded-full" />}
+                    <span className="text-lg leading-snug text-white/85">{member.name}</span>
                   </div>
                 ))}
               </div>

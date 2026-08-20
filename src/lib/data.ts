@@ -21,6 +21,7 @@ export const secretariat = {
     name: "Abhas Kunwar",
     role: "Deputy Secretary-General",
     slug: "abhas-kunwar",
+    image: "/images/our-team/abhas.png",
     placeholder: false,
   } as Person,
 };
@@ -218,9 +219,9 @@ export const committees: Committee[] = [
     description:
       "The IT Committee builds and maintains the technical backbone of TESMUN XIV — from the conference website to on-site systems.",
     board: {
-      headOf: { name: "Yubin KC", role: "Head of IT" },
+      headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png" },
       deputyHeadOf: [
-        { name: "Suyog Acharya", role: "Deputy Head" },
+        { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png" },
         { name: "Swastik Manandar", role: "Deputy Head" },
       ],
     },
@@ -253,7 +254,7 @@ export const committees: Committee[] = [
     description:
       "The Logistics Committee coordinates the operational execution of TESMUN XIV, ensuring every session runs precisely as planned.",
     board: {
-      headOf: { name: "Kushal Poudel", role: "Head of Press" },
+      headOf: { name: "Kushal Poudel", role: "Head of Logistics", image: "/images/our-team/logistics/kushal.png" },
       coHeadOf: { name: "Prasina Moktan", role: "Head of Press" },
       deputyHeadOf: [
         { name: "Arbin Dhital", role: "Top Floor Incharge" },
@@ -261,7 +262,7 @@ export const committees: Committee[] = [
         { name: "Sushan Shrestha", role: "First Floor Incharge" },
       ],
       additionalMembers: [
-        { name: "Rudraksh Devkota", role: "Overall Manager" },
+        { name: "Rudraksh Devkota", role: "Overall Manager", image: "/images/our-team/logistics/rudraksh.png" },
         { name: "Yugesh Adhikari", role: "Material Head" },
       ],
     },
