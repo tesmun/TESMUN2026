@@ -59,9 +59,9 @@ export const committees: Committee[] = [
     description:
       "The first of TESMUN's three national Legislative Parliaments, deliberating on domestic policy through the lens of Nepal's parliamentary process.",
     board: {
-      chair: { name: "Aakarshi Paudel", role: "Chair" },
-      viceChair: { name: "Dilasha Oli", role: "Vice Chair" },
-      moderator: { name: "Sijan Neupane", role: "Moderator" },
+      chair: { name: "Aakarshi Paudel", role: "Chair", image: "/images/committees/executive-board/aakarshi.png" },
+      viceChair: { name: "Dilasha Oli", role: "Vice Chair", image: "/images/committees/executive-board/dilasha.png" },
+      moderator: { name: "Sijan Neupane", role: "Moderator", image: "/images/committees/executive-board/sijan.png" },
     },
     guideUrl: "https://docs.google.com/document/d/1q15bWChGR4lDrzNmgmZ_Q5DaFM8QDnOfn4PxaZ16s5Y/edit?tab=t.0",
     logo: "/images/committees/visuals/committee-lp.png",
@@ -78,16 +78,19 @@ export const committees: Committee[] = [
       chair: {
         name: "Saksham Thapaliya",
         role: "Chair",
+        image: "/images/committees/executive-board/sakshamthapaliya.png",
         testimonial: "The art of leadership is not in being heard, but in making others feel heard. Welcome to LP II: a room for reasoned debate, respectful challenge and practical solutions. Represent your position with confidence, listen closely, and use your words to build understanding and advance constructive change.",
       },
       viceChair: {
         name: "Diya Shrestha",
         role: "Vice Chair",
+        image: "/images/committees/executive-board/diya.png",
         testimonial: "Strengthening transparency, accountability and institutional integrity requires more than identifying problems. Study Nepal’s Constitution, listen to opposing arguments, and bring solutions to the House. Debate fiercely, question fearlessly, and govern responsibly.",
       },
       moderator: {
         name: "Dijesh Niroula",
         role: "Moderator",
+        image: "/images/committees/executive-board/dijesh.png",
         testimonial: "Every opinion matters. LP II is a place to learn, grow and find the confidence to express ideas with respect and purpose. Participate actively, challenge viewpoints thoughtfully, and work together so every delegate leaves with greater confidence than when they arrived.",
       },
     },
@@ -107,16 +110,19 @@ export const committees: Committee[] = [
       chair: {
         name: "Binayak Babu Rana",
         role: "Chair",
+        image: "/images/committees/executive-board/binayak.png",
         testimonial: "LP III is more than a platform for speeches. Challenge your opponents, defend your position with evidence, form alliances and turn debate into meaningful solutions. Come prepared, come confident, and make your voice heard.",
       },
       viceChair: {
         name: "Alisa Rijal",
         role: "Vice Chair",
+        image: "/images/committees/executive-board/alisa.png",
         testimonial: "Do not run after awards. TESMUN is an opportunity to develop confidence, research and diplomatic skills. Ask questions, seek clarity, and remember that the dais is here to guide you as you learn and grow.",
       },
       moderator: {
         name: "Aayushma Shrestha",
         role: "Moderator",
+        image: "/images/committees/executive-board/aayushma.png",
         testimonial: "Every delegate has the opportunity to represent leaders and ministers while building public speaking, research and consensus-building skills. Bring curiosity, evidence and a willingness to engage with Nepal’s legislative challenges.",
       },
     },
@@ -135,16 +141,19 @@ export const committees: Committee[] = [
       chair: {
         name: "Kinjal Timalsina",
         role: "Chair",
+        image: "/images/committees/executive-board/kinjal.png",
         testimonial: "Do not be afraid to speak. HRC is a room of opposing interests, hard questions and hard facts where diplomacy begins. Research your country, understand your agenda, and be ready to adjust. The strongest contribution is the one that shifts a viewpoint or turns an argument into a solution.",
       },
       viceChair: {
         name: "Saanvi K.C.",
         role: "Vice Chair",
+        image: "/images/committees/executive-board/saanvi.png",
         testimonial: "Your words, ideas and perspectives can shape meaningful debate. HRC demands more than knowing national policy: listen to perspectives you may not like, defend your country with preparation, and remain willing to compromise. The floor is yours.",
       },
       moderator: {
         name: "Kritish Ghimire",
         role: "Moderator",
+        image: "/images/committees/executive-board/kritish.png",
         testimonial: "All voices matter. Be brave, forthright and vocal as you explore the issues affecting rights and dignity everywhere. Let the committee be collaborative, respectful and meaningful—and make your contributions worthwhile.",
       },
     },
@@ -160,9 +169,9 @@ export const committees: Committee[] = [
     description:
       "DISEC deliberates on matters of global disarmament, arms regulation and international security cooperation.",
     board: {
-      chair: { name: "Dhiki Khando Lama", role: "Chair" },
-      viceChair: { name: "Rijan Shrestha", role: "Vice Chair" },
-      moderator: { name: "Prasanna Budhathoki", role: "Moderator" },
+      chair: { name: "Dhiki Khando Lama", role: "Chair", image: "/images/committees/executive-board/dhiki.png" },
+      viceChair: { name: "Rijan Shrestha", role: "Vice Chair", image: "/images/committees/executive-board/rijan.png" },
+      moderator: { name: "Prasanna Budhathoki", role: "Moderator", image: "/images/committees/executive-board/prasanna.png" },
     },
     logo: "/images/committees/visuals/committee-disec.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/disec-z3751wrQjd3yvDW9KOsx96bCkr3Ne5.png",
@@ -175,9 +184,9 @@ export const committees: Committee[] = [
     description:
       "ECOSOC coordinates economic, social and related work, driving dialogue on sustainable development and global cooperation.",
     board: {
-      chair: { name: "Prateek Bhattarai", role: "Chair" },
-      viceChair: { name: "Sima Thapa Magar", role: "Vice Chair" },
-      moderator: { name: "Kunjal Kakki", role: "Moderator" },
+      chair: { name: "Prateek Bhattarai", role: "Chair", image: "/images/committees/executive-board/prateek.png" },
+      viceChair: { name: "Sima Thapa Magar", role: "Vice Chair", image: "/images/committees/executive-board/sima.png" },
+      moderator: { name: "Kunjal Kakki", role: "Moderator", image: "/images/committees/executive-board/kunjal.png" },
     },
     logo: "/images/committees/visuals/committee-ecosoc.webp",
     background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ecosoc-84xAxvepfKfpnbgz49vstXclzNLbae.png",
@@ -193,16 +202,19 @@ export const committees: Committee[] = [
       chair: {
         name: "Rujal Ojha",
         role: "Chair",
+        image: "/images/committees/executive-board/rujal.png",
         testimonial: "Climate change is no longer a distant threat. Research your country’s emissions, vulnerabilities, economic capacity and climate policies. Debate firmly, negotiate wisely, and work toward solutions that balance environmental responsibility with development.",
       },
       viceChair: {
         name: "Sankalpa Neupane",
         role: "Vice Chair",
+        image: "/images/committees/executive-board/sankalpa.png",
         testimonial: "Environmental governance demands scientific evidence, historical responsibility and climate justice. Study the guide carefully, stay organised and propose solutions that are ambitious, visionary and evidence-based.",
       },
       moderator: {
         name: "Unnat Aryal",
         role: "Moderator",
+        image: "/images/committees/executive-board/unnat.png",
         testimonial: "Leadership requires research, critical thinking and formal diplomatic dialogue. Bring individuality, clear evidence and a willingness to solve difficult ecological and geopolitical problems together. This is a development of self as well as an academic journey.",
       },
     },
@@ -238,8 +250,8 @@ export const committees: Committee[] = [
     board: {
       headOf: { name: "Dechen Hira Tamang", role: "Chief Editor" },
       deputyHeadOf: [
-        { name: "Siddhartha Basnet", role: "Deputy Chief Editor" },
-        { name: "Simran Devkota", role: "Deputy Chief Editor" },
+        { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png" },
+        { name: "Simran Devkota", role: "Deputy Chief Editor", image: "/images/our-team/press/simran.png" },
         { name: "John Doe", role: "Deputy Chief Editor", placeholder: true },
       ],
     },
