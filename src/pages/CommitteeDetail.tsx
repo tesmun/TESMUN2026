@@ -179,8 +179,8 @@ function ITDetail({ committee }: { committee: Committee }) {
         <div className="mx-auto max-w-7xl space-y-12">
           {[
             ["Web Designing Members", [{ name: "Sulav Sapkota" }, { name: "Abin Man Singh" }, { name: "Rinesh Karki", image: "/images/our-team/it/rinesh.png" }]],
-            ["Video Editing Members", ["Anish Rana", "Pratyush Rayamajhi"]],
-            ["Graphics Members", ["Shivam Bharati", "Aarush Bajracharya", "Bibek Devkota"]],
+            ["Video Editing Members", [{ name: "Anish Rana" }, { name: "Pratyush Rayamajhi" }]],
+            ["Graphics Members", [{ name: "Shivam Bharati" }, { name: "Aarush Bajracharya" }, { name: "Bibek Devkota" }]],
           ].map(([label, members]) => (
             <div key={label as string} className="border-t border-white/15 pt-5">
               <p className="text-[10px] uppercase tracking-[0.16em] text-gold">{label as string}</p>
@@ -208,8 +208,8 @@ function ITDetail({ committee }: { committee: Committee }) {
 function PressDetail({ committee }: { committee: Committee }) {
   const editors = [
     { name: "Dechen Hira Tamang", role: "Chief Editor", reverse: false, text: "As Chief Editor, Dechen Hira Tamang leads the Press Committee in covering every committee session, interview and behind-the-scenes moment of TESMUN XIV." },
-    { name: "Siddhartha Basnet", role: "Deputy Chief Editor", reverse: true, text: "Siddhartha supports editorial planning and works with reporters to ensure each publication reflects the depth and diversity of the conference." },
-    { name: "Simran Devkota", role: "Deputy Chief Editor", reverse: false, text: "Simran coordinates press coverage across sessions, helping writers and photographers capture the urgency and nuance of every debate." },
+    { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png", reverse: true, text: "Siddhartha supports editorial planning and works with reporters to ensure each publication reflects the depth and diversity of the conference." },
+    { name: "Simran Devkota", role: "Deputy Chief Editor", image: "/images/our-team/press/simran.png", reverse: false, text: "Simran coordinates press coverage across sessions, helping writers and photographers capture the urgency and nuance of every debate." },
     { name: "Renesha Maharjan", role: "Deputy Chief Editor", reverse: true, text: "Renesha supports editorial planning and helps coordinate reporting across every committee session." },
   ];
 
@@ -224,7 +224,7 @@ function PressDetail({ committee }: { committee: Committee }) {
             <div key={`${editor.role}-${editor.name}`}>
               <article className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
                 <div className={`relative aspect-[4/5] overflow-hidden bg-navy ${editor.reverse ? "md:order-2" : ""}`}>
-                  <PersonPlaceholder name={editor.name} className="h-full w-full" />
+                  {editor.image ? <img src={editor.image} alt={editor.name} className="photo-fill" /> : <PersonPlaceholder name={editor.name} className="h-full w-full" />}
                 </div>
                 <div className={editor.reverse ? "md:order-1" : ""}>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-silver">{editor.role}</p>
@@ -291,7 +291,7 @@ function LogisticsDetail({ committee }: { committee: Committee }) {
             {[headOf, coHeadOf].filter(Boolean).map((person, i) => (
               <div key={person!.name} className="flex flex-col">
                 <Reveal delay={i * 0.08}>
-                  <PersonPlaceholder name={person!.name} className="mb-4 aspect-[4/5] w-full" />
+                  {person!.image ? <img src={person!.image} alt={person!.name} className="photo-fill mb-4 aspect-[4/5] w-full" /> : <PersonPlaceholder name={person!.name} className="mb-4 aspect-[4/5] w-full" />}
                   <p className="text-[11px] uppercase tracking-[0.16em] text-silver">{person!.role}</p>
                   <h3 className="font-display mt-1 text-2xl text-white">{person!.name}</h3>
                 </Reveal>
@@ -301,7 +301,7 @@ function LogisticsDetail({ committee }: { committee: Committee }) {
           <div className="mt-16 grid gap-6 sm:grid-cols-3">
             {[...(committee.board.deputyHeadOf || []), ...(committee.board.additionalMembers || [])].map((person, i) => (
               <Reveal key={person.name} delay={i * 0.06}>
-                <PersonPlaceholder name={person.name} className="mb-4 aspect-square w-full" />
+                {person.image ? <img src={person.image} alt={person.name} className="photo-fill mb-4 aspect-square w-full" /> : <PersonPlaceholder name={person.name} className="mb-4 aspect-square w-full" />}
                 <p className="text-[10px] uppercase tracking-[0.16em] text-silver">{person.role}</p>
                 <h3 className="font-display mt-1 text-xl text-white">{person.name}</h3>
               </Reveal>
