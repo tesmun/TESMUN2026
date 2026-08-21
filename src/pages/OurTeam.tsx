@@ -59,7 +59,7 @@ export default function OurTeam() {
         </div>
       </section>
 
-      <section className="bg-navy-deep bg-[linear-gradient(rgba(8,19,35,0.72),rgba(8,19,35,0.9)),url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/itbg-5u6BRlK6g1lLQzl5bmHy63n4KubeZt.png')] bg-cover bg-center px-6 py-20 md:px-10">
+      <section className="bg-navy-deep px-6 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <Eyebrow className="text-silver/70">Facilitating Teams</Eyebrow>

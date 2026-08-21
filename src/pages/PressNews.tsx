@@ -19,7 +19,7 @@ export default function PressNews() {
           <div className="mt-8 flex items-end justify-between gap-6 border-b-2 border-navy pb-4">
             <div>
               <p className="text-[11px] uppercase tracking-[0.22em] text-gold">International Press Corps</p>
-              <h1 className="font-display mt-2 text-6xl font-medium leading-[0.9] tracking-tight sm:text-8xl">The Gazette</h1>
+              <h1 className="font-display mt-2 text-6xl font-medium leading-[0.9] tracking-tight sm:text-8xl">THE TESMUN TIMES</h1>
             </div>
             <p className="hidden max-w-xs text-right text-sm leading-6 text-ink/60 md:block">{pressSections.news.intro}</p>
           </div>
