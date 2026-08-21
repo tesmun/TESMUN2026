@@ -32,6 +32,9 @@ export default function App() {
           <Route path="/news" element={<Newspaper />} />
           <Route path="/news/:articleSlug" element={<NewsArticle />} />
           <Route path="/press/news" element={<Newspaper />} />
+          <Route path="/press/news/session-1" element={<Newspaper />} />
+          <Route path="/press/news/session-2" element={<Newspaper />} />
+          <Route path="/press/news/session-3" element={<Newspaper />} />
           <Route path="/press/news/:articleSlug" element={<NewsArticle />} />
           <Route path="/press/:slug" element={<PressSection />} />
           <Route path="/gallery" element={<Gallery />} />

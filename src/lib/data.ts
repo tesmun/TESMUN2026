@@ -68,7 +68,7 @@ export const committees: Committee[] = [
     },
     guideUrl: "https://docs.google.com/document/d/1q15bWChGR4lDrzNmgmZ_Q5DaFM8QDnOfn4PxaZ16s5Y/edit?tab=t.0",
     logo: "/images/committees/visuals/committee-lp.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-2qsmQq5yhmY1viQa0unkSfYqpucXZw.png",
   },
   {
     slug: "lp2",
@@ -100,7 +100,7 @@ export const committees: Committee[] = [
     guideUrl:
       "https://docs.google.com/document/d/1Fmh1U7z4DKfvuxWAhvQThbsbfq6n-NaB/edit?usp=sharing&ouid=104158985582123597718&rtpof=true&sd=true",
     logo: "/images/committees/visuals/committee-lp.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-2qsmQq5yhmY1viQa0unkSfYqpucXZw.png",
   },
   {
     slug: "lp3",
@@ -131,7 +131,7 @@ export const committees: Committee[] = [
     },
     guideUrl: "https://docs.google.com/document/d/14ks8zy2wg8Aib0SunYwfMAxIbLR2h_Q2/edit",
     logo: "/images/committees/visuals/committee-lp.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-x6wuvx9YYkXC0L39Ow7xnK50aFnTNx.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lpbg-2qsmQq5yhmY1viQa0unkSfYqpucXZw.png",
   },
   {
     slug: "hrc",
@@ -162,7 +162,7 @@ export const committees: Committee[] = [
     },
     guideUrl: "https://docs.google.com/document/d/1PX71jgNz19kJ0Gkz4WKtTsrWafjrZucocktpdjEeYUE/edit?tab=t.0",
     logo: "/images/committees/visuals/committee-hrc.webp",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hrc-fUE6mLW3NQJXIFrgToLEWkgSiCr6ZW.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hrcbg-aPOQmJEXqbMnKTrW7eayyx3R1Ag6f4.png",
   },
   {
     slug: "disec",
@@ -178,7 +178,7 @@ export const committees: Committee[] = [
     },
     guideUrl: "https://www.canva.com/design/DAHSQOsEVpA/lPPbgTFS3vuy55lb6MEktA/edit",
     logo: "/images/committees/visuals/committee-disec.webp",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/disec-z3751wrQjd3yvDW9KOsx96bCkr3Ne5.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/disecbg-8UEOEzlJbtX0jnubETQb5eIiK841gD.png",
   },
   {
     slug: "ecosoc",
@@ -194,7 +194,7 @@ export const committees: Committee[] = [
     },
     guideUrl: "https://docs.google.com/document/d/1N7qyNlFmbFPEWrI2E6WW5T0khS3-Xx46/edit?usp=sharing&ouid=109174747489804758640&rtpof=true&sd=true",
     logo: "/images/committees/visuals/committee-ecosoc.webp",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ecosoc-84xAxvepfKfpnbgz49vstXclzNLbae.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ecosocbg-gEKeFmnfgyd9huRaiHnawVVFVDqyFN.png",
   },
   {
     slug: "unep",
@@ -226,7 +226,7 @@ export const committees: Committee[] = [
     guideUrl:
       "https://docs.google.com/document/d/1dVN7n4nQLQ7KNc_ebO2xNRRPCkcKh40yNFKCsN4wRDM/edit?usp=sharing",
     logo: "/images/committees/visuals/committee-unep.webp",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unepbg-jWpwDDyDFzYbH5AOqwuymBEJabA7hr.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unepbg-ihLCYwOO6JWKqaOyQvf9mTbfPRY70Q.png",
   },
   {
     slug: "it",
@@ -243,7 +243,7 @@ export const committees: Committee[] = [
       ],
     },
     logo: "/images/our-team/logistics/logistic.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/itbg-PsxAFmus4v6k4rns9DSS7Uy9aDS6Lr.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/itbg-5u6BRlK6g1lLQzl5bmHy63n4KubeZt.png",
   },
   {
     slug: "press",
@@ -261,7 +261,7 @@ export const committees: Committee[] = [
       ],
     },
     logo: "/images/press/press.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/press-bg-tmDqIOmYniUFyaj0m5HRpeBEfSx3pP.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pressbg-4VGSjt0tYG0ogIAtxIZJJrgZiJI5T0.png",
   },
   {
     slug: "logistics",
@@ -284,7 +284,7 @@ export const committees: Committee[] = [
       ],
     },
     logo: "/images/our-team/it/it.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logisticsbg-eQkpkxkwEOVS5KXSp6hsJSmRHMn6dx.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logisticsbg-Fdux7ZSpuXLXtVkYKrYnKBU2NePfm3.png",
   },
 ];
 

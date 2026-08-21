@@ -10,7 +10,7 @@ export default function PressNews() {
   const rest = newsArticles.slice(1);
 
   return (
-    <main className="paper-grain min-h-screen text-ink">
+    <main className="paper-grain min-h-screen bg-[linear-gradient(rgba(8,19,35,0.72),rgba(8,19,35,0.84)),url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pressbg-4VGSjt0tYG0ogIAtxIZJJrgZiJI5T0.png')] bg-cover bg-fixed bg-center text-warm">
       <section className="border-b border-navy/15 px-6 pb-16 pt-32 md:px-10 md:pt-40">
         <div className="mx-auto max-w-6xl">
           <Link to="/press" className="text-[11px] font-medium uppercase tracking-[0.16em] text-blue hover:text-navy">
