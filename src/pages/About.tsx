@@ -26,7 +26,7 @@ export default function About() {
             </h1>
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="mt-6 text-sm uppercase tracking-[0.32em] text-silver">Engage · Express · Excell</p>
+            <p className="mt-6 text-sm uppercase tracking-[0.32em] text-silver">Engage · Express · Excel</p>
           </Reveal>
         </div>
         <GradualBlur target="parent" position="bottom" height="6rem" strength={2} divCount={5} curve="bezier" exponential />

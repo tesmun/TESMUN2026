@@ -20,7 +20,7 @@ export const secretariat = {
     placeholder: false,
   } as Person,
   dsg: {
-    name: "Abhas Kunwar",
+    name: "Abhash Kunwar",
     role: "Deputy Secretary-General",
     slug: "abhas-kunwar",
     testimonial: "Every successful committee begins with people who are prepared to listen, guide and take responsibility. Bring your questions, ideas and energy to TESMUN, and help create a conference where every participant feels supported and heard.",
@@ -261,7 +261,7 @@ export const committees: Committee[] = [
       ],
     },
     logo: "/images/press/press.png",
-    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pressbg-YXg2R0VGLD8fqATrDAtdUxsxNxXXKd.png",
+    background: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/press-bg-tmDqIOmYniUFyaj0m5HRpeBEfSx3pP.png",
   },
   {
     slug: "logistics",
@@ -413,6 +413,6 @@ export const galleryImages = [
   { src: "/images/gallery/normal/gallery-delegates.jpg", alt: "Young people seated around a formal meeting table in discussion", caption: "Delegates" },
   { src: "/images/about/about-purpose.png", alt: "A delegate's hand resting on a wooden podium", caption: "The floor opens" },
   { src: "/images/about/about-vision.png", alt: "An empty conference table lined with chairs and flags", caption: "Ready for session" },
-  { src: "/images/home/mottobg.png", alt: "Atmospheric backdrop used for the TESMUN motto", caption: "Engage · Express · Excell" },
+  { src: "/images/home/mottobg.png", alt: "Atmospheric backdrop used for the TESMUN motto", caption: "Engage · Express · Excel" },
   { src: "/images/press/press-hero.png", alt: "Editorial still from the TESMUN press desk", caption: "Press desk" },
 ];

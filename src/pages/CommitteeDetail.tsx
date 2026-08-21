@@ -163,7 +163,7 @@ function ITDetail({ committee }: { committee: Committee }) {
             ].map((lead) => (
               <div key={lead.role} className="flex flex-col">
                 <Reveal>
-                  <div className="relative aspect-[4/5] overflow-hidden bg-navy">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-navy sm:scale-[1.08] sm:origin-top">
                     <img src={lead.image} alt={lead.role} className="photo-fill" />
                   </div>
                   <p className="mt-4 text-[11px] uppercase tracking-[0.16em] text-silver">{lead.role}</p>
@@ -187,8 +187,8 @@ function ITDetail({ committee }: { committee: Committee }) {
               <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {(members as { name: string; image?: string }[]).map((member) => (
                   <div key={member.name} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
-                    {member.image ? <img src={member.image} alt={member.name} className="h-28 w-28 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={member.name} className="h-28 w-28 shrink-0 rounded-full" />}
-                    <span className="text-lg leading-snug text-white/85">{member.name}</span>
+                    {member.image ? <img src={member.image} alt={member.name} className="h-36 w-36 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={member.name} className="h-28 w-28 shrink-0 rounded-full" />}
+                    <span className="text-xl leading-snug text-white/85">{member.name}</span>
                   </div>
                 ))}
               </div>
@@ -242,10 +242,10 @@ function PressDetail({ committee }: { committee: Committee }) {
       <section className="px-6 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <Eyebrow className="text-silver/80">Committee-wise chief reporters</Eyebrow>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["HRC", "Anishka Kuikel", "Sambriddhi Phuyal"],
-              ["ECOSOC", "Shreni Chapagai", "Alishka Kuikel"],
+              ["ECOSOC", "Shreni Chapagain", "Alishka Kuikel"],
               ["UNEP", "Ranish Mahat"],
               ["DISEC", "Osang Ghising", "Shubam Shrestha"],
               ["LP I", "Krishna Shrestha", "Aarush Katuwal"],
@@ -257,7 +257,7 @@ function PressDetail({ committee }: { committee: Committee }) {
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {reporters.map((reporter) => (
                     <div key={reporter} className="flex items-center gap-3">
-                      <PersonPlaceholder name={reporter} className="h-20 w-20 shrink-0 rounded-full" />
+                      <PersonPlaceholder name={reporter} className="h-24 w-24 shrink-0 rounded-full" />
                       <span className="text-sm leading-snug text-white/80">{reporter}</span>
                     </div>
                   ))}
