@@ -10,7 +10,7 @@ export default function PressNews() {
   const rest = newsArticles.slice(1);
 
   return (
-    <main className="paper-grain min-h-screen text-ink">
+    <main className="paper-grain min-h-screen bg-[linear-gradient(rgba(8,19,35,0.72),rgba(8,19,35,0.84)),url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pressbg-4VGSjt0tYG0ogIAtxIZJJrgZiJI5T0.png')] bg-cover bg-fixed bg-center text-warm">
       <section className="border-b border-navy/15 px-6 pb-16 pt-32 md:px-10 md:pt-40">
         <div className="mx-auto max-w-6xl">
           <Link to="/press" className="text-[11px] font-medium uppercase tracking-[0.16em] text-blue hover:text-navy">
@@ -19,7 +19,7 @@ export default function PressNews() {
           <div className="mt-8 flex items-end justify-between gap-6 border-b-2 border-navy pb-4">
             <div>
               <p className="text-[11px] uppercase tracking-[0.22em] text-gold">International Press Corps</p>
-              <h1 className="font-display mt-2 text-6xl font-medium leading-[0.9] tracking-tight sm:text-8xl">The Gazette</h1>
+              <h1 className="font-display mt-2 text-6xl font-medium leading-[0.9] tracking-tight sm:text-8xl">THE TESMUN TIMES</h1>
             </div>
             <p className="hidden max-w-xs text-right text-sm leading-6 text-ink/60 md:block">{pressSections.news.intro}</p>
           </div>

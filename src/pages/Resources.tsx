@@ -40,7 +40,7 @@ export default function Resources() {
   return (
     <main>
       <PageHero
-        image="/images/resources/resources-hero.png"
+        image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resourcesbg-ECo2LwOjE8CpkDkVlVTrioEPADQ8Xy.png"
         alt="Research materials prepared for TESMUN delegates"
         title="RESOURCES"
         kicker="Delegate library"
