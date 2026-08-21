@@ -16,6 +16,9 @@ export type SessionNewsArticle = NewsArticle & {
 const placeholderBody = [
   "This dispatch records the committee’s work as the session moved from opening positions toward the decisions still to come.",
   "Across the room, delegates balanced national priorities with the shared language of negotiation, leaving the next page open to revision.",
+  "The debate developed through a sequence of formal interventions, informal consultations and careful amendments. Each contribution changed the temperature of the room, even when the wording remained measured.",
+  "By the close of the sitting, the committee had not resolved every question, but it had made its disagreements legible. Delegates left with clearer priorities and a more precise sense of what compromise would require.",
+  "The next session will test whether those conversations can become text. For now, the record is one of movement: a room learning how to disagree with purpose and continue working together.",
 ];
 
 const image = (session: NewsSession, day: NewsDay, page: NewsPage, number: number) =>
@@ -62,6 +65,10 @@ export const newsSessionArticles: SessionNewsArticle[] = ([1, 2, 3] as NewsSessi
 
 export function getSessionArticles(session: NewsSession, day: NewsDay, page: NewsPage) {
   return newsSessionArticles.filter((item) => item.sessionNumber === session && item.day === day && item.page === page);
+}
+
+export function getSessionNewsArticle(slug: string) {
+  return newsSessionArticles.find((item) => item.slug === slug);
 }
 
 export function getPageCommittees(page: NewsPage) {

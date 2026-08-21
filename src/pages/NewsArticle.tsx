@@ -2,11 +2,13 @@ import { Link, useParams } from "react-router-dom";
 import BorderGlow from "@/components/BorderGlow";
 import { getNewspaperArticle, relatedNewspaperArticles, sessions } from "@/lib/newspaper-data";
 import { getNewsArticle, newsArticles } from "@/lib/press-data";
+import { getSessionNewsArticle } from "@/lib/news-sessions";
 
 export default function NewsArticle() {
   const { articleSlug = "" } = useParams();
   const paper = getNewspaperArticle(articleSlug);
-  const article = getNewsArticle(articleSlug);
+  const sessionArticle = getSessionNewsArticle(articleSlug);
+  const article = getNewsArticle(articleSlug) ?? sessionArticle;
 
   if (paper) {
     const related = relatedNewspaperArticles(paper.slug);
