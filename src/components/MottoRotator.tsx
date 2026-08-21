@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const WORDS = ["ENGAGE", "EXPRESS", "EXCELL"];
+const WORDS = ["ENGAGE", "EXPRESS", "EXCEL"];
 
 export default function MottoRotator() {
   const [index, setIndex] = useState(0);
@@ -9,7 +9,7 @@ export default function MottoRotator() {
   useEffect(() => {
     const id = window.setInterval(() => {
       setIndex((current) => (current + 1) % WORDS.length);
-    }, 1000);
+    }, 1400);
     return () => window.clearInterval(id);
   }, []);
 
@@ -17,7 +17,7 @@ export default function MottoRotator() {
     <div
       className="relative flex min-h-[clamp(3.4rem,11vw,8.2rem)] w-full items-center justify-center overflow-hidden px-4"
       aria-live="polite"
-      aria-label="Engage, Express, Excell"
+      aria-label="Engage, Express, Excel"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span
