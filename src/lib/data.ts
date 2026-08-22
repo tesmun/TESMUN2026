@@ -253,11 +253,11 @@ export const committees: Committee[] = [
     description:
       "The Press Committee documents TESMUN XIV in real time, producing news, vox pop, interviews and visual coverage throughout the conference.",
     board: {
-      headOf: { name: "Dechen Hira Tamang", role: "Chief Editor", testimonial: "The Press Committee gives the conference its living record. Observe carefully, ask thoughtful questions and tell each story with clarity, fairness and purpose. Our work is to make the ideas, people and moments of TESMUN visible." },
+      headOf: { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", testimonial: "The Press Committee gives the conference its living record. Observe carefully, ask thoughtful questions and tell each story with clarity, fairness and purpose. Our work is to make the ideas, people and moments of TESMUN visible." },
       deputyHeadOf: [
         { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png", testimonial: "Good press begins with attention and respect. Listen closely, verify what you learn and capture the energy of the conference in a way that is honest, engaging and meaningful." },
         { name: "Simran Devkota", role: "Deputy Chief Editor", image: "/images/our-team/press/simran.png", testimonial: "Every interview, image and article is an opportunity to connect people with the conference. Stay curious, work thoughtfully and help create a record that reflects the voices and spirit of TESMUN." },
-        { name: "John Doe", role: "Deputy Chief Editor", placeholder: true },
+        { name: "Renesha Maharjan", role: "Deputy Chief Editor", image: "/images/our-team/press/renesha.png", testimonial: "Renesha supports editorial planning and helps coordinate reporting across every committee session." },
       ],
     },
     logo: "/images/press/press.png",
@@ -280,7 +280,7 @@ export const committees: Committee[] = [
       ],
       additionalMembers: [
         { name: "Rudraksh Devkota", role: "Overall Manager", image: "/images/our-team/logistics/rudraksh.png", testimonial: "Every moving part of the conference depends on shared responsibility. Stay attentive, support your team and take pride in the details. When we work with discipline and kindness, the whole conference becomes stronger." },
-        { name: "Yugesh Adhikari", role: "Material Head" },
+        { name: "Ojess Shrestha", role: "Material Head", image: "/images/our-team/logistics/ojess.png" },
       ],
     },
     logo: "/images/our-team/it/it.png",
