@@ -239,7 +239,7 @@ export const committees: Committee[] = [
       headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png", testimonial: "The IT Committee turns ideas into the digital systems that carry TESMUN forward. Bring creativity, precision and a willingness to solve problems together. Every detail matters, and every contribution helps make the conference clearer, more connected and more memorable." },
       deputyHeadOf: [
         { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png", testimonial: "Technical work is strongest when curiosity becomes collaboration. Support the workflow behind every session, stay ready to learn and help turn creative ideas into reliable systems that serve every delegate." },
-        { name: "Swastik Manandar", role: "Deputy Head" },
+        { name: "Swastik Manandhar", role: "Deputy Head", image: "/images/our-team/it/swastik.png" },
       ],
     },
     logo: "/images/our-team/logistics/logistic.png",
@@ -253,11 +253,11 @@ export const committees: Committee[] = [
     description:
       "The Press Committee documents TESMUN XIV in real time, producing news, vox pop, interviews and visual coverage throughout the conference.",
     board: {
-      headOf: { name: "Dechen Hira Tamang", role: "Chief Editor", testimonial: "The Press Committee gives the conference its living record. Observe carefully, ask thoughtful questions and tell each story with clarity, fairness and purpose. Our work is to make the ideas, people and moments of TESMUN visible." },
+      headOf: { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", testimonial: "The Press Committee gives the conference its living record. Observe carefully, ask thoughtful questions and tell each story with clarity, fairness and purpose. Our work is to make the ideas, people and moments of TESMUN visible." },
       deputyHeadOf: [
         { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png", testimonial: "Good press begins with attention and respect. Listen closely, verify what you learn and capture the energy of the conference in a way that is honest, engaging and meaningful." },
         { name: "Simran Devkota", role: "Deputy Chief Editor", image: "/images/our-team/press/simran.png", testimonial: "Every interview, image and article is an opportunity to connect people with the conference. Stay curious, work thoughtfully and help create a record that reflects the voices and spirit of TESMUN." },
-        { name: "John Doe", role: "Deputy Chief Editor", placeholder: true },
+        { name: "Renesha Maharjan", role: "Deputy Chief Editor", image: "/images/our-team/press/renesha.png", testimonial: "Renesha supports editorial planning and helps coordinate reporting across every committee session." },
       ],
     },
     logo: "/images/press/press.png",
@@ -272,15 +272,15 @@ export const committees: Committee[] = [
       "The Logistics Committee coordinates the operational execution of TESMUN XIV, ensuring every session runs precisely as planned.",
     board: {
       headOf: { name: "Kushal Poudel", role: "Head of Logistics", image: "/images/our-team/logistics/kushal.png", testimonial: "Logistics is where preparation becomes experience. Stay organised, communicate clearly and look after the details that allow every committee to run smoothly. A successful conference is built by people who are ready to help one another." },
-      coHeadOf: { name: "Prasina Moktan", role: "Head of Press" },
+      coHeadOf: { name: "Prasina Moktan", role: "Head of Logistics", image: "/images/our-team/logistics/prasina.png" },
       deputyHeadOf: [
-        { name: "Arbin Dhital", role: "Top Floor Incharge" },
-        { name: "Harshid Bhetwal", role: "Second Floor Incharge" },
-        { name: "Sushan Shrestha", role: "First Floor Incharge" },
+        { name: "Arbin Dhital", role: "Top Floor Incharge", image: "/images/our-team/logistics/arbin.png" },
+        { name: "Harshid Bhetwal", role: "Second Floor Incharge", image: "/images/our-team/logistics/harshid.png" },
+        { name: "Sushan Shrestha", role: "First Floor Incharge", image: "/images/our-team/logistics/sushan.png" },
       ],
       additionalMembers: [
         { name: "Rudraksh Devkota", role: "Overall Manager", image: "/images/our-team/logistics/rudraksh.png", testimonial: "Every moving part of the conference depends on shared responsibility. Stay attentive, support your team and take pride in the details. When we work with discipline and kindness, the whole conference becomes stronger." },
-        { name: "Yugesh Adhikari", role: "Material Head" },
+        { name: "Ojess Shrestha", role: "Material Head", image: "/images/our-team/logistics/ojess.png" },
       ],
     },
     logo: "/images/our-team/it/it.png",

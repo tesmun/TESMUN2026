@@ -133,7 +133,7 @@ function ITDetail({ committee }: { committee: Committee }) {
         <div className="mx-auto grid max-w-7xl gap-12 sm:grid-cols-2 md:gap-20">
           {[
             { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png", text: "Supporting the technical workflow behind the conference." },
-            { name: "Swastik Manandar", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
+            { name: "Swastik Manandhar", role: "Deputy Head", image: "/images/our-team/it/swastik.png", text: "Supporting the technical workflow behind the conference." },
           ].map((person) => (
             <div key={person.name} className="flex flex-col">
               <Reveal>
@@ -156,10 +156,10 @@ function ITDetail({ committee }: { committee: Committee }) {
           </Reveal>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/gallery/normal/gallery-library.jpg" },
-              { name: "Saksham Adhikari", role: "Web Designing Lead", image: "/images/our-team/it/sakshamadhikari.png" },
-              { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery/normal/gallery-debate.jpg" },
-              { name: "Samman Shrestha", role: "Graphic Designing Lead", image: "/images/press/cartoons/cartoon-1.png" },
+              { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/our-team/it/timothy.png" },
+              { name: "Saksham Adhikari", role: "Website Editing Lead", image: "/images/our-team/it/sakshamadhikari.png" },
+              { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/our-team/it/jonesh.png" },
+              { name: "Samman Shrestha", role: "Graphic Design Lead", image: "/images/our-team/it/samman.png" },
             ].map((lead) => (
               <div key={lead.role} className="flex flex-col">
                 <Reveal>
@@ -178,16 +178,16 @@ function ITDetail({ committee }: { committee: Committee }) {
       <section className="px-6 pb-20 md:px-10">
         <div className="mx-auto max-w-7xl space-y-12">
           {[
-            ["Web Designing Members", [{ name: "Sulav Sapkota" }, { name: "Abin Man Singh" }, { name: "Rinesh Karki", image: "/images/our-team/it/rinesh.png" }]],
-            ["Video Editing Members", [{ name: "Anish Rana" }, { name: "Pratyush Rayamajhi" }]],
-            ["Graphics Members", [{ name: "Shivam Bharati" }, { name: "Aarush Bajracharya" }, { name: "Bibek Devkota" }]],
+            ["Web Designing Members", [{ name: "Sulav Sapkota", image: "/images/our-team/it/sulav.png" }, { name: "Abin Man Singh", image: "/images/our-team/it/abin.png" }, { name: "Rinesh Karki", image: "/images/our-team/it/rinesh.png" }]],
+            ["Video Editing Members", [{ name: "Anish Rana", image: "/images/our-team/it/anish.png" }, { name: "Pratyush Rayamajhi", image: "/images/our-team/it/pratyush.png" }]],
+            ["Graphics Members", [{ name: "Shivam Bharati", image: "/images/our-team/it/shivam.png" }, { name: "Aarush Bajracharya", image: "/images/our-team/it/aarushbajracharya.png" }, { name: "Bibek Devkota", image: "/images/our-team/it/bibek.png" }]],
           ].map(([label, members]) => (
             <div key={label as string} className="border-t border-white/15 pt-5">
               <p className="text-[10px] uppercase tracking-[0.16em] text-gold">{label as string}</p>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {(members as { name: string; image?: string }[]).map((member) => (
-                  <div key={member.name} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
-                    {member.image ? <img src={member.image} alt={member.name} className="h-36 w-36 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={member.name} className="h-28 w-28 shrink-0 rounded-full" />}
+                  <div key={member.name} className="flex min-h-40 items-center gap-5 border border-white/10 bg-navy px-5 py-4">
+                    {member.image ? <img src={member.image} alt={member.name} className="h-44 w-44 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={member.name} className="h-36 w-36 shrink-0 rounded-full" />}
                     <span className="text-xl leading-snug text-white/85">{member.name}</span>
                   </div>
                 ))}
@@ -207,10 +207,10 @@ function ITDetail({ committee }: { committee: Committee }) {
 
 function PressDetail({ committee }: { committee: Committee }) {
   const editors = [
-    { name: "Dechen Hira Tamang", role: "Chief Editor", reverse: false, text: "As Chief Editor, Dechen Hira Tamang leads the Press Committee in covering every committee session, interview and behind-the-scenes moment of TESMUN XIV." },
-    { name: "Siddhartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png", reverse: true, text: "Siddhartha supports editorial planning and works with reporters to ensure each publication reflects the depth and diversity of the conference." },
+    { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", reverse: false, text: "As Chief Editor, Dechen Hira Tamang leads the Press Committee in covering every committee session, interview and behind-the-scenes moment of TESMUN XIV." },
+    { name: "Siddartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png", reverse: true, text: "Siddhartha supports editorial planning and works with reporters to ensure each publication reflects the depth and diversity of the conference." },
     { name: "Simran Devkota", role: "Deputy Chief Editor", image: "/images/our-team/press/simran.png", reverse: false, text: "Simran coordinates press coverage across sessions, helping writers and photographers capture the urgency and nuance of every debate." },
-    { name: "Renesha Maharjan", role: "Deputy Chief Editor", reverse: true, text: "Renesha supports editorial planning and helps coordinate reporting across every committee session." },
+    { name: "Renesha Maharjan", role: "Deputy Chief Editor", image: "/images/our-team/press/renesha.png", reverse: true, text: "Renesha supports editorial planning and helps coordinate reporting across every committee session." },
   ];
 
   return (
@@ -244,23 +244,27 @@ function PressDetail({ committee }: { committee: Committee }) {
           <Eyebrow className="text-silver/80">Committee-wise chief reporters</Eyebrow>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              ["HRC", "Anishka Kuikel", "Sambriddhi Phuyal"],
-              ["ECOSOC", "Shreni Chapagain", "Alishka Kuikel"],
-              ["UNEP", "Ranish Mahat"],
-              ["DISEC", "Osang Ghising", "Shubam Shrestha"],
-              ["LP I", "Krishna Shrestha", "Aarush Katuwal"],
-              ["LP II", "Pari Maharjan"],
-              ["LP III", "Aashiya Shrestha"],
+              ["HRC", { name: "Anishka Kuikel", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Sambriddhi Phuyal", image: "/images/our-team/press/sambridhi.png" }],
+              ["ECOSOC", { name: "Shreni Chapagain", image: "/images/our-team/press/shreni.png" }, { name: "Alishka Kuikel", image: "/images/our-team/press/alishkakuikel.png" }],
+              ["UNEP", { name: "Ranish Mahat", image: "/images/our-team/press/ranish.png" }],
+              ["DISEC", { name: "Osang Ghising", image: "/images/our-team/press/osang.png" }, { name: "Shubam Shrestha", image: "/images/our-team/press/shubhamshrestha.png" }],
+              ["LP I", { name: "Krishna Shrestha", image: "/images/our-team/press/krishna.png" }, { name: "Aarush Katuwal", image: "/images/our-team/press/aarushkatuwal.png" }],
+              ["LP II", { name: "Pari Maharjan", image: "/images/our-team/press/pari.png" }],
+              ["LP III", { name: "Aashiya Shrestha", image: "/images/our-team/press/aashiyashrestha.png" }],
+              ["Press Desk", { name: "Anishka Kuikel", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Anish Rana", image: "/images/our-team/press/anishkakuikel.png" }],
             ].map(([committeeName, ...reporters]) => (
-              <div key={committeeName} className="border border-white/10 bg-navy px-5 py-5">
-                <p className="text-[10px] uppercase tracking-[0.18em] text-gold">{committeeName}</p>
+              <div key={String(committeeName)} className="border border-white/10 bg-navy px-6 py-6">
+                <p className="text-[10px] uppercase tracking-[0.18em] text-gold">{String(committeeName)}</p>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {reporters.map((reporter) => (
-                    <div key={reporter} className="flex items-center gap-3">
-                      <PersonPlaceholder name={reporter} className="h-24 w-24 shrink-0 rounded-full" />
-                      <span className="text-sm leading-snug text-white/80">{reporter}</span>
-                    </div>
-                  ))}
+                  {reporters.map((reporter) => {
+                    const person = typeof reporter === "string" ? { name: reporter, image: undefined } : reporter as { name: string; image?: string };
+                    return (
+                      <div key={person.name} className="flex items-center gap-3">
+                        {person.image ? <img src={person.image} alt={person.name} className="h-36 w-36 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-24 w-24 shrink-0 rounded-full" />}
+                        <span className="text-sm leading-snug text-white/80">{person.name}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
