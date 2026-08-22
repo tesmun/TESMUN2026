@@ -230,6 +230,14 @@ export const cartoons = [
   { src: "/images/press/cartoons/cartoon-2.png", alt: "Editorial cartoon of a globe in a school blazer addressing a podium" },
   { src: "/images/press/cartoons/cartoon-3.png", alt: "Editorial cartoon of two country placards leaning together with a fountain pen between them" },
   { src: "/images/press/cartoons/cartoon-4.png", alt: "Editorial cartoon of resolution papers folding into a paper crane above a committee room" },
+  { src: "/images/press/cartoons/cartoon-1.png", alt: "Editorial cartoon placeholder five" },
+  { src: "/images/press/cartoons/cartoon-2.png", alt: "Editorial cartoon placeholder six" },
+  { src: "/images/press/cartoons/cartoon-3.png", alt: "Editorial cartoon placeholder seven" },
+  { src: "/images/press/cartoons/cartoon-4.png", alt: "Editorial cartoon placeholder eight" },
+  { src: "/images/press/cartoons/cartoon-1.png", alt: "Editorial cartoon placeholder nine" },
+  { src: "/images/press/cartoons/cartoon-2.png", alt: "Editorial cartoon placeholder ten" },
+  { src: "/images/press/cartoons/cartoon-3.png", alt: "Editorial cartoon placeholder eleven" },
+  { src: "/images/press/cartoons/cartoon-4.png", alt: "Editorial cartoon placeholder twelve" },
 ];
 
 export function getNewsArticle(slug: string) {

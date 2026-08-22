@@ -239,7 +239,7 @@ export const committees: Committee[] = [
       headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png", testimonial: "The IT Committee turns ideas into the digital systems that carry TESMUN forward. Bring creativity, precision and a willingness to solve problems together. Every detail matters, and every contribution helps make the conference clearer, more connected and more memorable." },
       deputyHeadOf: [
         { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png", testimonial: "Technical work is strongest when curiosity becomes collaboration. Support the workflow behind every session, stay ready to learn and help turn creative ideas into reliable systems that serve every delegate." },
-        { name: "Swastik Manandar", role: "Deputy Head" },
+        { name: "Swastik Manandhar", role: "Deputy Head", image: "/images/our-team/it/swastik.png" },
       ],
     },
     logo: "/images/our-team/logistics/logistic.png",

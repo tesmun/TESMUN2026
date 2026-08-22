@@ -133,7 +133,7 @@ function ITDetail({ committee }: { committee: Committee }) {
         <div className="mx-auto grid max-w-7xl gap-12 sm:grid-cols-2 md:gap-20">
           {[
             { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png", text: "Supporting the technical workflow behind the conference." },
-            { name: "Swastik Manandar", role: "Deputy Head", text: "Supporting the technical workflow behind the conference." },
+            { name: "Swastik Manandhar", role: "Deputy Head", image: "/images/our-team/it/swastik.png", text: "Supporting the technical workflow behind the conference." },
           ].map((person) => (
             <div key={person.name} className="flex flex-col">
               <Reveal>
@@ -260,7 +260,7 @@ function PressDetail({ committee }: { committee: Committee }) {
                     const person = typeof reporter === "string" ? { name: reporter, image: undefined } : reporter as { name: string; image?: string };
                     return (
                       <div key={person.name} className="flex items-center gap-3">
-                        {person.image ? <img src={person.image} alt={person.name} className="h-28 w-28 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-24 w-24 shrink-0 rounded-full" />}
+                        {person.image ? <img src={person.image} alt={person.name} className="h-36 w-36 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-24 w-24 shrink-0 rounded-full" />}
                         <span className="text-sm leading-snug text-white/80">{person.name}</span>
                       </div>
                     );
