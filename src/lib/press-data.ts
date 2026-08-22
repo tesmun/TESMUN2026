@@ -218,11 +218,11 @@ export const speeches: Speech[] = [
 
 export const opEdContributors = [
   { name: "Dibas Khadka", role: "Secretary-General", pdf: "", photo: "/images/our-team/secgen.png" },
-  { name: "Abhash Kunwar", role: "Deputy Secretary-General", pdf: "" },
-  { name: "Anuj Jung Thapa", role: "Delegate, Human Rights Council", pdf: "" },
-  { name: "Eva Shakya", role: "Delegate, Human Rights Council", pdf: "" },
-  { name: "Agrim Pandey", role: "Delegate, Human Rights Council", pdf: "" },
-  { name: "Priyajala Dhungana", role: "Delegate", pdf: "" },
+  { name: "Abhash Kunwar", role: "Deputy Secretary-General", pdf: "", photo: "/images/our-team/abhas.png" },
+  { name: "John Doe", role: "Contributor", pdf: "" },
+  { name: "John Doe", role: "Contributor", pdf: "" },
+  { name: "John Doe", role: "Contributor", pdf: "" },
+  { name: "John Doe", role: "Contributor", pdf: "" },
 ];
 
 export const cartoons = [

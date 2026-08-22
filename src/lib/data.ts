@@ -272,11 +272,11 @@ export const committees: Committee[] = [
       "The Logistics Committee coordinates the operational execution of TESMUN XIV, ensuring every session runs precisely as planned.",
     board: {
       headOf: { name: "Kushal Poudel", role: "Head of Logistics", image: "/images/our-team/logistics/kushal.png", testimonial: "Logistics is where preparation becomes experience. Stay organised, communicate clearly and look after the details that allow every committee to run smoothly. A successful conference is built by people who are ready to help one another." },
-      coHeadOf: { name: "Prasina Moktan", role: "Head of Press" },
+      coHeadOf: { name: "Prasina Moktan", role: "Head of Logistics", image: "/images/our-team/logistics/prasina.png" },
       deputyHeadOf: [
-        { name: "Arbin Dhital", role: "Top Floor Incharge" },
-        { name: "Harshid Bhetwal", role: "Second Floor Incharge" },
-        { name: "Sushan Shrestha", role: "First Floor Incharge" },
+        { name: "Arbin Dhital", role: "Top Floor Incharge", image: "/images/our-team/logistics/arbin.png" },
+        { name: "Harshid Bhetwal", role: "Second Floor Incharge", image: "/images/our-team/logistics/harshid.png" },
+        { name: "Sushan Shrestha", role: "First Floor Incharge", image: "/images/our-team/logistics/sushan.png" },
       ],
       additionalMembers: [
         { name: "Rudraksh Devkota", role: "Overall Manager", image: "/images/our-team/logistics/rudraksh.png", testimonial: "Every moving part of the conference depends on shared responsibility. Stay attentive, support your team and take pride in the details. When we work with discipline and kindness, the whole conference becomes stronger." },

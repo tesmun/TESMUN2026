@@ -158,7 +158,7 @@ function ITDetail({ committee }: { committee: Committee }) {
             {[
               { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/our-team/it/timothy.png" },
               { name: "Saksham Adhikari", role: "Website Editing Lead", image: "/images/our-team/it/sakshamadhikari.png" },
-              { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/gallery/normal/gallery-debate.jpg" },
+              { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/our-team/it/jonesh.png" },
               { name: "Samman Shrestha", role: "Graphic Design Lead", image: "/images/our-team/it/samman.png" },
             ].map((lead) => (
               <div key={lead.role} className="flex flex-col">
@@ -178,16 +178,16 @@ function ITDetail({ committee }: { committee: Committee }) {
       <section className="px-6 pb-20 md:px-10">
         <div className="mx-auto max-w-7xl space-y-12">
           {[
-            ["Web Designing Members", [{ name: "Sulav Sapkota" }, { name: "Abin Man Singh", image: "/images/our-team/it/abin.png" }, { name: "Rinesh Karki", image: "/images/our-team/it/rinesh.png" }]],
-            ["Video Editing Members", [{ name: "Anish Rana", image: "/images/our-team/it/anish.png" }, { name: "Pratyush Rayamajhi" }]],
-            ["Graphics Members", [{ name: "Shivam Bharati", image: "/images/our-team/it/shivam.png" }, { name: "Aarush Bajracharya" }, { name: "Bibek Devkota" }]],
+            ["Web Designing Members", [{ name: "Sulav Sapkota", image: "/images/our-team/it/sulav.png" }, { name: "Abin Man Singh", image: "/images/our-team/it/abin.png" }, { name: "Rinesh Karki", image: "/images/our-team/it/rinesh.png" }]],
+            ["Video Editing Members", [{ name: "Anish Rana", image: "/images/our-team/it/anish.png" }, { name: "Pratyush Rayamajhi", image: "/images/our-team/it/pratyush.png" }]],
+            ["Graphics Members", [{ name: "Shivam Bharati", image: "/images/our-team/it/shivam.png" }, { name: "Aarush Bajracharya", image: "/images/our-team/it/aarushbajracharya.png" }, { name: "Bibek Devkota", image: "/images/our-team/it/bibek.png" }]],
           ].map(([label, members]) => (
             <div key={label as string} className="border-t border-white/15 pt-5">
               <p className="text-[10px] uppercase tracking-[0.16em] text-gold">{label as string}</p>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {(members as { name: string; image?: string }[]).map((member) => (
-                  <div key={member.name} className="flex items-center gap-4 border border-white/10 bg-navy px-4 py-3">
-                    {member.image ? <img src={member.image} alt={member.name} className="h-36 w-36 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={member.name} className="h-28 w-28 shrink-0 rounded-full" />}
+                  <div key={member.name} className="flex min-h-40 items-center gap-5 border border-white/10 bg-navy px-5 py-4">
+                    {member.image ? <img src={member.image} alt={member.name} className="h-44 w-44 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={member.name} className="h-36 w-36 shrink-0 rounded-full" />}
                     <span className="text-xl leading-snug text-white/85">{member.name}</span>
                   </div>
                 ))}
@@ -253,14 +253,14 @@ function PressDetail({ committee }: { committee: Committee }) {
               ["LP III", { name: "Aashiya Shrestha", image: "/images/our-team/press/aashiyashrestha.png" }],
               ["Press Desk", { name: "Anishka Kuikel", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Anish Rana", image: "/images/our-team/press/anishkakuikel.png" }],
             ].map(([committeeName, ...reporters]) => (
-              <div key={String(committeeName)} className="border border-white/10 bg-navy px-5 py-5">
+              <div key={String(committeeName)} className="border border-white/10 bg-navy px-6 py-6">
                 <p className="text-[10px] uppercase tracking-[0.18em] text-gold">{String(committeeName)}</p>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {reporters.map((reporter) => {
                     const person = typeof reporter === "string" ? { name: reporter, image: undefined } : reporter as { name: string; image?: string };
                     return (
                       <div key={person.name} className="flex items-center gap-3">
-                        {person.image ? <img src={person.image} alt={person.name} className="h-24 w-24 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-24 w-24 shrink-0 rounded-full" />}
+                        {person.image ? <img src={person.image} alt={person.name} className="h-28 w-28 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-24 w-24 shrink-0 rounded-full" />}
                         <span className="text-sm leading-snug text-white/80">{person.name}</span>
                       </div>
                     );
