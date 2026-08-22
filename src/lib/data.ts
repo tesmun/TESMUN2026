@@ -241,7 +241,7 @@ export const committees: Committee[] = [
     name: "Information Technology Committee",
     category: "facilitating",
     description:
-      "The IT Committee builds and maintains the technical backbone of TESMUN XIV — from the conference website to on-site systems.",
+      "The IT Committee builds and maintains the technical backbone of TESMUN 2026 — from the conference website to on-site systems.",
     board: {
       headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png", testimonial: "The harder the conflict, the greater the triumph. — George Washington\n\nTo bring a conference as dynamic as TESMUN 2026 to life, countless hours of work happen far beyond the committees. As the IT department, we stand behind the screen, behind the systems, behind the designs, behind the digital experiences and in helping make the vision of TESMUN a reality.\n\nIt's not just about managing technology. Whether it's creating engaging videos, building the official TESMUN website, or providing real-time updates, we ensure that every aspect of the conference is connected, accessible, and alive.\n\nEach page of the website, each visual, each announcement and each video is the result of hours of creativity, precision and collaboration. As delegates debate resolutions and chairs lead committees, our team is busy behind the scenes making sure their efforts are captured, communicated and remembered.\n\nThe challenges may be demanding, the deadlines relentless, and the work often unseen—but that is what makes the final result worthwhile. Because when the screens light up, the videos roll, and every piece comes together, we know that the effort behind the scenes has helped create something worth remembering." },
       deputyHeadOf: [
@@ -258,7 +258,7 @@ export const committees: Committee[] = [
     name: "Press Committee",
     category: "facilitating",
     description:
-      "The Press Committee documents TESMUN XIV in real time, producing news, vox pop, interviews and visual coverage throughout the conference.",
+      "The Press Committee documents TESMUN 2026 in real time, producing news, vox pop, interviews and visual coverage throughout the conference.",
     board: {
       headOf: { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", testimonial: "The Press Committee gives the conference its living record. Observe carefully, ask thoughtful questions and tell each story with clarity, fairness and purpose. Our work is to make the ideas, people and moments of TESMUN visible." },
       deputyHeadOf: [
@@ -276,7 +276,7 @@ export const committees: Committee[] = [
     name: "Logistics Committee",
     category: "facilitating",
     description:
-      "The Logistics Committee coordinates the operational execution of TESMUN XIV, ensuring every session runs precisely as planned.",
+      "The Logistics Committee coordinates the operational execution of TESMUN 2026, ensuring every session runs precisely as planned.",
     board: {
       headOf: { name: "Kushal Poudel", role: "Head of Logistics", image: "/images/our-team/logistics/kushal.png", testimonial: "Logistics is where preparation becomes experience. Stay organised, communicate clearly and look after the details that allow every committee to run smoothly. A successful conference is built by people who are ready to help one another." },
       coHeadOf: { name: "Prasina Moktan", role: "Head of Logistics", image: "/images/our-team/logistics/prasina.png" },

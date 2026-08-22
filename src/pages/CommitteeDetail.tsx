@@ -37,7 +37,7 @@ function BoardRow({
           </p>
           {person.testimonial && (
             <div className="mt-7 max-w-xl text-left text-sm leading-6 text-warm/90 sm:text-base sm:leading-7">
-              {person.testimonial.split("\\n\\n").map((paragraph, index) => (
+              {person.testimonial.split("\n\n").map((paragraph, index) => (
                 <p key={index} className={`${index > 0 ? "mt-5" : ""} whitespace-pre-line`}>{index === 0 && paragraph.includes("—") ? <strong>{paragraph}</strong> : paragraph}</p>
               ))}
             </div>
@@ -218,7 +218,7 @@ function ITDetail({ committee }: { committee: Committee }) {
 
 function PressDetail({ committee }: { committee: Committee }) {
   const editors = [
-    { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", reverse: false, text: "As Chief Editor, Dechen Hira Tamang leads the Press Committee in covering every committee session, interview and behind-the-scenes moment of TESMUN XIV." },
+    { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", reverse: false, text: "While TESMUN unfolds, many work behind the curtains, orchestrating the concert from behind. They are the true pillars of the program–the ones who construct the foundation for greater things to be built on. The Press, IT, and Logistics team have all put in immense effort into creating that structure for TESMUN 2026. As the head of the Press team, I’d like to commence this annual event by quoting,\n\n“Write what should not be forgotten.” -Isabel Allendeas\n\nAs the Press records history,capturing it and storing text in a digital archive, one which might be stumbled upon in the future by generations to come." },
     { name: "Siddartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png", reverse: true, text: "Siddhartha supports editorial planning and works with reporters to ensure each publication reflects the depth and diversity of the conference." },
     { name: "Simran Devkota", role: "Deputy Chief Editor", image: "/images/our-team/press/simran.png", reverse: false, text: "Simran coordinates press coverage across sessions, helping writers and photographers capture the urgency and nuance of every debate." },
     { name: "Renesha Maharjan", role: "Deputy Chief Editor", image: "/images/our-team/press/renesha.png", reverse: true, text: "Renesha supports editorial planning and helps coordinate reporting across every committee session." },
@@ -241,7 +241,7 @@ function PressDetail({ committee }: { committee: Committee }) {
                   <p className="text-[11px] uppercase tracking-[0.18em] text-silver">{editor.role}</p>
                   <h2 className="font-display mt-2 text-3xl text-white sm:text-4xl">{editor.name}</h2>
                   <div className="rule mt-5 max-w-[7rem]" />
-                  <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/80">{editor.text}</p>
+                  <div className="mt-6 max-w-xl space-y-5 text-[15px] leading-relaxed text-white/80">{editor.text.split("\n\n").map((paragraph, paragraphIndex) => <p key={paragraphIndex} className={paragraphIndex === 1 ? "font-medium text-warm" : ""}>{paragraphIndex === 1 ? <strong>{paragraph}</strong> : paragraph}</p>)}</div>
                 </div>
               </article>
               {index < editors.length - 1 && <Divider className="mt-16" />}
