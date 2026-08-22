@@ -55,8 +55,16 @@ export default function TeamMember() {
         <div className="mx-auto max-w-3xl">
           <Reveal>
             <Eyebrow>Testimonial</Eyebrow>
-            <blockquote className="font-display mt-7 max-w-2xl text-2xl leading-relaxed text-ink sm:text-3xl">
-              “{person.testimonial ?? "This testimonial will be published soon."}”
+            <blockquote className="mt-7 max-w-2xl text-base leading-7 text-ink sm:text-lg">
+              {(person.testimonial ?? "This testimonial will be published soon.").split("\\n\\n").map((paragraph, index) => {
+                const lines = paragraph.split("\\n");
+                const isQuote = index === 0 && lines.length > 1;
+                return (
+                  <p key={index} className={index > 0 ? "mt-5" : ""}>
+                    {isQuote ? <><strong>{lines[0]}</strong><br /><strong>{lines[1]}</strong></> : paragraph}
+                  </p>
+                );
+              })}
             </blockquote>
           </Reveal>
         </div>

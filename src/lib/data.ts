@@ -15,15 +15,15 @@ export const secretariat = {
     name: "Dibas Khadka",
     role: "Secretary-General",
     slug: "dibas-khadka",
-    testimonial: "TESMUN is a space where preparation, curiosity and respectful dialogue become meaningful leadership. I encourage every delegate and team member to contribute with purpose, support one another and make this conference an experience that extends beyond the sessions.",
+    testimonial: "The only limit to our realization of tomorrow is our doubts of today.\n- Franklin D. Roosevelt\n\nMUN is not the loudest person's show. It's about listening, understanding, and taking the courageous approach to speak up when necessary. To me, as Secretary-General, the vision of TESMUN 2026 is very straightforward: that all voices are heard. Whether you are an old pro or you've brought your placard to the table for the first time, your ideas can make a difference in the room.\n\nBe ready for challenging ideas, creating alliances, making mistakes, and learning from them.Make TESMUN 2026 a more than just a conference. Let It be where your voice begins.",
     image: "/images/our-team/secgen.png",
     placeholder: false,
   } as Person,
   dsg: {
     name: "Abhash Kunwar",
     role: "Deputy Secretary-General",
-    slug: "abhas-kunwar",
-    testimonial: "Every successful committee begins with people who are prepared to listen, guide and take responsibility. Bring your questions, ideas and energy to TESMUN, and help create a conference where every participant feels supported and heard.",
+    slug: "abhash-kunwar",
+    testimonial: "Leadership is not about holding a title; it is about creating opportunities, inspiring change, and giving every voice the chance to be heard.\n\nAs Deputy Secretary-General of TES-MUN 2026, I believe that diplomacy begins with respect, grows through dialogue, and succeeds through unity. Together, let us debate with purpose, think beyond borders, and shape solutions for a better tomorrow.\n\nWelcome to TES-MUN 2026, where ideas become action, and delegates become leaders.",
     image: "/images/our-team/abhas.png",
     placeholder: false,
   } as Person,
@@ -45,6 +45,7 @@ export type Committee = {
   slug: string;
   abbr: string;
   name: string;
+  email?: string;
   category: CommitteeCategory;
   description: string;
   board: CommitteeBoard;
@@ -56,13 +57,14 @@ export type Committee = {
 export const committees: Committee[] = [
   {
     slug: "lp1",
+    email: "lp1@excelsior.edu.np",
     abbr: "LP I",
     name: "Legislative Parliament I",
     category: "national",
     description:
       "The first of TESMUN's three national Legislative Parliaments, deliberating on domestic policy through the lens of Nepal's parliamentary process.",
     board: {
-      chair: { name: "Aakarshi Paudel", role: "Chair", image: "/images/committees/executive-board/aakarshi.png", testimonial: "It is my greatest honor to welcome you all to Legislative Parliament I. You are here not merely to speak, but to represent the political ideology and people behind your placard. You may be nervous or lose your words, and that is completely fine. As your Chair, I promise to remain fair, impartial and approachable. Remember that you are practicing the responsibility of democracy, and I look forward to hearing you on the floor." },
+      chair: { name: "Aakarshi Paudel", role: "Chair", image: "/images/committees/executive-board/aakarshi.png", testimonial: "“The only way to make sure people you agree with can speak is to support the rights of people you don't agree with.\"\n— Eleanor Holmes Norton\n\nIt is my greatest honor to welcome you all to Legislative Parliament-I at this year’s Model United Nations Conference. I am Aakarshi Paudel, and I am truly privileged to serve as your Chair. As we enter this committee, remember that you are not here merely to speak; you are here to represent. Behind every placard lies a political ideology, a constituency, and the voice of people who have entrusted you to speak on their behalf.\n\nYou may be nervous, lose your words, or disagree with someone more experienced. That is completely fine. Every strong parliamentarian started somewhere. As your Chair, I promise to remain fair, impartial, and approachable, ensuring every voice receives an opportunity to be heard.\n\nRemember, you are not simply simulating Parliament; you are practicing the responsibility of democracy. I wish you all the very best, and I look forward to hearing you on the floor." },
       viceChair: { name: "Dilasha Oli", role: "Vice Chair", image: "/images/committees/executive-board/dilasha.png", testimonial: "With the warmest heart, I welcome you to Legislative Parliament I of TESMUN 2026. I am excited to hear your ideas and watch this committee come alive through your voices. I am always here to guide you, whether you speak with trembling hands or confidence. Bring your ideas, passion, questions and willingness to learn, and make this committee truly yours." },
       moderator: { name: "Sijan Neupane", role: "Moderator", image: "/images/committees/executive-board/sijan.png", testimonial: "It is my pleasure to welcome you to Legislative Parliament I. My goal is to make this committee active, engaging and a space where every delegate feels confident enough to participate. Question ideas, defend your position, challenge others respectfully and be willing to negotiate. Come prepared, stay involved and turn your research into meaningful parliamentary debate." },
     },
@@ -72,6 +74,7 @@ export const committees: Committee[] = [
   },
   {
     slug: "lp2",
+    email: "lp2@excelsior.edu.np",
     abbr: "LP II",
     name: "Legislative Parliament II",
     category: "national",
@@ -104,6 +107,7 @@ export const committees: Committee[] = [
   },
   {
     slug: "lp3",
+    email: "lp3@excelsior.edu.np",
     abbr: "LP III",
     name: "Legislative Parliament III",
     category: "national",
@@ -135,6 +139,7 @@ export const committees: Committee[] = [
   },
   {
     slug: "hrc",
+    email: "hrc@excelsior.edu.np",
     abbr: "HRC",
     name: "Human Rights Council",
     category: "international",
@@ -166,6 +171,7 @@ export const committees: Committee[] = [
   },
   {
     slug: "disec",
+    email: "disec@excelsior.edu.np",
     abbr: "DISEC",
     name: "Disarmament and International Security Committee",
     category: "international",
@@ -182,6 +188,7 @@ export const committees: Committee[] = [
   },
   {
     slug: "ecosoc",
+    email: "ecosoc@excelsior.edu.np",
     abbr: "ECOSOC",
     name: "Economic and Social Council",
     category: "international",
@@ -190,7 +197,7 @@ export const committees: Committee[] = [
     board: {
       chair: { name: "Prateek Bhattarai", role: "Chair", image: "/images/committees/executive-board/prateek.png", testimonial: "Welcome to ECOSOC, where economic and social policy meets the responsibility to build a fairer and more sustainable world. Research deeply, listen generously and bring solutions that connect ambition with practical action. Meaningful progress begins when every perspective is taken seriously." },
       viceChair: { name: "Sima Thapa Magar", role: "Vice Chair", image: "/images/committees/executive-board/sima.png", testimonial: "ECOSOC rewards delegates who combine evidence with empathy. Understand your country’s priorities, engage with perspectives different from your own and work toward resolutions that communities can genuinely implement." },
-      moderator: { name: "Kunjal Kakki", role: "Moderator", image: "/images/committees/executive-board/kunjal.png", testimonial: "Come prepared to ask difficult questions and build constructive dialogue. Every speech, negotiation and amendment is an opportunity to turn complex economic and social challenges into shared solutions." },
+      moderator: { name: "Kunjal Karki", role: "Moderator", image: "/images/committees/executive-board/kunjal.png", testimonial: "Come prepared to ask difficult questions and build constructive dialogue. Every speech, negotiation and amendment is an opportunity to turn complex economic and social challenges into shared solutions." },
     },
     guideUrl: "https://docs.google.com/document/d/1N7qyNlFmbFPEWrI2E6WW5T0khS3-Xx46/edit?usp=sharing&ouid=109174747489804758640&rtpof=true&sd=true",
     logo: "/images/committees/visuals/committee-ecosoc.webp",
@@ -236,7 +243,7 @@ export const committees: Committee[] = [
     description:
       "The IT Committee builds and maintains the technical backbone of TESMUN XIV — from the conference website to on-site systems.",
     board: {
-      headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png", testimonial: "The IT Committee turns ideas into the digital systems that carry TESMUN forward. Bring creativity, precision and a willingness to solve problems together. Every detail matters, and every contribution helps make the conference clearer, more connected and more memorable." },
+      headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png", testimonial: "The harder the conflict, the greater the triumph. — George Washington\n\nTo bring a conference as dynamic as TESMUN 2026 to life, countless hours of work happen far beyond the committees. As the IT department, we stand behind the screen, behind the systems, behind the designs, behind the digital experiences and in helping make the vision of TESMUN a reality.\n\nIt's not just about managing technology. Whether it's creating engaging videos, building the official TESMUN website, or providing real-time updates, we ensure that every aspect of the conference is connected, accessible, and alive.\n\nEach page of the website, each visual, each announcement and each video is the result of hours of creativity, precision and collaboration. As delegates debate resolutions and chairs lead committees, our team is busy behind the scenes making sure their efforts are captured, communicated and remembered.\n\nThe challenges may be demanding, the deadlines relentless, and the work often unseen—but that is what makes the final result worthwhile. Because when the screens light up, the videos roll, and every piece comes together, we know that the effort behind the scenes has helped create something worth remembering." },
       deputyHeadOf: [
         { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png", testimonial: "Technical work is strongest when curiosity becomes collaboration. Support the workflow behind every session, stay ready to learn and help turn creative ideas into reliable systems that serve every delegate." },
         { name: "Swastik Manandhar", role: "Deputy Head", image: "/images/our-team/it/swastik.png" },
@@ -335,7 +342,7 @@ export const coordinators: Person[] = [
     slug: "pratik-subedi",
     image: "/images/our-team/it/itcoordinator.jpeg",
     testimonial:
-      "Serving as the IT Coordinator for TESMUN 2025 has been an enriching journey. Together, we shaped the digital face of the conference through the website, ceremony videos, invitation cards and dais portfolios. What stands out most is the way technology became a bridge for creativity and diplomacy.",
+      "Serving as the IT Coordinator for TESMUN 2026 has been an enriching journey. Together, we shaped the digital face of the conference through the website, ceremony videos, invitation cards and dais portfolios. What stands out most is the way technology became a bridge for creativity and diplomacy.",
     sourceUrl: "https://sites.google.com/view/tes-mun2025/testimonials/it-coordinator",
   },
   {
@@ -378,7 +385,7 @@ export const contactInfo = {
   school: "The Excelsior School",
   address: "Swoyambhu Cir Rd, Kathmandu 44600",
   phone: "01-5301917",
-  email: "tesmun@excelsior.edu.np",
+  email: "itmun@excelsior.edu.np",
   mapEmbed:
     "https://maps.google.com/maps?q=The%20Excelsior%20School%20Swoyambhu%20Kathmandu&t=&z=16&ie=UTF8&iwloc=&output=embed",
   socials: [

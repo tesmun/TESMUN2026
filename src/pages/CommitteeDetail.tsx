@@ -36,7 +36,11 @@ function BoardRow({
               : `${person.name} serves as ${person.role} for this committee, guiding procedure, debate and the drafting of resolutions across the conference.`}
           </p>
           {person.testimonial && (
-            <p className="mt-7 max-w-xl text-left text-sm leading-6 text-warm/90 sm:text-base sm:leading-7">{person.testimonial}</p>
+            <div className="mt-7 max-w-xl text-left text-sm leading-6 text-warm/90 sm:text-base sm:leading-7">
+              {person.testimonial.split("\\n\\n").map((paragraph, index) => (
+                <p key={index} className={`${index > 0 ? "mt-5" : ""} whitespace-pre-line`}>{index === 0 && paragraph.includes("—") ? <strong>{paragraph}</strong> : paragraph}</p>
+              ))}
+            </div>
           )}
         </Reveal>
       </div>
@@ -96,8 +100,11 @@ function CommitteeDescription({ committee }: { committee: Committee }) {
               className="inline-flex items-center gap-2 border border-white/25 px-5 py-3 text-[11px] uppercase tracking-[0.14em] text-white transition-colors hover:border-gold"
             >
               <TableProperties size={14} /> Country Matrix
-            </a>
-          </div>
+              </a>
+              {committee.email && (
+                <a href={`mailto:${committee.email}`} className="basis-full text-xs text-gold underline underline-offset-4">{committee.email}</a>
+              )}
+            </div>
         )}
       </div>
     </section>
@@ -116,9 +123,13 @@ function ITDetail({ committee }: { committee: Committee }) {
             <Eyebrow className="text-silver/80">Head of IT</Eyebrow>
             <h2 className="font-display mt-3 text-4xl text-white sm:text-5xl">Yubin KC</h2>
             <div className="rule mt-6 max-w-[7rem]" />
-            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/80">
-              Leading the IT desk for TESMUN XIV, Yubin KC oversees the conference website, on-site systems and the digital infrastructure that keeps every committee connected.
-            </p>
+<div className="mt-6 max-w-md space-y-5 text-[15px] leading-relaxed text-white/80">
+            <p><strong>“The harder the conflict, the greater the triumph.” — George Washington</strong></p>
+            <p>To bring a conference as dynamic as TESMUN 2026 to life, countless hours of work happen far beyond the committees. As the IT department, we stand behind the screen, behind the systems, behind the designs, behind the digital experiences and in helping make the vision of TESMUN a reality.</p>
+            <p>It's not just about managing technology. Whether it's creating engaging videos, building the official TESMUN website, or providing real-time updates, we ensure that every aspect of the conference is connected, accessible, and alive.</p>
+            <p>Each page of the website, each visual, each announcement and each video is the result of hours of creativity, precision and collaboration. As delegates debate resolutions and chairs lead committees, our team is busy behind the scenes making sure their efforts are captured, communicated and remembered.</p>
+            <p>The challenges may be demanding, the deadlines relentless, and the work often unseen—but that is what makes the final result worthwhile. Because when the screens light up, the videos roll, and every piece comes together, we know that the effort behind the scenes has helped create something worth remembering.</p>
+          </div>
           </Reveal>
           <Reveal delay={0.08}>
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden bg-navy">
