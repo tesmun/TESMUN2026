@@ -94,7 +94,7 @@ function CommitteeDescription({ committee }: { committee: Committee }) {
               </span>
             )}
             <a
-              href={allocationsSheet}
+              href={committee.matrixUrl || allocationsSheet}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-white/25 px-5 py-3 text-[11px] uppercase tracking-[0.14em] text-white transition-colors hover:border-gold"
@@ -168,7 +168,7 @@ function ITDetail({ committee }: { committee: Committee }) {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/our-team/it/timothy.png" },
-              { name: "Saksham Adhikari", role: "Website Editing Lead", image: "/images/our-team/it/sakshamadhikari.png" },
+              { name: "Saksham Adhikari", role: "Website Editing Lead", image: "/images/our-team/it/sakshamadhikari.png?v=2" },
               { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/our-team/it/jonesh.png" },
               { name: "Samman Shrestha", role: "Graphic Design Lead", image: "/images/our-team/it/samman.png" },
             ].map((lead) => (
@@ -253,26 +253,28 @@ function PressDetail({ committee }: { committee: Committee }) {
       <section className="px-6 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <Eyebrow className="text-silver/80">Committee-wise chief reporters</Eyebrow>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["HRC", { name: "Anishka Kuikel", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Sambriddhi Phuyal", image: "/images/our-team/press/sambridhi.png" }],
-              ["ECOSOC", { name: "Shreni Chapagain", image: "/images/our-team/press/shreni.png" }, { name: "Alishka Kuikel", image: "/images/our-team/press/alishkakuikel.png" }],
-              ["UNEP", { name: "Ranish Mahat", image: "/images/our-team/press/ranish.png" }],
-              ["DISEC", { name: "Osang Ghising", image: "/images/our-team/press/osang.png" }, { name: "Shubam Shrestha", image: "/images/our-team/press/shubhamshrestha.png" }],
-              ["LP I", { name: "Krishna Shrestha", image: "/images/our-team/press/krishna.png" }, { name: "Aarush Katuwal", image: "/images/our-team/press/aarushkatuwal.png" }],
-              ["LP II", { name: "Pari Maharjan", image: "/images/our-team/press/pari.png" }],
-              ["LP III", { name: "Aashiya Shrestha", image: "/images/our-team/press/aashiyashrestha.png" }],
-              ["Press Desk", { name: "Anishka Kuikel", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Anish Rana", image: "/images/our-team/press/anishkakuikel.png" }],
-            ].map(([committeeName, ...reporters]) => (
-              <div key={String(committeeName)} className="border border-white/10 bg-navy px-6 py-6">
-                <p className="text-[10px] uppercase tracking-[0.18em] text-gold">{String(committeeName)}</p>
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              ["HRC", "/images/committees/visuals/committee-hrc.webp", { name: "Anishka Kuikel", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Sambriddhi Phuyal", image: "/images/our-team/press/sambridhi.png" }],
+              ["ECOSOC", "/images/committees/visuals/committee-ecosoc.webp", { name: "Shreni Chapagain", image: "/images/our-team/press/shreni.png" }, { name: "Alishka Kuikel", image: "/images/our-team/press/alishkakuikel.png" }],
+              ["UNEP", "/images/committees/visuals/committee-unep.webp", { name: "Ranish Mahat", image: "/images/our-team/press/ranish.png" }],
+              ["DISEC", "/images/committees/visuals/committee-disec.webp", { name: "Osang Ghising", image: "/images/our-team/press/osang.png" }, { name: "Shubam Shrestha", image: "/images/our-team/press/shubhamshrestha.png" }],
+              ["LP I", "/images/committees/visuals/committee-lp.png", { name: "Krishna Shrestha", image: "/images/our-team/press/krishna.png" }, { name: "Aarush Katuwal", image: "/images/our-team/press/aarushkatuwal.png" }],
+              ["LP II", "/images/committees/visuals/committee-lp.png", { name: "Pari Maharjan", image: "/images/our-team/press/pari.png" }],
+              ["LP III", "/images/committees/visuals/committee-lp.png", { name: "Aashiya Shrestha", image: "/images/our-team/press/aashiyashrestha.png" }],
+            ].map(([committeeName, logo, ...reporters]) => (
+              <div key={String(committeeName)} className="border border-white/10 bg-navy px-5 py-5">
+                <div className="flex items-center gap-3 mb-4">
+                  {logo && <img src={String(logo)} alt={`${committeeName} logo`} className="h-8 w-8 object-contain" />}
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-gold flex-1">{String(committeeName)}</p>
+                </div>
+                <div className="space-y-4">
                   {reporters.map((reporter) => {
                     const person = typeof reporter === "string" ? { name: reporter, image: undefined } : reporter as { name: string; image?: string };
                     return (
-                      <div key={person.name} className="flex items-center gap-3">
-                        {person.image ? <img src={person.image} alt={person.name} className="h-36 w-36 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-24 w-24 shrink-0 rounded-full" />}
-                        <span className="text-sm leading-snug text-white/80">{person.name}</span>
+                      <div key={person.name} className="text-center">
+                        {person.image ? <img src={person.image} alt={person.name} className="h-24 w-24 shrink-0 rounded-full object-cover mx-auto border border-gold/30" /> : <PersonPlaceholder name={person.name} className="h-20 w-20 shrink-0 rounded-full mx-auto" />}
+                        <p className="text-xs leading-tight text-white/80 mt-2 line-clamp-2">{person.name}</p>
                       </div>
                     );
                   })}

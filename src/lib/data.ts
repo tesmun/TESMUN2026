@@ -50,6 +50,7 @@ export type Committee = {
   description: string;
   board: CommitteeBoard;
   guideUrl?: string;
+  matrixUrl?: string;
   logo?: string;
   background?: string;
 };
@@ -58,6 +59,7 @@ export const committees: Committee[] = [
   {
     slug: "lp1",
     email: "lp1@excelsior.edu.np",
+    matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=85834387#gid=85834387",
     abbr: "LP I",
     name: "Legislative Parliament I",
     category: "national",
@@ -75,6 +77,7 @@ export const committees: Committee[] = [
   {
     slug: "lp2",
     email: "lp2@excelsior.edu.np",
+    matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=1089742237#gid=1089742237",
     abbr: "LP II",
     name: "Legislative Parliament II",
     category: "national",
@@ -108,6 +111,7 @@ export const committees: Committee[] = [
   {
     slug: "lp3",
     email: "lp3@excelsior.edu.np",
+    matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=2111183706#gid=2111183706",
     abbr: "LP III",
     name: "Legislative Parliament III",
     category: "national",
@@ -140,6 +144,7 @@ export const committees: Committee[] = [
   {
     slug: "hrc",
     email: "hrc@excelsior.edu.np",
+    matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=1439556256#gid=1439556256",
     abbr: "HRC",
     name: "Human Rights Council",
     category: "international",
@@ -172,6 +177,7 @@ export const committees: Committee[] = [
   {
     slug: "disec",
     email: "disec@excelsior.edu.np",
+    matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=2066997340#gid=2066997340",
     abbr: "DISEC",
     name: "Disarmament and International Security Committee",
     category: "international",
@@ -189,6 +195,7 @@ export const committees: Committee[] = [
   {
     slug: "ecosoc",
     email: "ecosoc@excelsior.edu.np",
+    matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=2068843279#gid=2068843279",
     abbr: "ECOSOC",
     name: "Economic and Social Council",
     category: "international",
@@ -205,6 +212,8 @@ export const committees: Committee[] = [
   },
   {
     slug: "unep",
+    email: "unep@excelsior.edu.np",
+    matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=399385211#gid=399385211",
     abbr: "UNEP",
     name: "United Nations Environment Programme",
     category: "international",
@@ -368,7 +377,7 @@ export const coordinators: Person[] = [
 export const conferenceDate = new Date("2026-08-31T09:00:00+05:45");
 
 export const allocationsSheet =
-  "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=2111183706#gid=2111183706";
+  "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?usp=sharing";
 
 export const teamMembers: Person[] = [
   ...seniorLeadership,
@@ -406,20 +415,20 @@ export const navLinks = [
 ];
 
 export const galleryImages = [
-  { src: "/images/home/cover.png", alt: "The Excelsior School campus illuminated at night for TESMUN", caption: "Campus at night" },
-  { src: "/images/about/about-hero.png", alt: "Cinematic view of the TESMUN about hall", caption: "The hall" },
-  { src: "/images/committees/visuals/committees-hero.png", alt: "Committee room prepared for debate", caption: "Committee room" },
-  { src: "/images/gallery/normal/gallery-assembly.jpg", alt: "United Nations flags along the Allée des Nations in Geneva", caption: "Allée des Nations" },
-  { src: "/images/gallery/normal/gallery-debate.jpg", alt: "A young speaker addressing a formal discussion from a microphone", caption: "The floor" },
-  { src: "/images/gallery/normal/gallery-kathmandu.jpg", alt: "Silhouette of people at a historic pavilion in Kirtipur, Kathmandu", caption: "Kathmandu dusk" },
-  { src: "/images/gallery/normal/gallery-flags.jpg", alt: "A speaker at a podium during a formal conference address", caption: "The podium" },
-  { src: "/images/gallery/normal/gallery-gavel.jpg", alt: "Close-up of a wooden gavel on a formal desk", caption: "In session" },
-  { src: "/images/gallery/normal/gallery-library.jpg", alt: "Eyeglasses resting on a stack of research notebooks", caption: "Preparation" },
-  { src: "/images/gallery/normal/gallery-campus.jpg", alt: "Tree-lined courtyard between academic buildings", caption: "The grounds" },
-  { src: "/images/gallery/normal/gallery-podium.jpg", alt: "Empty conference room with a podium and rows of chairs", caption: "Before the gavel" },
-  { src: "/images/gallery/normal/gallery-delegates.jpg", alt: "Young people seated around a formal meeting table in discussion", caption: "Delegates" },
-  { src: "/images/about/about-purpose.png", alt: "A delegate's hand resting on a wooden podium", caption: "The floor opens" },
-  { src: "/images/about/about-vision.png", alt: "An empty conference table lined with chairs and flags", caption: "Ready for session" },
-  { src: "/images/home/mottobg.png", alt: "Atmospheric backdrop used for the TESMUN motto", caption: "Engage · Express · Excel" },
-  { src: "/images/press/press-hero.png", alt: "Editorial still from the TESMUN press desk", caption: "Press desk" },
+  { src: "/images/home/cover.png", alt: "The Excelsior School campus illuminated at night for TESMUN", caption: "" },
+  { src: "/images/about/about-hero.png", alt: "Cinematic view of the TESMUN about hall", caption: "" },
+  { src: "/images/committees/visuals/committees-hero.png", alt: "Committee room prepared for debate", caption: "" },
+  { src: "/images/gallery/normal/gallery-assembly.jpg", alt: "United Nations flags along the Allée des Nations in Geneva", caption: "" },
+  { src: "/images/gallery/normal/gallery-debate.jpg", alt: "A young speaker addressing a formal discussion from a microphone", caption: "" },
+  { src: "/images/gallery/normal/gallery-kathmandu.jpg", alt: "Silhouette of people at a historic pavilion in Kirtipur, Kathmandu", caption: "" },
+  { src: "/images/gallery/normal/gallery-flags.jpg", alt: "A speaker at a podium during a formal conference address", caption: "" },
+  { src: "/images/gallery/normal/gallery-gavel.jpg", alt: "Close-up of a wooden gavel on a formal desk", caption: "" },
+  { src: "/images/gallery/normal/gallery-library.jpg", alt: "Eyeglasses resting on a stack of research notebooks", caption: "" },
+  { src: "/images/gallery/normal/gallery-campus.jpg", alt: "Tree-lined courtyard between academic buildings", caption: "" },
+  { src: "/images/gallery/normal/gallery-podium.jpg", alt: "Empty conference room with a podium and rows of chairs", caption: "" },
+  { src: "/images/gallery/normal/gallery-delegates.jpg", alt: "Young people seated around a formal meeting table in discussion", caption: "" },
+  { src: "/images/about/about-purpose.png", alt: "A delegate's hand resting on a wooden podium", caption: "" },
+  { src: "/images/about/about-vision.png", alt: "An empty conference table lined with chairs and flags", caption: "" },
+  { src: "/images/home/mottobg.png", alt: "Atmospheric backdrop used for the TESMUN motto", caption: "" },
+  { src: "/images/press/press-hero.png", alt: "Editorial still from the TESMUN press desk", caption: "" },
 ];
