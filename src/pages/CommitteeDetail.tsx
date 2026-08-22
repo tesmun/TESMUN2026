@@ -30,13 +30,17 @@ function BoardRow({
             {person.placeholder ? "To Be Announced" : person.name}
           </h2>
           <div className="rule mt-6 max-w-[7rem]" />
-          <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/80">
-            {person.placeholder
-              ? "This appointment will be published when the Secretariat confirms the dais."
-              : `${person.name} serves as ${person.role} for this committee, guiding procedure, debate and the drafting of resolutions across the conference.`}
-          </p>
+          {person.placeholder && (
+            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/80">
+              This appointment will be published when the Secretariat confirms the dais.
+            </p>
+          )}
           {person.testimonial && (
-            <p className="mt-7 max-w-xl text-left text-sm leading-6 text-warm/90 sm:text-base sm:leading-7">{person.testimonial}</p>
+            <div className="mt-7 max-w-xl text-left text-sm leading-6 text-warm/90 sm:text-base sm:leading-7">
+              {person.testimonial.split("\n\n").map((paragraph, index) => (
+                <p key={index} className={`${index > 0 ? "mt-5" : ""} whitespace-pre-line`}>{index === 0 && paragraph.includes("—") ? <strong>{paragraph}</strong> : paragraph}</p>
+              ))}
+            </div>
           )}
         </Reveal>
       </div>
@@ -90,14 +94,17 @@ function CommitteeDescription({ committee }: { committee: Committee }) {
               </span>
             )}
             <a
-              href={allocationsSheet}
+              href={committee.matrixUrl || allocationsSheet}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-white/25 px-5 py-3 text-[11px] uppercase tracking-[0.14em] text-white transition-colors hover:border-gold"
             >
               <TableProperties size={14} /> Country Matrix
-            </a>
-          </div>
+              </a>
+              {committee.email && (
+                <a href={`mailto:${committee.email}`} className="basis-full text-xs text-gold underline underline-offset-4">{committee.email}</a>
+              )}
+            </div>
         )}
       </div>
     </section>
@@ -116,9 +123,13 @@ function ITDetail({ committee }: { committee: Committee }) {
             <Eyebrow className="text-silver/80">Head of IT</Eyebrow>
             <h2 className="font-display mt-3 text-4xl text-white sm:text-5xl">Yubin KC</h2>
             <div className="rule mt-6 max-w-[7rem]" />
-            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/80">
-              Leading the IT desk for TESMUN XIV, Yubin KC oversees the conference website, on-site systems and the digital infrastructure that keeps every committee connected.
-            </p>
+<div className="mt-6 max-w-md space-y-5 text-[15px] leading-relaxed text-white/80">
+            <p><strong>“The harder the conflict, the greater the triumph.” — George Washington</strong></p>
+            <p>To bring a conference as dynamic as TESMUN 2026 to life, countless hours of work happen far beyond the committees. As the IT department, we stand behind the screen, behind the systems, behind the designs, behind the digital experiences and in helping make the vision of TESMUN a reality.</p>
+            <p>It's not just about managing technology. Whether it's creating engaging videos, building the official TESMUN website, or providing real-time updates, we ensure that every aspect of the conference is connected, accessible, and alive.</p>
+            <p>Each page of the website, each visual, each announcement and each video is the result of hours of creativity, precision and collaboration. As delegates debate resolutions and chairs lead committees, our team is busy behind the scenes making sure their efforts are captured, communicated and remembered.</p>
+            <p>The challenges may be demanding, the deadlines relentless, and the work often unseen—but that is what makes the final result worthwhile. Because when the screens light up, the videos roll, and every piece comes together, we know that the effort behind the scenes has helped create something worth remembering.</p>
+          </div>
           </Reveal>
           <Reveal delay={0.08}>
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden bg-navy">
@@ -157,7 +168,7 @@ function ITDetail({ committee }: { committee: Committee }) {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { name: "Timothy Rajiv Kandel", role: "IT/Press Coordinator", image: "/images/our-team/it/timothy.png" },
-              { name: "Saksham Adhikari", role: "Website Editing Lead", image: "/images/our-team/it/sakshamadhikari.png" },
+              { name: "Saksham Adhikari", role: "Website Editing Lead", image: "/images/our-team/it/sakshamadhikari.png?v=2" },
               { name: "Jonesh Gurung", role: "Video Editing Lead", image: "/images/our-team/it/jonesh.png" },
               { name: "Samman Shrestha", role: "Graphic Design Lead", image: "/images/our-team/it/samman.png" },
             ].map((lead) => (
@@ -207,7 +218,7 @@ function ITDetail({ committee }: { committee: Committee }) {
 
 function PressDetail({ committee }: { committee: Committee }) {
   const editors = [
-    { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", reverse: false, text: "As Chief Editor, Dechen Hira Tamang leads the Press Committee in covering every committee session, interview and behind-the-scenes moment of TESMUN XIV." },
+    { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", reverse: false, text: "While TESMUN unfolds, many work behind the curtains, orchestrating the concert from behind. They are the true pillars of the program–the ones who construct the foundation for greater things to be built on. The Press, IT, and Logistics team have all put in immense effort into creating that structure for TESMUN 2026. As the head of the Press team, I’d like to commence this annual event by quoting,\n\n“Write what should not be forgotten.” -Isabel Allendeas\n\nAs the Press records history,capturing it and storing text in a digital archive, one which might be stumbled upon in the future by generations to come." },
     { name: "Siddartha Basnet", role: "Deputy Chief Editor", image: "/images/our-team/press/siddartha.png", reverse: true, text: "Siddhartha supports editorial planning and works with reporters to ensure each publication reflects the depth and diversity of the conference." },
     { name: "Simran Devkota", role: "Deputy Chief Editor", image: "/images/our-team/press/simran.png", reverse: false, text: "Simran coordinates press coverage across sessions, helping writers and photographers capture the urgency and nuance of every debate." },
     { name: "Renesha Maharjan", role: "Deputy Chief Editor", image: "/images/our-team/press/renesha.png", reverse: true, text: "Renesha supports editorial planning and helps coordinate reporting across every committee session." },
@@ -230,7 +241,7 @@ function PressDetail({ committee }: { committee: Committee }) {
                   <p className="text-[11px] uppercase tracking-[0.18em] text-silver">{editor.role}</p>
                   <h2 className="font-display mt-2 text-3xl text-white sm:text-4xl">{editor.name}</h2>
                   <div className="rule mt-5 max-w-[7rem]" />
-                  <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/80">{editor.text}</p>
+                  <div className="mt-6 max-w-xl space-y-5 text-[15px] leading-relaxed text-white/80">{editor.text.split("\n\n").map((paragraph, paragraphIndex) => <p key={paragraphIndex} className={paragraphIndex === 1 ? "font-medium text-warm" : ""}>{paragraphIndex === 1 ? <strong>{paragraph}</strong> : paragraph}</p>)}</div>
                 </div>
               </article>
               {index < editors.length - 1 && <Divider className="mt-16" />}
@@ -242,26 +253,28 @@ function PressDetail({ committee }: { committee: Committee }) {
       <section className="px-6 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <Eyebrow className="text-silver/80">Committee-wise chief reporters</Eyebrow>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["HRC", { name: "Anishka Kuikel", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Sambriddhi Phuyal", image: "/images/our-team/press/sambridhi.png" }],
-              ["ECOSOC", { name: "Shreni Chapagain", image: "/images/our-team/press/shreni.png" }, { name: "Alishka Kuikel", image: "/images/our-team/press/alishkakuikel.png" }],
-              ["UNEP", { name: "Ranish Mahat", image: "/images/our-team/press/ranish.png" }],
-              ["DISEC", { name: "Osang Ghising", image: "/images/our-team/press/osang.png" }, { name: "Shubam Shrestha", image: "/images/our-team/press/shubhamshrestha.png" }],
-              ["LP I", { name: "Krishna Shrestha", image: "/images/our-team/press/krishna.png" }, { name: "Aarush Katuwal", image: "/images/our-team/press/aarushkatuwal.png" }],
-              ["LP II", { name: "Pari Maharjan", image: "/images/our-team/press/pari.png" }],
-              ["LP III", { name: "Aashiya Shrestha", image: "/images/our-team/press/aashiyashrestha.png" }],
-              ["Press Desk", { name: "Anishka Kuikel", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Anish Rana", image: "/images/our-team/press/anishkakuikel.png" }],
-            ].map(([committeeName, ...reporters]) => (
-              <div key={String(committeeName)} className="border border-white/10 bg-navy px-6 py-6">
-                <p className="text-[10px] uppercase tracking-[0.18em] text-gold">{String(committeeName)}</p>
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              ["HRC", "/images/committees/visuals/committee-hrc.webp", { name: "Anishka Kuikel", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Sambriddhi Phuyal", image: "/images/our-team/press/sambridhi.png" }],
+              ["ECOSOC", "/images/committees/visuals/committee-ecosoc.webp", { name: "Shreni Chapagain", image: "/images/our-team/press/shreni.png" }, { name: "Alishka Kuikel", image: "/images/our-team/press/alishkakuikel.png" }],
+              ["UNEP", "/images/committees/visuals/committee-unep.webp", { name: "Ranish Mahat", image: "/images/our-team/press/ranish.png" }],
+              ["DISEC", "/images/committees/visuals/committee-disec.webp", { name: "Osang Ghising", image: "/images/our-team/press/osang.png" }, { name: "Shubam Shrestha", image: "/images/our-team/press/shubhamshrestha.png" }],
+              ["LP I", "/images/committees/visuals/committee-lp.png", { name: "Krishna Shrestha", image: "/images/our-team/press/krishna.png" }, { name: "Aarush Katuwal", image: "/images/our-team/press/aarushkatuwal.png" }],
+              ["LP II", "/images/committees/visuals/committee-lp.png", { name: "Pari Maharjan", image: "/images/our-team/press/pari.png" }],
+              ["LP III", "/images/committees/visuals/committee-lp.png", { name: "Aashiya Shrestha", image: "/images/our-team/press/aashiyashrestha.png" }],
+            ].map(([committeeName, logo, ...reporters]) => (
+              <div key={String(committeeName)} className="border border-white/10 bg-navy px-5 py-5">
+                <div className="flex items-center gap-3 mb-4">
+                  {logo && <img src={String(logo)} alt={`${committeeName} logo`} className="h-8 w-8 object-contain" />}
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-gold flex-1">{String(committeeName)}</p>
+                </div>
+                <div className="space-y-4">
                   {reporters.map((reporter) => {
                     const person = typeof reporter === "string" ? { name: reporter, image: undefined } : reporter as { name: string; image?: string };
                     return (
-                      <div key={person.name} className="flex items-center gap-3">
-                        {person.image ? <img src={person.image} alt={person.name} className="h-36 w-36 shrink-0 rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-24 w-24 shrink-0 rounded-full" />}
-                        <span className="text-sm leading-snug text-white/80">{person.name}</span>
+                      <div key={person.name} className="text-center">
+                        {person.image ? <img src={person.image} alt={person.name} className="h-24 w-24 shrink-0 rounded-full object-cover mx-auto border border-gold/30" /> : <PersonPlaceholder name={person.name} className="h-20 w-20 shrink-0 rounded-full mx-auto" />}
+                        <p className="text-xs leading-tight text-white/80 mt-2 line-clamp-2">{person.name}</p>
                       </div>
                     );
                   })}

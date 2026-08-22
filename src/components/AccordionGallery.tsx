@@ -28,9 +28,11 @@ export default function AccordionGallery({
           <>
             <img src={item.image} alt={item.label} className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#071a33]/80 via-transparent to-transparent" />
-            <span className="absolute bottom-5 left-5 font-display text-lg text-white sm:text-2xl">
-              {item.label}
-            </span>
+            {item.label && (
+              <span className="absolute bottom-5 left-5 font-display text-lg text-white sm:text-2xl">
+                {item.label}
+              </span>
+            )}
           </>
         );
         const className = "relative overflow-hidden border-r border-white/10 last:border-0";

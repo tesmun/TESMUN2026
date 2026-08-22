@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { FacebookIcon, YoutubeIcon } from "@/components/social-icons";
 import SpecularButton from "@/components/SpecularButton";
@@ -34,10 +34,10 @@ export default function Contact() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, "")}`} className="flex h-full flex-col border border-navy/10 p-7 transition-colors hover:border-gold">
-                <Phone size={18} className="text-gold" />
-                <p className="mt-5 text-[11px] uppercase tracking-[0.16em] text-blue">Call</p>
-                <p className="mt-2 text-sm text-ink">{contactInfo.phone}</p>
+              <a href="mailto:secgen@excelsior.edu.np" className="flex h-full flex-col border border-navy/10 p-7 transition-colors hover:border-gold">
+                <Mail size={18} className="text-gold" />
+                <p className="mt-5 text-[11px] uppercase tracking-[0.16em] text-blue">Secretariat Email</p>
+                <p className="mt-2 text-sm text-ink underline decoration-gold/60 underline-offset-4">secgen@excelsior.edu.np</p>
               </a>
             </Reveal>
             <Reveal delay={0.16}>
@@ -80,12 +80,7 @@ export default function Contact() {
               If you need assistance accessing the conference site, documents, or the campus, write to{" "}
               <a href={`mailto:${contactInfo.email}`} className="underline decoration-gold underline-offset-4">
                 {contactInfo.email}
-              </a>{" "}
-              or call{" "}
-              <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, "")}`} className="underline decoration-gold underline-offset-4">
-                {contactInfo.phone}
-              </a>
-              . We will arrange support in advance of arrival.
+              </a>.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <SpecularButton href={`mailto:${contactInfo.email}`}>Write to TESMUN</SpecularButton>

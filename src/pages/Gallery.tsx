@@ -8,11 +8,11 @@ import { Eyebrow, PageHero } from "@/components/section-parts";
 import { galleryImages } from "@/lib/data";
 
 const accordionItems = [
-  { image: "https://picsum.photos/id/1015/900/1200", label: "Canyon", link: "#" },
-  { image: "https://picsum.photos/id/1018/900/1200", label: "Ridgeline", link: "#" },
-  { image: "https://picsum.photos/id/1039/900/1200", label: "Falls", link: "#" },
-  { image: "https://picsum.photos/id/1043/900/1200", label: "Harbour", link: "#" },
-  { image: "https://picsum.photos/id/1044/900/1200", label: "Skyline", link: "#" },
+  { image: "/images/gallery/accordion/1.png", label: "", link: "#" },
+  { image: "/images/gallery/accordion/2.png", label: "", link: "#" },
+  { image: "/images/gallery/accordion/3.png", label: "", link: "#" },
+  { image: "/images/gallery/accordion/4.png", label: "", link: "#" },
+  { image: "/images/gallery/accordion/5.png", label: "", link: "#" },
 ];
 
 const ceremonyVideos = [
