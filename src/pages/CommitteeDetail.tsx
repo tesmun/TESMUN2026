@@ -30,11 +30,11 @@ function BoardRow({
             {person.placeholder ? "To Be Announced" : person.name}
           </h2>
           <div className="rule mt-6 max-w-[7rem]" />
-          <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/80">
-            {person.placeholder
-              ? "This appointment will be published when the Secretariat confirms the dais."
-              : `${person.name} serves as ${person.role} for this committee, guiding procedure, debate and the drafting of resolutions across the conference.`}
-          </p>
+          {person.placeholder && (
+            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/80">
+              This appointment will be published when the Secretariat confirms the dais.
+            </p>
+          )}
           {person.testimonial && (
             <div className="mt-7 max-w-xl text-left text-sm leading-6 text-warm/90 sm:text-base sm:leading-7">
               {person.testimonial.split("\n\n").map((paragraph, index) => (
