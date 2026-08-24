@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@keyframes draw-line {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
 @theme {
   --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "EB Garamond", ui-serif, Georgia, serif;

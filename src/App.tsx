@@ -8,6 +8,7 @@ import Gallery from "@/pages/Gallery";
 import Home from "@/pages/Home";
 import NewsArticle from "@/pages/NewsArticle";
 import Newspaper from "@/pages/Newspaper";
+import NewsDispatch from "@/pages/NewsDispatch";
 import NotFound from "@/pages/NotFound";
 import OurTeam from "@/pages/OurTeam";
 import Press from "@/pages/Press";
@@ -30,16 +31,8 @@ export default function App() {
           <Route path="/our-team/:slug" element={<TeamMember />} />
           <Route path="/press" element={<Press />} />
           <Route path="/news" element={<Newspaper />} />
-          <Route path="/news/:articleSlug" element={<NewsArticle />} />
-          <Route path="/press/news" element={<Newspaper />} />
-          <Route path="/press/news/session-1/day-1" element={<Newspaper />} />
-          <Route path="/press/news/session-1/day-2" element={<Newspaper />} />
-          <Route path="/press/news/session-2/day-1" element={<Newspaper />} />
-          <Route path="/press/news/session-2/day-2" element={<Newspaper />} />
-          <Route path="/press/news/session-3/day-1" element={<Newspaper />} />
-          <Route path="/press/news/session-3/day-2" element={<Newspaper />} />
-          <Route path="/press/news/session-3/day-3" element={<Newspaper />} />
-          <Route path="/press/news/session-3/day-4" element={<Newspaper />} />
+          <Route path="/news/:session/:day/:article" element={<NewsDispatch />} />
+          <Route path="/press/news" element={<Navigate to="/news" replace />} />
           <Route path="/press/news/:articleSlug" element={<NewsArticle />} />
           <Route path="/press/:slug" element={<PressSection />} />
           <Route path="/gallery" element={<Gallery />} />
