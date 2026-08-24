@@ -208,9 +208,8 @@ function ITDetail({ committee }: { committee: Committee }) {
         </div>
       </section>
       <div className="bg-navy-deep pb-10 text-center">
-        <Link to="/committees" className="text-xs uppercase tracking-[0.14em] text-silver hover:text-white">
-          ← Back to Committees
-        </Link>
+        {committee.teamListUrl && <a href={committee.teamListUrl} target="_blank" rel="noopener noreferrer" className="mb-8 inline-flex border border-gold px-6 py-3 text-xs uppercase tracking-[0.14em] text-gold transition-colors hover:bg-gold hover:text-navy-deep">Full Team List</a>}
+        <div><Link to="/committees" className="text-xs uppercase tracking-[0.14em] text-silver hover:text-white">← Back to Committees</Link></div>
       </div>
     </main>
   );
@@ -286,9 +285,8 @@ function PressDetail({ committee }: { committee: Committee }) {
       </section>
 
       <div className="bg-navy-deep pb-10 text-center">
-        <Link to="/committees" className="text-xs uppercase tracking-[0.14em] text-silver hover:text-white">
-          ← Back to Committees
-        </Link>
+        {committee.teamListUrl && <a href={committee.teamListUrl} target="_blank" rel="noopener noreferrer" className="mb-8 inline-flex border border-gold px-6 py-3 text-xs uppercase tracking-[0.14em] text-gold transition-colors hover:bg-gold hover:text-navy-deep">Full Team List</a>}
+        <div><Link to="/committees" className="text-xs uppercase tracking-[0.14em] text-silver hover:text-white">← Back to Committees</Link></div>
       </div>
     </main>
   );

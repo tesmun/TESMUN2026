@@ -51,6 +51,7 @@ export type Committee = {
   board: CommitteeBoard;
   guideUrl?: string;
   matrixUrl?: string;
+  teamListUrl?: string;
   logo?: string;
   background?: string;
 };
@@ -246,6 +247,7 @@ export const committees: Committee[] = [
   },
   {
     slug: "it",
+    teamListUrl: "https://docs.google.com/spreadsheets/d/1De4QrNGDVpysKJCHSiHh7Sz1F8sPUW03A1X_D3ipEaU/edit?usp=sharing",
     abbr: "IT",
     name: "Information Technology Committee",
     category: "facilitating",
@@ -263,6 +265,7 @@ export const committees: Committee[] = [
   },
   {
     slug: "press",
+    teamListUrl: "https://docs.google.com/spreadsheets/d/1De4QrNGDVpysKJCHSiHh7Sz1F8sPUW03A1X_D3ipEaU/edit?gid=45536629#gid=45536629",
     abbr: "PRESS",
     name: "Press Committee",
     category: "facilitating",

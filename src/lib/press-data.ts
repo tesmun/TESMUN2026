@@ -217,7 +217,7 @@ export const speeches: Speech[] = [
 ];
 
 export const opEdContributors = [
-  { name: "Dibas Khadka", role: "Secretary-General", pdf: "", photo: "/images/our-team/secgen.png" },
+  { name: "Dibas Khadka", role: "Secretary-General", pdf: "https://drive.google.com/file/d/1_K_fJxH1t3IidJKuqWotQ9SspnyWqCco/view?usp=sharing", photo: "/images/our-team/secgen.png" },
   { name: "Abhash Kunwar", role: "Deputy Secretary-General", pdf: "", photo: "/images/our-team/abhas.png" },
   { name: "John Doe", role: "Contributor", pdf: "" },
   { name: "John Doe", role: "Contributor", pdf: "" },
