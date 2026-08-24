@@ -1,6 +1,8 @@
 import { newsSessionArticles, type NewsSession, type NewsDay } from "./news-sessions";
 
 export type ArchiveArticle = {
+  session: NewsSession;
+  day: NewsDay;
   committee: string;
   committeeSlug: string;
   committeeLogo: string;
@@ -38,6 +40,8 @@ export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) =>
       const page = index < 3 ? 1 : 2;
       const number = index < 3 ? index + 1 : index - 2;
       return {
+        session,
+        day,
         committee,
         committeeSlug,
         committeeLogo,

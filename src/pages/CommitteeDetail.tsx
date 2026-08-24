@@ -304,15 +304,20 @@ function LogisticsDetail({ committee }: { committee: Committee }) {
 
       <section className="px-6 py-16 md:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 sm:grid-cols-2">
+          <div className="space-y-20">
             {[headOf, coHeadOf].filter(Boolean).map((person, i) => (
-              <div key={person!.name} className="flex flex-col">
-                <Reveal delay={i * 0.08}>
-                  <div className="relative mb-4 aspect-[4/5] w-full overflow-hidden bg-navy">
-                  {person!.image ? <img src={person!.image} alt={person!.name} className="photo-fill" /> : <PersonPlaceholder name={person!.name} className="h-full w-full" />}
-                </div>
+              <div key={person!.name} className={`grid items-center gap-10 md:grid-cols-2 md:gap-20 ${i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""}`}>
+                <Reveal>
+                  <div className="relative aspect-[4/5] max-w-lg overflow-hidden bg-navy">
+                    {person!.image ? <img src={person!.image} alt={person!.name} className="photo-fill" /> : <PersonPlaceholder name={person!.name} className="h-full w-full" />}
+                  </div>
+                </Reveal>
+                <Reveal delay={0.12}>
                   <p className="text-[11px] uppercase tracking-[0.16em] text-silver">{person!.role}</p>
-                  <h3 className="font-display mt-1 text-2xl text-white">{person!.name}</h3>
+                  <h3 className="font-display mt-2 text-4xl text-white sm:text-5xl">{person!.name}</h3>
+                  <div className="mt-6 max-w-xl space-y-5 text-[15px] leading-relaxed text-white/80">
+                    {person!.testimonial?.split("\\n\\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                  </div>
                 </Reveal>
               </div>
             ))}
