@@ -34,7 +34,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+          "fixed inset-x-3 top-3 z-50 rounded-2xl border border-white/20 bg-navy-deep/55 shadow-2xl shadow-black/20 backdrop-blur-2xl transition-all duration-500 supports-[backdrop-filter]:bg-navy-deep/40",
           scrolled || open ? "bg-navy-deep/92 backdrop-blur-md shadow-[0_1px_24px_rgba(7,26,51,0.35)]" : "bg-navy-deep/85 backdrop-blur-sm xl:bg-transparent xl:backdrop-blur-none",
         )}
       >
@@ -53,7 +53,7 @@ export default function Navbar() {
                 to={link.href}
                 end={link.href === "/"}
                 className={({ isActive }) =>
-                  cn("nav-link text-[11px] font-medium uppercase tracking-[0.16em]", isActive && "is-active")
+                  cn("nav-link text-[13px] font-medium uppercase tracking-[0.15em]", isActive && "is-active")
                 }
               >
                 {link.label}

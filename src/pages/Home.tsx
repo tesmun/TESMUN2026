@@ -42,16 +42,16 @@ export default function Home() {
         />
         <div className="relative z-10 flex flex-col items-center px-6 text-center">
           <Reveal>
-            <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.3em] text-silver sm:text-xs">
+            <p className="mb-5 text-[15px] font-semibold uppercase tracking-[0.24em] text-silver sm:text-base">
               The Excelsior School Model United Nations
             </p>
           </Reveal>
           <h1 className="text-[12vw] leading-[0.92] text-warm sm:text-[8vw] lg:text-[6.2vw]">
             <BlurText text="TESMUN" delay={150} animateBy="words" direction="top" className="font-display font-extrabold" />
-            <BlurText text="XIV" delay={150} animateBy="words" direction="top" className="ml-[0.12em] font-serif font-medium tracking-[0.04em]" />
+            <BlurText text="XIV" delay={150} animateBy="words" direction="top" className="ml-[0.12em] scale-[0.8] origin-left font-serif font-normal tracking-[0.04em]" />
           </h1>
           <Reveal delay={0.35}>
-            <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.26em] text-silver sm:text-sm">
+            <p className="mt-6 text-[15px] font-semibold uppercase tracking-[0.22em] text-silver sm:text-lg">
               Kathmandu, Nepal
             </p>
           </Reveal>
