@@ -38,7 +38,7 @@ function BoardRow({
           {person.testimonial && (
             <div className="mt-7 max-w-xl text-left text-sm leading-6 text-warm/90 sm:text-base sm:leading-7">
               {person.testimonial.split("\n\n").map((paragraph, index) => (
-                <p key={index} className={`${index > 0 ? "mt-5" : ""} whitespace-pre-line`}>{index === 0 && paragraph.includes("—") ? <strong>{paragraph}</strong> : paragraph}</p>
+                <p key={index} className={`${index > 0 ? "mt-5" : ""} whitespace-pre-line`}>{paragraph.includes("“") || paragraph.includes("\"") ? <strong>{paragraph}</strong> : paragraph}</p>
               ))}
             </div>
           )}
@@ -314,7 +314,7 @@ function LogisticsDetail({ committee }: { committee: Committee }) {
                   <p className="text-[11px] uppercase tracking-[0.16em] text-silver">{person!.role}</p>
                   <h3 className="font-display mt-2 text-4xl text-white sm:text-5xl">{person!.name}</h3>
                   <div className="mt-6 max-w-xl space-y-5 text-[15px] leading-relaxed text-white/80">
-                    {person!.testimonial?.split("\\n\\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    {person!.testimonial?.split("\\n\\n").map((paragraph) => <p key={paragraph}>{paragraph.includes("“") || paragraph.includes("\"") ? <strong>{paragraph}</strong> : paragraph}</p>)}
                   </div>
                 </Reveal>
               </div>
