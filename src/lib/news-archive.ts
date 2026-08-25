@@ -1,4 +1,5 @@
 import { newsSessionArticles, type NewsSession, type NewsDay } from "./news-sessions";
+import day2Verbatim from "../content/day-2-session-1.txt?raw";
 
 export type ArchiveArticle = {
   session: NewsSession; day: NewsDay; committee: string; committeeSlug: string; committeeLogo: string;
@@ -31,6 +32,8 @@ const overrides: Record<string, { committee: string; headline: string; author: s
 };
 const sessions: { session: NewsSession; days: NewsDay[] }[] = [{ session: 3, days: [3, 2, 1] }, { session: 2, days: [2, 1] }, { session: 1, days: [2, 1] }];
 const fallbackBody = ["This dispatch records the committee’s work as the session moved from opening positions toward the decisions still to come.", "Across the room, delegates balanced national priorities with the shared language of negotiation, leaving the next page open to revision."];
+const verbatimDay2 = day2Verbatim.trim().split(/\\n(?=[A-Z][A-Z0-9 !?,.'’?!:-]{20,}\\s*\\n)/).map((section) => section.trim()).filter(Boolean);
+const day2VerbatimBodies = verbatimDay2.map((section) => section.split(/\\n{2,}/).slice(2).filter(Boolean));
 export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
   const custom = overrides[`${session}-${day}`];
   const list = custom ?? defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody }));
@@ -41,7 +44,7 @@ export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) =>
       const [slug, logo] = committeeMeta[item.committee as keyof typeof committeeMeta];
       const page = index < 3 ? 1 : 2;
       const number = index < 3 ? index + 1 : index - 2;
-      return { session, day, committee: item.committee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: item.body, author: item.author, image: `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`, imageAlt: `${item.committee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : "TESMUN XIV" };
+      return { session, day, committee: item.committee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: session === 1 && day === 2 && day2VerbatimBodies[index]?.length ? day2VerbatimBodies[index] : item.body, author: item.author, image: `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`, imageAlt: `${item.committee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : "TESMUN XIV" };
     }),
   };
 }));
