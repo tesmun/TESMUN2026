@@ -44,9 +44,9 @@ const article = (sessionNumber: NewsSession, day: NewsDay, page: NewsPage, numbe
 export const newsSessionDays: Record<NewsSession, NewsDay[]> = { 1: [1, 2], 2: [1, 2], 3: [1, 2, 3, 4] };
 
 const nationalCommittees = [
-  ["TES-MP I", "/images/committees/visuals/committee-lp.png", "The opening debate takes shape"],
-  ["TES-MP II", "/images/committees/visuals/committee-lp.png", "The work between the speeches"],
-  ["TES-MP III", "/images/committees/visuals/committee-lp.png", "The final session finds its voice"],
+  ["LP I", "/images/committees/visuals/committee-lp.png", "The opening debate takes shape"],
+  ["LP II", "/images/committees/visuals/committee-lp.png", "The work between the speeches"],
+  ["LP III", "/images/committees/visuals/committee-lp.png", "The final session finds its voice"],
 ] as const;
 
 const internationalCommittees = [
