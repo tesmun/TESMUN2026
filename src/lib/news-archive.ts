@@ -1,67 +1,56 @@
 import { newsSessionArticles, type NewsSession, type NewsDay } from "./news-sessions";
+import day2Verbatim from "../content/day-2-session-1.txt?raw";
 
 export type ArchiveArticle = {
-  session: NewsSession;
-  day: NewsDay;
-  committee: string;
-  committeeSlug: string;
-  committeeLogo: string;
-  headline: string;
-  summary: string;
-  image: string;
-  imageAlt: string;
-  date: string;
+  session: NewsSession; day: NewsDay; committee: string; committeeSlug: string; committeeLogo: string;
+  headline: string; summary: string; body: string[]; author: string; image: string; imageAlt: string; date: string;
 };
-
 export type ArchiveDay = { session: NewsSession; day: NewsDay; articles: ArchiveArticle[] };
 
-const committees = [
-  ["LP1", "lp1", "/images/committees/visuals/committee-lp.png"],
-  ["LP2", "lp2", "/images/committees/visuals/committee-lp.png"],
-  ["LP3", "lp3", "/images/committees/visuals/committee-lp.png"],
-  ["DISEC", "disec", "/images/committees/visuals/committee-disec.webp"],
-  ["HRC", "hrc", "/images/committees/visuals/committee-hrc.webp"],
-  ["ECOSOC", "ecosoc", "/images/committees/visuals/committee-ecosoc.webp"],
-  ["UNEP", "unep", "/images/committees/visuals/committee-unep.webp"],
-] as const;
-
-const sessions: { session: NewsSession; days: NewsDay[] }[] = [
-  { session: 3, days: [3, 2, 1] },
-  { session: 2, days: [2, 1] },
-  { session: 1, days: [2, 1] },
-];
-
-export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) =>
-  days.map((day) => ({
+const committeeMeta = {
+  LP1: ["lp1", "/images/committees/visuals/committee-lp.png"], LP2: ["lp2", "/images/committees/visuals/committee-lp.png"], LP3: ["lp3", "/images/committees/visuals/committee-lp.png"],
+  DISEC: ["disec", "/images/committees/visuals/committee-disec.webp"], HRC: ["hrc", "/images/committees/visuals/committee-hrc.webp"], ECOSOC: ["ecosoc", "/images/committees/visuals/committee-ecosoc.webp"], UNEP: ["unep", "/images/committees/visuals/committee-unep.webp"],
+} as const;
+const defaultCommittees = ["LP1", "LP2", "LP3", "DISEC", "HRC", "ECOSOC", "UNEP"] as const;
+const overrides: Record<string, { committee: string; headline: string; author: string; summary: string; body: string[] }[]> = {
+  "1-1": [
+    { committee: "LP1", headline: "THE QUIET COMMITTEE ERUPTS! EIGHTH GRADERS FINALLY FIND THEIR VOICE!", author: "Krishna Shrestha, Chief Reporter of LP-I", summary: "Grade 8 delegates began their first-ever Model United Nations (MUN) session on Monday by simulating the national Parliament and discussing key national issues.", body: ["Grade 8 delegates began their first-ever Model United Nations (MUN) session on Monday by simulating the national Parliament and discussing key national issues, with the Dais panel providing a demonstration to help them understand the procedures.", "The session began with delegates presenting their views, but some struggled to speak. The Vice Chair encouraged them to participate more and said, \"Your research has been wonderful but you need to present your points confidently.\"", "As the hesitation from the delegates continued, the Dais panel stepped in to encourage participation. When asked about the delegates' difficulty speaking, Chair Aakarshi Paudel said, \"I have no idea why the delegates are having a hard time speaking. The main agenda and the motion raised for the Moderated Caucus both are not particularly difficult.\"", "The session was briefly disrupted when the delegate of Biraj Bhakta Shrestha, Ayaan Upreti, was suspended twice from the committee.", "Secretary-General Dibas Khadka later stepped in to encourage delegates to ask questions, express their opinions and said, \"Delegates, you all are free to ask me any questions regarding the agenda or the motion of the Moderated Caucus. As the Secretary General, it is my responsibility to improve the flow of discussions, provide support and supervise every committee. Please, feel free to speak up and contribute to the ongoing discussion,\" Dibas Khadka said.", "Following his intervention, the atmosphere of the committee began to change. Delegates who had spoken little earlier started raising points, questioning one another and presenting arguments.", "By the end of the session, delegates were participating more in the moderated caucus as the committee continued."] },
+    { committee: "LP3", headline: "WHO'S TO BLAME?! PARLIAMENT PUTS GEN Z PROTESTS ON TRIAL!", author: "Ranish Mahat and Osang Ghising, Chief Reporter of LP III", summary: "Delegates debated the need for greater transparency, political responsibility and institutional accountability in a committee session on Monday focused on government accountability following the Gen Z protests.", body: ["Delegates debated the need for greater transparency, political responsibility and institutional accountability in a committee session on Monday focused on government accountability following the Gen Z protests. The discussion centered on how stronger oversight and responsible governance could address concerns raised by the protests.", "Delegates Anjas Khanal representing Gyan Bahadur Shahi, Rishav Mainali representing Harka Raj Rai , and Pallabi Neupane representing Swornim wagle presented motions from which Swarnim Wagle's motion, \"Ensuring Government Accountability on an Independent Grievance,\" was selected for discussion.", "The moderated caucus lasted 20 minutes, with each delegate given one minute to present their views. The debate turned toward the causes of the protests and questions of political responsibility were raised . Delegate of Gyan Bahadur Shahi argued that the CPN-UML and Nepali Congress should accept responsibility for issues surrounding the unrest, identifying unemployment and political instability as key concerns.", "\"The party made certain mistakes, but allegations that we ordered police to open fire are entirely false,\" the delegate of Ram Bahadur Thapa, Aashra Shakya stated during the caucus.", "Following the Moderated caucus, delegates moved into an Unmoderated caucus, allowing them to continue negotiations and seek common ground on the issues raised. The session later produced two working papers, with one selected for further consideration. As discussions continued, delegates remained focused on strengthening government accountability and addressing the concerns raised by the Gen Z protests."] },
+    { committee: "DISEC", headline: "WEAPONS ON THE LOOSE! RUSSIA AND USA GO HEAD-TO-HEAD!", author: "Garima Dahal and Simran Devkota, Chief Reporters of DISEC", summary: "On a motion raised by the delegate of Russia, delegates in the Disarmament and International Security Committee (DISEC) engaged in intense debate following the opening of a Moderated Caucus on Monday.", body: ["On a motion raised by the delegate of Russia, delegates in the Disarmament and International Security Committee (DISEC) engaged in intense debate following the opening of a Moderated Caucus on Monday focused on establishing mandatory UN end-user certificates to prevent weapons diversion to non-state militias.", "Citing the 2019 UN Panel of Experts report on Libya, Russian delegate Sabhya Devkota accused Washington of geopolitical negligence and failing to enforce structural accountability over global arms flows. \"The 2019 UN Panel of Experts report on Libya found violations to be repeated and sometimes blatant, with scant regard paid to compliance with sanctions measures,\" the delegate stated, pointing to concealed deliveries and urging mandatory post-delivery audits.", "Rebuffing the accusations, United States delegate Aashima Bhattarai argued that U.S.-origin hardware entered conflict zones through unauthorized third-party transfers that directly breached bilateral sales contracts.", "\"Regarding the U.S.-origin military hardware cited in the Panel's report, our investigations confirm these items were transferred by third-party nations in direct violation of legally binding Foreign Military Sales agreements, not as a result of U.S. policy or consent,\" the delegate of USA stated, defending legitimate defense transfers while opposing excessive operational restrictions.", "With major powers maintaining contrasting perspectives on global oversight, the committee shifted its attention toward drafting a balanced resolution that addresses arms monitoring without compromising national security interests."] },
+    { committee: "HRC", headline: "FOREIGN POWERS, LOCAL WARS! HRC DEBATE TURNS FIERY!", author: "Pari Maharjan, Chief Reporter of HRC", summary: "Representatives in the United Nations Human Rights Council (UNHRC) discussed the balance between national security and foreign intervention on Monday during a debate titled \"State Sovereignty vs. Foreign Interference in Counter-Terrorism.\"", body: ["Representatives in the United Nations Human Rights Council (UNHRC) discussed the balance between national security and foreign intervention on Monday during a debate titled \"State Sovereignty vs. Foreign Interference in Counter-Terrorism,\" a motion introduced by Naman B.C., the delegate of the Democratic People's Republic of Korea (DPRK).", "The session focused on a state's right to protect its territorial integrity and national security. Divergent views emerged among Samyog Sedhai, the delegate of China, Sarjan Lamichhane, the delegate of the United States, and Naman B.C., the delegate of the DPRK, while Anuj Jung Thapa, the delegate of Afghanistan, outlined his government's position on domestic counter-terrorism efforts.", "The debate extended beyond its scheduled duration after the shadow delegate of Mexico questioned the reporting from the delegate of Afghanistan on counter-terrorism operations.", "\"Afghanistan claims 800 counter-terrorism operations, while the reports of the 100 missiles and 1,000 plus people's death haven't been submitted to the UN Council,\" the shadow delegate stated.", "Following this statement, Samyog Sedhai, the delegate of China, and Naman B.C., the delegate of the DPRK, directed their arguments toward Sarjan Lamichhane, the delegate of the United States, and Kastup Pant, the delegate of the United Kingdom, raised concerns regarding foreign intervention and state sovereignty. Additionally, Anuj Jung Thapa, the delegate of Afghanistan, criticized U.S. policy, stating that the United States withdrew \"at its convenience\" during challenging security conditions.", "Throughout the session, delegates presented contrasting views on balancing counter-terrorism initiatives with state sovereignty and human rights, addressing whether sovereignty should limit international human rights oversight or if counter-terrorism policies justify external intervention."] },
+    { committee: "UNEP", headline: "IRAN'S BATTLE FOR CLIMATE JUSTICE! UNEP DEBATE ERUPTS!", author: "Aashiya Shrestha, Substitute Chief Reporter for UNEP", summary: "The United Nations Environment Programme (UNEP) debated \"Depoliticizing the UNFCCC Technology Mechanism for Developing Nations\" during a Moderated Caucus on Monday.", body: ["The United Nations Environment Programme (UNEP) debated \"Depoliticizing the UNFCCC Technology Mechanism for Developing Nations\" during a Moderated Caucus on Monday, with delegates discussing political barriers, technology transfer, and the need for developing countries to gain fair access to climate solutions.", "Opening the discussion, delegate Bisesh Bhatt, representing the Iranian President, highlighted national environmental vulnerabilities, focusing on the country's worsening water crisis. \"Iran is facing a water crisis, but it is not caused by Iran only,\" Bhatt stated, asserting that transboundary environmental degradation requires shared international accountability rather than isolated blame.", "The delegate further argued that the United States bears greater responsibility for the crisis than Iran. The discussion took a different turn when the Chair, Rujal Ojha, stepped in as a shadow delegate, portraying U.S. President Donald Trump during the presidential speech. The Chair explained that his intention was to demonstrate how delegates should approach a presidential speech. Following the demonstration, Bisesh Bhatt defended Iran against allegations of excessive oil production, noting that the United States produces more oil than Iran.", "The debate also highlighted the regional nature of environmental problems. Bisesh Bhatt pointed to the involvement of neighboring countries, stating, \"Neighbouring countries have huge involvement in this issue.\" His statement prioritized whether individual countries could be held responsible for environmental problems that cross borders.", "As the debate continued, delegates considered the difficulties developing nations face in accessing advanced climate technology and the extent to which political interests influence international environmental cooperation. The discussion reflected a broader question over whether climate technology should be treated primarily as a development tool or as an issue affected by international politics.", "Despite differing positions, delegates continued working toward common ground. The focus gradually shifted from assigning responsibility to finding practical ways to improve cooperation and technology transfer between developed and developing nations.", "The session concluded with the delegates representing Brazil, Shubhatmika Ghimire and Malaysia, Kristina Gurung submitting a working paper as co-sponsors. The proposal received majority support from the committee, marking a step toward collective action on improving access to climate technology for developing countries."] },
+  ],
+  "1-2": [
+    { committee: "UNEP", headline: "MELTING GLACIERS! RISING ACCUSATIONS! UNEP DESCENDS INTO CHAOS!", author: "Ranish Mahat, Chief Reporter of UNEP", summary: "An escalating glacier crisis turned UNEP into a diplomatic battleground as allegations of secret geoengineering reshaped alliances.", body: ["An escalating glacier crisis turned the UNEP committee into a diplomatic battleground as the delegate of China faced allegations of secret geoengineering and countries began shifting alliances.", "Amid growing accusations, the Dais expressed frustration: “Delegates, this is UNEP. We are here to solve a crisis, not simply describe one,” said Moderator Unnat Aryal.", "The session ended with continued divisions over responsibility and limited cooperation."] },
+    { committee: "ECOSOC", headline: "BROKEN PROMISES! BILLIONS MISSING! ECOSOC DEMANDS ACCOUNTABILITY!", author: "Alishka Kuikel and Shreni Chapagain, Chief Reporters of ECOSOC", summary: "ECOSOC debated equitable burden-sharing, international aid commitments and transparent financing for the Sustainable Development Goals.", body: ["As the global financial gap threatened the Sustainable Development Goals, delegates engaged in heated debate over equitable burden-sharing and international aid commitments.", "Delegates organized into regional blocs to draft formal resolutions on transparent ODA tracking and equitable SDG financing models."] },
+    { committee: "DISEC", headline: "GUNS! DRONES! DECEPTION! DISEC ON THE EDGE OF WAR!", author: "Osang Ghising, Chief Reporter of DISEC", summary: "A false-flag arms plot involving intercepted weapons and military drones triggered an international crisis before intelligence files changed the story.", body: ["A false-flag arms plot involving intercepted heavy weaponry and military drones triggered an international crisis in DISEC, before a recovered hard drive exposed an alleged intelligence scheme.", "As the plot was exposed, the committee shifted away from accusations and toward cooperation on illicit arms transfers and weapons monitoring."] },
+    { committee: "DISEC", headline: "SHELL COMPANIES! SECRET WEAPONS! DISEC UNCOVERS A GLOBAL ARMS PLOT!", author: "Shubham Shrestha, Reporter of DISEC", summary: "An intercepted shipment led investigators to shell companies, erased serial numbers and a covert network profiting from instability.", body: ["An illicit arms shipment intercepted by Italy sparked a rapidly escalating crisis, eventually uncovering alleged shell companies and a covert network accused of inflating regional demand for weapons.", "Vice-Chair Rijan Shrestha urged delegates: “We have heard the accusations. Now the committee needs to hear solutions.”"] },
+    { committee: "HRC", headline: "WHO’S BEHIND THE PLOT?! PUTIN KIDNAPPING SCANDAL ERUPTS!", author: "Anishka Kuikel and Sambridhi Phuyal, Chief Reporters of UNHRC", summary: "An alleged kidnapping conspiracy sparked global outrage, new alliances and a debate over responsibility for regional destruction.", body: ["Qatar’s delegate accused the delegates of the USA, Russia and Israel of orchestrating President Putin’s alleged kidnapping during an HRC session.", "Following the revelation, nations formed alliances aimed at restoring peace, protecting lives and preventing future conflicts."] },
+    { committee: "LP1", headline: "FAKE! FRAUD! FRENZY! AI VIDEOS RATTLE THE NATIONAL PARLIAMENT!", author: "Aarush Katuwal, Chief Reporter of LP I", summary: "AI-generated videos and documents sent the national Parliament into a political crisis before forensic analysis exposed the fabrication.", body: ["An expert forensic report confirmed that videos and documents presented as evidence during the national Parliament simulation were generated or manipulated using artificial intelligence.", "The incident left the committee facing a broader question over how parliamentarians should verify information before acting on it."] },
+    { committee: "LP2", headline: "RSP IN CRISIS! CORRUPTION ALLEGATIONS FORCE FINANCE MINISTER RE-ELECTION!", author: "Pari Maharjan, Chief Reporter of LP II", summary: "An alleged voice recording triggered a crisis over corruption, accountability and the re-election of a Finance Minister.", body: ["An alleged voice recording involving the Rastriya Swatantra Party thrust the committee into a crisis, raising alarm over corruption and inflated project costs.", "The crisis was ultimately brought to a vote. Swarnim Wagle was removed and Sunil Lamsal was elected as the new Finance Minister."] },
+  ],
+};
+const sessions: { session: NewsSession; days: NewsDay[] }[] = [{ session: 3, days: [3, 2, 1] }, { session: 2, days: [2, 1] }, { session: 1, days: [2, 1] }];
+const fallbackBody = ["This dispatch records the committee’s work as the session moved from opening positions toward the decisions still to come.", "Across the room, delegates balanced national priorities with the shared language of negotiation, leaving the next page open to revision."];
+const verbatimDay2 = day2Verbatim.trim().split(/\\n(?=[A-Z][A-Z0-9 !?,.'’?!:-]{20,}\\s*\\n)/).map((section) => section.trim()).filter(Boolean);
+const day2VerbatimBodies = verbatimDay2.map((section) => section.split(/\\n{2,}/).slice(2).filter(Boolean));
+export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
+  const custom = overrides[`${session}-${day}`];
+  const list = custom ?? defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody }));
+  return {
     session,
     day,
-    articles: committees.map(([committee, committeeSlug, committeeLogo], index) => {
-      const source = newsSessionArticles.find((item) => item.sessionNumber === session && item.day === day && item.committee === committee) ?? newsSessionArticles.find((item) => item.sessionNumber === session && item.day === day);
+    articles: list.map((item, index) => {
+      const [slug, logo] = committeeMeta[item.committee as keyof typeof committeeMeta];
       const page = index < 3 ? 1 : 2;
       const number = index < 3 ? index + 1 : index - 2;
-      return {
-        session,
-        day,
-        committee,
-        committeeSlug,
-        committeeLogo,
-        headline: source?.title ?? `${committee} dispatch from the floor`,
-        summary: source?.standfirst ?? "A concise report from the committee floor, where delegates turn preparation into diplomacy.",
-        image: `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`,
-        imageAlt: `${committee} delegates in session`,
-        date: source?.date ?? "TESMUN XIV",
-      };
+      return { session, day, committee: item.committee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: session === 1 && day === 2 && day2VerbatimBodies[index]?.length ? day2VerbatimBodies[index] : item.body, author: item.author, image: `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`, imageAlt: `${item.committee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : "TESMUN XIV" };
     }),
-  })),
-);
-
+  };
+}));
 export const sessionLabel: Record<NewsSession, string> = { 1: "FIRST SESSION", 2: "SECOND SESSION", 3: "FINAL SESSION" };
-
 export const dayLabel = (day: NewsDay) => `DAY ${day}`;
-
 export const archiveArticleCount = newsArchive.reduce((total, day) => total + day.articles.length, 0);
-
-export const committeeOrder = committees.map(([name]) => name);
-
+export const committeeOrder = Object.keys(committeeMeta);
 export type { NewsSession, NewsDay };
 /* */
