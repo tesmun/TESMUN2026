@@ -1,67 +1,53 @@
 import { newsSessionArticles, type NewsSession, type NewsDay } from "./news-sessions";
 
 export type ArchiveArticle = {
-  session: NewsSession;
-  day: NewsDay;
-  committee: string;
-  committeeSlug: string;
-  committeeLogo: string;
-  headline: string;
-  summary: string;
-  image: string;
-  imageAlt: string;
-  date: string;
+  session: NewsSession; day: NewsDay; committee: string; committeeSlug: string; committeeLogo: string;
+  headline: string; summary: string; body: string[]; author: string; image: string; imageAlt: string; date: string;
 };
-
 export type ArchiveDay = { session: NewsSession; day: NewsDay; articles: ArchiveArticle[] };
 
-const committees = [
-  ["LP1", "lp1", "/images/committees/visuals/committee-lp.png"],
-  ["LP2", "lp2", "/images/committees/visuals/committee-lp.png"],
-  ["LP3", "lp3", "/images/committees/visuals/committee-lp.png"],
-  ["DISEC", "disec", "/images/committees/visuals/committee-disec.webp"],
-  ["HRC", "hrc", "/images/committees/visuals/committee-hrc.webp"],
-  ["ECOSOC", "ecosoc", "/images/committees/visuals/committee-ecosoc.webp"],
-  ["UNEP", "unep", "/images/committees/visuals/committee-unep.webp"],
-] as const;
-
-const sessions: { session: NewsSession; days: NewsDay[] }[] = [
-  { session: 3, days: [3, 2, 1] },
-  { session: 2, days: [2, 1] },
-  { session: 1, days: [2, 1] },
-];
-
-export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) =>
-  days.map((day) => ({
+const committeeMeta = {
+  LP1: ["lp1", "/images/committees/visuals/committee-lp.png"], LP2: ["lp2", "/images/committees/visuals/committee-lp.png"], LP3: ["lp3", "/images/committees/visuals/committee-lp.png"],
+  DISEC: ["disec", "/images/committees/visuals/committee-disec.webp"], HRC: ["hrc", "/images/committees/visuals/committee-hrc.webp"], ECOSOC: ["ecosoc", "/images/committees/visuals/committee-ecosoc.webp"], UNEP: ["unep", "/images/committees/visuals/committee-unep.webp"],
+} as const;
+const defaultCommittees = ["LP1", "LP2", "LP3", "DISEC", "HRC", "ECOSOC", "UNEP"] as const;
+const overrides: Record<string, { committee: string; headline: string; author: string; summary: string; body: string[] }[]> = {
+  "1-1": [
+    { committee: "LP1", headline: "THE QUIET COMMITTEE ERUPTS! EIGHTH GRADERS FINALLY FIND THEIR VOICE!", author: "Krishna Shrestha, Chief Reporter of LP-I", summary: "Grade 8 delegates began their first-ever Model United Nations session by simulating the national Parliament and finding confidence in debate.", body: ["Grade 8 delegates began their first-ever Model United Nations (MUN) session on Monday by simulating the national Parliament and discussing key national issues, with the Dais panel providing a demonstration to help them understand the procedures.", "The session began with delegates presenting their views, but some struggled to speak. The Vice Chair encouraged them to participate more and said, “Your research has been wonderful but you need to present your points confidently.”", "Following intervention from Secretary-General Dibas Khadka, the atmosphere changed. Delegates who had spoken little earlier started raising points, questioning one another and presenting arguments."] },
+    { committee: "LP3", headline: "WHO’S TO BLAME?! PARLIAMENT PUTS GEN Z PROTESTS ON TRIAL!", author: "Ranish Mahat and Osang Ghising, Chief Reporters of LP III", summary: "Delegates debated transparency, political responsibility and institutional accountability following the Gen Z protests.", body: ["Delegates debated the need for greater transparency, political responsibility and institutional accountability in a committee session focused on government accountability following the Gen Z protests.", "The moderated caucus produced competing positions before delegates moved into an unmoderated caucus to negotiate. The session later produced two working papers, with one selected for further consideration."] },
+    { committee: "DISEC", headline: "WEAPONS ON THE LOOSE! RUSSIA AND USA GO HEAD-TO-HEAD!", author: "Garima Dahal and Simran Devkota, Chief Reporters of DISEC", summary: "DISEC opened an intense debate on mandatory UN end-user certificates to prevent weapons diversion to non-state militias.", body: ["On a motion raised by the delegate of Russia, delegates engaged in intense debate over establishing mandatory UN end-user certificates to prevent weapons diversion to non-state militias.", "With major powers maintaining contrasting perspectives on global oversight, the committee shifted its attention toward drafting a balanced resolution that addresses arms monitoring without compromising national security interests."] },
+    { committee: "HRC", headline: "FOREIGN POWERS, LOCAL WARS! HRC DEBATE TURNS FIERY!", author: "Pari Maharjan, Chief Reporter of HRC", summary: "UNHRC delegates examined the balance between state sovereignty, national security and foreign intervention in counter-terrorism.", body: ["Representatives discussed the balance between national security and foreign intervention during a debate titled “State Sovereignty vs. Foreign Interference in Counter-Terrorism.”", "Throughout the session, delegates presented contrasting views on balancing counter-terrorism initiatives with state sovereignty and human rights."] },
+    { committee: "UNEP", headline: "IRAN’S BATTLE FOR CLIMATE JUSTICE! UNEP DEBATE ERUPTS!", author: "Aashiya Shrestha, Substitute Chief Reporter for UNEP", summary: "UNEP debated fair access to climate technology and whether environmental crises should be understood through shared international accountability.", body: ["The United Nations Environment Programme debated “Depoliticizing the UNFCCC Technology Mechanism for Developing Nations” during a moderated caucus on Monday.", "Despite differing positions, delegates worked toward common ground on cooperation and technology transfer between developed and developing nations. The session concluded with a working paper receiving majority support."] },
+  ],
+  "1-2": [
+    { committee: "UNEP", headline: "MELTING GLACIERS! RISING ACCUSATIONS! UNEP DESCENDS INTO CHAOS!", author: "Ranish Mahat, Chief Reporter of UNEP", summary: "An escalating glacier crisis turned UNEP into a diplomatic battleground as allegations of secret geoengineering reshaped alliances.", body: ["An escalating glacier crisis turned the UNEP committee into a diplomatic battleground as the delegate of China faced allegations of secret geoengineering and countries began shifting alliances.", "Amid growing accusations, the Dais expressed frustration: “Delegates, this is UNEP. We are here to solve a crisis, not simply describe one,” said Moderator Unnat Aryal.", "The session ended with continued divisions over responsibility and limited cooperation."] },
+    { committee: "ECOSOC", headline: "BROKEN PROMISES! BILLIONS MISSING! ECOSOC DEMANDS ACCOUNTABILITY!", author: "Alishka Kuikel and Shreni Chapagain, Chief Reporters of ECOSOC", summary: "ECOSOC debated equitable burden-sharing, international aid commitments and transparent financing for the Sustainable Development Goals.", body: ["As the global financial gap threatened the Sustainable Development Goals, delegates engaged in heated debate over equitable burden-sharing and international aid commitments.", "Delegates organized into regional blocs to draft formal resolutions on transparent ODA tracking and equitable SDG financing models."] },
+    { committee: "DISEC", headline: "GUNS! DRONES! DECEPTION! DISEC ON THE EDGE OF WAR!", author: "Osang Ghising, Chief Reporter of DISEC", summary: "A false-flag arms plot involving intercepted weapons and military drones triggered an international crisis before intelligence files changed the story.", body: ["A false-flag arms plot involving intercepted heavy weaponry and military drones triggered an international crisis in DISEC, before a recovered hard drive exposed an alleged intelligence scheme.", "As the plot was exposed, the committee shifted away from accusations and toward cooperation on illicit arms transfers and weapons monitoring."] },
+    { committee: "DISEC", headline: "SHELL COMPANIES! SECRET WEAPONS! DISEC UNCOVERS A GLOBAL ARMS PLOT!", author: "Shubham Shrestha, Reporter of DISEC", summary: "An intercepted shipment led investigators to shell companies, erased serial numbers and a covert network profiting from instability.", body: ["An illicit arms shipment intercepted by Italy sparked a rapidly escalating crisis, eventually uncovering alleged shell companies and a covert network accused of inflating regional demand for weapons.", "Vice-Chair Rijan Shrestha urged delegates: “We have heard the accusations. Now the committee needs to hear solutions.”"] },
+    { committee: "HRC", headline: "WHO’S BEHIND THE PLOT?! PUTIN KIDNAPPING SCANDAL ERUPTS!", author: "Anishka Kuikel and Sambridhi Phuyal, Chief Reporters of UNHRC", summary: "An alleged kidnapping conspiracy sparked global outrage, new alliances and a debate over responsibility for regional destruction.", body: ["Qatar’s delegate accused the delegates of the USA, Russia and Israel of orchestrating President Putin’s alleged kidnapping during an HRC session.", "Following the revelation, nations formed alliances aimed at restoring peace, protecting lives and preventing future conflicts."] },
+    { committee: "LP1", headline: "FAKE! FRAUD! FRENZY! AI VIDEOS RATTLE THE NATIONAL PARLIAMENT!", author: "Aarush Katuwal, Chief Reporter of LP I", summary: "AI-generated videos and documents sent the national Parliament into a political crisis before forensic analysis exposed the fabrication.", body: ["An expert forensic report confirmed that videos and documents presented as evidence during the national Parliament simulation were generated or manipulated using artificial intelligence.", "The incident left the committee facing a broader question over how parliamentarians should verify information before acting on it."] },
+    { committee: "LP2", headline: "RSP IN CRISIS! CORRUPTION ALLEGATIONS FORCE FINANCE MINISTER RE-ELECTION!", author: "Pari Maharjan, Chief Reporter of LP II", summary: "An alleged voice recording triggered a crisis over corruption, accountability and the re-election of a Finance Minister.", body: ["An alleged voice recording involving the Rastriya Swatantra Party thrust the committee into a crisis, raising alarm over corruption and inflated project costs.", "The crisis was ultimately brought to a vote. Swarnim Wagle was removed and Sunil Lamsal was elected as the new Finance Minister."] },
+  ],
+};
+const sessions: { session: NewsSession; days: NewsDay[] }[] = [{ session: 3, days: [3, 2, 1] }, { session: 2, days: [2, 1] }, { session: 1, days: [2, 1] }];
+const fallbackBody = ["This dispatch records the committee’s work as the session moved from opening positions toward the decisions still to come.", "Across the room, delegates balanced national priorities with the shared language of negotiation, leaving the next page open to revision."];
+export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
+  const custom = overrides[`${session}-${day}`];
+  const list = custom ?? defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody }));
+  return {
     session,
     day,
-    articles: committees.map(([committee, committeeSlug, committeeLogo], index) => {
-      const source = newsSessionArticles.find((item) => item.sessionNumber === session && item.day === day && item.committee === committee) ?? newsSessionArticles.find((item) => item.sessionNumber === session && item.day === day);
+    articles: list.map((item, index) => {
+      const [slug, logo] = committeeMeta[item.committee as keyof typeof committeeMeta];
       const page = index < 3 ? 1 : 2;
       const number = index < 3 ? index + 1 : index - 2;
-      return {
-        session,
-        day,
-        committee,
-        committeeSlug,
-        committeeLogo,
-        headline: source?.title ?? `${committee} dispatch from the floor`,
-        summary: source?.standfirst ?? "A concise report from the committee floor, where delegates turn preparation into diplomacy.",
-        image: `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`,
-        imageAlt: `${committee} delegates in session`,
-        date: source?.date ?? "TESMUN XIV",
-      };
+      return { session, day, committee: item.committee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: item.body, author: item.author, image: `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`, imageAlt: `${item.committee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : "TESMUN XIV" };
     }),
-  })),
-);
-
+  };
+}));
 export const sessionLabel: Record<NewsSession, string> = { 1: "FIRST SESSION", 2: "SECOND SESSION", 3: "FINAL SESSION" };
-
 export const dayLabel = (day: NewsDay) => `DAY ${day}`;
-
 export const archiveArticleCount = newsArchive.reduce((total, day) => total + day.articles.length, 0);
-
-export const committeeOrder = committees.map(([name]) => name);
-
+export const committeeOrder = Object.keys(committeeMeta);
 export type { NewsSession, NewsDay };
 /* */

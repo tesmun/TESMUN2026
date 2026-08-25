@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
           <Magnetic>
           <Link to="/" className="flex items-center gap-2.5 text-white xl:text-warm">
-            <LogoMark size={26} />
+            <LogoMark size={30} />
             <span className="font-display text-[13px] font-semibold tracking-[0.18em]">TESMUN</span>
           </Link>
           </Magnetic>
