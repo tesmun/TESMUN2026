@@ -140,7 +140,7 @@ export default function Home() {
             <Eyebrow className="text-silver/70">Forums of Diplomacy</Eyebrow>
             <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-warm sm:text-4xl">Committees</h2>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-silver/85">
-              From National Legislative Parliaments to International Councils and Facilitating
+              From National TES Model Parliament to International Councils and Facilitating
               Committees, TESMUN XIV convenes eleven distinct forums for debate, negotiation and resolution.
             </p>
             <div className="mt-8">
