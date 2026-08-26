@@ -13,6 +13,7 @@ import NotFound from "@/pages/NotFound";
 import OurTeam from "@/pages/OurTeam";
 import Press from "@/pages/Press";
 import PressSection from "@/pages/PressSection";
+import Editorial from "@/pages/Editorial";
 import Resources from "@/pages/Resources";
 import TeamMember from "@/pages/TeamMember";
 import Seo from "@/components/Seo";
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/our-team/:slug" element={<TeamMember />} />
           <Route path="/press" element={<Press />} />
+          <Route path="/press/editorial" element={<Editorial />} />
           <Route path="/news" element={<Newspaper />} />
           <Route path="/news/:session/:day/:article" element={<NewsDispatch />} />
           <Route path="/press/news" element={<Navigate to="/news" replace />} />

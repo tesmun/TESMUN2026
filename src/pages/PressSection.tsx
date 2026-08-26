@@ -9,17 +9,26 @@ const video = "https://www.youtube.com/watch?v=vxpm8OZRH30";
 const voxTeamOne = [
   { name: "Harshid Bhetwal", role: "Second floor incharge", answer: "Unity", photo: "/images/our-team/logistics/harshid.png" },
   { name: "Renesha Maharjan", role: "Deputy Editor", answer: "Public Speaking", photo: "/images/our-team/press/renesha.png" },
-  { name: "Sonam Maharjan", role: "Logistics", answer: "Debating skill", photo: "" },
+  { name: "Sonam Maharjan", role: "Logistics", answer: "Debating skill", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8Tk3WJvYajVJKgAmcbOr5qO8uJMali.png" },
   { name: "Pratik Subedi", role: "IT Coordinator", answer: "Collaboration", photo: "/images/our-team/it/itcoordinator.jpeg" },
   { name: "Kinjal Timalsina", role: "HRC Chief", answer: "Entertaining", photo: "/images/committees/executive-board/kinjal.png" },
-  { name: "Laxmi Lamsal", role: "LP1 Committee Incharge", answer: "Research", photo: "" },
+  { name: "Laxmi Lamsal", role: "LP1 Committee Incharge", answer: "Research", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-h9AICPiHmYVHXvhRWepVEQrDBVeQMV.png" },
   { name: "Govinda Gautam", role: "MUN advisor", answer: "Consesus building", photo: "/images/our-team/muncoordinator.jpg" },
   { name: "Degraj Sapkota", role: "LP3 Committee Teacher", answer: "Leadership", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mJa6TudkrdCLvYrWXN6NGNB3Zn0Lsd.png" },
   { name: "Siddhartha Basnet", role: "Deputy chief editor", answer: "Responsibility", photo: "/images/our-team/press/siddartha.png" },
   { name: "Unnat Aryal", role: "UNEP moderator", answer: "Innovation", photo: "/images/committees/executive-board/unnat.png" },
   { name: "Dipendra Silwal", role: "Press Coordinator", answer: "Creativity", photo: "/images/our-team/press/presscoordinator.jpg" },
 ];
-const voxTeamTwo = Array.from({ length: 8 }, (_, index) => ({ name: `Team 2 participant ${String(index + 1).padStart(2, "0")}`, role: "Role to be added", answer: "Answer to be added", photo: "" }));
+const voxTeamTwo = [
+  { name: "Samman Shrestha", role: "Graphic designer lead", answer: "The most memorable thing about TESMUN is the first time that you enter the committee.", photo: "/images/our-team/it/samman.png" },
+  { name: "Saksham Adhikari", role: "Lead web designer", answer: "Interviews and debates I've done.", photo: "/images/our-team/it/sakshamadhikari.png" },
+  { name: "Deg Raj Sapkota", role: "To help the students", answer: "Discussion of crisis", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mJa6TudkrdCLvYrWXN6NGNB3Zn0Lsd.png" },
+  { name: "Samynnat Burtakoti", role: "Delegate of Israel · HRC", answer: "GSL Sharing", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-wQVK7yAYREIGrbh3JV9DFKiQrJxbTv.png" },
+  { name: "Siddhartha Basnet", role: "Deputy Chief Editor · Press Committee", answer: "For me, I would say that my experience as the delegate of Tanardan Sharma during TESMUN 2024 was the most memorable time because I gained a lot of skills and important characteristics.", photo: "/images/our-team/press/siddartha.png" },
+  { name: "Soumya Shrestha", role: "Delegate of Germany · DISEC", answer: "The most memorable thing in TESMUN is speaking for my committee.", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8CLnk0tJjP8J6997MZU1SUzNK4alKK.png" },
+  { name: "Dilasha Oli", role: "Vice Chair · LP1", answer: "Enthusiasm of Delegates", photo: "/images/committees/executive-board/dilasha.png" },
+  { name: "Kinjal Timalsina", role: "Chair · HRC", answer: "Country Policy", photo: "/images/committees/executive-board/kinjal.png" },
+];
 const chairPhotos: Record<string, string> = { "LP I": "/images/committees/executive-board/aakarshi.png", "LP II": "/images/committees/executive-board/sakshamthapaliya.png", "LP III": "/images/committees/executive-board/binayak.png", UNEP: "/images/committees/executive-board/rujal.png", DISEC: "/images/committees/executive-board/dhiki.png", ECOSOC: "/images/committees/executive-board/prateek.png", HRC: "/images/committees/executive-board/kinjal.png" };
 const speechRoster = [{ speaker: "Dibas Khadka", role: "Secretary General", committee: "Opening Ceremony", photo: "/images/our-team/secgen.png" }, { speaker: "Abhash Kunwar", role: "Deputy Secretary General", committee: "Opening Ceremony", photo: "/images/our-team/abhas.png" }, ...["LP I", "LP II", "LP III", "UNEP", "DISEC", "ECOSOC", "HRC"].map((committee) => ({ speaker: `${committee} Chair`, role: "Committee Chair", committee, photo: chairPhotos[committee] })), { speaker: "Head of IT", role: "Head of IT", committee: "Information Technology", photo: "/images/our-team/it/yubin.png" }];
 const interviewSubjects = Array.from({ length: 20 }, (_, i) => ({ title: `Interview ${String(i + 1).padStart(2, "0")}`, subject: "John Doe" }));
