@@ -40,9 +40,9 @@ const voxTeamOneQ2 = [
   { name: "Kamala Kharel", role: "LP III Incharge", answer: "They can share opinions, grow their debating and leadership skills, understand political parties and their country’s situation, and develop research skills.", photo: "" },
 ];
 const voxTeamTwoQ2 = [
-  { name: "Ritika Pyakurel", role: "Logistics", answer: "LP3 because all delegates are doing their best.", photo: "" },
-  { name: "Rayna Kuwar", role: "Logistics", answer: "LP1 because all delegates are doing great.", photo: "" },
-  { name: "Rashmi Ijam", role: "Press", answer: "It has to be Press as I always have been in this team since I started TESMUN.", photo: "/images/our-team/press/ranish.png" },
+  { name: "Ritika Pyakurel", role: "Logistics", answer: "LP3 because all delegates are doing their best.", photo: "/images/press/vox-pop/ritika.png" },
+  { name: "Rayna Kuwar", role: "Logistics", answer: "LP1 because all delegates are doing great.", photo: "/images/press/vox-pop/rayna.png" },
+  { name: "Rashmi Ijam", role: "Press", answer: "It has to be Press as I always have been in this team since I started TESMUN.", photo: "/images/press/vox-pop/rashmi-ijam.png" },
   { name: "Sonam Maharjan", role: "Logistics", answer: "LP1 because 2 years back, I was playing the role of delegate of CPN(UML) and now I am playing the role of logistics in LP1 in TESMUN 2026.", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8Tk3WJvYajVJKgAmcbOr5qO8uJMali.png" },
   { name: "Ojess Shrestha", role: "Logistics", answer: "ECOSOC because I was in ECOSOC a year back.", photo: "/images/our-team/logistics/ojess.png" },
   { name: "Dijesh Niroula", role: "Moderator · LP-2", answer: "LP2 as it’s the first time we participated.", photo: "/images/committees/executive-board/dijesh.png" },
