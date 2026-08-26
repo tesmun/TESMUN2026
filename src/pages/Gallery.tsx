@@ -18,7 +18,7 @@ const sessions = [
 ];
 
 function PhotoGrid({ offset, count, onSelect, circular = false }: { offset: number; count: number; onSelect: (index: number) => void; circular?: boolean }) {
-  return <div className={`grid grid-cols-2 gap-3 sm:grid-cols-4 ${circular ? "lg:grid-cols-6" : ""}`}>{photos(offset, count).map((photo, index) => <button key={`${photo.src}-${index}`} type="button" onClick={() => onSelect((offset + index) % galleryImages.length)} className="group relative aspect-[4/3] overflow-hidden"><img src={photo.src} alt={photo.alt} className={`h-full w-full object-cover transition duration-700 group-hover:scale-105 ${circular ? "rounded-full" : ""}`} /><span className="absolute inset-0 bg-navy-deep/0 transition group-hover:bg-navy-deep/20" /></button>)}</div>;
+  return <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 ${circular ? "lg:grid-cols-3" : ""}`}>{photos(offset, count).map((photo, index) => <button key={`${photo.src}-${index}`} type="button" onClick={() => onSelect((offset + index) % galleryImages.length)} className="group relative aspect-[4/3] overflow-hidden"><img src={photo.src} alt={photo.alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><span className="absolute inset-0 bg-navy-deep/0 transition group-hover:bg-navy-deep/20" /></button>)}</div>;
 }
 
 export default function Gallery() {
