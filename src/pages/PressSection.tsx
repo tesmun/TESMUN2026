@@ -39,7 +39,15 @@ const voxTeamOneQ2 = [
   { name: "Ritika Pyakurel", role: "Logistics", answer: "Students can explore new things, speak their best, and get more opportunities.", photo: "/images/our-team/logistics/prasina.png" },
   { name: "Kamala Kharel", role: "LP III Incharge", answer: "They can share opinions, grow their debating and leadership skills, understand political parties and their country’s situation, and develop research skills.", photo: "" },
 ];
-const voxTeamTwoQ2 = Array.from({ length: 8 }, (_, index) => ({ name: `Team 2 respondent ${String(index + 1).padStart(2, "0")}`, role: "Photo and response to be added", answer: "Placeholder — content will be provided later.", photo: "" }));
+const voxTeamTwoQ2 = [
+  { name: "Ritika Pyakurel", role: "Logistics", answer: "LP3 because all delegates are doing their best.", photo: "" },
+  { name: "Rayna Kuwar", role: "Logistics", answer: "LP1 because all delegates are doing great.", photo: "" },
+  { name: "Rashmi Ijam", role: "Press", answer: "It has to be Press as I always have been in this team since I started TESMUN.", photo: "/images/our-team/press/ranish.png" },
+  { name: "Sonam Maharjan", role: "Logistics", answer: "LP1 because 2 years back, I was playing the role of delegate of CPN(UML) and now I am playing the role of logistics in LP1 in TESMUN 2026.", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8Tk3WJvYajVJKgAmcbOr5qO8uJMali.png" },
+  { name: "Ojess Shrestha", role: "Logistics", answer: "ECOSOC because I was in ECOSOC a year back.", photo: "/images/our-team/logistics/ojess.png" },
+  { name: "Dijesh Niroula", role: "Moderator · LP-2", answer: "LP2 as it’s the first time we participated.", photo: "/images/committees/executive-board/dijesh.png" },
+  { name: "Aryan Tamang", role: "Floor Head · UNEP", answer: "My favourite committee is UNEP as there are many good speakers and they speak logically.", photo: "" },
+];
 
 const chairPhotos: Record<string, string> = { "LP I": "/images/committees/executive-board/aakarshi.png", "LP II": "/images/committees/executive-board/sakshamthapaliya.png", "LP III": "/images/committees/executive-board/binayak.png", UNEP: "/images/committees/executive-board/rujal.png", DISEC: "/images/committees/executive-board/dhiki.png", ECOSOC: "/images/committees/executive-board/prateek.png", HRC: "/images/committees/executive-board/kinjal.png" };
 const speechRoster = [{ speaker: "Dibas Khadka", role: "Secretary General", committee: "Opening Ceremony", photo: "/images/our-team/secgen.png" }, { speaker: "Abhash Kunwar", role: "Deputy Secretary General", committee: "Opening Ceremony", photo: "/images/our-team/abhas.png" }, ...["LP I", "LP II", "LP III", "UNEP", "DISEC", "ECOSOC", "HRC"].map((committee) => ({ speaker: `${committee} Chair`, role: "Committee Chair", committee, photo: chairPhotos[committee] })), { speaker: "Head of IT", role: "Head of IT", committee: "Information Technology", photo: "/images/our-team/it/yubin.png" }];
