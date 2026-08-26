@@ -1,5 +1,6 @@
 import { newsSessionArticles, type NewsSession, type NewsDay } from "./news-sessions";
 import day2Verbatim from "../content/day-2-session-1.txt?raw";
+import session2Day1Verbatim from "../content/second-session-day-1.txt?raw";
 
 export type ArchiveArticle = {
   session: NewsSession; day: NewsDay; committee: string; committeeSlug: string; committeeLogo: string;
@@ -32,11 +33,15 @@ const overrides: Record<string, { committee: string; headline: string; author: s
 };
 const sessions: { session: NewsSession; days: NewsDay[] }[] = [{ session: 3, days: [3, 2, 1] }, { session: 2, days: [2, 1] }, { session: 1, days: [2, 1] }];
 const fallbackBody = ["This dispatch records the committee’s work as the session moved from opening positions toward the decisions still to come.", "Across the room, delegates balanced national priorities with the shared language of negotiation, leaving the next page open to revision."];
-const verbatimDay2 = day2Verbatim.trim().split(/\\n(?=[A-Z][A-Z0-9 !?,.'’?!:-]{20,}\\s*\\n)/).map((section) => section.trim()).filter(Boolean);
-const day2VerbatimBodies = verbatimDay2.map((section) => section.split(/\\n{2,}/).slice(2).filter(Boolean));
+const verbatimDay2 = day2Verbatim.trim().split(/\n(?=[A-Z][A-Z0-9 !?,.'’?!:-]{20,}\s*\n)/).map((section) => section.trim()).filter(Boolean);
+const day2VerbatimBodies = verbatimDay2.map((section) => section.split(/\n{2,}/).slice(2).filter(Boolean));
+const session2VerbatimArticles = session2Day1Verbatim.trim().split(/\n(?=[A-Z0-9][A-Z0-9 !?,.'’&:-]{20,}\s*\n)/).map((section) => {
+  const lines = section.split(/\n/).map((line) => line.trim()).filter(Boolean);
+  return { committee: "", headline: lines[0] ?? "", author: (lines[1] ?? "").replace(/^-/, "").trim(), summary: lines[3] ?? "", body: lines.slice(3) };
+}).filter((article) => article.headline && article.body.length);
 export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
   const custom = overrides[`${session}-${day}`];
-  const list = custom ?? defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody }));
+  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article, index) => ({ ...article, committee: defaultCommittees[index] ?? "UNEP" })) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
   return {
     session,
     day,
