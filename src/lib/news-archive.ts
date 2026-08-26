@@ -33,8 +33,15 @@ const overrides: Record<string, { committee: string; headline: string; author: s
 };
 const sessions: { session: NewsSession; days: NewsDay[] }[] = [{ session: 3, days: [3, 2, 1] }, { session: 2, days: [2, 1] }, { session: 1, days: [2, 1] }];
 const fallbackBody = ["This dispatch records the committee’s work as the session moved from opening positions toward the decisions still to come.", "Across the room, delegates balanced national priorities with the shared language of negotiation, leaving the next page open to revision."];
-const verbatimDay2 = day2Verbatim.trim().split(/\n(?=[A-Z][A-Z0-9 !?,.'’?!:-]{20,}\s*\n)/).map((section) => section.trim()).filter(Boolean);
-const day2VerbatimBodies = verbatimDay2.map((section) => section.split(/\n{2,}/).slice(2).filter(Boolean));
+const verbatimDay2 = day2Verbatim.trim().split(/\n(?=(?:MELTING GLACIERS|BROKEN PROMISES|GUNS! DRONES|SHELL COMPANIES|WHO’S BEHIND|FAKE! FRAUD|RSP IN CRISIS|GEN Z PROTEST))/).map((section) => section.trim()).filter(Boolean);
+const day2VerbatimBodies = verbatimDay2.map((section) => {
+  const lines = section.split(/\n/).map((line) => line.trim()).filter(Boolean);
+  let bodyStart = 1;
+  while (bodyStart < lines.length && (/^(?:-|By\b|18(?:th)? August\b|Kathmandu,? August\b)/i.test(lines[bodyStart]) || /^\d{1,2}(?:st|nd|rd|th)? August\b/i.test(lines[bodyStart]))) {
+    bodyStart += 1;
+  }
+  return lines.slice(bodyStart);
+});
 const session2VerbatimArticles = session2Day1Verbatim.trim().split(/\n(?=[A-Z0-9][A-Z0-9 !?,.'’&:-]{20,}\s*\n)/).map((section) => {
   const lines = section.split(/\n/).map((line) => line.trim()).filter(Boolean);
   return { committee: "", headline: lines[0] ?? "", author: (lines[1] ?? "").replace(/^-/, "").trim(), summary: lines[3] ?? "", body: lines.slice(3) };
