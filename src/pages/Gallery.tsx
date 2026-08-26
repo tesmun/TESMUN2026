@@ -36,7 +36,7 @@ function PhotoGrid({ offset, count, onSelect, circular = false, customPhotos }: 
 
 export default function Gallery() {
   const [active, setActive] = useState<{ src: string; alt: string } | null>(null);
-  return <main className="bg-warm">
+  return <main className="bg-warm bg-[url('/images/gallery/gallery.png')] bg-cover bg-center bg-fixed">
     <PageHero image="/images/home/cover.png" alt="The Excelsior School campus at night" title="GALLERY" subtitle="A considered visual record of TESMUN XIV." />
     <section className="px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow>Event archive</Eyebrow><h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">Highlights of the Event</h2></Reveal><div className="mt-10"><AccordionGallery items={accordionItems} defaultIndex={2} expandRatio={0.52} trigger="hover" /></div></div></section>
     {sessions.slice(0, 3).map((section) => <section key={section.title} className="border-t border-ink/10 px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow>{section.title === "Final Session" ? "Conference record" : "Ceremony archive"}</Eyebrow><h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">{section.title}</h2></Reveal><div className="mt-10"><PhotoGrid offset={section.offset} count={section.count} onSelect={setActive} circular={section.title === "Final Session"} /></div></div></section>)}
