@@ -40,7 +40,7 @@ export default function Resources() {
   return (
     <main className="relative overflow-hidden bg-[url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xiRWfj5zSb4KfcVOmS4vH6IUpQyq6W.png')] bg-cover bg-center bg-fixed">
       <PageHero
-        image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resourcesbg-ECo2LwOjE8CpkDkVlVTrioEPADQ8Xy.png"
+        image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-VDhuOBGbEJF9My3Yc2WVIyicbNKbRH.png"
         alt="Research materials prepared for TESMUN delegates"
         title="RESOURCES"
         kicker="Delegate library"
