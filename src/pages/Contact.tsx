@@ -1,6 +1,6 @@
 import { Mail, MapPin } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { FacebookIcon, YoutubeIcon } from "@/components/social-icons";
+import { FacebookIcon, TikTokIcon, WebsiteIcon, YoutubeIcon } from "@/components/social-icons";
 import SpecularButton from "@/components/SpecularButton";
 import { Eyebrow, PageHero } from "@/components/section-parts";
 import { contactInfo } from "@/lib/data";
@@ -84,16 +84,9 @@ export default function Contact() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <SpecularButton href={`mailto:${contactInfo.email}`}>Write to TESMUN</SpecularButton>
-              {contactInfo.socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`TESMUN on ${social.label}`}
-                  className="flex h-11 w-11 items-center justify-center border border-navy/15 text-navy transition-colors hover:border-gold"
-                >
-                  {social.label === "YouTube" ? <YoutubeIcon size={18} /> : <FacebookIcon size={18} />}
+              {[...contactInfo.socials, { label: "Website", href: "https://excelsior.edu.np" }, { label: "TikTok", href: "https://tiktok.com/@theexcelsiorschool" }].map((social) => (
+                <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`TESMUN on ${social.label}`} className="flex h-14 w-14 items-center justify-center border border-navy/15 text-navy transition-colors hover:border-gold">
+                  {social.label === "YouTube" ? <YoutubeIcon size={26} /> : social.label === "Facebook" ? <FacebookIcon size={26} /> : social.label === "Website" ? <WebsiteIcon size={26} /> : <TikTokIcon size={26} />}
                 </a>
               ))}
             </div>

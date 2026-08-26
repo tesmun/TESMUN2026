@@ -43,8 +43,8 @@ export default function Gallery() {
       <section className="bg-warm px-6 py-16 md:px-10">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <Eyebrow>Selected frames</Eyebrow>
-            <h2 className="font-display mt-3 text-3xl text-ink">Accordion</h2>
+            <Eyebrow>Event archive</Eyebrow>
+            <h2 className="font-display mt-3 text-3xl text-ink">Highlights of the Event</h2>
           </Reveal>
           <div className="mt-8">
             <AccordionGallery items={accordionItems} defaultIndex={2} expandRatio={0.52} trigger="hover" />
@@ -71,11 +71,31 @@ export default function Gallery() {
         </div>
       </section>
 
+      <section className="bg-warm px-6 py-16 md:px-10">
+        <div className="mx-auto max-w-7xl">
+          <Reveal><Eyebrow>Conference archive</Eyebrow><h2 className="font-display mt-3 text-3xl text-ink">Opening Ceremony</h2></Reveal>
+          <div className="mt-8"><AccordionGallery items={accordionItems} defaultIndex={0} expandRatio={0.52} trigger="hover" /></div>
+        </div>
+      </section>
+
+      <section className="bg-warm px-6 py-16 md:px-10">
+        <div className="mx-auto max-w-7xl">
+          <Reveal><Eyebrow>Practice archive</Eyebrow><h2 className="font-display mt-3 text-3xl text-ink">Second Practice Session</h2></Reveal>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">{galleryImages.slice(0, 10).map((image) => <img key={image.src} src={image.src} alt={image.alt} className="aspect-square w-full object-cover" />)}</div>
+          <Reveal><h2 className="font-display mt-16 text-3xl text-ink">First Practice Session</h2></Reveal>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">{galleryImages.slice(0, 10).reverse().map((image) => <img key={image.src} src={image.src} alt={image.alt} className="aspect-square w-full object-cover" />)}</div>
+        </div>
+      </section>
+
+      <section className="bg-navy-deep px-6 py-20 md:px-10">
+        <div className="mx-auto max-w-7xl"><Reveal><Eyebrow className="text-silver/70">Final Session</Eyebrow><h2 className="font-display mt-3 text-3xl text-warm">Final Session</h2></Reveal><div className="mt-8 flex gap-6 overflow-x-auto pb-4">{galleryImages.map((image) => <img key={image.src} src={image.src} alt={image.alt} className="h-64 w-64 shrink-0 rounded-full object-cover" />)}</div></div>
+      </section>
+
       <section className="bg-navy-deep px-6 py-20 pb-28 md:px-10">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <Eyebrow className="text-silver/70">Ceremonies</Eyebrow>
-            <h2 className="font-display mt-3 text-3xl font-medium text-warm sm:text-4xl">Opening and Closing</h2>
+            <h2 className="font-display mt-3 text-3xl font-medium text-warm sm:text-4xl">Closing Ceremony</h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-silver/75">
               Official recordings will appear here. Each placeholder accepts a YouTube URL and embeds the video automatically.
             </p>

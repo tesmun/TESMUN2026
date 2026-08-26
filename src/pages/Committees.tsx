@@ -44,7 +44,7 @@ export default function Committees() {
           <Reveal>
             <div className="rule mb-8 max-w-7xl" />
             <Eyebrow className="text-silver/80">National</Eyebrow>
-            <h2 className="font-display mt-3 text-3xl font-medium text-white sm:text-4xl">Legislative Parliaments</h2>
+            <h2 className="font-display mt-3 text-3xl font-medium text-white sm:text-4xl">TES Model Parliament</h2>
           </Reveal>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {committeesByCategory.national.map((c, i) => (
