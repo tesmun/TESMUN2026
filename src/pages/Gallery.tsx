@@ -7,139 +7,41 @@ import { Reveal } from "@/components/Reveal";
 import { Eyebrow, PageHero } from "@/components/section-parts";
 import { galleryImages } from "@/lib/data";
 
-const accordionItems = [
-  { image: "/images/gallery/accordion/1.png", label: "", link: "#" },
-  { image: "/images/gallery/accordion/2.png", label: "", link: "#" },
-  { image: "/images/gallery/accordion/3.png", label: "", link: "#" },
-  { image: "/images/gallery/accordion/4.png", label: "", link: "#" },
-  { image: "/images/gallery/accordion/5.png", label: "", link: "#" },
+const accordionItems = [1, 2, 3, 4, 5].map((n) => ({ image: `/images/gallery/accordion/${n}.png`, label: "", link: "#" }));
+const firstPracticePhotos = [
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-6K3ofJHkm0CtbVq92n0oLqOSgpkOyZ.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DuMf0DGLFIr8QFa9UDfxZsXBzs1aZG.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-pyh5DPATl0XLV6FIMVg3i1eNjbfShi.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-vrpxjU6v40YNuuUaX248qvlX18bT9G.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-l0xL4gwQBFmRIk74qGAzmLVmFvb93G.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-K5zNqSUPKRpzEr8fI6cYPPu5DabVvv.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-R24DjDYuPKvEdrJ8qZAOlUqeThFxEO.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-TApTGmEta51yfVelmtwI0YjWmn6iOI.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-w6Olks3twuSgJyhmzTscYl9NdUsbVa.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Ln9AXL0u0yOSCmsVONIZQ5IUL3Uykb.png",
+];
+const photos = (offset: number, count: number, custom?: string[]) => custom ? Array.from({ length: count }, (_, index) => ({ src: custom[index % custom.length], alt: "First Practice Session" })) : Array.from({ length: count }, (_, index) => galleryImages[(offset + index) % galleryImages.length]);
+const sessions = [
+  { title: "CLOSING CEREMONY", count: 8, offset: 0 },
+  { title: "Final Session", count: 12, offset: 4 },
+  { title: "OPENING CEREMONY", count: 8, offset: 2 },
+  { title: "SECOND PRACTICE SESSION", count: 12, offset: 1 },
+  { title: "FIRST PRACTICE SESSION", count: 12, offset: 5 },
 ];
 
-const ceremonyVideos = [
-  {
-    title: "Opening Ceremony",
-    dek: "The first gavel of TESMUN XIV. The YouTube URL will embed automatically when published.",
-    youtubeUrl: "",
-  },
-  {
-    title: "Closing Ceremony",
-    dek: "The final sitting, recorded for the conference archive. The YouTube URL will embed automatically when published.",
-    youtubeUrl: "",
-  },
-];
+function PhotoGrid({ offset, count, onSelect, circular = false, customPhotos }: { offset: number; count: number; onSelect: (index: number) => void; circular?: boolean; customPhotos?: string[] }) {
+  const items = photos(offset, count, customPhotos);
+  return <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 ${circular ? "lg:grid-cols-3" : ""}`}>{items.map((photo, index) => <button key={`${photo.src}-${index}`} type="button" onClick={() => onSelect(customPhotos ? -1 : (offset + index) % galleryImages.length)} className="group relative aspect-[4/3] overflow-hidden"><img src={photo.src} alt={photo.alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><span className="absolute inset-0 bg-navy-deep/0 transition group-hover:bg-navy-deep/20" /></button>)}</div>;
+}
 
 export default function Gallery() {
   const [active, setActive] = useState<number | null>(null);
-
-  return (
-    <main>
-      <PageHero
-        image="/images/home/cover.png"
-        alt="The Excelsior School campus at night"
-        title="GALLERY"
-        subtitle="A visual record of TESMUN — campus, chamber and city."
-      />
-
-      <section className="bg-warm px-6 py-16 md:px-10">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <Eyebrow>Event archive</Eyebrow>
-            <h2 className="font-display mt-3 text-3xl text-ink">Highlights of the Event</h2>
-          </Reveal>
-          <div className="mt-8">
-            <AccordionGallery items={accordionItems} defaultIndex={2} expandRatio={0.52} trigger="hover" />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-warm px-6 pb-16 md:px-10">
-        <div className="mx-auto columns-1 gap-4 sm:columns-2 lg:columns-3">
-          {galleryImages.map((image, index) => (
-            <Reveal key={image.src} delay={(index % 6) * 0.04} className="mb-4 break-inside-avoid">
-              <button type="button" onClick={() => setActive(index)} className="group relative block w-full overflow-hidden">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                />
-                <span className="absolute inset-x-0 bottom-0 bg-navy-deep/70 px-4 py-3 text-left text-xs uppercase tracking-[0.16em] text-warm opacity-0 transition-opacity group-hover:opacity-100">
-                  {image.caption}
-                </span>
-              </button>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-warm px-6 py-16 md:px-10">
-        <div className="mx-auto max-w-7xl">
-          <Reveal><Eyebrow>Conference archive</Eyebrow><h2 className="font-display mt-3 text-3xl text-ink">Opening Ceremony</h2></Reveal>
-          <div className="mt-8"><AccordionGallery items={accordionItems} defaultIndex={0} expandRatio={0.52} trigger="hover" /></div>
-        </div>
-      </section>
-
-      <section className="bg-warm px-6 py-16 md:px-10">
-        <div className="mx-auto max-w-7xl">
-          <Reveal><Eyebrow>Practice archive</Eyebrow><h2 className="font-display mt-3 text-3xl text-ink">Second Practice Session</h2></Reveal>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">{galleryImages.slice(0, 10).map((image) => <img key={image.src} src={image.src} alt={image.alt} className="aspect-square w-full object-cover" />)}</div>
-          <Reveal><h2 className="font-display mt-16 text-3xl text-ink">First Practice Session</h2></Reveal>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">{galleryImages.slice(0, 10).reverse().map((image) => <img key={image.src} src={image.src} alt={image.alt} className="aspect-square w-full object-cover" />)}</div>
-        </div>
-      </section>
-
-      <section className="bg-navy-deep px-6 py-20 md:px-10">
-        <div className="mx-auto max-w-7xl"><Reveal><Eyebrow className="text-silver/70">Final Session</Eyebrow><h2 className="font-display mt-3 text-3xl text-warm">Final Session</h2></Reveal><div className="mt-8 flex gap-6 overflow-x-auto pb-4">{galleryImages.map((image) => <img key={image.src} src={image.src} alt={image.alt} className="h-64 w-64 shrink-0 rounded-full object-cover" />)}</div></div>
-      </section>
-
-      <section className="bg-navy-deep px-6 py-20 pb-28 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <Reveal>
-            <Eyebrow className="text-silver/70">Ceremonies</Eyebrow>
-            <h2 className="font-display mt-3 text-3xl font-medium text-warm sm:text-4xl">Closing Ceremony</h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-silver/75">
-              Official recordings will appear here. Each placeholder accepts a YouTube URL and embeds the video automatically.
-            </p>
-          </Reveal>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            {ceremonyVideos.map((video, index) => (
-              <Reveal key={video.title} delay={index * 0.08}>
-                <BorderGlow
-                  edgeSensitivity={30}
-                  glowColor="40 80 80"
-                  backgroundColor="#0d2a4a"
-                  borderRadius={28}
-                  glowRadius={40}
-                  glowIntensity={1}
-                  coneSpread={25}
-                  animated={false}
-                  colors={["#c6a15b", "#e3c46a", "#f4efa8"]}
-                >
-                  <article className="p-5 sm:p-6">
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-gold">TESMUN XIV</p>
-                    <h3 className="font-display mt-2 text-2xl text-warm">{video.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-silver/75">{video.dek}</p>
-                    <div className="mt-5">
-                      <YouTubeEmbed url={video.youtubeUrl} title={video.title} />
-                    </div>
-                  </article>
-                </BorderGlow>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {active !== null && (
-        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-navy-deep/92 p-6" onClick={() => setActive(null)}>
-          <button type="button" aria-label="Close photograph" className="absolute right-6 top-6 text-warm">
-            <X size={28} />
-          </button>
-          <figure className="max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <img src={galleryImages[active].src} alt={galleryImages[active].alt} className="max-h-[82vh] w-full object-contain" />
-            <figcaption className="mt-4 text-center text-sm text-silver">{galleryImages[active].alt}</figcaption>
-          </figure>
-        </div>
-      )}
-    </main>
-  );
+  return <main className="bg-warm">
+    <PageHero image="/images/home/cover.png" alt="The Excelsior School campus at night" title="GALLERY" subtitle="A considered visual record of TESMUN XIV." />
+    <section className="px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow>Event archive</Eyebrow><h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">Highlights of the Event</h2></Reveal><div className="mt-10"><AccordionGallery items={accordionItems} defaultIndex={2} expandRatio={0.52} trigger="hover" /></div></div></section>
+    {sessions.slice(0, 3).map((section) => <section key={section.title} className="border-t border-ink/10 px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow>{section.title === "Final Session" ? "Conference record" : "Ceremony archive"}</Eyebrow><h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">{section.title}</h2></Reveal><div className="mt-10"><PhotoGrid offset={section.offset} count={section.count} onSelect={setActive} circular={section.title === "Final Session"} /></div></div></section>)}
+    <section className="border-t border-ink/10 bg-navy-deep px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow className="text-silver/70">Video archive</Eyebrow><h2 className="mt-3 font-display text-3xl text-warm sm:text-4xl">OPENING CEREMONY VIDEO &amp; CLOSING CEREMONY VIDEO</h2></Reveal><div className="mt-10 grid gap-6 md:grid-cols-2">{["Opening Ceremony", "Closing Ceremony"].map((title) => <BorderGlow key={title} backgroundColor="#0d2a4a" borderRadius={24} colors={["#c6a15b", "#e3c46a", "#f4efa8"]}><article className="p-5"><h3 className="font-display text-2xl text-warm">{title}</h3><div className="mt-5"><YouTubeEmbed url="" title={title} /></div></article></BorderGlow>)}</div></div></section>
+    {sessions.slice(3).map((section) => <section key={section.title} className="border-t border-ink/10 px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow>Practice archive</Eyebrow><h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">{section.title}</h2></Reveal><div className="mt-10"><PhotoGrid offset={section.offset} count={section.count} onSelect={setActive} customPhotos={section.title === "FIRST PRACTICE SESSION" ? firstPracticePhotos : undefined} /></div></div></section>)}
+    {active !== null && <div className="fixed inset-0 z-[80] flex items-center justify-center bg-navy-deep/95 p-6" onClick={() => setActive(null)}><button type="button" aria-label="Close photograph" className="absolute right-6 top-6 text-warm"><X size={28} /></button><img src={galleryImages[active].src} alt={galleryImages[active].alt} className="max-h-[82vh] max-w-5xl object-contain" /></div>}
+  </main>;
 }
