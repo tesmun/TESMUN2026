@@ -23,9 +23,9 @@ const voxTeamTwo = [
   { name: "Samman Shrestha", role: "Graphic designer lead", answer: "The most memorable thing about TESMUN is the first time that you enter the committee.", photo: "/images/our-team/it/samman.png" },
   { name: "Saksham Adhikari", role: "Lead web designer", answer: "Interviews and debates I've done.", photo: "/images/our-team/it/sakshamadhikari.png" },
   { name: "Deg Raj Sapkota", role: "To help the students", answer: "Discussion of crisis", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mJa6TudkrdCLvYrWXN6NGNB3Zn0Lsd.png" },
-  { name: "Samynnat Burtakoti", role: "Delegate of Israel · HRC", answer: "GSL Sharing", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-wQVK7yAYREIGrbh3JV9DFKiQrJxbTv.png" },
+  { name: "Sammunat Burtakoti", role: "Delegate of Israel · HRC", answer: "GSL Sharing", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8CLnk0tJjP8J6997MZU1SUzNK4alKK.png" },
   { name: "Siddhartha Basnet", role: "Deputy Chief Editor · Press Committee", answer: "For me, I would say that my experience as the delegate of Tanardan Sharma during TESMUN 2024 was the most memorable time because I gained a lot of skills and important characteristics.", photo: "/images/our-team/press/siddartha.png" },
-  { name: "Soumya Shrestha", role: "Delegate of Germany · DISEC", answer: "The most memorable thing in TESMUN is speaking for my committee.", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8CLnk0tJjP8J6997MZU1SUzNK4alKK.png" },
+  { name: "Soumya Shrestha", role: "Delegate of Germany · DISEC", answer: "The most memorable thing in TESMUN is speaking for my committee.", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-wQVK7yAYREIGrbh3JV9DFKiQrJxbTv.png" },
   { name: "Dilasha Oli", role: "Vice Chair · LP1", answer: "Enthusiasm of Delegates", photo: "/images/committees/executive-board/dilasha.png" },
   { name: "Kinjal Timalsina", role: "Chair · HRC", answer: "Country Policy", photo: "/images/committees/executive-board/kinjal.png" },
 ];
