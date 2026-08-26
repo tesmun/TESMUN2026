@@ -69,21 +69,19 @@ export default function PressNews() {
                   <h2 className="font-display text-2xl">{session}</h2>
                   <span className="text-[11px] uppercase tracking-[0.16em] text-ink/45">Dispatches</span>
                 </div>
-                <div className="grid gap-8 md:grid-cols-3">
-                  {items.map((article) => (
-                    <Link key={article.slug} to={`/press/news/${article.slug}`} className="group block">
-                      <BorderGlow backgroundColor="#0d2a4a" borderRadius={16} colors={["#c6a15b", "#e3c46a", "#f4efa8"]}>
-                      <img
-                        src={article.image}
-                        alt={article.caption ?? article.title}
-                        className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                      />
-                      </BorderGlow>
-                      <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-gold">
-                        {article.date} · {article.author}
-                      </p>
-                      <h3 className="font-display mt-2 text-2xl leading-tight">{article.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-ink/65">{article.standfirst}</p>
+                <div className="space-y-10">
+                  {items.map((article, index) => (
+                    <Link key={article.slug} to={`/press/news/${article.slug}`} className="group grid items-center gap-6 border-y border-navy/15 py-6 md:grid-cols-2 md:gap-10">
+                      <div className={index % 2 === 0 ? "order-2 md:order-2" : "order-2 md:order-1"}>
+                        <BorderGlow backgroundColor="#0d2a4a" borderRadius={16} colors={["#c6a15b", "#e3c46a", "#f4efa8"]}>
+                          <img src={article.image} alt={article.caption ?? article.title} className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                        </BorderGlow>
+                      </div>
+                      <div className={index % 2 === 0 ? "order-1 md:order-1" : "order-1 md:order-2"}>
+                        <p className="text-[11px] uppercase tracking-[0.14em] text-gold">{article.date} · {article.author}</p>
+                        <h3 className="font-display mt-2 text-3xl leading-tight">{article.title}</h3>
+                        <p className="mt-3 max-w-xl text-sm leading-6 text-ink/65">{article.standfirst}</p>
+                      </div>
                     </Link>
                   ))}
                 </div>
