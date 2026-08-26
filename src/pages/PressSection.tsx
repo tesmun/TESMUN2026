@@ -29,18 +29,32 @@ const voxTeamTwo = [
   { name: "Dilasha Oli", role: "Vice Chair · LP1", answer: "Enthusiasm of Delegates", photo: "/images/committees/executive-board/dilasha.png" },
   { name: "Kinjal Timalsina", role: "Chair · HRC", answer: "Country Policy", photo: "/images/committees/executive-board/kinjal.png" },
 ];
+const voxTeamOneQ2 = [
+  { name: "Hari Kumari Thapa", role: "Committee Incharge · LP II", answer: "They can explore knowledge, speak without hesitation, and form habits of debating, advocacy, and negotiation.", photo: "/images/press/vox-pop/hari-kumari-thapa.png" },
+  { name: "Deenakar Kiran Khadka", role: "Instructional Supervisor · Science", answer: "Students can research topics, talk from different perspectives, and reach common ground after resolving issues respectfully.", photo: "/images/press/vox-pop/deenakar-kiran-khadka.png" },
+  { name: "Bhakti Shrestha", role: "Maths Teacher · Floor Incharge", answer: "They will learn research work and, more than that, explore themselves.", photo: "/images/press/vox-pop/bhakti-shrestha.png" },
+  { name: "Dipendra Silwal", role: "MUN Press Coordinator", answer: "It is a space for creativity and self-reliance.", photo: "/images/our-team/press/presscoordinator.jpg" },
+  { name: "Sanskriti Uprety", role: "Logistics", answer: "Because it is very motivating and inspiring.", photo: "" },
+  { name: "Rayna Kunwar", role: "Logistics", answer: "Because they gain more knowledge about politics and what is happening right now.", photo: "/images/our-team/logistics/ojess.png" },
+  { name: "Ritika Pyakurel", role: "Logistics", answer: "Students can explore new things, speak their best, and get more opportunities.", photo: "/images/our-team/logistics/prasina.png" },
+  { name: "Kamala Kharel", role: "LP III Incharge", answer: "They can share opinions, grow their debating and leadership skills, understand political parties and their country’s situation, and develop research skills.", photo: "" },
+];
+const voxTeamTwoQ2 = Array.from({ length: 8 }, (_, index) => ({ name: `Team 2 respondent ${String(index + 1).padStart(2, "0")}`, role: "Photo and response to be added", answer: "Placeholder — content will be provided later.", photo: "" }));
+
 const chairPhotos: Record<string, string> = { "LP I": "/images/committees/executive-board/aakarshi.png", "LP II": "/images/committees/executive-board/sakshamthapaliya.png", "LP III": "/images/committees/executive-board/binayak.png", UNEP: "/images/committees/executive-board/rujal.png", DISEC: "/images/committees/executive-board/dhiki.png", ECOSOC: "/images/committees/executive-board/prateek.png", HRC: "/images/committees/executive-board/kinjal.png" };
 const speechRoster = [{ speaker: "Dibas Khadka", role: "Secretary General", committee: "Opening Ceremony", photo: "/images/our-team/secgen.png" }, { speaker: "Abhash Kunwar", role: "Deputy Secretary General", committee: "Opening Ceremony", photo: "/images/our-team/abhas.png" }, ...["LP I", "LP II", "LP III", "UNEP", "DISEC", "ECOSOC", "HRC"].map((committee) => ({ speaker: `${committee} Chair`, role: "Committee Chair", committee, photo: chairPhotos[committee] })), { speaker: "Head of IT", role: "Head of IT", committee: "Information Technology", photo: "/images/our-team/it/yubin.png" }];
 const interviewSubjects = Array.from({ length: 20 }, (_, i) => ({ title: `Interview ${String(i + 1).padStart(2, "0")}`, subject: "John Doe" }));
 
 function VoxPopTeams() {
   const [team, setTeam] = useState<1 | 2>(1);
-  const people = team === 1 ? voxTeamOne : voxTeamTwo;
+  const [question, setQuestion] = useState<1 | 2>(1);
+  const people = question === 1 ? (team === 1 ? voxTeamOne : voxTeamTwo) : (team === 1 ? voxTeamOneQ2 : voxTeamTwoQ2);
   return <section className="mt-14">
     <div className="flex flex-wrap gap-3 border-b border-white/15 pb-5" role="tablist" aria-label="Vox-Pop teams">
       {[1, 2].map((item) => <button key={item} type="button" role="tab" aria-selected={team === item} onClick={() => setTeam(item as 1 | 2)} className={cn("px-5 py-3 text-xs uppercase tracking-[0.16em] transition", team === item ? "bg-gold text-navy-deep" : "border border-white/20 text-silver hover:border-gold hover:text-warm")}>Team {item}</button>)}
     </div>
-    <div className="mt-10 border-t border-gold/30 pt-8"><p className="text-[11px] uppercase tracking-[0.18em] text-gold">Team {team}</p><h2 className="font-display mt-3 text-3xl sm:text-4xl">Q1. Describe TES MUN in one word.</h2>
+    <div className="mt-6 flex flex-wrap gap-3" role="tablist" aria-label="Vox-Pop questions"><button type="button" role="tab" aria-selected={question === 1} onClick={() => setQuestion(1)} className={cn("border px-4 py-2 text-xs uppercase tracking-[0.14em]", question === 1 ? "border-gold bg-gold text-navy-deep" : "border-white/20 text-silver")}>Question 1</button><button type="button" role="tab" aria-selected={question === 2} onClick={() => setQuestion(2)} className={cn("border px-4 py-2 text-xs uppercase tracking-[0.14em]", question === 2 ? "border-gold bg-gold text-navy-deep" : "border-white/20 text-silver")}>Question 2</button></div>
+    <div className="mt-10 border-t border-gold/30 pt-8"><p className="text-[11px] uppercase tracking-[0.18em] text-gold">Team {team}</p><h2 className="font-display mt-3 text-3xl sm:text-4xl">{question === 1 ? "Q1. Describe TES MUN in one word." : "Q2. Why do the students love TES MUN?"}</h2>
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{people.map((person) => <article key={person.name} className="border border-white/10 bg-navy p-5 shadow-2xl">
         {person.photo ? <img src={person.photo} alt={`${person.name} portrait`} className="mx-auto h-40 w-40 rounded-full border border-gold/30 object-cover" /> : <div className="mx-auto h-40 w-40 rounded-full border border-dashed border-white/20" aria-label="Portrait not provided" />}
         <p className="mt-5 text-lg font-medium text-warm">{person.name}</p><p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-gold">{person.role}</p><p className="mt-5 text-sm leading-6 text-silver/80">“{person.answer}”</p>
