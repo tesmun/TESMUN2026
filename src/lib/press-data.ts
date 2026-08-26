@@ -226,16 +226,21 @@ export const opEdContributors = [
 ];
 
 export const cartoons = [
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5sr5wIf3XTfrOXzGPEyqWAJW3e1193.png", alt: "Cartoon by Aagaman Adhikari, Grade 7C", credit: "Aagaman Adhikari · Grade 7C" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1yHn90E94MbUA1lIkn7wAc6tXf2H9r.png", alt: "Cartoon by Aagaman Adhikari, Grade 7C", credit: "Aagaman Adhikari · Grade 7C" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jRKX7EupENn9GJGGZQ2teJ9RCYXkCF.png", alt: "Cartoon by Agrata Parajuli, Grade 7A", credit: "Agrata Parajuli · Grade 7A" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7irIx7PHAF4gZjVxYDXjBWWlJLjr8s.png", alt: "Cartoon by Diya Shrestha, Grade 7B", credit: "Diya Shrestha · Grade 7B" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-sCEzbigfQJq6dAiAtWb9siMoJZPsNx.png", alt: "Cartoon by Ruja Adhikari, Grade 7C", credit: "Ruja Adhikari · Grade 7C" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DdgS6IR46kl5sPuvDGEqBd3OvzSBei.png", alt: "Cartoon by Ruja Adhikari, Grade 7C", credit: "Ruja Adhikari · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5sr5wIf3XTfrOXzGPEyqWAJW3e1193.png", alt: "Cartoon by Agrata Parajuli, Grade 7A", credit: "Agrata Parajuli · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1yHn90E94MbUA1lIkn7wAc6tXf2H9r.png", alt: "Cartoon by Samip Dhakal, Grade 7A", credit: "Samip Dhakal · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jRKX7EupENn9GJGGZQ2teJ9RCYXkCF.png", alt: "Cartoon by Ruja Adhikari, Grade 7C", credit: "Ruja Adhikari · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7irIx7PHAF4gZjVxYDXjBWWlJLjr8s.png", alt: "Cartoon by Rituja Dhital, Grade 7A", credit: "Rituja Dhital · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-sCEzbigfQJq6dAiAtWb9siMoJZPsNx.png", alt: "Cartoon by Diya Shrestha, Grade 7B", credit: "Diya Shrestha · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DdgS6IR46kl5sPuvDGEqBd3OvzSBei.png", alt: "Cartoon by Aagaman Adhikari, Grade 7C", credit: "Aagaman Adhikari · Grade 7C" },
   { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-gdzQe2qEjei0DJ77xEnwHZYMsA0nIQ.png", alt: "Cartoon by Sakura Amgain, Grade 7B", credit: "Sakura Amgain · Grade 7B" },
   { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-CG7qUvWyuXTNGyuLr222cCYe5TmuQx.png", alt: "Cartoon by Shreesha Neupane, Grade 7B", credit: "Shreesha Neupane · Grade 7B" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-AprsgwYgaF03SQZHIOJzQ12npRgGOL.png", alt: "Cartoon by Samip Dhakal, Grade 7A", credit: "Samip Dhakal · Grade 7A" },
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7lPv3fkMyRMPff5G9gcXHIOMyvsH98.png", alt: "Cartoon by Rituja Dhital, Grade 7A", credit: "Rituja Dhital · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-AprsgwYgaF03SQZHIOJzQ12npRgGOL.png", alt: "Cartoon by Aagaman Adhikari, Grade 7C", credit: "Aagaman Adhikari · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7lPv3fkMyRMPff5G9gcXHIOMyvsH98.png", alt: "Cartoon by Ruja Adhikari, Grade 7C", credit: "Ruja Adhikari · Grade 7C" },
+  { src: "/images/press/cartoons/cartoon-11.png", alt: "Cartoon by Aagaman Adhikari, Grade 7C", credit: "Aagaman Adhikari · Grade 7C" },
+  { src: "/images/press/cartoons/cartoon-12.png", alt: "Cartoon by Agrata Parajuli, Grade 7A", credit: "Agrata Parajuli · Grade 7A" },
+  { src: "/images/press/cartoons/cartoon-13.png", alt: "Cartoon by Akreena Pradhan, Grade 7B", credit: "Akreena Pradhan · Grade 7B" },
+  { src: "/images/press/cartoons/cartoon-14.png", alt: "Cartoon by Rituja Dhital, Grade 7A", credit: "Rituja Dhital · Grade 7A" },
+  { src: "/images/press/cartoons/cartoon-15.png", alt: "Cartoon by Ruja Adhikari, Grade 7C", credit: "Ruja Adhikari · Grade 7C" },
 ];
 
 export function getNewsArticle(slug: string) {
