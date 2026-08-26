@@ -1,14 +1,44 @@
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { Link, useParams } from "react-router-dom";
 import { ChevronDown, X } from "lucide-react";
 import { pressSections, voxQuestions, opEdContributors, cartoons } from "@/lib/press-data";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 const video = "https://www.youtube.com/watch?v=vxpm8OZRH30";
-const voxPeople = ["Aarav Shrestha", "Maya Gurung", "Rohan Karki", "Saanvi Joshi", "Kabir Thapa", "Anisha Rai", "Nischal Bista", "Prakriti Lama"];
+const voxTeamOne = [
+  { name: "Harshid Bhetwal", role: "Second floor incharge", answer: "Unity", photo: "/images/our-team/logistics/harshid.png" },
+  { name: "Renesha Maharjan", role: "Deputy Editor", answer: "Public Speaking", photo: "/images/our-team/press/renesha.png" },
+  { name: "Sonam Maharjan", role: "Logistics", answer: "Debating skill", photo: "" },
+  { name: "Pratik Subedi", role: "IT Coordinator", answer: "Collaboration", photo: "/images/our-team/it/itcoordinator.jpeg" },
+  { name: "Kinjal Timalsina", role: "HRC Chief", answer: "Entertaining", photo: "/images/committees/executive-board/kinjal.png" },
+  { name: "Laxmi Lamsal", role: "LP1 Committee Incharge", answer: "Research", photo: "" },
+  { name: "Govinda Gautam", role: "MUN advisor", answer: "Consesus building", photo: "/images/our-team/muncoordinator.jpg" },
+  { name: "Degraj Sapkota", role: "LP3 Committee Teacher", answer: "Leadership", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mJa6TudkrdCLvYrWXN6NGNB3Zn0Lsd.png" },
+  { name: "Siddhartha Basnet", role: "Deputy chief editor", answer: "Responsibility", photo: "/images/our-team/press/siddartha.png" },
+  { name: "Unnat Aryal", role: "UNEP moderator", answer: "Innovation", photo: "/images/committees/executive-board/unnat.png" },
+  { name: "Dipendra Silwal", role: "Press Coordinator", answer: "Creativity", photo: "/images/our-team/press/presscoordinator.jpg" },
+];
+const voxTeamTwo = Array.from({ length: 8 }, (_, index) => ({ name: `Team 2 participant ${String(index + 1).padStart(2, "0")}`, role: "Role to be added", answer: "Answer to be added", photo: "" }));
 const chairPhotos: Record<string, string> = { "LP I": "/images/committees/executive-board/aakarshi.png", "LP II": "/images/committees/executive-board/sakshamthapaliya.png", "LP III": "/images/committees/executive-board/binayak.png", UNEP: "/images/committees/executive-board/rujal.png", DISEC: "/images/committees/executive-board/dhiki.png", ECOSOC: "/images/committees/executive-board/prateek.png", HRC: "/images/committees/executive-board/kinjal.png" };
 const speechRoster = [{ speaker: "Dibas Khadka", role: "Secretary General", committee: "Opening Ceremony", photo: "/images/our-team/secgen.png" }, { speaker: "Abhash Kunwar", role: "Deputy Secretary General", committee: "Opening Ceremony", photo: "/images/our-team/abhas.png" }, ...["LP I", "LP II", "LP III", "UNEP", "DISEC", "ECOSOC", "HRC"].map((committee) => ({ speaker: `${committee} Chair`, role: "Committee Chair", committee, photo: chairPhotos[committee] })), { speaker: "Head of IT", role: "Head of IT", committee: "Information Technology", photo: "/images/our-team/it/yubin.png" }];
 const interviewSubjects = Array.from({ length: 20 }, (_, i) => ({ title: `Interview ${String(i + 1).padStart(2, "0")}`, subject: "John Doe" }));
+
+function VoxPopTeams() {
+  const [team, setTeam] = useState<1 | 2>(1);
+  const people = team === 1 ? voxTeamOne : voxTeamTwo;
+  return <section className="mt-14">
+    <div className="flex flex-wrap gap-3 border-b border-white/15 pb-5" role="tablist" aria-label="Vox-Pop teams">
+      {[1, 2].map((item) => <button key={item} type="button" role="tab" aria-selected={team === item} onClick={() => setTeam(item as 1 | 2)} className={cn("px-5 py-3 text-xs uppercase tracking-[0.16em] transition", team === item ? "bg-gold text-navy-deep" : "border border-white/20 text-silver hover:border-gold hover:text-warm")}>Team {item}</button>)}
+    </div>
+    <div className="mt-10 border-t border-gold/30 pt-8"><p className="text-[11px] uppercase tracking-[0.18em] text-gold">Team {team}</p><h2 className="font-display mt-3 text-3xl sm:text-4xl">Q1. Describe TES MUN in one word.</h2>
+      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{people.map((person) => <article key={person.name} className="border border-white/10 bg-navy p-5 shadow-2xl">
+        {person.photo ? <img src={person.photo} alt={`${person.name} portrait`} className="mx-auto h-40 w-40 rounded-full border border-gold/30 object-cover" /> : <div className="mx-auto h-40 w-40 rounded-full border border-dashed border-white/20" aria-label="Portrait not provided" />}
+        <p className="mt-5 text-lg font-medium text-warm">{person.name}</p><p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-gold">{person.role}</p><p className="mt-5 text-sm leading-6 text-silver/80">“{person.answer}”</p>
+      </article>)}</div>
+    </div>
+  </section>;
+}
 
 export default function PressSection() {
   const { slug = "" } = useParams(); const section = pressSections[slug as keyof typeof pressSections]; const [open, setOpen] = useState(0); const [lightbox, setLightbox] = useState<number | null>(null);
@@ -17,7 +47,7 @@ export default function PressSection() {
   {slug === "interviews" && <section className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">{interviewSubjects.map((item) => <article key={item.title} className="border border-white/10 bg-navy p-5 shadow-2xl"><div className="mb-5 aspect-video bg-navy-deep"><YouTubeEmbed url={video} title={item.title}/></div><p className="text-[10px] uppercase tracking-[0.16em] text-gold">Interview</p><h2 className="mt-2 font-display text-2xl">{item.title}</h2><p className="mt-2 text-sm text-silver/70">{item.subject} · video placeholder</p></article>)}</section>}
   {slug === "podcast" && <section className="mt-14 grid max-w-4xl gap-6 sm:grid-cols-2">{["Podcast episode 01", "Podcast episode 02"].map((title) => <article key={title} className="border border-white/10 bg-navy p-5"><div className="aspect-video bg-navy-deep"><YouTubeEmbed url={video} title={title}/></div><h2 className="mt-4 font-display text-3xl">{title}</h2></article>)}</section>}
   {slug === "speeches" && <section className="mt-14 max-w-5xl divide-y divide-white/15 border-y border-white/15">{speechRoster.map((speech, i) => <div key={speech.speaker}><button type="button" onClick={() => setOpen(open === i ? -1 : i)} className="flex w-full items-center justify-between gap-5 py-8 text-left"><span className="flex items-center gap-6"><img src={speech.photo} alt={`${speech.speaker} portrait`} className="h-24 w-24 shrink-0 rounded-full border border-gold/30 object-cover sm:h-32 sm:w-32" /><span><span className="text-[10px] uppercase tracking-[0.16em] text-gold">{speech.committee} · {speech.role}</span><span className="mt-2 block font-display text-3xl sm:text-4xl">{speech.speaker}</span></span></span><ChevronDown className={`shrink-0 transition ${open === i ? "rotate-180 text-gold" : ""}`} /></button>{open === i && <div className="pb-8 pl-0 text-base leading-8 text-silver/80 sm:pl-36">Speech text will be added to this archive after the conference record is supplied.</div>}</div>)}</section>}
-  {slug === "vox-pop" && <section className="mt-14 space-y-12">{voxQuestions.map((item, q) => <div key={item.question} className="border-t border-gold/30 pt-8"><h2 className="font-display text-3xl sm:text-4xl">Q{q + 1}. {item.question}</h2><div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{voxPeople.map((name, i) => <article key={`${name}-${q}`} className="border border-white/10 bg-navy p-5 shadow-2xl"><img src="/images/our-team/press/interview-portrait.jpg" alt={`${name} portrait placeholder`} className="mx-auto h-32 w-32 rounded-full border border-gold/30 object-cover" /><p className="mt-5 text-lg font-medium">{name}</p><p className="mt-2 text-sm leading-6 text-silver/70">“{item.answers[i % item.answers.length]}”</p></article>)}</div></div>)}</section>}
+  {slug === "vox-pop" && <VoxPopTeams />}
   {slug === "cartoons" && <section className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">{cartoons.map((cartoon, i) => <button key={i} type="button" onClick={() => setLightbox(i)} className="group border border-white/10 bg-navy p-4 text-left shadow-2xl"><img src={cartoon.src} alt={cartoon.alt} className="aspect-[4/3] w-full object-cover transition group-hover:opacity-80"/><p className="mt-4 text-[10px] uppercase tracking-[0.16em] text-gold">Cartoon {String(i + 1).padStart(2, "0")}</p><p className="mt-2 text-sm text-silver">{cartoon.credit}</p></button>)}{lightbox !== null && <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-deep/95 p-6" onClick={() => setLightbox(null)}><button type="button" aria-label="Close cartoon" className="absolute right-6 top-6"><X/></button><img src={cartoons[lightbox].src} alt={cartoons[lightbox].alt} className="max-h-[85vh] max-w-full object-contain" onClick={(e) => e.stopPropagation()}/></div>}</section>}
   {slug === "op-ed" && <section className="mt-14 grid gap-8 sm:grid-cols-2">{opEdContributors.map((contributor, index) => <a key={`${contributor.name}-${index}`} href={contributor.pdf || "https://drive.google.com/"} target="_blank" rel="noreferrer" className="group border-y border-white/15 py-10 transition-colors hover:border-gold/70"><div className="flex items-center gap-6"><img src={contributor.photo || "/images/our-team/press/interview-portrait.jpg"} alt={`${contributor.name} portrait`} className="h-48 w-48 shrink-0 rounded-full border border-gold/30 object-cover"/><div><p className="text-[10px] uppercase tracking-[0.16em] text-gold">Contributor · Read PDF</p><h2 className="mt-2 font-display text-4xl group-hover:text-gold">{contributor.name}</h2><p className="mt-2 text-sm text-silver/70">{contributor.role}</p></div></div></a>)}</section>}
   </div></main>;
