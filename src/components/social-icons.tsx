@@ -11,6 +11,14 @@ export function YoutubeIcon({ size = 19, className }: { size?: number; className
   );
 }
 
+export function WebsiteIcon({ size = 19, className }: { size?: number; className?: string }) {
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.4" /><path d="M3 12h18M12 3c2.2 2.4 3.2 5.4 3.2 9S14.2 18.6 12 21c-2.2-2.4-3.2-5.4-3.2-9S9.8 5.4 12 3z" stroke="currentColor" strokeWidth="1.2" /></svg>;
+}
+
+export function TikTokIcon({ size = 19, className }: { size?: number; className?: string }) {
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true"><path d="M14 4v10.2a3.8 3.8 0 1 1-3-3.7M14 4c.5 2.7 2.2 4.3 5 4.6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" /></svg>;
+}
+
 export function FacebookIcon({ size = 19, className }: { size?: number; className?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

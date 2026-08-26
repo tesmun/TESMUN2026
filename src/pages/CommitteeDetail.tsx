@@ -99,7 +99,7 @@ function CommitteeDescription({ committee }: { committee: Committee }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-white/25 px-5 py-3 text-[11px] uppercase tracking-[0.14em] text-white transition-colors hover:border-gold"
             >
-              <TableProperties size={14} /> Country Matrix
+              <TableProperties size={14} /> Delegate Matrix
               </a>
               {committee.email && (
                 <a href={`mailto:${committee.email}`} className="basis-full text-xs text-gold underline underline-offset-4">{committee.email}</a>
@@ -258,9 +258,9 @@ function PressDetail({ committee }: { committee: Committee }) {
               ["ECOSOC", "/images/committees/visuals/committee-ecosoc.webp", { name: "Shreni Chapagain", image: "/images/our-team/press/shreni.png" }, { name: "Alishka Kuikel", image: "/images/our-team/press/alishkakuikel.png" }],
               ["UNEP", "/images/committees/visuals/committee-unep.webp", { name: "Ranish Mahat", image: "/images/our-team/press/ranish.png" }],
               ["DISEC", "/images/committees/visuals/committee-disec.webp", { name: "Osang Ghising", image: "/images/our-team/press/osang.png" }, { name: "Shubam Shrestha", image: "/images/our-team/press/shubhamshrestha.png" }],
-              ["LP I", "/images/committees/visuals/committee-lp.png", { name: "Krishna Shrestha", image: "/images/our-team/press/krishna.png" }, { name: "Aarush Katuwal", image: "/images/our-team/press/aarushkatuwal.png" }],
-              ["LP II", "/images/committees/visuals/committee-lp.png", { name: "Pari Maharjan", image: "/images/our-team/press/pari.png" }],
-              ["LP III", "/images/committees/visuals/committee-lp.png", { name: "Aashiya Shrestha", image: "/images/our-team/press/aashiyashrestha.png" }],
+              ["TES-MP I", "/images/committees/visuals/committee-lp.png", { name: "Krishna Shrestha", image: "/images/our-team/press/krishna.png" }, { name: "Aarush Katuwal", image: "/images/our-team/press/aarushkatuwal.png" }],
+              ["TES-MP II", "/images/committees/visuals/committee-lp.png", { name: "Pari Maharjan", image: "/images/our-team/press/pari.png" }],
+              ["TES-MP III", "/images/committees/visuals/committee-lp.png", { name: "Aashiya Shrestha", image: "/images/our-team/press/aashiyashrestha.png" }],
             ].map(([committeeName, logo, ...reporters]) => (
               <div key={String(committeeName)} className="border border-white/10 bg-navy px-5 py-5">
                 <div className="flex items-center gap-3 mb-4">

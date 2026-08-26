@@ -38,7 +38,7 @@ const grainientProps = {
 
 export default function Resources() {
   return (
-    <main>
+    <main className="relative overflow-hidden bg-[url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xiRWfj5zSb4KfcVOmS4vH6IUpQyq6W.png')] bg-cover bg-center bg-fixed">
       <PageHero
         image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resourcesbg-ECo2LwOjE8CpkDkVlVTrioEPADQ8Xy.png"
         alt="Research materials prepared for TESMUN delegates"
@@ -150,7 +150,7 @@ export default function Resources() {
       <section className="bg-navy-deep px-6 py-20 pb-28 sm:py-28 md:px-10">
         <div className="mx-auto max-w-5xl">
           <Reveal className="max-w-xl">
-            <Eyebrow className="text-silver/70">Country Matrix</Eyebrow>
+            <Eyebrow className="text-silver/70">Delegate Matrix</Eyebrow>
             <h2 className="font-display mt-3 text-3xl text-warm">Delegate allocations</h2>
             <p className="mt-4 text-sm leading-relaxed text-silver/80">
               All committee assignments are published in one official spreadsheet.
@@ -169,6 +169,16 @@ export default function Resources() {
               </BorderGlow>
             </a>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-navy-deep/95 px-6 py-8 md:px-10">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4">
+          <Eyebrow className="text-silver/70">Previous conferences</Eyebrow>
+          <div className="flex flex-wrap gap-3">
+            <a href="https://sites.google.com/view/tes-mun2025" target="_blank" rel="noopener noreferrer" className="border border-gold/70 px-4 py-2 font-mono text-xs uppercase tracking-[0.14em] text-warm transition-colors hover:bg-gold hover:text-navy-deep">TESMUN 2025</a>
+            <a href="https://sites.google.com/view/tesmun2024" target="_blank" rel="noopener noreferrer" className="border border-gold/70 px-4 py-2 font-mono text-xs uppercase tracking-[0.14em] text-warm transition-colors hover:bg-gold hover:text-navy-deep">TESMUN 2024</a>
+          </div>
         </div>
       </section>
     </main>
