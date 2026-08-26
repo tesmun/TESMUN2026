@@ -9,10 +9,10 @@ const video = "https://www.youtube.com/watch?v=vxpm8OZRH30";
 const voxTeamOne = [
   { name: "Harshid Bhetwal", role: "Second floor incharge", answer: "Unity", photo: "/images/our-team/logistics/harshid.png" },
   { name: "Renesha Maharjan", role: "Deputy Editor", answer: "Public Speaking", photo: "/images/our-team/press/renesha.png" },
-  { name: "Sonam Maharjan", role: "Logistics", answer: "Debating skill", photo: "" },
+  { name: "Sonam Maharjan", role: "Logistics", answer: "Debating skill", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8Tk3WJvYajVJKgAmcbOr5qO8uJMali.png" },
   { name: "Pratik Subedi", role: "IT Coordinator", answer: "Collaboration", photo: "/images/our-team/it/itcoordinator.jpeg" },
   { name: "Kinjal Timalsina", role: "HRC Chief", answer: "Entertaining", photo: "/images/committees/executive-board/kinjal.png" },
-  { name: "Laxmi Lamsal", role: "LP1 Committee Incharge", answer: "Research", photo: "" },
+  { name: "Laxmi Lamsal", role: "LP1 Committee Incharge", answer: "Research", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-h9AICPiHmYVHXvhRWepVEQrDBVeQMV.png" },
   { name: "Govinda Gautam", role: "MUN advisor", answer: "Consesus building", photo: "/images/our-team/muncoordinator.jpg" },
   { name: "Degraj Sapkota", role: "LP3 Committee Teacher", answer: "Leadership", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mJa6TudkrdCLvYrWXN6NGNB3Zn0Lsd.png" },
   { name: "Siddhartha Basnet", role: "Deputy chief editor", answer: "Responsibility", photo: "/images/our-team/press/siddartha.png" },
