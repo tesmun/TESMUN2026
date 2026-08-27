@@ -1,4 +1,4 @@
-export type PressSectionSlug = "news" | "vox-pop" | "interviews" | "podcast" | "speeches" | "op-ed" | "cartoons";
+export type PressSectionSlug = "news" | "vox-pop" | "vox-pop-team-1" | "vox-pop-team-2" | "interviews" | "podcast" | "speeches" | "op-ed" | "cartoons";
 
 export type NewsArticle = {
   slug: string;
@@ -77,6 +77,8 @@ export const newsArticles: NewsArticle[] = [
 export const pressSections = {
   news: { label: "News", title: "The conference, in motion", intro: "Session-by-session dispatches from the rooms where debate becomes direction." },
   "vox-pop": { label: "Vox Pop", title: "Many voices, one moment", intro: "Short answers and honest reactions from the people between sessions." },
+  "vox-pop-team-1": { label: "Vox Pop · Team 1", title: "Team 1 voices", intro: "Describe TESMUN in one word, then tell us why students love it." },
+  "vox-pop-team-2": { label: "Vox Pop · Team 2", title: "Team 2 voices", intro: "Memorable moments and favourite committees from TESMUN 2026." },
   interviews: { label: "Interviews", title: "The people behind the placards", intro: "Long-form conversations about diplomacy, pressure and possibility." },
   podcast: { label: "Podcast", title: "The TESMUN Podcast", intro: "Two conversations from the conference floor, ready for your own video links." },
   speeches: { label: "Speeches", title: "Words with weight", intro: "An archive of opening statements, closing reflections and ideas worth carrying forward." },

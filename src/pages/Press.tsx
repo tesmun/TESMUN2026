@@ -9,6 +9,8 @@ import { pressSections } from "@/lib/press-data";
 const slots = [
   { slug: "news", layout: "wide" as const },
   { slug: "vox-pop", layout: "square" as const },
+  { slug: "vox-pop-team-1", layout: "square" as const },
+  { slug: "vox-pop-team-2", layout: "square" as const },
   { slug: "interviews", layout: "square" as const },
   { slug: "podcast", layout: "square" as const },
   { slug: "speeches", layout: "tall" as const },
