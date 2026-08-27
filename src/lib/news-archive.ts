@@ -1,6 +1,7 @@
 import { newsSessionArticles, type NewsSession, type NewsDay } from "./news-sessions";
 import day2Verbatim from "../content/day-2-session-1.txt?raw";
 import session2Day1Verbatim from "../content/second-session-day-1.txt?raw";
+import session2Day2Verbatim from "../content/second-session-day-2.txt?raw";
 
 export type ArchiveArticle = {
   session: NewsSession; day: NewsDay; committee: string; committeeSlug: string; committeeLogo: string;
@@ -13,6 +14,8 @@ const committeeMeta = {
   DISEC: ["disec", "/images/committees/visuals/committee-disec.webp"], HRC: ["hrc", "/images/committees/visuals/committee-hrc.webp"], ECOSOC: ["ecosoc", "/images/committees/visuals/committee-ecosoc.webp"], UNEP: ["unep", "/images/committees/visuals/committee-unep.webp"],
 } as const;
 const defaultCommittees = ["LP1", "LP2", "LP3", "DISEC", "HRC", "ECOSOC", "UNEP"] as const;
+const session2Day2Committees = ["LP1", "LP2", "LP3", "LP3", "DISEC", "HRC", "HRC", "ECOSOC", "UNEP", "UNEP"] as const;
+const session2Day2Images = ["lp1-photo2.png", "lp2-photo2.png", "lp3-photo1.png", "lp3-photo2.png", "disec1.png", "hrc2.png", "hrc1.png", "ecosoc1.png", "unep2.png", "unep1.png"] as const;
 const overrides: Record<string, { committee: string; headline: string; author: string; summary: string; body: string[]; image?: string }[]> = {
   "1-1": [
     { committee: "LP1", headline: "THE QUIET COMMITTEE ERUPTS! EIGHTH GRADERS FINALLY FIND THEIR VOICE!", author: "Krishna Shrestha, Chief Reporter of LP-I", summary: "Grade 8 delegates began their first-ever Model United Nations (MUN) session on Monday by simulating the national Parliament and discussing key national issues.", body: ["Grade 8 delegates began their first-ever Model United Nations (MUN) session on Monday by simulating the national Parliament and discussing key national issues, with the Dais panel providing a demonstration to help them understand the procedures.", "The session began with delegates presenting their views, but some struggled to speak. The Vice Chair encouraged them to participate more and said, \"Your research has been wonderful but you need to present your points confidently.\"", "As the hesitation from the delegates continued, the Dais panel stepped in to encourage participation. When asked about the delegates' difficulty speaking, Chair Aakarshi Paudel said, \"I have no idea why the delegates are having a hard time speaking. The main agenda and the motion raised for the Moderated Caucus both are not particularly difficult.\"", "The session was briefly disrupted when the delegate of Biraj Bhakta Shrestha, Ayaan Upreti, was suspended twice from the committee.", "Secretary-General Dibas Khadka later stepped in to encourage delegates to ask questions, express their opinions and said, \"Delegates, you all are free to ask me any questions regarding the agenda or the motion of the Moderated Caucus. As the Secretary General, it is my responsibility to improve the flow of discussions, provide support and supervise every committee. Please, feel free to speak up and contribute to the ongoing discussion,\" Dibas Khadka said.", "Following his intervention, the atmosphere of the committee began to change. Delegates who had spoken little earlier started raising points, questioning one another and presenting arguments.", "By the end of the session, delegates were participating more in the moderated caucus as the committee continued."] },
@@ -44,13 +47,16 @@ const day2VerbatimBodies = verbatimDay2.map((section) => {
   }
   return lines.slice(bodyStart);
 });
-const session2VerbatimArticles = session2Day1Verbatim.trim().split(/\n(?=[A-Z0-9][A-Z0-9 !?,.'’&:-]{20,}\s*\n)/).map((section) => {
+const parseVerbatimArticles = (source: string) => source.trim().split(/\n(?=[A-Z0-9][A-Z0-9 !?,.'’&:-]{20,}\s*\n)/).map((section) => {
   const lines = section.split(/\n/).map((line) => line.trim()).filter(Boolean);
-  return { committee: "", headline: lines[0] ?? "", author: (lines[1] ?? "").replace(/^-/, "").trim(), summary: lines[3] ?? "", body: lines.slice(3) };
+  const bodyStart = lines.findIndex((line, index) => index > 1 && !/^By\s/i.test(line) && !/^Kathmandu,/i.test(line));
+  return { committee: "", headline: lines[0] ?? "", author: (lines[1] ?? "").replace(/^-/, "").trim(), summary: lines[bodyStart] ?? "", body: lines.slice(bodyStart) };
 }).filter((article) => article.headline && article.body.length);
+const session2VerbatimArticles = parseVerbatimArticles(session2Day1Verbatim);
+const session2Day2VerbatimArticles = parseVerbatimArticles(session2Day2Verbatim);
 export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
   const custom = overrides[`${session}-${day}`];
-  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article, index) => ({ ...article, committee: defaultCommittees[index] ?? "UNEP" })) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
+  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article, index) => ({ ...article, committee: defaultCommittees[index] ?? "UNEP" })) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index) => ({ ...article, committee: session2Day2Committees[index] ?? "UNEP", image: `/images/press/session-2/day-2/${session2Day2Images[index] ?? "unep1.png"}` })) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
   return {
     session,
     day,
