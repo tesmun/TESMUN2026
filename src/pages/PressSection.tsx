@@ -12,9 +12,9 @@ const voxTeamOne = [
   { name: "Sonam Maharjan", role: "Logistics", answer: "Debating skill", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8Tk3WJvYajVJKgAmcbOr5qO8uJMali.png" },
   { name: "Pratik Subedi", role: "IT Coordinator", answer: "Collaboration", photo: "/images/our-team/it/itcoordinator.jpeg" },
   { name: "Kinjal Timalsina", role: "HRC Chief", answer: "Entertaining", photo: "/images/committees/executive-board/kinjal.png" },
-  { name: "Laxmi Lamsal", role: "LP1 Committee Incharge", answer: "Research", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-h9AICPiHmYVHXvhRWepVEQrDBVeQMV.png" },
+  { name: "Laxmi Lamsal", role: "LP1 Committee Incharge", answer: "Research", photo: "/images/press/vox-pop/laxmi.png" },
   { name: "Govinda Gautam", role: "MUN advisor", answer: "Consesus building", photo: "/images/our-team/muncoordinator.jpg" },
-  { name: "Degraj Sapkota", role: "LP3 Committee Teacher", answer: "Leadership", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mJa6TudkrdCLvYrWXN6NGNB3Zn0Lsd.png" },
+  { name: "Degraj Sapkota", role: "LP3 Committee Teacher", answer: "Leadership", photo: "/images/press/vox-pop/degraj.png" },
   { name: "Siddhartha Basnet", role: "Deputy chief editor", answer: "Responsibility", photo: "/images/our-team/press/siddartha.png" },
   { name: "Unnat Aryal", role: "UNEP moderator", answer: "Innovation", photo: "/images/committees/executive-board/unnat.png" },
   { name: "Dipendra Silwal", role: "Press Coordinator", answer: "Creativity", photo: "/images/our-team/press/presscoordinator.jpg" },
@@ -22,10 +22,10 @@ const voxTeamOne = [
 const voxTeamTwo = [
   { name: "Samman Shrestha", role: "Graphic designer lead", answer: "The most memorable thing about TESMUN is the first time that you enter the committee.", photo: "/images/our-team/it/samman.png" },
   { name: "Saksham Adhikari", role: "Lead web designer", answer: "Interviews and debates I've done.", photo: "/images/our-team/it/sakshamadhikari.png" },
-  { name: "Deg Raj Sapkota", role: "To help the students", answer: "Discussion of crisis", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mJa6TudkrdCLvYrWXN6NGNB3Zn0Lsd.png" },
-  { name: "Sammunat Burtakoti", role: "Delegate of Israel · HRC", answer: "GSL Sharing", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8CLnk0tJjP8J6997MZU1SUzNK4alKK.png" },
+  { name: "Deg Raj Sapkota", role: "To help the students", answer: "Discussion of crisis", photo: "/images/press/vox-pop/degraj.png" },
+  { name: "Sammunat Burtakoti", role: "Delegate of Israel · HRC", answer: "GSL Sharing", photo: "/images/press/vox-pop/sammunat.png" },
   { name: "Siddhartha Basnet", role: "Deputy Chief Editor · Press Committee", answer: "For me, I would say that my experience as the delegate of Tanardan Sharma during TESMUN 2024 was the most memorable time because I gained a lot of skills and important characteristics.", photo: "/images/our-team/press/siddartha.png" },
-  { name: "Soumya Shrestha", role: "Delegate of Germany · DISEC", answer: "The most memorable thing in TESMUN is speaking for my committee.", photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-wQVK7yAYREIGrbh3JV9DFKiQrJxbTv.png" },
+  { name: "Soumya Shrestha", role: "Delegate of Germany · DISEC", answer: "The most memorable thing in TESMUN is speaking for my committee.", photo: "/images/press/vox-pop/soumya.png" },
   { name: "Dilasha Oli", role: "Vice Chair · LP1", answer: "Enthusiasm of Delegates", photo: "/images/committees/executive-board/dilasha.png" },
   { name: "Kinjal Timalsina", role: "Chair · HRC", answer: "Country Policy", photo: "/images/committees/executive-board/kinjal.png" },
 ];
@@ -37,7 +37,7 @@ const voxTeamOneQ2 = [
   { name: "Sanskriti Uprety", role: "Logistics", answer: "Because it is very motivating and inspiring.", photo: "/images/press/vox-pop/sanskriti.png" },
   { name: "Rayna Kunwar", role: "Logistics", answer: "Because they gain more knowledge about politics and what is happening right now.", photo: "/images/press/vox-pop/rayna.png" },
   { name: "Ritika Pyakurel", role: "Logistics", answer: "Students can explore new things, speak their best, and get more opportunities.", photo: "/images/press/vox-pop/ritika.png" },
-  { name: "Kamala Kharel", role: "LP III Incharge", answer: "They can share opinions, grow their debating and leadership skills, understand political parties and their country’s situation, and develop research skills.", photo: "/images/press/vox-pop/kamala-kharel.jpeg" },
+  { name: "Kamala Kharel", role: "LP III Incharge", answer: "They can share opinions, grow their debating and leadership skills, understand political parties and their country’s situation, and develop research skills.", photo: "/images/press/vox-pop/kamala.png" },
 ];
 const voxTeamTwoQ2 = [
   { name: "Ritika Pyakurel", role: "Logistics", answer: "LP3 because all delegates are doing their best.", photo: "/images/press/vox-pop/ritika.png" },
@@ -65,7 +65,7 @@ function VoxPopTeams() {
       {[1, 2].map((item) => <button key={item} type="button" role="tab" aria-selected={team === item} onClick={() => setTeam(item as 1 | 2)} className={cn("px-5 py-3 text-xs uppercase tracking-[0.16em] transition", team === item ? "bg-gold text-navy-deep" : "border border-white/20 text-silver hover:border-gold hover:text-warm")}>Team {item}</button>)}
     </div>
     <div className="mt-6 flex flex-wrap gap-3" role="tablist" aria-label="Vox-Pop questions"><button type="button" role="tab" aria-selected={question === 1} onClick={() => setQuestion(1)} className={cn("border px-4 py-2 text-xs uppercase tracking-[0.14em]", question === 1 ? "border-gold bg-gold text-navy-deep" : "border-white/20 text-silver")}>Question 1</button><button type="button" role="tab" aria-selected={question === 2} onClick={() => setQuestion(2)} className={cn("border px-4 py-2 text-xs uppercase tracking-[0.14em]", question === 2 ? "border-gold bg-gold text-navy-deep" : "border-white/20 text-silver")}>Question 2</button></div>
-    <div className="mt-10 border-t border-gold/30 pt-8"><p className="text-[11px] uppercase tracking-[0.18em] text-gold">Team {team}</p><h2 className="font-display mt-3 text-3xl sm:text-4xl">{question === 1 ? "Q1. Describe TES MUN in one word." : "Q2. Why do the students love TES MUN?"}</h2>
+    <div className="mt-10 border-t border-gold/30 pt-8"><p className="text-[11px] uppercase tracking-[0.18em] text-gold">Team {team}</p><h2 className="font-display mt-3 text-3xl sm:text-4xl">{question === 1 ? "Q1. What is the most memorable thing about TESMUN 2026?" : "Q2. Which is your favourite committee and why?"}</h2>
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{people.map((person) => <article key={person.name} className="border border-white/10 bg-navy p-5 shadow-2xl">
         {person.photo ? <img src={person.photo} alt={`${person.name} portrait`} className="mx-auto h-40 w-40 rounded-full border border-gold/30 object-cover" /> : <div className="mx-auto h-40 w-40 rounded-full border border-dashed border-white/20" aria-label="Portrait not provided" />}
         <p className="mt-5 text-lg font-medium text-warm">{person.name}</p><p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-gold">{person.role}</p><p className="mt-5 text-sm leading-6 text-silver/80">“{person.answer}”</p>
