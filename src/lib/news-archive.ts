@@ -50,13 +50,13 @@ const day2VerbatimBodies = verbatimDay2.map((section) => {
 const parseVerbatimArticles = (source: string) => source.trim().split(/\n(?=[A-Z0-9][A-Z0-9 !?,.'’&:-]{20,}\s*\n)/).map((section) => {
   const lines = section.split(/\n/).map((line) => line.trim()).filter(Boolean);
   const bodyStart = lines.findIndex((line, index) => index > 1 && !/^By\s/i.test(line) && !/^Kathmandu,/i.test(line));
-  return { committee: "", headline: lines[0] ?? "", author: (lines[1] ?? "").replace(/^-/, "").trim(), summary: lines[bodyStart] ?? "", body: lines.slice(bodyStart) };
+  return { committee: "", headline: lines[0] ?? "", author: (lines[1] ?? "").replace(/^-?\s*By\s*/i, "").trim(), summary: lines[bodyStart] ?? "", body: lines.slice(bodyStart) };
 }).filter((article) => article.headline && article.body.length);
-const session2VerbatimArticles = parseVerbatimArticles(session2Day1Verbatim);
-const session2Day2VerbatimArticles = parseVerbatimArticles(session2Day2Verbatim);
+const session2VerbatimArticles = parseVerbatimArticles(session2Day1Verbatim.replace(/^SECOND SESSION, DAY-1\s*/i, ""));
+const session2Day2VerbatimArticles = parseVerbatimArticles(session2Day2Verbatim.replace(/^SECOND SESSION, DAY-2\s*/i, ""));
 export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
   const custom = overrides[`${session}-${day}`];
-  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article, index) => ({ ...article, committee: defaultCommittees[index] ?? "UNEP" })) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index) => ({ ...article, committee: session2Day2Committees[index] ?? "UNEP", image: `/images/press/session-2/day-2/${session2Day2Images[index] ?? "unep1.png"}` })) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
+  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article, index) => ({ ...article, committee: defaultCommittees[index] ?? "UNEP" })) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index) => ({ ...article, committee: session2Day2Committees[index] ?? "UNEP", image: `/images/press/news/session-2/day-2/${session2Day2Images[index] ?? "unep1.png"}` })) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
   return {
     session,
     day,
@@ -64,7 +64,7 @@ export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) =>
       const [slug, logo] = committeeMeta[item.committee as keyof typeof committeeMeta];
       const page = index < 3 ? 1 : 2;
       const number = index < 3 ? index + 1 : index - 2;
-      return { session, day, committee: item.committee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: session === 1 && day === 2 && day2VerbatimBodies[index]?.length ? day2VerbatimBodies[index] : item.body, author: item.author, image: item.image ?? `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`, imageAlt: `${item.committee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : "TESMUN XIV" };
+      return { session, day, committee: item.committee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: session === 1 && day === 2 && day2VerbatimBodies[index]?.length ? day2VerbatimBodies[index] : item.body, author: item.author, image: item.image ?? `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`, imageAlt: `${item.committee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : session === 2 ? `August ${day === 1 ? "25" : "26"}, 2026` : "TESMUN XIV" };
     }),
   };
 }));

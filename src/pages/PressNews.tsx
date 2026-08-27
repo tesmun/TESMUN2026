@@ -80,7 +80,7 @@ export default function PressNews() {
                     <Link key={article.slug} to={`/press/news/${article.slug}`} className="group grid items-center gap-6 border-y border-navy/15 py-6 md:grid-cols-2 md:gap-10">
                       <div className={index % 2 === 0 ? "order-2 md:order-2" : "order-2 md:order-1"}>
                         <BorderGlow backgroundColor="#0d2a4a" borderRadius={16} colors={["#c6a15b", "#e3c46a", "#f4efa8"]}>
-                          <img src={article.image} alt={article.caption ?? article.title} className="aspect-[16/10] w-[70%] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                          <img src={article.image} alt={article.caption ?? article.title} className="block aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
                         </BorderGlow>
                       </div>
                       <div className={index % 2 === 0 ? "order-1 md:order-1" : "order-1 md:order-2"}>
