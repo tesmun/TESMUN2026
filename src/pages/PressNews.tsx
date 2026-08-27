@@ -58,13 +58,19 @@ export default function PressNews() {
         </div>
       </section>
 
+      <nav aria-label="Jump to session" className="flex flex-wrap justify-center gap-3 px-6 pb-10 md:px-10">
+        {[['Final Session', 'session-3'], ['Second Session', 'session-2'], ['First Session', 'session-1']].map(([label, id]) => (
+          <a key={id} href={`#${id}`} className="border border-gold/60 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gold transition-colors hover:bg-gold hover:text-navy">{label}</a>
+        ))}
+      </nav>
+
       <section className="px-6 pb-24 md:px-10">
-        <div className="mx-auto max-w-6xl space-y-14">
+        <div className="mx-auto max-w-6xl space-y-10">
           {sessions.map((session) => {
             const items = newsArticles.filter((a) => a.session === session);
             if (!items.length) return null;
             return (
-              <div key={session}>
+              <div key={session} id={session === "Final Session" ? "session-3" : session === "Second Session" ? "session-2" : "session-1"} className="scroll-mt-8">
                 <div className="mb-6 flex items-center justify-between border-y border-navy/20 py-3">
                   <h2 className="font-display text-2xl">{session}</h2>
                   <span className="text-[11px] uppercase tracking-[0.16em] text-ink/45">Dispatches</span>
@@ -74,7 +80,7 @@ export default function PressNews() {
                     <Link key={article.slug} to={`/press/news/${article.slug}`} className="group grid items-center gap-6 border-y border-navy/15 py-6 md:grid-cols-2 md:gap-10">
                       <div className={index % 2 === 0 ? "order-2 md:order-2" : "order-2 md:order-1"}>
                         <BorderGlow backgroundColor="#0d2a4a" borderRadius={16} colors={["#c6a15b", "#e3c46a", "#f4efa8"]}>
-                          <img src={article.image} alt={article.caption ?? article.title} className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                          <img src={article.image} alt={article.caption ?? article.title} className="aspect-[16/10] w-[70%] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
                         </BorderGlow>
                       </div>
                       <div className={index % 2 === 0 ? "order-1 md:order-1" : "order-1 md:order-2"}>
