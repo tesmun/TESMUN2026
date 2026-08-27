@@ -13,7 +13,7 @@ const voxTeamOne = [
   { name: "Pratik Subedi", role: "IT Coordinator", answer: "Collaboration", photo: "/images/our-team/it/itcoordinator.jpeg" },
   { name: "Kinjal Timalsina", role: "HRC Chief", answer: "Entertaining", photo: "/images/committees/executive-board/kinjal.png" },
   { name: "Laxmi Lamsal", role: "LP1 Committee Incharge", answer: "Research", photo: "/images/press/vox-pop/laxmi.png" },
-  { name: "Govinda Gautam", role: "MUN advisor", answer: "Consesus building", photo: "/images/our-team/muncoordinator.jpg" },
+  { name: "Govinda Gautam", role: "MUN advisor", answer: "Consensus building", photo: "/images/our-team/muncoordinator.jpg" },
   { name: "Degraj Sapkota", role: "LP3 Committee Teacher", answer: "Leadership", photo: "/images/press/vox-pop/degraj.png" },
   { name: "Siddhartha Basnet", role: "Deputy chief editor", answer: "Responsibility", photo: "/images/our-team/press/siddartha.png" },
   { name: "Unnat Aryal", role: "UNEP moderator", answer: "Innovation", photo: "/images/committees/executive-board/unnat.png" },
