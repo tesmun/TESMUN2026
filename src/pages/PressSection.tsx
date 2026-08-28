@@ -2,7 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Link, useParams } from "react-router-dom";
 import { ChevronDown, X } from "lucide-react";
-import { pressSections, voxQuestions, opEdContributors, cartoons } from "@/lib/press-data";
+import { pressSections, opEdContributors, cartoons } from "@/lib/press-data";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 const video = "https://www.youtube.com/watch?v=vxpm8OZRH30";
@@ -54,6 +54,12 @@ const speechRoster = [{ speaker: "Dibas Khadka", role: "Secretary General", comm
 const interviewSubjects = [
   { title: "EPISODE 01", subject: "Degraj Sapkota", url: "https://www.youtube.com/watch?v=2r5BgkLx-Mk&t=32s" },
   { title: "EPISODE 02", subject: "Deenakar Kiran Khadka", url: "https://www.youtube.com/watch?v=M3Tp1v33q28" },
+  { title: "EPISODE 03", subject: "Govinda Gautam", url: "https://www.youtube.com/watch?v=7NCOq1V7ILw&t=80s" },
+  { title: "EPISODE 04", subject: "Diya Shrestha", url: "https://www.youtube.com/watch?v=6XIqauT44kw&t=1s" },
+  { title: "EPISODE 05", subject: "Kinjal Timalsina", url: "https://www.youtube.com/watch?v=Xg3X-h33oXg&t=1s" },
+  { title: "EPISODE 06", subject: "Aakarshi Poudel", url: "https://www.youtube.com/watch?v=C8rIXuh7Xrg&t=1s" },
+  { title: "EPISODE 07", subject: "Binayak Babu Rana", url: "https://www.youtube.com/watch?v=oKlUSbiv5ig&t=1s" },
+  { title: "EPISODE 08", subject: "Aayushma Shrestha", url: "https://www.youtube.com/watch?v=JDkop1Z_K94&t=2s" },
 ];
 
 function VoxPopTeams() {
@@ -65,7 +71,7 @@ function VoxPopTeams() {
       {[1, 2].map((item) => <button key={item} type="button" role="tab" aria-selected={team === item} onClick={() => setTeam(item as 1 | 2)} className={cn("px-5 py-3 text-xs uppercase tracking-[0.16em] transition", team === item ? "bg-gold text-navy-deep" : "border border-white/20 text-silver hover:border-gold hover:text-warm")}>Team {item}</button>)}
     </div>
     <div className="mt-6 flex flex-wrap gap-3" role="tablist" aria-label="Vox-Pop questions"><button type="button" role="tab" aria-selected={question === 1} onClick={() => setQuestion(1)} className={cn("border px-4 py-2 text-xs uppercase tracking-[0.14em]", question === 1 ? "border-gold bg-gold text-navy-deep" : "border-white/20 text-silver")}>Question 1</button><button type="button" role="tab" aria-selected={question === 2} onClick={() => setQuestion(2)} className={cn("border px-4 py-2 text-xs uppercase tracking-[0.14em]", question === 2 ? "border-gold bg-gold text-navy-deep" : "border-white/20 text-silver")}>Question 2</button></div>
-    <div className="mt-10 border-t border-gold/30 pt-8"><p className="text-[11px] uppercase tracking-[0.18em] text-gold">Team {team}</p><h2 className="font-display mt-3 text-3xl sm:text-4xl">{question === 1 ? "Q1. What is the most memorable thing about TESMUN 2026?" : "Q2. Which is your favourite committee and why?"}</h2>
+    <div className="mt-10 border-t border-gold/30 pt-8"><p className="text-[11px] uppercase tracking-[0.18em] text-gold">Team {team}</p><h2 className="font-display mt-3 text-3xl sm:text-4xl">{team === 1 && question === 1 ? "Q1. Describe TESMUN in one word." : team === 1 && question === 2 ? "Q2. Why do the students love TESMUN?" : question === 1 ? "Q1. What is the most memorable thing about TESMUN 2026?" : "Q2. Which is your favourite committee and why?"}</h2>
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{people.map((person) => <article key={person.name} className="border border-white/10 bg-navy p-5 shadow-2xl">
         {person.photo ? <img src={person.photo} alt={`${person.name} portrait`} className="mx-auto h-40 w-40 rounded-full border border-gold/30 object-cover" /> : <div className="mx-auto h-40 w-40 rounded-full border border-dashed border-white/20" aria-label="Portrait not provided" />}
         <p className="mt-5 text-lg font-medium text-warm">{person.name}</p><p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-gold">{person.role}</p><p className="mt-5 text-sm leading-6 text-silver/80">“{person.answer}”</p>
