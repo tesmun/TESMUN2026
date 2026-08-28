@@ -10,12 +10,21 @@ export type ArchiveArticle = {
 export type ArchiveDay = { session: NewsSession; day: NewsDay; articles: ArchiveArticle[] };
 
 const committeeMeta = {
-  LP1: ["lp1", "/images/committees/visuals/committee-lp.png"], LP2: ["lp2", "/images/committees/visuals/committee-lp.png"], LP3: ["lp3", "/images/committees/visuals/committee-lp.png"],
-  DISEC: ["disec", "/images/committees/visuals/committee-disec.webp"], HRC: ["hrc", "/images/committees/visuals/committee-hrc.webp"], ECOSOC: ["ecosoc", "/images/committees/visuals/committee-ecosoc.webp"], UNEP: ["unep", "/images/committees/visuals/committee-unep.webp"],
+  LP1: ["lp1", "/images/committees/visuals/committee-lp.png", "LP I"], LP2: ["lp2", "/images/committees/visuals/committee-lp.png", "LP II"], LP3: ["lp3", "/images/committees/visuals/committee-lp.png", "LP III"],
+  DISEC: ["disec", "/images/committees/visuals/committee-disec.webp", "DISEC"], HRC: ["hrc", "/images/committees/visuals/committee-hrc.webp", "HRC"], ECOSOC: ["ecosoc", "/images/committees/visuals/committee-ecosoc.webp", "ECOSOC"], UNEP: ["unep", "/images/committees/visuals/committee-unep.webp", "UNEP"],
 } as const;
 const defaultCommittees = ["LP1", "LP2", "LP3", "DISEC", "HRC", "ECOSOC", "UNEP"] as const;
-const session2Day2Committees = ["LP1", "LP2", "LP3", "LP3", "DISEC", "HRC", "HRC", "ECOSOC", "UNEP", "UNEP"] as const;
-const session2Day2Images = ["lp1-photo2.png", "lp2-photo2.png", "lp3-photo1.png", "lp3-photo2.png", "disec1.png", "hrc2.png", "hrc1.png", "ecosoc1.png", "unep2.png", "unep1.png"] as const;
+const session2Day2Committees = ["LP1", "LP2", "LP3", "DISEC", "HRC", "ECOSOC", "UNEP", "LP3", "HRC", "UNEP"] as const;
+const session2Day1Images: Record<string, string> = { LP1: "lp1.webp", LP2: "lp2.webp", LP3: "lp3.webp", DISEC: "disec.webp", HRC: "hrc.webp", ECOSOC: "ecosoc.webp", UNEP: "unep.webp" };
+const session2Day2ImagesByCommittee: Record<string, string[]> = {
+  LP1: ["lp1-photo1.png", "lp1-photo2.png", "lp1-photo3.png"],
+  LP2: ["lp2-photo1.png", "lp2-photo2.png"],
+  LP3: ["lp3-photo1.png", "lp3-photo2.png"],
+  DISEC: ["disec1.png", "disec2.png"],
+  HRC: ["hrc1.png", "hrc2.png"],
+  ECOSOC: ["ecosoc1.png", "ecosoc2.png"],
+  UNEP: ["unep1.png", "unep2.png"],
+};
 const overrides: Record<string, { committee: string; headline: string; author: string; summary: string; body: string[]; image?: string }[]> = {
   "1-1": [
     { committee: "LP1", headline: "THE QUIET COMMITTEE ERUPTS! EIGHTH GRADERS FINALLY FIND THEIR VOICE!", author: "Krishna Shrestha, Chief Reporter of LP-I", summary: "Grade 8 delegates began their first-ever Model United Nations (MUN) session on Monday by simulating the national Parliament and discussing key national issues.", body: ["Grade 8 delegates began their first-ever Model United Nations (MUN) session on Monday by simulating the national Parliament and discussing key national issues, with the Dais panel providing a demonstration to help them understand the procedures.", "The session began with delegates presenting their views, but some struggled to speak. The Vice Chair encouraged them to participate more and said, \"Your research has been wonderful but you need to present your points confidently.\"", "As the hesitation from the delegates continued, the Dais panel stepped in to encourage participation. When asked about the delegates' difficulty speaking, Chair Aakarshi Paudel said, \"I have no idea why the delegates are having a hard time speaking. The main agenda and the motion raised for the Moderated Caucus both are not particularly difficult.\"", "The session was briefly disrupted when the delegate of Biraj Bhakta Shrestha, Ayaan Upreti, was suspended twice from the committee.", "Secretary-General Dibas Khadka later stepped in to encourage delegates to ask questions, express their opinions and said, \"Delegates, you all are free to ask me any questions regarding the agenda or the motion of the Moderated Caucus. As the Secretary General, it is my responsibility to improve the flow of discussions, provide support and supervise every committee. Please, feel free to speak up and contribute to the ongoing discussion,\" Dibas Khadka said.", "Following his intervention, the atmosphere of the committee began to change. Delegates who had spoken little earlier started raising points, questioning one another and presenting arguments.", "By the end of the session, delegates were participating more in the moderated caucus as the committee continued."] },
@@ -38,6 +47,17 @@ const overrides: Record<string, { committee: string; headline: string; author: s
 };
 const sessions: { session: NewsSession; days: NewsDay[] }[] = [{ session: 3, days: [3, 2, 1] }, { session: 2, days: [2, 1] }, { session: 1, days: [2, 1] }];
 const fallbackBody = ["This dispatch records the committee’s work as the session moved from opening positions toward the decisions still to come.", "Across the room, delegates balanced national priorities with the shared language of negotiation, leaving the next page open to revision."];
+const cleanAuthor = (author: string) => author.replace(/\s*[·|,-]?\s*(?:Kathmandu\s*,?\s*)?(?:August\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,?\s*2026)?|\d{1,2}(?:st|nd|rd|th)?\s+August(?:\s*,?\s*2026)?)/gi, "").replace(/\s+2026\b/gi, "").replace(/\s{2,}/g, " ").replace(/[ ,·|-]+$/, "").trim();
+const session2Day2Committee = (headline: string) => {
+  if (/12 BILLION|GOVERNMENT DEMANDS/i.test(headline)) return "LP1";
+  if (/2\.1 BILLION|RSP DIVIDED/i.test(headline)) return "LP2";
+  if (/DEVELOPMENT OR DISASTER|DEVELOPMENT CRISIS|REAL-LIFE FLASH FLOOD/i.test(headline)) return "LP3";
+  if (/FOREIGN INTERVENTION|REGIONAL CHAOS|DISEC/i.test(headline)) return "DISEC";
+  if (/WAR JUSTIFIED|CIVILIAN PROTECTION|CONFLICT ZONES/i.test(headline)) return "HRC";
+  if (/OIL MONEY|SECRET SHIPMENTS|ECOSOC/i.test(headline)) return "ECOSOC";
+  return "UNEP";
+};
+const committeeDisplayName = (committee: string) => committeeMeta[committee as keyof typeof committeeMeta]?.[2] ?? committee;
 const verbatimDay2 = day2Verbatim.trim().split(/\n(?=(?:MELTING GLACIERS|BROKEN PROMISES|GUNS! DRONES|SHELL COMPANIES|WHO’S BEHIND|FAKE! FRAUD|RSP IN CRISIS|GEN Z PROTEST))/).map((section) => section.trim()).filter(Boolean);
 const day2VerbatimBodies = verbatimDay2.map((section) => {
   const lines = section.split(/\n/).map((line) => line.trim()).filter(Boolean);
@@ -50,21 +70,31 @@ const day2VerbatimBodies = verbatimDay2.map((section) => {
 const parseVerbatimArticles = (source: string) => source.trim().split(/\n(?=[A-Z0-9][A-Z0-9 !?,.'’&:-]{20,}\s*\n)/).map((section) => {
   const lines = section.split(/\n/).map((line) => line.trim()).filter(Boolean);
   const bodyStart = lines.findIndex((line, index) => index > 1 && !/^By\s/i.test(line) && !/^Kathmandu,/i.test(line));
-  return { committee: "", headline: lines[0] ?? "", author: (lines[1] ?? "").replace(/^-/, "").trim(), summary: lines[bodyStart] ?? "", body: lines.slice(bodyStart) };
+  return { committee: "", headline: lines[0] ?? "", author: (lines[1] ?? "").replace(/^-?\s*By\s*/i, "").trim(), summary: lines[bodyStart] ?? "", body: lines.slice(bodyStart) };
 }).filter((article) => article.headline && article.body.length);
-const session2VerbatimArticles = parseVerbatimArticles(session2Day1Verbatim);
-const session2Day2VerbatimArticles = parseVerbatimArticles(session2Day2Verbatim);
+const session2VerbatimArticles = parseVerbatimArticles(session2Day1Verbatim.replace(/^SECOND SESSION, DAY-1\s*/i, ""));
+const session2Day2VerbatimArticles = parseVerbatimArticles(session2Day2Verbatim.replace(/^SECOND SESSION, DAY-2\s*/i, ""));
+const session2Day1Committee = (headline: string) => {
+  if (/YOUTH MIGRATION|PARLIAMENT AT A BREAKING POINT/i.test(headline)) return "LP2";
+  if (/GEN Z|WHO FAILED NEPAL/i.test(headline)) return "LP1";
+  if (/GREEN FUTURE|POWER! POLITICS/i.test(headline)) return "LP3";
+  if (/MISSILE|DISEC/i.test(headline)) return "DISEC";
+  if (/CHINA|EXPELLED|UNHRC/i.test(headline)) return "HRC";
+  if (/SANCTIONS|ECOSOC/i.test(headline)) return "ECOSOC";
+  return "UNEP";
+};
 export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
   const custom = overrides[`${session}-${day}`];
-  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article, index) => ({ ...article, committee: defaultCommittees[index] ?? "UNEP" })) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index) => ({ ...article, committee: session2Day2Committees[index] ?? "UNEP", image: `/images/press/session-2/day-2/${session2Day2Images[index] ?? "unep1.png"}` })) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
+  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article) => { const committee = session2Day1Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-2/day-1/${session2Day1Images[committee]}` }; }) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index, articles) => { const committee = session2Day2Committee(article.headline); const occurrence = articles.slice(0, index).filter((item) => session2Day2Committee(item.headline) === committee).length; const imageName = session2Day2ImagesByCommittee[committee]?.[occurrence]; return { ...article, committee, image: imageName ? `/images/press/news/session-2/day-2/${imageName}` : undefined }; }) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
   return {
     session,
     day,
     articles: list.map((item, index) => {
-      const [slug, logo] = committeeMeta[item.committee as keyof typeof committeeMeta];
+      const [slug, logo] = committeeMeta[item.committee as keyof typeof committeeMeta] ?? committeeMeta.UNEP;
       const page = index < 3 ? 1 : 2;
       const number = index < 3 ? index + 1 : index - 2;
-      return { session, day, committee: item.committee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: session === 1 && day === 2 && day2VerbatimBodies[index]?.length ? day2VerbatimBodies[index] : item.body, author: item.author, image: item.image ?? `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`, imageAlt: `${item.committee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : "TESMUN XIV" };
+      const displayCommittee = committeeDisplayName(item.committee);
+      return { session, day, committee: displayCommittee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: session === 1 && day === 2 && day2VerbatimBodies[index]?.length ? day2VerbatimBodies[index] : item.body, author: cleanAuthor(item.author), image: item.image ?? (session === 2 && day === 2 ? undefined : `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`), imageAlt: `${displayCommittee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : session === 2 ? `August ${day === 1 ? "25" : "26"}, 2026` : "TESMUN XIV" };
     }),
   };
 }));
