@@ -124,11 +124,12 @@ function ITDetail({ committee }: { committee: Committee }) {
             <h2 className="font-display mt-3 text-4xl text-white sm:text-5xl">Yubin KC</h2>
             <div className="rule mt-6 max-w-[7rem]" />
 <div className="mt-6 max-w-md space-y-5 text-[15px] leading-relaxed text-white/80">
-            <p><strong>“The harder the conflict, the greater the triumph.” — George Washington</strong></p>
-            <p>To bring a conference as dynamic as TESMUN 2026 to life, countless hours of work happen far beyond the committees. As the IT department, we stand behind the screen, behind the systems, behind the designs, behind the digital experiences and in helping make the vision of TESMUN a reality.</p>
-            <p>It's not just about managing technology. Whether it's creating engaging videos, building the official TESMUN website, or providing real-time updates, we ensure that every aspect of the conference is connected, accessible, and alive.</p>
-            <p>Each page of the website, each visual, each announcement and each video is the result of hours of creativity, precision and collaboration. As delegates debate resolutions and chairs lead committees, our team is busy behind the scenes making sure their efforts are captured, communicated and remembered.</p>
-            <p>The challenges may be demanding, the deadlines relentless, and the work often unseen—but that is what makes the final result worthwhile. Because when the screens light up, the videos roll, and every piece comes together, we know that the effort behind the scenes has helped create something worth remembering.</p>
+            <p><strong>“If I had asked people what they wanted, they would have said faster horses.” — Henry Ford</strong></p>
+            <p>TESMUN 2026 is more than a conference to me. It is an opportunity to be part of something that brings together students with different perspectives, ambitions, and ideas, and give them a platform to engage with the world beyond the classroom.</p>
+            <p>As the Head of IT, I have the privilege of contributing to that experience from behind the scenes. Whether through the website, media, or digital platforms, my aim was never simply to produce content, but to help shape how delegates experienced and remembered the conference.</p>
+            <p>The process was not always straightforward. Ideas changed, expectations evolved, and turning a vision into something tangible required constant adaptation. But that is also what made the experience meaningful. It taught me to take ownership of my work, remain open to criticism, and continue pursuing a higher standard even when the process became difficult.</p>
+            <p>What I value most from TESMUN is the opportunity to contribute to a conference created by students, for students. I am proud to be playing a part in that process and even prouder of what our collective effort is becoming.</p>
+            <p>TESMUN 2026 is an experience of learning, creating, and, above all, being part of something larger than any one role.</p>
           </div>
           </Reveal>
           <Reveal delay={0.08}>
