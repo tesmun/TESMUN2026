@@ -15,7 +15,16 @@ const committeeMeta = {
 } as const;
 const defaultCommittees = ["LP1", "LP2", "LP3", "DISEC", "HRC", "ECOSOC", "UNEP"] as const;
 const session2Day2Committees = ["LP1", "LP2", "LP3", "DISEC", "HRC", "ECOSOC", "UNEP", "LP3", "HRC", "UNEP"] as const;
-const session2Day2Images = ["lp1-photo2.png", "lp2-photo2.png", "lp3-photo1.png", "disec1.png", "hrc2.png", "ecosoc1.png", "unep2.png", "lp3-photo2.png", "hrc1.png", "unep1.png"] as const;
+const session2Day1Images: Record<string, string> = { LP1: "lp1.webp", LP2: "lp2.webp", LP3: "lp3.webp", DISEC: "disec.webp", HRC: "hrc.webp", ECOSOC: "ecosoc.webp", UNEP: "unep.webp" };
+const session2Day2ImagesByCommittee: Record<string, string[]> = {
+  LP1: ["lp1-photo1.png", "lp1-photo2.png", "lp1-photo3.png"],
+  LP2: ["lp2-photo1.png", "lp2-photo2.png"],
+  LP3: ["lp3-photo1.png", "lp3-photo2.png"],
+  DISEC: ["disec1.png", "disec2.png"],
+  HRC: ["hrc1.png", "hrc2.png"],
+  ECOSOC: ["ecosoc1.png", "ecosoc2.png"],
+  UNEP: ["unep1.png", "unep2.png"],
+};
 const overrides: Record<string, { committee: string; headline: string; author: string; summary: string; body: string[]; image?: string }[]> = {
   "1-1": [
     { committee: "LP1", headline: "THE QUIET COMMITTEE ERUPTS! EIGHTH GRADERS FINALLY FIND THEIR VOICE!", author: "Krishna Shrestha, Chief Reporter of LP-I", summary: "Grade 8 delegates began their first-ever Model United Nations (MUN) session on Monday by simulating the national Parliament and discussing key national issues.", body: ["Grade 8 delegates began their first-ever Model United Nations (MUN) session on Monday by simulating the national Parliament and discussing key national issues, with the Dais panel providing a demonstration to help them understand the procedures.", "The session began with delegates presenting their views, but some struggled to speak. The Vice Chair encouraged them to participate more and said, \"Your research has been wonderful but you need to present your points confidently.\"", "As the hesitation from the delegates continued, the Dais panel stepped in to encourage participation. When asked about the delegates' difficulty speaking, Chair Aakarshi Paudel said, \"I have no idea why the delegates are having a hard time speaking. The main agenda and the motion raised for the Moderated Caucus both are not particularly difficult.\"", "The session was briefly disrupted when the delegate of Biraj Bhakta Shrestha, Ayaan Upreti, was suspended twice from the committee.", "Secretary-General Dibas Khadka later stepped in to encourage delegates to ask questions, express their opinions and said, \"Delegates, you all are free to ask me any questions regarding the agenda or the motion of the Moderated Caucus. As the Secretary General, it is my responsibility to improve the flow of discussions, provide support and supervise every committee. Please, feel free to speak up and contribute to the ongoing discussion,\" Dibas Khadka said.", "Following his intervention, the atmosphere of the committee began to change. Delegates who had spoken little earlier started raising points, questioning one another and presenting arguments.", "By the end of the session, delegates were participating more in the moderated caucus as the committee continued."] },
@@ -79,7 +88,7 @@ const session2Day1Committee = (headline: string) => {
 };
 export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
   const custom = overrides[`${session}-${day}`];
-  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article) => ({ ...article, committee: session2Day1Committee(article.headline) })) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index) => ({ ...article, committee: session2Day2Committee(article.headline), image: `/images/press/news/session-2/day-2/${session2Day2Images[index] ?? "unep1.png"}` })) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
+  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article) => { const committee = session2Day1Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-2/day-1/${session2Day1Images[committee]}` }; }) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index, articles) => { const committee = session2Day2Committee(article.headline); const occurrence = articles.slice(0, index).filter((item) => session2Day2Committee(item.headline) === committee).length; const imageName = session2Day2ImagesByCommittee[committee]?.[occurrence]; return { ...article, committee, image: imageName ? `/images/press/news/session-2/day-2/${imageName}` : undefined }; }) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
   return {
     session,
     day,
@@ -88,7 +97,7 @@ export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) =>
       const page = index < 3 ? 1 : 2;
       const number = index < 3 ? index + 1 : index - 2;
       const displayCommittee = committeeDisplayName(item.committee);
-      return { session, day, committee: displayCommittee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: session === 1 && day === 2 && day2VerbatimBodies[index]?.length ? day2VerbatimBodies[index] : item.body, author: cleanAuthor(item.author), image: item.image ?? `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`, imageAlt: `${displayCommittee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : session === 2 ? `August ${day === 1 ? "25" : "26"}, 2026` : "TESMUN XIV" };
+      return { session, day, committee: displayCommittee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: session === 1 && day === 2 && day2VerbatimBodies[index]?.length ? day2VerbatimBodies[index] : item.body, author: cleanAuthor(item.author), image: item.image ?? (session === 2 && day === 2 ? undefined : `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`), imageAlt: `${displayCommittee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : session === 2 ? `August ${day === 1 ? "25" : "26"}, 2026` : "TESMUN XIV" };
     }),
   };
 }));
