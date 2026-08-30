@@ -1,25 +1,52 @@
-# TESMUN XIV
+<div align="center">
 
-Official conference website for The Excelsior School Model United Nations, session XIV.
+  <a href="https://tesmun.tech">
+    <img src="https://i.imgur.com/QWpnTNj.png" alt="TESMUN XIV Logo" width="200">
+  </a>
 
-## Stack
+  # 🏛️ TESMUN XIV (2026)
+  ### *14th Edition of The Excelsior School Model United Nations*
 
-Vite + React + TypeScript + Tailwind CSS v4 + Framer Motion
+  [![Official Website](https://img.shields.io/badge/Website-tesmun.tech-0A84FF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://tesmun2026.pages.dev)
+  [![Host Institution](https://img.shields.io/badge/Host-The_Excelsior_School-003366?style=for-the-badge&logo=graduation-cap&logoColor=white)](https://excelsior.edu.np)
 
-## Structure
+  ---
 
-```
-src/
-  App.tsx
-  main.tsx
-  index.css
-  components/
-  lib/
-  pages/
-public/images/
-```
+</div>
 
-## Scripts
+## 🌐 Welcome to TESMUN XIV
 
-- `npm run dev` — local development
-- `npm run build` — production build
+Welcome to the **14th Annual Excelsior School Model United Nations (TESMUN XIV)**.
+
+TESMUN serves as a platform for emerging student leaders, diplomats, and thinkers to engage in rigorous debate, negotiate resolutions, and address critical global challenges with diplomacy and foresight.
+
+---
+
+## 📌 Essential Links
+
+| Resource | Link |
+| :--- | :--- |
+| **Official Conference Portal** | [tesmun.tech](https://tesmun2026.pages.dev) |
+| **The Excelsior School** | [excelsior.edu.np](https://excelsior.edu.np) |
+| **Delegate Allocations** | Available on [tesmun.tech](https://tesmun2026.pages.dev) |
+
+---
+
+## 🏛️ Event Overview
+
+* **Host Institution:** The Excelsior School
+* **Edition:** XIV (14th Iteration)
+* **Venue:** Kathmandu, Nepal
+* **Official Platform:** [tesmun.tech](https://tesmun2026.pages.dev)
+
+---
+
+## 🤝 Contact & Inquiries
+
+For official announcements, schedules, committee matrices, and delegate handbooks, visit the official conference portal at **[tesmun.tech](https://tesmun.tech)** or contact **[The Excelsior School](https://excelsior.edu.np)**.
+
+<br>
+
+<div align="center">
+  <sub><i>Unite to create the future.</i></sub>
+</div>
