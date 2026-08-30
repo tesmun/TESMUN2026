@@ -47,7 +47,7 @@ const overrides: Record<string, { committee: string; headline: string; author: s
 };
 const sessions: { session: NewsSession; days: NewsDay[] }[] = [{ session: 3, days: [3, 2, 1] }, { session: 2, days: [2, 1] }, { session: 1, days: [2, 1] }];
 const fallbackBody = ["This dispatch records the committee’s work as the session moved from opening positions toward the decisions still to come.", "Across the room, delegates balanced national priorities with the shared language of negotiation, leaving the next page open to revision."];
-const cleanAuthor = (author: string) => author.replace(/\s*[·|,-]?\s*(?:Kathmandu\s*,?\s*)?(?:August\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,?\s*2026)?|\d{1,2}(?:st|nd|rd|th)?\s+August(?:\s*,?\s*2026)?)/gi, "").replace(/\s+2026\b/gi, "").replace(/\s{2,}/g, " ").replace(/[ ,·|-]+$/, "").trim();
+const cleanAuthor = (author: string) => author.replace(/^[-–—]\s*/, "").replace(/\s*[·|,-]?\s*(?:Kathmandu\s*,?\s*)?(?:August\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,?\s*2026)?|\d{1,2}(?:st|nd|rd|th)?\s+August(?:\s*,?\s*2026)?)/gi, "").replace(/\s+2026\b/gi, "").replace(/\s{2,}/g, " ").replace(/[ ,·|-]+$/, "").trim();
 const session2Day2Committee = (headline: string) => {
   if (/12 BILLION|GOVERNMENT DEMANDS/i.test(headline)) return "LP1";
   if (/2\.1 BILLION|RSP DIVIDED/i.test(headline)) return "LP2";
@@ -72,8 +72,18 @@ const parseVerbatimArticles = (source: string) => source.trim().split(/\n(?=[A-Z
   const bodyStart = lines.findIndex((line, index) => index > 1 && !/^By\s/i.test(line) && !/^Kathmandu,/i.test(line));
   return { committee: "", headline: lines[0] ?? "", author: (lines[1] ?? "").replace(/^-?\s*By\s*/i, "").trim(), summary: lines[bodyStart] ?? "", body: lines.slice(bodyStart) };
 }).filter((article) => article.headline && article.body.length);
+const session1Day2VerbatimArticles = parseVerbatimArticles(day2Verbatim.replace(/^FIRST SESSION, DAY-2\s*/i, ""));
 const session2VerbatimArticles = parseVerbatimArticles(session2Day1Verbatim.replace(/^SECOND SESSION, DAY-1\s*/i, ""));
 const session2Day2VerbatimArticles = parseVerbatimArticles(session2Day2Verbatim.replace(/^SECOND SESSION, DAY-2\s*/i, ""));
+const session1Day2Committee = (headline: string) => {
+  if (/MELTING GLACIERS/i.test(headline)) return "UNEP";
+  if (/BROKEN PROMISES/i.test(headline)) return "ECOSOC";
+  if (/GUNS! DRONES|SHELL COMPANIES/i.test(headline)) return "DISEC";
+  if (/WHO’S BEHIND/i.test(headline)) return "HRC";
+  if (/FAKE! FRAUD/i.test(headline)) return "LP1";
+  if (/RSP IN CRISIS/i.test(headline)) return "LP2";
+  return "LP3";
+};
 const session2Day1Committee = (headline: string) => {
   if (/YOUTH MIGRATION|PARLIAMENT AT A BREAKING POINT/i.test(headline)) return "LP2";
   if (/GEN Z|WHO FAILED NEPAL/i.test(headline)) return "LP1";
@@ -84,8 +94,8 @@ const session2Day1Committee = (headline: string) => {
   return "UNEP";
 };
 export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
-  const custom = overrides[`${session}-${day}`];
-  const list = custom ?? (session === 2 && day === 1 ? session2VerbatimArticles.map((article) => { const committee = session2Day1Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-2/day-1/${session2Day1Images[committee]}` }; }) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index, articles) => { const committee = session2Day2Committee(article.headline); const occurrence = articles.slice(0, index).filter((item) => session2Day2Committee(item.headline) === committee).length; const imageName = session2Day2ImagesByCommittee[committee]?.[occurrence]; return { ...article, committee, image: imageName ? `/images/press/news/session-2/day-2/${imageName}` : undefined }; }) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody })));
+  const custom = session === 1 && day === 2 ? undefined : overrides[`${session}-${day}`];
+  const list = custom ?? (session === 1 && day === 2 ? session1Day2VerbatimArticles.map((article) => ({ ...article, committee: session1Day2Committee(article.headline), image: undefined })) : session === 2 && day === 1 ? session2VerbatimArticles.map((article) => { const committee = session2Day1Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-2/day-1/${session2Day1Images[committee]}` }; }) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index, articles) => { const committee = session2Day2Committee(article.headline); const occurrence = articles.slice(0, index).filter((item) => session2Day2Committee(item.headline) === committee).length; const imageName = session2Day2ImagesByCommittee[committee]?.[occurrence]; return { ...article, committee, image: imageName ? `/images/press/news/session-2/day-2/${imageName}` : undefined }; }) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody, image: undefined })));
   return {
     session,
     day,
