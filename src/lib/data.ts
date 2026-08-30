@@ -377,7 +377,7 @@ export const coordinators: Person[] = [
   },
 ];
 
-export const conferenceDate = new Date("2026-08-31T09:00:00+05:45");
+export const conferenceDate = new Date("2026-09-01T08:30:00+05:45");
 
 export const allocationsSheet =
   "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?usp=sharing";
