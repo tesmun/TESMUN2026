@@ -15,7 +15,7 @@ const slots = [
   { slug: "op-ed", layout: "square" as const },
   { slug: "cartoons", layout: "square" as const },
   { slug: "editorial", layout: "square" as const },
-  { slug: "conference", layout: "wide" as const },
+  { slug: "conference", layout: "square" as const },
 ];
 
 export default function Press() {
