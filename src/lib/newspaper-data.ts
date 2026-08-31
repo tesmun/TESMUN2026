@@ -33,7 +33,7 @@ export const newspaperArticles: NewspaperArticle[] = [
     session: "final",
     committee: "TES Model Parliament I",
     committeeSlug: "lp1",
-    committeeAbbr: "LP I",
+    committeeAbbr: "MP I",
     headline: "The chamber settles on a narrower bill",
     dek: "After two days of coalition arithmetic, LP I sent a trimmed text to the floor rather than a louder one.",
     body: [
@@ -55,7 +55,7 @@ export const newspaperArticles: NewspaperArticle[] = [
     session: "final",
     committee: "TES Model Parliament II",
     committeeSlug: "lp2",
-    committeeAbbr: "LP II",
+    committeeAbbr: "MP II",
     headline: "A working majority, held by a clause",
     dek: "LP II closed with a majority intact — and a single sentence that nearly undid it.",
     body: [
@@ -76,7 +76,7 @@ export const newspaperArticles: NewspaperArticle[] = [
     session: "final",
     committee: "TES Model Parliament III",
     committeeSlug: "lp3",
-    committeeAbbr: "LP III",
+    committeeAbbr: "MP III",
     headline: "The crossbench writes the last line",
     dek: "LP III’s closing text belonged to neither front bench. That was the point.",
     body: [
@@ -184,7 +184,7 @@ export const newspaperArticles: NewspaperArticle[] = [
     session: "second",
     committee: "TES Model Parliament I",
     committeeSlug: "lp1",
-    committeeAbbr: "LP I",
+    committeeAbbr: "MP I",
     headline: "Coalitions tested in the tea break",
     dek: "LP I’s second sitting moved the real debate into the corridor — and then back again.",
     body: [
@@ -205,7 +205,7 @@ export const newspaperArticles: NewspaperArticle[] = [
     session: "second",
     committee: "TES Model Parliament II",
     committeeSlug: "lp2",
-    committeeAbbr: "LP II",
+    committeeAbbr: "MP II",
     headline: "Procedure, used as a tool rather than a shield",
     dek: "LP II learned that a well-timed motion can be more persuasive than a long speech.",
     body: [
@@ -226,7 +226,7 @@ export const newspaperArticles: NewspaperArticle[] = [
     session: "second",
     committee: "TES Model Parliament III",
     committeeSlug: "lp3",
-    committeeAbbr: "LP III",
+    committeeAbbr: "MP III",
     headline: "The amendment that arrived in a whisper",
     dek: "LP III’s most important sentence was not delivered from the floor.",
     body: [
@@ -334,7 +334,7 @@ export const newspaperArticles: NewspaperArticle[] = [
     session: "first",
     committee: "TES Model Parliament I",
     committeeSlug: "lp1",
-    committeeAbbr: "LP I",
+    committeeAbbr: "MP I",
     headline: "The benches find their voices",
     dek: "LP I opened with ceremony, then with the first real test of who would speak for whom.",
     body: [
@@ -355,7 +355,7 @@ export const newspaperArticles: NewspaperArticle[] = [
     session: "first",
     committee: "TES Model Parliament II",
     committeeSlug: "lp2",
-    committeeAbbr: "LP II",
+    committeeAbbr: "MP II",
     headline: "Rules, tested before they are trusted",
     dek: "LP II’s opening sitting was less about the bill than about whether the house would keep its own clock.",
     body: [
@@ -376,7 +376,7 @@ export const newspaperArticles: NewspaperArticle[] = [
     session: "first",
     committee: "TES Model Parliament III",
     committeeSlug: "lp3",
-    committeeAbbr: "LP III",
+    committeeAbbr: "MP III",
     headline: "A new house learns its acoustics",
     dek: "LP III opened like a room discovering how loud it needs to be.",
     body: [
