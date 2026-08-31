@@ -17,7 +17,6 @@ const photos = [
   { src: "/images/press/conference/main.png", alt: "TESMUN press conference panel", caption: "The secretariat gathered for the TESMUN 2026 press conference." },
   { src: "/images/press/conference/secondary.png", alt: "Student speaking at a TESMUN podium", caption: "Proceedings opened in the auditorium hall." },
   { src: "/images/press/conference/reporterspeaking.png", alt: "Student reporter speaking into a microphone", caption: "The press desk put questions to the conference." },
-  { src: "/images/press/press-hero.png", alt: "TESMUN press desk", caption: "TES Press recorded the day’s discussion." },
 ];
 
 export default function PressConference() {
@@ -47,7 +46,7 @@ export default function PressConference() {
           <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-[0.12em]">{photos[0].caption}</figcaption>
         </figure>
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_0.32fr]">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_0.5fr]">
           <div className="columns-1 gap-8 text-[16px] leading-7 sm:text-[17px] lg:columns-2">
             {articleParagraphs.map((paragraph, index) => (
               <p key={index} className="mb-6 break-inside-avoid font-serif">{paragraph}</p>
@@ -57,7 +56,7 @@ export default function PressConference() {
             <blockquote className="font-serif text-2xl font-bold leading-tight">“The conference wasted no time getting to the heart of the matter.”</blockquote>
             {photos.slice(1).map((photo) => (
               <figure key={photo.src}>
-                <img src={photo.src} alt={photo.alt} className="h-auto w-full object-cover" />
+                <img src={photo.src} alt={photo.alt} className="h-auto w-full object-cover lg:max-h-[420px]" />
                 <figcaption className="mt-2 font-mono text-[10px] uppercase leading-4 tracking-[0.08em]">{photo.caption}</figcaption>
               </figure>
             ))}

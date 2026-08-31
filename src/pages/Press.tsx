@@ -15,6 +15,7 @@ const slots = [
   { slug: "op-ed", layout: "square" as const },
   { slug: "cartoons", layout: "square" as const },
   { slug: "editorial", layout: "square" as const },
+  { slug: "conference", layout: "wide" as const },
 ];
 
 export default function Press() {
@@ -40,7 +41,7 @@ export default function Press() {
 
           <div className="mt-14 grid gap-5 md:grid-cols-6">
             {slots.map((slot, i) => {
-              const section = slot.slug === "editorial" ? { label: "Editorial", intro: "The considered voice of the TESMUN Press Desk." } : pressSections[slot.slug as keyof typeof pressSections];
+              const section = slot.slug === "editorial" ? { label: "Editorial", intro: "The considered voice of the TESMUN Press Desk." } : slot.slug === "conference" ? { label: "Press Conference", intro: "A report from the TESMUN 2026 conference floor." } : pressSections[slot.slug as keyof typeof pressSections];
               const span = slot.layout === "wide" ? "md:col-span-6" : slot.layout === "tall" ? "md:col-span-2" : "md:col-span-2";
               return (
                 <Reveal key={slot.slug} delay={i * 0.05} className={span}>
