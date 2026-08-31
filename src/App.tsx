@@ -12,6 +12,7 @@ import NewsDispatch from "@/pages/NewsDispatch";
 import NotFound from "@/pages/NotFound";
 import OurTeam from "@/pages/OurTeam";
 import Press from "@/pages/Press";
+import PressConference from "@/pages/PressConference";
 import PressSection from "@/pages/PressSection";
 import Editorial from "@/pages/Editorial";
 import Resources from "@/pages/Resources";
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/our-team/:slug" element={<TeamMember />} />
           <Route path="/press" element={<Press />} />
+          <Route path="/press/conference" element={<PressConference />} />
           <Route path="/press/editorial" element={<Editorial />} />
           <Route path="/news" element={<Newspaper />} />
           <Route path="/news/:session/:day/:article" element={<NewsDispatch />} />
