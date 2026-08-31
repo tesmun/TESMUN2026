@@ -61,7 +61,7 @@ export const committees: Committee[] = [
     slug: "lp1",
     email: "lp1@excelsior.edu.np",
     matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=85834387#gid=85834387",
-    abbr: "LP I",
+    abbr: "MP I",
     name: "TES Model Parliament I",
     category: "national",
     description:
@@ -79,7 +79,7 @@ export const committees: Committee[] = [
     slug: "lp2",
     email: "lp2@excelsior.edu.np",
     matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=1089742237#gid=1089742237",
-    abbr: "LP II",
+    abbr: "MP II",
     name: "TES Model Parliament II",
     category: "national",
     description:
@@ -113,7 +113,7 @@ export const committees: Committee[] = [
     slug: "lp3",
     email: "lp3@excelsior.edu.np",
     matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=2111183706#gid=2111183706",
-    abbr: "LP III",
+    abbr: "MP III",
     name: "TES Model Parliament III",
     category: "national",
     description:
