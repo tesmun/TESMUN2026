@@ -23,20 +23,24 @@ const firstPracticePhotos = [
 ];
 const secondPracticePhotos = Array.from({ length: 10 }, (_, index) => `/images/gallery/second-practice/${String(index + 1).padStart(2, "0")}.jpg`);
 const openingCeremonyPhotos = [
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-P2ZincV1vlclFrSEYy3pasQJcRFvlS.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-vwKnE6iC7qdRw6Tf7AtMxByLlEViuP.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yYo4Gh0Fq7YBgc6NGWldpcLEAcEVep.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-P3gAhcAYFZ8Zps3YDq2SFrZTj0a1C3.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-btKtypgd6rrxh6KlwRNDuhB4ZGQx2m.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hTmmvvau5f9UQ2ruZtvYfIcD9mRRI2.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-6KaUmiaiNUz8DqxqJqvPwIqHlaMPGd.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-gIeLxWfhMFYUaHPKS2SETJAieKygBF.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ERi1tU9Z7dXDujp0T2t1IQWYQP1P8X.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-COHBYnMBf5p7WVNFjF1WhCUTOJRkzM.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5qvMskhdOVw1YHk18HITMRC98OpBD5.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1nWtwUu1HtyfCGDqoJ52GLkdUND4gW.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-P4IUs69pU6OnBk9NcHXT4J6oBqqa25.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-GmGyR0HNyp757xW34kfvTEPyGufbbU.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134101-Rm6BxfMfB062hAqQ0dP7nywZwHSiWz.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134026-2l2vSr4fMbZo85pGO9yZrIoG8NL75S.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20135009-nNV0qSUWLOGTfKg792Gkl1arViEYbp.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140559-5c4ImebtD9GE1INYZPdR1vz7OAFKU6.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20135053-AzuKtrg6SRI6eWI9kEVvMu17Sumlqr.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140545-cs5jjQnIuBFbEgElkbohEd0xyMriKu.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140141-0DlAHBhcyG074KLRcBFUIUev8qxRYF.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140132-MtBGXXSSssqSVukkVyJaLiA4USWrxz.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20133915-8AS47AykVeDIqIM7d5qfruXoMhaZHo.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134124-uIZOOfF1WctPjn0i92JJjd50d1LIvy.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140116-IR3BqWr9467oMHcMvk3vx701gnL6KP.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140630-O3arFl2ll7dieBXSj9vCDS4uVNqpVj.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140217-Y7AlYSxkDlRSCFDTvAdZG8nmZwwbzp.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134040-VZFqRKZJcctsfrZlcAchMabynxBNwC.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140152-ruDGR9cUXZaeCS0je4Os9SrOQ6cnXE.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140002-jR75DVXOhz0bfWKKe7yEfOykEYpPsQ.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20135951-TJYTfViHyaLfWrxkZPnQ8KMVVrgbXG.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140229-1Dn6gq0iIJSXkQ1B6nhZoFVwRzpo3h.png",
 ];
 const photos = (offset: number, count: number, custom?: string[], alt = "Gallery photograph"): { src: string; alt: string }[] => custom ? Array.from({ length: count }, (_, index) => ({ src: custom[index % custom.length], alt })) : Array.from({ length: count }, (_, index) => ({ src: galleryImages[(offset + index) % galleryImages.length].src, alt: galleryImages[(offset + index) % galleryImages.length].alt || alt }));
 const blankCeremony = new Set(["CLOSING CEREMONY", "Final Session", "OPENING CEREMONY"]);
