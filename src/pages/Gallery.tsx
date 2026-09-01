@@ -22,19 +22,39 @@ const firstPracticePhotos = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Ln9AXL0u0yOSCmsVONIZQ5IUL3Uykb.png",
 ];
 const secondPracticePhotos = Array.from({ length: 10 }, (_, index) => `/images/gallery/second-practice/${String(index + 1).padStart(2, "0")}.jpg`);
+const openingCeremonyPhotos = [
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134101-Rm6BxfMfB062hAqQ0dP7nywZwHSiWz.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134026-2l2vSr4fMbZo85pGO9yZrIoG8NL75S.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20135009-nNV0qSUWLOGTfKg792Gkl1arViEYbp.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140559-5c4ImebtD9GE1INYZPdR1vz7OAFKU6.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20135053-AzuKtrg6SRI6eWI9kEVvMu17Sumlqr.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140545-cs5jjQnIuBFbEgElkbohEd0xyMriKu.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140141-0DlAHBhcyG074KLRcBFUIUev8qxRYF.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140132-MtBGXXSSssqSVukkVyJaLiA4USWrxz.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20133915-8AS47AykVeDIqIM7d5qfruXoMhaZHo.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134124-uIZOOfF1WctPjn0i92JJjd50d1LIvy.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140116-IR3BqWr9467oMHcMvk3vx701gnL6KP.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140630-O3arFl2ll7dieBXSj9vCDS4uVNqpVj.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140217-Y7AlYSxkDlRSCFDTvAdZG8nmZwwbzp.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134040-VZFqRKZJcctsfrZlcAchMabynxBNwC.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140152-ruDGR9cUXZaeCS0je4Os9SrOQ6cnXE.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140002-jR75DVXOhz0bfWKKe7yEfOykEYpPsQ.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20135951-TJYTfViHyaLfWrxkZPnQ8KMVVrgbXG.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20140229-1Dn6gq0iIJSXkQ1B6nhZoFVwRzpo3h.png",
+];
 const photos = (offset: number, count: number, custom?: string[], alt = "Gallery photograph"): { src: string; alt: string }[] => custom ? Array.from({ length: count }, (_, index) => ({ src: custom[index % custom.length], alt })) : Array.from({ length: count }, (_, index) => ({ src: galleryImages[(offset + index) % galleryImages.length].src, alt: galleryImages[(offset + index) % galleryImages.length].alt || alt }));
 const blankCeremony = new Set(["CLOSING CEREMONY", "Final Session", "OPENING CEREMONY"]);
 const sessions = [
   { title: "CLOSING CEREMONY", count: 8, offset: 0 },
   { title: "Final Session", count: 12, offset: 4 },
-  { title: "OPENING CEREMONY", count: 8, offset: 2 },
+  { title: "OPENING CEREMONY", count: openingCeremonyPhotos.length, offset: 2, customPhotos: openingCeremonyPhotos },
   { title: "SECOND PRACTICE SESSION", count: 10, offset: 1 },
   { title: "FIRST PRACTICE SESSION", count: 12, offset: 5 },
 ];
 
 function PhotoGrid({ offset, count, onSelect, circular = false, customPhotos, customAlt }: { offset: number; count: number; onSelect: (photo: { src: string; alt: string }) => void; circular?: boolean; customPhotos?: string[]; customAlt?: string }) {
   const items = photos(offset, count, customPhotos, customAlt);
-  return <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 ${circular ? "lg:grid-cols-3" : ""}`}>{items.map((photo, index) => { const blank = blankCeremony.has(customAlt ?? ""); return <button key={`${photo.src}-${index}`} type="button" onClick={() => !blank && onSelect(photo)} aria-label={blank ? `${customAlt} photograph placeholder` : photo.alt} className={`group relative aspect-[4/3] overflow-hidden ${blank ? "bg-slate-700/60" : "bg-navy-deep"}`}>{!blank && <img src={photo.src} alt={photo.alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />} {!blank && <span className="absolute inset-0 bg-navy-deep/0 transition group-hover:bg-navy-deep/20" />}</button>; })}</div>;
+  return <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 ${circular ? "lg:grid-cols-3" : ""}`}>{items.map((photo, index) => { const blank = !customPhotos && blankCeremony.has(customAlt ?? ""); return <button key={`${photo.src}-${index}`} type="button" onClick={() => !blank && onSelect(photo)} aria-label={blank ? `${customAlt} photograph placeholder` : photo.alt} className={`group relative aspect-[4/3] overflow-hidden ${blank ? "bg-slate-700/60" : "bg-navy-deep"}`}>{!blank && <img src={photo.src} alt={photo.alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />} {!blank && <span className="absolute inset-0 bg-navy-deep/0 transition group-hover:bg-navy-deep/20" />}</button>; })}</div>;
 }
 
 export default function Gallery() {
@@ -42,7 +62,7 @@ export default function Gallery() {
   return <main className="bg-navy-deep">
     <PageHero image="/images/gallery/gallery.png" alt="The Excelsior School campus at night" title="GALLERY" subtitle="A considered visual record of TESMUN XIV." />
     <section className="px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow>Event archive</Eyebrow><h2 className="mt-3 font-display text-3xl text-warm sm:text-4xl">Highlights of the Event</h2></Reveal><div className="mt-10"><AccordionGallery items={accordionItems} defaultIndex={2} expandRatio={0.52} trigger="hover" /></div></div></section>
-    {sessions.slice(0, 3).map((section) => <section key={section.title} className="border-t border-ink/10 px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow className="text-warm">{section.title === "Final Session" ? "Conference record" : "Ceremony archive"}</Eyebrow><h2 className="mt-3 font-display text-3xl text-warm sm:text-4xl">{section.title}</h2></Reveal><div className="mt-10"><PhotoGrid offset={section.offset} count={section.count} onSelect={setActive} circular={section.title === "Final Session"} customAlt={section.title} /></div></div></section>)}
+    {sessions.slice(0, 3).map((section) => <section key={section.title} className="border-t border-ink/10 px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow className="text-warm">{section.title === "Final Session" ? "Conference record" : "Ceremony archive"}</Eyebrow><h2 className="mt-3 font-display text-3xl text-warm sm:text-4xl">{section.title}</h2></Reveal><div className="mt-10"><PhotoGrid offset={section.offset} count={section.count} onSelect={setActive} circular={section.title === "Final Session"} customPhotos={section.customPhotos} customAlt={section.title} /></div></div></section>)}
     <section className="border-t border-ink/10 bg-navy-deep px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow className="text-silver/70">Video archive</Eyebrow><h2 className="mt-3 font-display text-3xl text-warm sm:text-4xl">OPENING CEREMONY VIDEO &amp; CLOSING CEREMONY VIDEO</h2></Reveal><div className="mt-10 grid gap-6 md:grid-cols-2">{["Opening Ceremony", "Closing Ceremony"].map((title) => <BorderGlow key={title} backgroundColor="#0d2a4a" borderRadius={24} colors={["#c6a15b", "#e3c46a", "#f4efa8"]}><article className="p-5"><h3 className="font-display text-2xl text-warm">{title}</h3><div className="mt-5"><YouTubeEmbed url="" title={title} /></div></article></BorderGlow>)}</div></div></section>
     {sessions.slice(3).map((section) => <section key={section.title} className="border-t border-ink/10 px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-7xl"><Reveal><Eyebrow className="text-warm">Practice archive</Eyebrow><h2 className="mt-3 font-display text-3xl text-warm sm:text-4xl">{section.title}</h2></Reveal><div className="mt-10"><PhotoGrid offset={section.offset} count={section.count} onSelect={setActive} customPhotos={section.title === "FIRST PRACTICE SESSION" ? firstPracticePhotos : section.title === "SECOND PRACTICE SESSION" ? secondPracticePhotos : undefined} customAlt={section.title} /></div></div></section>)}
     <section className="border-t border-ink/10 px-6 py-16 md:px-10 md:py-20"><div className="mx-auto flex max-w-7xl justify-center"><BorderGlow backgroundColor="#0d2a4a" borderRadius={24} colors={["#c6a15b", "#e3c46a", "#f4efa8"]}><div className="p-2"><SpecularButton href="https://sites.google.com/excelsior.edu.np/tesmun2026-gallery/home" size="lg">Grade 7 Photography Library</SpecularButton></div></BorderGlow></div></section>
