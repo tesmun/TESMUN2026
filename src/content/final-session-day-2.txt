@@ -1,0 +1,64 @@
+Create/update the /news page in the existing TESMUN 2026 repository.
+
+Use the existing website and codebase as the source of truth. Do not redesign the existing /news structure unnecessarily. First inspect the current news components, styling, routing, and responsive behavior, then add the following content cleanly.
+
+Add FINAL SESSION DAY-2 news
+
+Create individual news dispatches for:
+
+MP-I
+MP-II
+MP-III / LP-III
+HRC
+DISEC
+ECOSOC
+UNEP
+
+Each committee must have its own individual news article/card/dispatch, following the exact existing /news format.
+
+Use the article content provided in the attached source exactly, with careful proofreading for obvious spelling, grammar, spacing, and formatting errors. Do not change the facts, names, quotes, or meaning.
+
+Images
+
+Use the corresponding committee images from:
+
+/public/images/press/news/session-3/day-2/
+
+Use these PNGs for the relevant dispatches:
+
+lp1.png → MP-I
+lp2.png → MP-II
+lp3.png → MP-III
+hrc.png → HRC
+disec.png → DISEC
+ecosoc.png → ECOSOC
+unep.png → UNEP
+
+Make sure every dispatch has the correct corresponding image and that no committee receives the wrong image.
+
+Article Metadata
+
+Format the byline and date separately, not on the same line.
+
+Example:
+
+By Krishna Shrestha and Aarush Katuwal
+Chief Reporters of LP-I
+
+Kathmandu, 2 September 2026
+
+Keep this metadata visually clean and consistent across every article.
+
+Important
+Preserve the existing /news design and functionality.
+Make every dispatch responsive on desktop, tablet, and mobile.
+No duplicated articles.
+No missing articles.
+No incorrect committee/image pairing.
+No broken images or routes.
+No console/runtime errors.
+Ensure long headlines and article text do not break the layout.
+Keep spacing, typography, image ratios, and card behavior consistent with existing news items.
+Proofread the final rendered content carefully before finishing.
+
+The complete source content for all seven articles is provided in the attached document. Use it as the source of truth.
