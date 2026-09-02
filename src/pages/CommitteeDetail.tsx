@@ -124,11 +124,12 @@ function ITDetail({ committee }: { committee: Committee }) {
             <h2 className="font-display mt-3 text-4xl text-white sm:text-5xl">Yubin KC</h2>
             <div className="rule mt-6 max-w-[7rem]" />
 <div className="mt-6 max-w-md space-y-5 text-[15px] leading-relaxed text-white/80">
-            <p><strong>“The harder the conflict, the greater the triumph.” — George Washington</strong></p>
-            <p>To bring a conference as dynamic as TESMUN 2026 to life, countless hours of work happen far beyond the committees. As the IT department, we stand behind the screen, behind the systems, behind the designs, behind the digital experiences and in helping make the vision of TESMUN a reality.</p>
-            <p>It's not just about managing technology. Whether it's creating engaging videos, building the official TESMUN website, or providing real-time updates, we ensure that every aspect of the conference is connected, accessible, and alive.</p>
-            <p>Each page of the website, each visual, each announcement and each video is the result of hours of creativity, precision and collaboration. As delegates debate resolutions and chairs lead committees, our team is busy behind the scenes making sure their efforts are captured, communicated and remembered.</p>
-            <p>The challenges may be demanding, the deadlines relentless, and the work often unseen—but that is what makes the final result worthwhile. Because when the screens light up, the videos roll, and every piece comes together, we know that the effort behind the scenes has helped create something worth remembering.</p>
+            <p><strong>“If I had asked people what they wanted, they would have said faster horses.” — Henry Ford</strong></p>
+            <p>TESMUN 2026 is more than a conference to me. It is an opportunity to be part of something that brings together students with different perspectives, ambitions, and ideas, and give them a platform to engage with the world beyond the classroom.</p>
+            <p>As the Head of IT, I have the privilege of contributing to that experience from behind the scenes. Whether through the website, media, or digital platforms, my aim was never simply to produce content, but to help shape how delegates experienced and remembered the conference.</p>
+            <p>The process was not always straightforward. Ideas changed, expectations evolved, and turning a vision into something tangible required constant adaptation. But that is also what made the experience meaningful. It taught me to take ownership of my work, remain open to criticism, and continue pursuing a higher standard even when the process became difficult.</p>
+            <p>What I value most from TESMUN is the opportunity to contribute to a conference created by students, for students. I am proud to be playing a part in that process and even prouder of what our collective effort is becoming.</p>
+            <p>TESMUN 2026 is an experience of learning, creating, and, above all, being part of something larger than any one role.</p>
           </div>
           </Reveal>
           <Reveal delay={0.08}>
@@ -215,6 +216,19 @@ function ITDetail({ committee }: { committee: Committee }) {
   );
 }
 
+const pressProfilePlaceholder = (name: string) => ({ name, image: undefined as string | undefined });
+const interviewTeam = [
+  { name: "Rishika Lama", role: "Interview Team Lead", image: pressProfilePlaceholder("Rishika Lama").image },
+  { name: "Garima Dahal", role: "Interview Team 2", image: pressProfilePlaceholder("Garima Dahal").image },
+  { name: "Sofiya Roka", role: "Interview Team 3", image: pressProfilePlaceholder("Sofiya Roka").image },
+];
+const cameraPersons = [
+  { name: "Shriyan Basnet", role: "Interview Camera Person", image: pressProfilePlaceholder("Shriyan Basnet").image },
+  { name: "Sujal Lal Munakarmi", role: "MP1, MP2, MP3 Camera Person", image: pressProfilePlaceholder("Sujal Lal Munakarmi").image },
+  { name: "Lisha Maharjan", role: "ECOSOC, DISEC, HRC Camera Person", image: pressProfilePlaceholder("Lisha Maharjan").image },
+  { name: "Sushant Tamang", role: "UNEP Camera Person", image: pressProfilePlaceholder("Sushant Tamang").image },
+];
+function PressProfiles({ title, people }: { title: string; people: readonly { name: string; role: string; image?: string }[] }) { return <section className="mt-20"><Eyebrow className="text-silver/80">{title}</Eyebrow><div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{people.map((person) => <article key={person.name} className="border border-white/10 bg-navy px-5 py-6 text-center"><div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-gold/30">{person.image ? <img src={person.image} alt={person.name} className="h-full w-full rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-full w-full rounded-full" />}</div><h3 className="mt-4 text-lg text-white">{person.name}</h3><p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-gold">{person.role}</p></article>)}</div></section>; }
 function PressDetail({ committee }: { committee: Committee }) {
   const editors = [
     { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", reverse: false, text: "While TESMUN unfolds, many work behind the curtains, orchestrating the concert from behind. They are the true pillars of the program–the ones who construct the foundation for greater things to be built on. The Press, IT, and Logistics team have all put in immense effort into creating that structure for TESMUN 2026. As the head of the Press team, I’d like to commence this annual event by quoting,\n\n“Write what should not be forgotten.” -Isabel Allendeas\n\nAs the Press records history,capturing it and storing text in a digital archive, one which might be stumbled upon in the future by generations to come." },
@@ -283,6 +297,7 @@ function PressDetail({ committee }: { committee: Committee }) {
           </div>
         </div>
       </section>
+      <section className="px-6 py-20 md:px-10"><div className="mx-auto max-w-7xl"><PressProfiles title="Interview Team" people={interviewTeam} /><PressProfiles title="Camera Persons" people={cameraPersons} /></div></section>
 
       <div className="bg-navy-deep pb-10 text-center">
         {committee.teamListUrl && <a href={committee.teamListUrl} target="_blank" rel="noopener noreferrer" className="mb-8 inline-flex border border-gold px-6 py-3 text-xs uppercase tracking-[0.14em] text-gold transition-colors hover:bg-gold hover:text-navy-deep">Full Team List</a>}

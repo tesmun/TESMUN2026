@@ -221,10 +221,7 @@ export const speeches: Speech[] = [
 export const opEdContributors = [
   { name: "Dibas Khadka", role: "Secretary-General", pdf: "https://drive.google.com/file/d/1_K_fJxH1t3IidJKuqWotQ9SspnyWqCco/view?usp=sharing", photo: "/images/our-team/secgen.png" },
   { name: "Abhash Kunwar", role: "Deputy Secretary-General", pdf: "https://drive.google.com/file/d/1hZh1d1RQyxJgXvC9hCsoOSoj9CfeZnJ2/view?usp=sharing", photo: "/images/our-team/abhas.png" },
-  { name: "John Doe", role: "Contributor", pdf: "" },
-  { name: "John Doe", role: "Contributor", pdf: "" },
-  { name: "John Doe", role: "Contributor", pdf: "" },
-  { name: "John Doe", role: "Contributor", pdf: "" },
+
 ];
 
 export const cartoons = [
@@ -243,6 +240,39 @@ export const cartoons = [
   { src: "/images/press/cartoons/cartoon-13.png", alt: "Cartoon by Akeerna Pradhan, Grade 7B", credit: "Akeerna Pradhan · Grade 7B" },
   { src: "/images/press/cartoons/cartoon-14.png", alt: "Cartoon by Agrata Parajuli, Grade 7A", credit: "Agrata Parajuli · Grade 7A" },
   { src: "/images/press/cartoons/cartoon-15.png", alt: "Cartoon by Rituja Dhital, Grade 7A", credit: "Rituja Dhital · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aayshman%20Karki%207c-xJ3Ru7rWa4KHcBOJzafTt5jagmayPP.png", alt: "Cartoon by Aayshman Karki, Grade 7C", credit: "Aayshman Karki · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aagaman%20Adhikari-7%20C-0HZj2A9a2oXzHHcHlbUjgh542Vwh9X.png", alt: "Cartoon by Aagaman Adhikari, Grade 7C", credit: "Aagaman Adhikari · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rituja%20dhital%207A%281%29-6ECuQW89VG5niNwaMlo92vWDPWuJhF.png", alt: "Cartoon by rituja dhital, Grade 7A", credit: "rituja dhital · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rajveer%20Adhikari%207B-EVwjKP8ZwUU7iYRb3rIhE9P0LMsPpc.png", alt: "Cartoon by Rajveer Adhikari, Grade 7B", credit: "Rajveer Adhikari · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aayushman%20Karki%207%20C-mENXqXkCUsruE2FdDEe6kbREbSMPIp.png", alt: "Cartoon by Aayushman Karki, Grade 7C", credit: "Aayushman Karki · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rituja%20Dhital%207A-nvAUFj6WhvqO66FOq3KawMXtHyoc6z.png", alt: "Cartoon by Rituja Dhital, Grade 7A", credit: "Rituja Dhital · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rajveer%20Adhikari%207B%282%29-f6825Lbl0CawwHwIov02XeFI3czt8G.png", alt: "Cartoon by Rajveer Adhikari, Grade 7B", credit: "Rajveer Adhikari · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Samip%20Dhakal%207A-A2aRWr5wpam2B8SQOMMUi9IarK8CiN.png", alt: "Cartoon by Samip Dhakal, Grade 7A", credit: "Samip Dhakal · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sakura%20amgain%207B-0c5rJxEfAO99MZxtLuoNO4cndICKjX.png", alt: "Cartoon by sakura amgain, Grade 7B", credit: "sakura amgain · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aagrata%20Parajuli%207A-6VkZDYcklRPDYtbRaRBP9uVShXWbow.png", alt: "Cartoon by Aagrata Parajuli, Grade 7A", credit: "Aagrata Parajuli · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ruja%20Adhikari%207C-YAfRZ3UkJ2aCkv3KNVHEE8l4M93pPh.png", alt: "Cartoon by Ruja Adhikari, Grade 7C", credit: "Ruja Adhikari · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aakeerna%20Pradhan-%207B-d2lDQ0IbHA0LKFEQoyoaXEzDmTCWgt.png", alt: "Cartoon by Aakeerna Pradhan, Grade 7B", credit: "Aakeerna Pradhan · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rajveer%20Adhikari%207B%281%29-CZbomqA6NqpINWmV7I92rnCuXSdAdG.png", alt: "Cartoon by Rajveer Adhikari, Grade 7B", credit: "Rajveer Adhikari · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Niman%20Maharjan%207C-jXDyWVMrn5zvnewaRiR148kCflSoEp.png", alt: "Cartoon by Niman Maharjan, Grade 7C", credit: "Niman Maharjan · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Atharva%20Poudel%207A-reIn162ClRmw5x9TBGGvmWSHYgO42X.png", alt: "Cartoon by Atharva Poudel, Grade 7A", credit: "Atharva Poudel · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pratistha%20Maharjan%207C-Pg4pNjhGqxFlOdNjHzCi9UxtfaM2ES.png", alt: "Cartoon by Pratistha Maharjan, Grade 7C", credit: "Pratistha Maharjan · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aakeerna%20Pradhan%207B-9t2UrHKVHkoDOWDS4XKYlChzyEalsh.png", alt: "Cartoon by Aakeerna Pradhan, Grade 7B", credit: "Aakeerna Pradhan · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ruja%20Adhikari%207C%281%29-1Z3Swsyh5HdqpiVjEBC3WmS72QHTYn.png", alt: "Cartoon by Ruja Adhikari, Grade 7C", credit: "Ruja Adhikari · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Diya%20Shrestha%207B-6vXe0nX5skWdVtA1JU663onvCVoSP3.png", alt: "Cartoon by Diya Shrestha, Grade 7B", credit: "Diya Shrestha · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aakeerna%20pradhan%207B%281%29-k1yRoOf0BJMUm5wmMiQTvAy9A30tUW.png", alt: "Cartoon by aakeerna pradhan, Grade 7B", credit: "aakeerna pradhan · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aagaman%20adhikari%207C-2rxoU15tRUyFH2zjfuhY7CRIVdHv21.png", alt: "Cartoon by aagaman adhikari, Grade 7C", credit: "aagaman adhikari · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aayushman%20karki%207C-ro6N8k0rCVrJEiZBUyz3Jn2aBpKbvy.png", alt: "Cartoon by aayushman karki, Grade 7C", credit: "aayushman karki · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nirman%20maharjan%207C-LdPRBRUHKDIx1OxHKswrrQluAO9kPO.png", alt: "Cartoon by nirman maharjan, Grade 7C", credit: "nirman maharjan · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aagrata%20parajuli%207a-lOT4SEHl1j9cXiOPk0mCsAXcb8Kiw4.png", alt: "Cartoon by aagrata parajuli, Grade 7A", credit: "aagrata parajuli · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rajeev%20Adhikari%207B-0Qxn3pcYreFLgKp7zlXnhccn4gKSQ9.png", alt: "Cartoon by Rajeev Adhikari, Grade 7B", credit: "Rajeev Adhikari · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rituja%20Dhital%207A-WD9B4Q8mUlyx2pPi4ywqwgZ4kdpAV9.png", alt: "Cartoon by Rituja Dhital, Grade 7A", credit: "Rituja Dhital · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/artharva%20poudel%20%207a-ogTWbx4PVe1OQyz3lFwSDrykyrpMrR.png", alt: "Cartoon by artharva poudel, Grade 7A", credit: "artharva poudel · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Shreesha%20Neupane%207B-uF18hpPrPLJXXoUHDM5DKv5H0VXPhM.png", alt: "Cartoon by Shreesha Neupane, Grade 7B", credit: "Shreesha Neupane · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/samip%20dhakal%207A-kpPDnQFOKianEVRuIIso8BfUsIvNfO.png", alt: "Cartoon by samip dhakal, Grade 7A", credit: "samip dhakal · Grade 7A" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Prathistha%20Maharjan%207C-39Qwje8WUsL03Efe06OxwHENwZuCfu.png", alt: "Cartoon by Prathistha Maharjan, Grade 7C", credit: "Prathistha Maharjan · Grade 7C" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/diya%20shrestha%207B-biUDHZGHM1kcC75tcaABxtwIKjgJV5.png", alt: "Cartoon by diya shrestha, Grade 7B", credit: "diya shrestha · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aakeerna%20Pradhan%207B-oae9htcAG1NJOuJjkFEDRA50bzjpOh.png", alt: "Cartoon by Aakeerna Pradhan, Grade 7B", credit: "Aakeerna Pradhan · Grade 7B" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ruja%20Adhikari%207C-8fIzV8hrqunTiM92R0UccxuR5PfZRQ.png", alt: "Cartoon by Ruja Adhikari, Grade 7C", credit: "Ruja Adhikari · Grade 7C" },
 ];
 
 export function getNewsArticle(slug: string) {

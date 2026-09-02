@@ -61,7 +61,7 @@ export const committees: Committee[] = [
     slug: "lp1",
     email: "lp1@excelsior.edu.np",
     matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=85834387#gid=85834387",
-    abbr: "LP I",
+    abbr: "MP I",
     name: "TES Model Parliament I",
     category: "national",
     description:
@@ -79,7 +79,7 @@ export const committees: Committee[] = [
     slug: "lp2",
     email: "lp2@excelsior.edu.np",
     matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=1089742237#gid=1089742237",
-    abbr: "LP II",
+    abbr: "MP II",
     name: "TES Model Parliament II",
     category: "national",
     description:
@@ -113,7 +113,7 @@ export const committees: Committee[] = [
     slug: "lp3",
     email: "lp3@excelsior.edu.np",
     matrixUrl: "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?gid=2111183706#gid=2111183706",
-    abbr: "LP III",
+    abbr: "MP III",
     name: "TES Model Parliament III",
     category: "national",
     description:
@@ -254,7 +254,7 @@ export const committees: Committee[] = [
     description:
       "The IT Committee builds and maintains the technical backbone of TESMUN 2026 — from the conference website to on-site systems.",
     board: {
-      headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png", testimonial: "The harder the conflict, the greater the triumph. — George Washington\n\nTo bring a conference as dynamic as TESMUN 2026 to life, countless hours of work happen far beyond the committees. As the IT department, we stand behind the screen, behind the systems, behind the designs, behind the digital experiences and in helping make the vision of TESMUN a reality.\n\nIt's not just about managing technology. Whether it's creating engaging videos, building the official TESMUN website, or providing real-time updates, we ensure that every aspect of the conference is connected, accessible, and alive.\n\nEach page of the website, each visual, each announcement and each video is the result of hours of creativity, precision and collaboration. As delegates debate resolutions and chairs lead committees, our team is busy behind the scenes making sure their efforts are captured, communicated and remembered.\n\nThe challenges may be demanding, the deadlines relentless, and the work often unseen—but that is what makes the final result worthwhile. Because when the screens light up, the videos roll, and every piece comes together, we know that the effort behind the scenes has helped create something worth remembering." },
+      headOf: { name: "Yubin KC", role: "Head of IT", image: "/images/our-team/it/yubin.png", testimonial: "If I had asked people what they wanted, they would have said faster horses. — Henry Ford\n\nTESMUN 2026 is more than a conference to me. It is an opportunity to be part of something that brings together students with different perspectives, ambitions, and ideas, and give them a platform to engage with the world beyond the classroom.\n\nAs the Head of IT, I have the privilege of contributing to that experience from behind the scenes. Whether through the website, media, or digital platforms, my aim was never simply to produce content, but to help shape how delegates experienced and remembered the conference.\n\nThe process was not always straightforward. Ideas changed, expectations evolved, and turning a vision into something tangible required constant adaptation. But that is also what made the experience meaningful. It taught me to take ownership of my work, remain open to criticism, and continue pursuing a higher standard even when the process became difficult.\n\nWhat I value most from TESMUN is the opportunity to contribute to a conference created by students, for students. I am proud to be playing a part in that process and even prouder of what our collective effort is becoming.\n\nTESMUN 2026 is an experience of learning, creating, and, above all, being part of something larger than any one role." },
       deputyHeadOf: [
         { name: "Suyog Acharya", role: "Deputy Head", image: "/images/our-team/it/suyog.png", testimonial: "Technical work is strongest when curiosity becomes collaboration. Support the workflow behind every session, stay ready to learn and help turn creative ideas into reliable systems that serve every delegate." },
         { name: "Swastik Manandhar", role: "Deputy Head", image: "/images/our-team/it/swastik.png" },
@@ -377,7 +377,7 @@ export const coordinators: Person[] = [
   },
 ];
 
-export const conferenceDate = new Date("2026-08-31T09:00:00+05:45");
+export const conferenceDate = new Date("2026-09-01T08:30:00+05:45");
 
 export const allocationsSheet =
   "https://docs.google.com/spreadsheets/d/1IXmUFmMha65Kks6TOtv_PV8vw6qFZa_1fla4kFSwGUA/edit?usp=sharing";
