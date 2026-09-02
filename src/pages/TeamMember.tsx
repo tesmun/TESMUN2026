@@ -55,13 +55,16 @@ export default function TeamMember() {
         <div className="mx-auto max-w-3xl">
           <Reveal>
             <Eyebrow>Testimonial</Eyebrow>
-            <blockquote className="mt-7 max-w-2xl text-base leading-7 text-ink sm:text-lg">
+            <blockquote className="mt-7 max-w-2xl text-base leading-8 text-ink sm:text-lg">
               {(person.testimonial ?? "This testimonial will be published soon.").split("\n\n").map((paragraph, index) => {
-                const lines = paragraph.split("\n");
-                const isQuote = index === 0 && (lines.length > 1 || paragraph.startsWith("“") || paragraph.startsWith("\""));
+                const isOpeningQuote = paragraph.startsWith("“") || paragraph.startsWith("\"");
+                const isAdvisorOpening = person.role === "MUN Advisor" && index === 0;
+                const isLogisticsOpening = person.role === "Logistics Coordinator" && index === 0;
+                const isStrongProfile = person.name === "Simran Devkota";
+                const isEmphasis = isOpeningQuote || isAdvisorOpening || isLogisticsOpening || isStrongProfile;
                 return (
-                  <p key={index} className={index > 0 ? "mt-5" : ""}>
-                    {isQuote ? <><strong>{lines[0]}</strong><br /><strong>{lines[1]}</strong></> : paragraph}
+                  <p key={index} className={`${index > 0 ? "mt-6" : ""} ${isEmphasis ? "font-semibold text-navy-deep" : ""} ${isOpeningQuote ? "border-l-2 border-gold pl-5 font-display text-2xl leading-tight sm:text-3xl" : ""}`}>
+                    {paragraph}
                   </p>
                 );
               })}
