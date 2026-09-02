@@ -26,7 +26,7 @@ export default function AccordionGallery({
         const open = index === active;
         const inner = (
           <>
-            <img src={item.image} alt={item.label} className="absolute inset-0 h-full w-full object-cover" />
+            <img src={item.image} alt={item.label} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#071a33]/80 via-transparent to-transparent" />
             {item.label && (
               <span className="absolute bottom-5 left-5 font-display text-lg text-white sm:text-2xl">
@@ -35,7 +35,7 @@ export default function AccordionGallery({
             )}
           </>
         );
-        const className = "relative overflow-hidden border-r border-white/10 last:border-0";
+        const className = "group relative overflow-hidden border-r border-white/10 outline-none last:border-0 focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-gold";
         const style = {
           flexGrow: open ? expandRatio * 100 : collapsed * 100,
           flexBasis: 0,

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { useReducedMotion } from "framer-motion";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -21,6 +22,7 @@ function ScrollToTop() {
 
 export default function PageShell() {
   const location = useLocation();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <div className="min-h-screen bg-navy-deep text-ink">
@@ -29,10 +31,10 @@ export default function PageShell() {
       <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname}
-          initial={{ opacity: 0, filter: "blur(8px)" }}
-          animate={{ opacity: 1, filter: "blur(0px)" }}
-          exit={{ opacity: 0, filter: "blur(6px)" }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -8, filter: "blur(6px)" }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
         >
           <Outlet />
         </motion.div>
