@@ -228,15 +228,6 @@ const cameraPersons = [
   { name: "Lisha Maharjan", role: "ECOSOC, DISEC, HRC Camera Person", image: pressProfilePlaceholder("Lisha Maharjan").image },
   { name: "Sushant Tamang", role: "UNEP Camera Person", image: pressProfilePlaceholder("Sushant Tamang").image },
 ];
-const committeePressTeams = [
-  ["HRC", [{ name: "Anishka Kuikel", role: "Reporter", image: "/images/our-team/press/anishkakuikel.png" }, { name: "Sambriddhi Phuyal", role: "Reporter", image: "/images/our-team/press/sambridhi.png" }]],
-  ["ECOSOC", [{ name: "Shreni Chapagain", role: "Reporter", image: "/images/our-team/press/shreni.png" }, { name: "Alishka Kuikel", role: "Reporter", image: "/images/our-team/press/alishkakuikel.png" }]],
-  ["UNEP", [{ name: "Ranish Mahat", role: "Reporter", image: "/images/our-team/press/ranish.png" }]],
-  ["DISEC", [{ name: "Osang Ghising", role: "Reporter", image: "/images/our-team/press/osang.png" }, { name: "Shubam Shrestha", role: "Reporter", image: "/images/our-team/press/shubhamshrestha.png" }]],
-  ["TES-MP I", [{ name: "Krishna Shrestha", role: "Reporter", image: "/images/our-team/press/krishna.png" }, { name: "Aarush Katuwal", role: "Reporter", image: "/images/our-team/press/aarushkatuwal.png" }]],
-  ["TES-MP II", [{ name: "Pari Maharjan", role: "Reporter", image: "/images/our-team/press/pari.png" }]],
-  ["TES-MP III", [{ name: "Aashiya Shrestha", role: "Reporter", image: "/images/our-team/press/aashiyashrestha.png" }]],
-] as const;
 function PressProfiles({ title, people }: { title: string; people: readonly { name: string; role: string; image?: string }[] }) { return <section className="mt-20"><Eyebrow className="text-silver/80">{title}</Eyebrow><div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{people.map((person) => <article key={person.name} className="border border-white/10 bg-navy px-5 py-6 text-center"><div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-gold/30">{person.image ? <img src={person.image} alt={person.name} className="h-full w-full rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-full w-full rounded-full" />}</div><h3 className="mt-4 text-lg text-white">{person.name}</h3><p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-gold">{person.role}</p></article>)}</div></section>; }
 function PressDetail({ committee }: { committee: Committee }) {
   const editors = [
@@ -306,7 +297,7 @@ function PressDetail({ committee }: { committee: Committee }) {
           </div>
         </div>
       </section>
-      <section className="px-6 py-20 md:px-10"><div className="mx-auto max-w-7xl"><PressProfiles title="Interview Team" people={interviewTeam} /><PressProfiles title="Camera Persons" people={cameraPersons} /><section className="mt-20"><Eyebrow className="text-silver/80">Committee-wise Press Team</Eyebrow><div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{committeePressTeams.map(([name, people]) => <div key={name} className="border border-white/10 bg-navy px-5 py-5"><p className="text-[10px] uppercase tracking-[0.18em] text-gold">{name}</p><div className="mt-5 flex flex-col gap-5">{people.map((person) => <div key={person.name} className="text-center"><img src={person.image} alt={person.name} className="mx-auto h-24 w-24 rounded-full border border-gold/30 object-cover" /><p className="mt-2 text-sm leading-tight text-white">{person.name}</p><p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-silver">{person.role}</p></div>)}</div></div>)}</div></section></div></section>
+      <section className="px-6 py-20 md:px-10"><div className="mx-auto max-w-7xl"><PressProfiles title="Interview Team" people={interviewTeam} /><PressProfiles title="Camera Persons" people={cameraPersons} /></div></section>
 
       <div className="bg-navy-deep pb-10 text-center">
         {committee.teamListUrl && <a href={committee.teamListUrl} target="_blank" rel="noopener noreferrer" className="mb-8 inline-flex border border-gold px-6 py-3 text-xs uppercase tracking-[0.14em] text-gold transition-colors hover:bg-gold hover:text-navy-deep">Full Team List</a>}
