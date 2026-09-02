@@ -216,6 +216,19 @@ function ITDetail({ committee }: { committee: Committee }) {
   );
 }
 
+const pressProfilePlaceholder = (name: string) => ({ name, image: undefined as string | undefined });
+const interviewTeam = [
+  { name: "Rishika Lama", role: "Interview Team Lead", image: pressProfilePlaceholder("Rishika Lama").image },
+  { name: "Garima Dahal", role: "Interview Team 2", image: pressProfilePlaceholder("Garima Dahal").image },
+  { name: "Sofiya Roka", role: "Interview Team 3", image: pressProfilePlaceholder("Sofiya Roka").image },
+];
+const cameraPersons = [
+  { name: "Shriyan Basnet", role: "Interview Camera Person", image: pressProfilePlaceholder("Shriyan Basnet").image },
+  { name: "Sujal Lal Munakarmi", role: "MP1, MP2, MP3 Camera Person", image: pressProfilePlaceholder("Sujal Lal Munakarmi").image },
+  { name: "Lisha Maharjan", role: "ECOSOC, DISEC, HRC Camera Person", image: pressProfilePlaceholder("Lisha Maharjan").image },
+  { name: "Sushant Tamang", role: "UNEP Camera Person", image: pressProfilePlaceholder("Sushant Tamang").image },
+];
+function PressProfiles({ title, people }: { title: string; people: readonly { name: string; role: string; image?: string }[] }) { return <section className="mt-20"><Eyebrow className="text-silver/80">{title}</Eyebrow><div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{people.map((person) => <article key={person.name} className="border border-white/10 bg-navy px-5 py-6 text-center"><div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-gold/30">{person.image ? <img src={person.image} alt={person.name} className="h-full w-full rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-full w-full rounded-full" />}</div><h3 className="mt-4 text-lg text-white">{person.name}</h3><p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-gold">{person.role}</p></article>)}</div></section>; }
 function PressDetail({ committee }: { committee: Committee }) {
   const editors = [
     { name: "Dechen Hira Tamang", role: "Chief Editor", image: "/images/our-team/press/dechen.png", reverse: false, text: "While TESMUN unfolds, many work behind the curtains, orchestrating the concert from behind. They are the true pillars of the program–the ones who construct the foundation for greater things to be built on. The Press, IT, and Logistics team have all put in immense effort into creating that structure for TESMUN 2026. As the head of the Press team, I’d like to commence this annual event by quoting,\n\n“Write what should not be forgotten.” -Isabel Allendeas\n\nAs the Press records history,capturing it and storing text in a digital archive, one which might be stumbled upon in the future by generations to come." },
@@ -284,6 +297,7 @@ function PressDetail({ committee }: { committee: Committee }) {
           </div>
         </div>
       </section>
+      <section className="px-6 py-20 md:px-10"><div className="mx-auto max-w-7xl"><PressProfiles title="Interview Team" people={interviewTeam} /><PressProfiles title="Camera Persons" people={cameraPersons} /></div></section>
 
       <div className="bg-navy-deep pb-10 text-center">
         {committee.teamListUrl && <a href={committee.teamListUrl} target="_blank" rel="noopener noreferrer" className="mb-8 inline-flex border border-gold px-6 py-3 text-xs uppercase tracking-[0.14em] text-gold transition-colors hover:bg-gold hover:text-navy-deep">Full Team List</a>}
