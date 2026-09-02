@@ -13,7 +13,7 @@ export type ArchiveArticle = {
 export type ArchiveDay = { session: NewsSession; day: NewsDay; articles: ArchiveArticle[] };
 
 const committeeMeta = {
-  OPENING: ["opening", "/images/favicon.svg", "Opening Ceremony"],
+  OPENING: ["opening", "/images/committees/visuals/munlogo.svg", "Opening Ceremony"],
   LP1: ["lp1", "/images/committees/visuals/committee-lp.png", "LP I"], LP2: ["lp2", "/images/committees/visuals/committee-lp.png", "LP II"], LP3: ["lp3", "/images/committees/visuals/committee-lp.png", "LP III"],
   DISEC: ["disec", "/images/committees/visuals/committee-disec.webp", "DISEC"], HRC: ["hrc", "/images/committees/visuals/committee-hrc.webp", "HRC"], ECOSOC: ["ecosoc", "/images/committees/visuals/committee-ecosoc.webp", "ECOSOC"], UNEP: ["unep", "/images/committees/visuals/committee-unep.webp", "UNEP"],
 } as const;
