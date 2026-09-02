@@ -216,7 +216,6 @@ function ITDetail({ committee }: { committee: Committee }) {
   );
 }
 
-const pressProfilePlaceholder = (name: string) => ({ name, image: undefined as string | undefined });
 const interviewTeam = [
   { name: "Rishika Lama", role: "Interview Team Lead", image: "/images/our-team/press/rishika.png" },
   { name: "Garima Dahal", role: "Interview Team 2", image: "/images/our-team/press/garima.png" },
@@ -224,9 +223,9 @@ const interviewTeam = [
 ];
 const cameraPersons = [
   { name: "Shriyan Basnet", role: "Interview Camera Person", image: "/images/our-team/press/shriyan.png" },
-  { name: "Sujal Lal Munakarmi", role: "MP1, MP2, MP3 Camera Person", image: pressProfilePlaceholder("Sujal Lal Munakarmi").image },
+  { name: "Sujal Lal Munakarmi", role: "MP1, MP2, MP3 Camera Person", image: "/images/our-team/press/sujal.png" },
   { name: "Lisha Maharjan", role: "ECOSOC, DISEC, HRC Camera Person", image: "/images/press/vox-pop/lisha.png" },
-  { name: "Sushant Tamang", role: "UNEP Camera Person", image: pressProfilePlaceholder("Sushant Tamang").image },
+  { name: "Sushant Tamang", role: "UNEP Camera Person", image: "/images/our-team/press/sushant.png" },
 ];
 function PressProfiles({ title, people }: { title: string; people: readonly { name: string; role: string; image?: string }[] }) { return <section className="mt-20"><Eyebrow className="text-silver/80">{title}</Eyebrow><div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{people.map((person) => <article key={person.name} className="border border-white/10 bg-navy px-5 py-6 text-center"><div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-gold/30">{person.image ? <img src={person.image} alt={person.name} className="h-full w-full rounded-full object-cover" /> : <PersonPlaceholder name={person.name} className="h-full w-full rounded-full" />}</div><h3 className="mt-4 text-lg text-white">{person.name}</h3><p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-gold">{person.role}</p></article>)}</div></section>; }
 function PressDetail({ committee }: { committee: Committee }) {
