@@ -22,6 +22,20 @@ const firstPracticePhotos = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Ln9AXL0u0yOSCmsVONIZQ5IUL3Uykb.png",
 ];
 const secondPracticePhotos = Array.from({ length: 10 }, (_, index) => `/images/gallery/second-practice/${String(index + 1).padStart(2, "0")}.jpg`);
+const finalSessionPhotos = [
+  "/images/gallery/final-session/006A9365.jpg",
+  "/images/gallery/final-session/006A9235.jpg",
+  "/images/gallery/final-session/006A9237.jpg",
+  "/images/gallery/final-session/006A9427.jpg",
+  "/images/gallery/final-session/006A9408.jpg",
+  "/images/gallery/final-session/006A9137.jpg",
+  "/images/gallery/final-session/006A9388.jpg",
+  "/images/gallery/final-session/006A9397.jpg",
+  "/images/gallery/final-session/006A9369.jpg",
+  "/images/gallery/final-session/006A9394.jpg",
+  "/images/gallery/final-session/006A9376.jpg",
+  "/images/gallery/final-session/006A9377.jpg",
+];
 const openingCeremonyPhotos = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134101-Rm6BxfMfB062hAqQ0dP7nywZwHSiWz.png",
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-01%20134026-2l2vSr4fMbZo85pGO9yZrIoG8NL75S.png",
@@ -46,7 +60,7 @@ const photos = (offset: number, count: number, custom?: string[], alt = "Gallery
 const blankCeremony = new Set(["CLOSING CEREMONY", "Final Session", "OPENING CEREMONY"]);
 const sessions = [
   { title: "CLOSING CEREMONY", count: 8, offset: 0 },
-  { title: "Final Session", count: 12, offset: 4 },
+  { title: "Final Session", count: finalSessionPhotos.length, offset: 4, customPhotos: finalSessionPhotos },
   { title: "OPENING CEREMONY", count: openingCeremonyPhotos.length, offset: 2, customPhotos: openingCeremonyPhotos },
   { title: "SECOND PRACTICE SESSION", count: 10, offset: 1 },
   { title: "FIRST PRACTICE SESSION", count: 12, offset: 5 },
