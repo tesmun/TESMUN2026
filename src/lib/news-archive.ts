@@ -53,7 +53,8 @@ const fallbackBody = ["This dispatch records the committee’s work as the sessi
 const cleanAuthor = (author: string) => author.replace(/^[-–—]\s*/, "").replace(/\s*[·|,-]?\s*(?:Kathmandu\s*,?\s*)?(?:August\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,?\s*2026)?|\d{1,2}(?:st|nd|rd|th)?\s+August(?:\s*,?\s*2026)?)/gi, "").replace(/\s+2026\b/gi, "").replace(/\s{2,}/g, " ").replace(/[ ,·|-]+$/, "").trim();
 const finalSessionDay1Committee = (headline: string) => {
   if (/SEVEN COMMITTEES|INAUGURATED/i.test(headline)) return "OPENING";
-  if (/QUESTIONS GO UNANSWERED|GSL HEATS UP/i.test(headline)) return "HRC";
+  if (/QUESTIONS GO UNANSWERED/i.test(headline)) return "LP2";
+  if (/GSL HEATS UP/i.test(headline)) return "HRC";
   if (/ANTI-CORRUPTION|INDEPENDENCE OF ANTI-CORRUPTION/i.test(headline)) return "LP2";
   if (/NO PARTY SPARED/i.test(headline)) return "LP3";
   if (/CHEMICAL WEAPONS/i.test(headline)) return "DISEC";
