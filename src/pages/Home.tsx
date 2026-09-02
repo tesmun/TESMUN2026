@@ -1,13 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import BlurText from "@/components/BlurText";
-import Countdown from "@/components/Countdown";
 import GradualBlur from "@/components/GradualBlur";
 import MottoRotator from "@/components/MottoRotator";
 import { Reveal } from "@/components/Reveal";
 import SpecularButton from "@/components/SpecularButton";
 import { Divider, EditorialLink, Eyebrow } from "@/components/section-parts";
-import { conferenceDate } from "@/lib/data";
 
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
@@ -61,10 +59,10 @@ export default function Home() {
 
       <section className="bg-navy-deep px-6 py-20 sm:py-24">
         <Reveal className="mx-auto max-w-4xl text-center">
-          <Eyebrow className="text-silver/70">Convening In</Eyebrow>
-          <div className="mt-8">
-            <Countdown target={conferenceDate} />
-          </div>
+          <Eyebrow className="text-silver/70">TESMUN 2026</Eyebrow>
+          <p className="mt-8 font-display text-3xl font-bold tracking-[0.12em] text-warm sm:text-5xl">
+            1 Sept 2026 - 3 Sept 2026
+          </p>
         </Reveal>
       </section>
 
