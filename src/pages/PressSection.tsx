@@ -57,27 +57,27 @@ const voxTeamOneQ3 = [
   { name: "Barsha Anex Dit Chenaud", role: "Logistics", answer: "Leadership skills.", photo: "/images/press/vox-pop/barsha.png" },
   { name: "Shovana Oliya", role: "Logistics", answer: "Debating skills.", photo: "/images/press/vox-pop/shovana.png" },
   { name: "Bikas Lamu", role: "Parent Spectator (Priyanshu Lama, Grade 8)", answer: "They get to learn international topics from a young age.", photo: "/images/press/vox-pop/bikas.png" },
-  { name: "Alisa Rijal", role: "Vice Chair of LP3", answer: "One who is inspired can also inspire many others.", photo: "/images/press/vox-pop/alisa.png" },
-  { name: "Prasina Moktan", role: "Logistics Head (Girl)", answer: "Coordination, cooperation, and knowing about our surroundings and global issues.", photo: "/images/press/vox-pop/prasina.png" },
+  { name: "Alisa Rijal", role: "Vice Chair of LP3", answer: "One who is inspired can also inspire many others.", photo: "/images/committees/executive-board/alisa.png" },
+  { name: "Prasina Moktan", role: "Logistics Head (Girl)", answer: "Coordination, cooperation, and knowing about our surroundings and global issues.", photo: "/images/our-team/logistics/prasina.png" },
   { name: "Rashika Regmi", role: "Logistics", answer: "We can communicate in every area and build our inner confidence.", photo: "/images/press/vox-pop/rashika.png" },
 ];
 const voxTeamOneQ4 = [
-  { name: "Simran Devkota", role: "Deputy Chief Editor", answer: "The newcomers were confused and needed more time and guidance, but it was inspiring as well.", photo: "/images/press/vox-pop/simran.png" },
+  { name: "Simran Devkota", role: "Deputy Chief Editor", answer: "The newcomers were confused and needed more time and guidance, but it was inspiring as well.", photo: "/images/our-team/press/simran.png" },
   { name: "Garima Dhal", role: "Interview Team Leader", answer: "Running around to find people to interview because they all have different schedules.", photo: "/images/press/vox-pop/garima.png" },
   { name: "Lila Phuyal", role: "MP 1 Teacher", answer: "As the 8th graders aren’t familiar with political affairs and parties, it was challenging to nurture them.", photo: "/images/press/vox-pop/lila.png" },
   { name: "Saya Luitel", role: "DISEC Israel", answer: "Telling accusations related to weapons.", photo: "/images/press/vox-pop/saya.png" },
   { name: "Shushatmiks Ghimire", role: "Delegate of Brazil (UNEP)", answer: "Unpredictable crises can occur.", photo: "/images/press/vox-pop/shushatmiks.png" },
   { name: "Uttam Luitel", role: "Coordinator in ECOSOC", answer: "Identifying the crisis and solutions.", photo: "/images/press/vox-pop/uttam.png" },
   { name: "Prasiddha Rajak", role: "Arjun Narsing K.C. (Nepali Congress LP1)", answer: "Having to speak from a minority opposition.", photo: "/images/press/vox-pop/prasiddha.png" },
-  { name: "Samman Shrestha", role: "Graphics Team Lead (IT)", answer: "Managing the work in a short period of time.", photo: "/images/press/vox-pop/samman.png" },
+  { name: "Samman Shrestha", role: "Graphics Team Lead (IT)", answer: "Managing the work in a short period of time.", photo: "/images/our-team/it/samman.png" },
 ];
 const voxTeamTwoQ3 = [
-  { name: "Degraj Raj Sapkota", role: "LP3 Teacher", answer: "The most interesting event in the committee is when delegate members give feedback to each other about their weaknesses and try to solve problems through dialogue and diplomacy.", photo: "/images/press/vox-pop/degraj-raj.png" },
+  { name: "Degraj Raj Sapkota", role: "LP3 Teacher", answer: "The most interesting event in the committee is when delegate members give feedback to each other about their weaknesses and try to solve problems through dialogue and diplomacy.", photo: "/images/press/vox-pop/degraj.png" },
   { name: "Ayub Lamsal", role: "Delegate of LP1 as Balendra Shah", answer: "The funniest incident that happened in the committee was Suhang Nembang accusing his own party.", photo: "/images/press/vox-pop/ayub.png" },
-  { name: "Harshid Bhetwal", role: "Floor Head, Logistics Team", answer: "I think the funniest incident was when the Chair of Legislative Parliament-2 was suspended for using A.I.", photo: "/images/press/vox-pop/harshid-q3.png" },
+  { name: "Harshid Bhetwal", role: "Floor Head, Logistics Team", answer: "I think the funniest incident was when the Chair of Legislative Parliament-2 was suspended for using A.I.", photo: "/images/our-team/logistics/harshid.png" },
   { name: "Deep Kiran Neupane", role: "HRC Delegate of Bangladesh", answer: "The funniest incident was when a delegate of Germany talked about the Epstein Files and America was trying to ignore it.", photo: "/images/press/vox-pop/deep-kiran.png" },
   { name: "Niyukta Shrestha", role: "HRC Delegate of South Sudan", answer: "The funniest incident was when our crisis topic was the Epstein Files and the USA was accused of trying to hide the matter.", photo: "/images/press/vox-pop/niyukta.png" },
-  { name: "Kamala Kharel", role: "Committee In-charge, LP3 (Teacher)", answer: "TES MUN teaches students to debate and research, helps develop their personality, and teaches them about international leadership and current affairs.", photo: "/images/press/vox-pop/kamala-q3.png" },
+  { name: "Kamala Kharel", role: "Committee In-charge, LP3 (Teacher)", answer: "TES MUN teaches students to debate and research, helps develop their personality, and teaches them about international leadership and current affairs.", photo: "/images/press/vox-pop/kamala.png" },
   { name: "Shreeni Chapagain", role: "ECOSOC Reporter, Press Team", answer: "It teaches students how to be independent and solve real-life problems, making them more confident. It also helps them academically, keeps them updated about real-world issues, and creates citizens that the nation needs.", photo: "/images/press/vox-pop/shreeni.png" },
 ];
 const voxTeamTwoQ4 = [
