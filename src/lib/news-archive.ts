@@ -81,7 +81,7 @@ const day2VerbatimBodies = verbatimDay2.map((section) => {
   }
   return lines.slice(bodyStart);
 });
-const parseVerbatimArticles = (source: string) => source.trim().split(/\n(?=[A-Z0-9][A-Z0-9 !?,.'’&:-]{20,}\s*\n)/).map((section) => {
+const parseVerbatimArticles = (source: string) => source.trim().split(/\n(?=[‘'“”]?[A-Z0-9][A-Z0-9 !?,.'’&:-]{20,}\s*\n)/).map((section) => {
   const lines = section.split(/\n/).map((line) => line.trim()).filter(Boolean);
   const authorIndex = lines.findIndex((line, index) => index > 0 && /^(?:-?\s*By\b|-?[A-Z][^\n]*\bReporter(?:s)?\b)/i.test(line));
   const bodyStart = lines.findIndex((line, index) => index > (authorIndex > 0 ? authorIndex : 0) && !/^(?:-?\s*By\b|.*\bReporter(?:s)?\b|Kathmandu,?\s*|\d{1,2}(?:st|nd|rd|th)?\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\b|(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2})/i.test(line));
