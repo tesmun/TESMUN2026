@@ -218,12 +218,12 @@ function ITDetail({ committee }: { committee: Committee }) {
 
 const pressProfilePlaceholder = (name: string) => ({ name, image: undefined as string | undefined });
 const interviewTeam = [
-  { name: "Rishika Lama", role: "Interview Team Lead", image: pressProfilePlaceholder("Rishika Lama").image },
-  { name: "Garima Dahal", role: "Interview Team 2", image: pressProfilePlaceholder("Garima Dahal").image },
-  { name: "Sofiya Roka", role: "Interview Team 3", image: pressProfilePlaceholder("Sofiya Roka").image },
+  { name: "Rishika Lama", role: "Interview Team Lead", image: "/images/our-team/press/rishika.png" },
+  { name: "Garima Dahal", role: "Interview Team 2", image: "/images/our-team/press/garima.png" },
+  { name: "Sofiya Roka", role: "Interview Team 3", image: "/images/our-team/press/sofiyaroka.png" },
 ];
 const cameraPersons = [
-  { name: "Shriyan Basnet", role: "Interview Camera Person", image: pressProfilePlaceholder("Shriyan Basnet").image },
+  { name: "Shriyan Basnet", role: "Interview Camera Person", image: "/images/our-team/press/shriyan.png" },
   { name: "Sujal Lal Munakarmi", role: "MP1, MP2, MP3 Camera Person", image: pressProfilePlaceholder("Sujal Lal Munakarmi").image },
   { name: "Lisha Maharjan", role: "ECOSOC, DISEC, HRC Camera Person", image: pressProfilePlaceholder("Lisha Maharjan").image },
   { name: "Sushant Tamang", role: "UNEP Camera Person", image: pressProfilePlaceholder("Sushant Tamang").image },
