@@ -23,6 +23,14 @@ const firstPracticePhotos = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Ln9AXL0u0yOSCmsVONIZQ5IUL3Uykb.png",
 ];
 const secondPracticePhotos = Array.from({ length: 10 }, (_, index) => `/images/gallery/second-practice/${String(index + 1).padStart(2, "0")}.jpg`);
+const closingCeremonyPhotos = [
+  "/images/gallery/closing-ceremony-01.jpeg",
+  "/images/gallery/closing-ceremony-02.jpeg",
+  "/images/gallery/closing-ceremony-03.jpeg",
+  "/images/gallery/closing-ceremony-04.jpeg",
+  "/images/gallery/closing-ceremony-06.jpeg",
+  "/images/gallery/closing-ceremony-07.jpeg",
+];
 const finalSessionPhotos = [
   "/images/gallery/final-session/006A9365.jpg",
   "/images/gallery/final-session/006A9235.jpg",
@@ -76,7 +84,7 @@ const openingCeremonyPhotos = [
 const photos = (offset: number, count: number, custom?: string[], alt = "Gallery photograph"): { src: string; alt: string }[] => custom ? Array.from({ length: count }, (_, index) => ({ src: custom[index % custom.length], alt })) : Array.from({ length: count }, (_, index) => ({ src: galleryImages[(offset + index) % galleryImages.length].src, alt: galleryImages[(offset + index) % galleryImages.length].alt || alt }));
 const blankCeremony = new Set(["CLOSING CEREMONY", "Final Session", "OPENING CEREMONY"]);
 const sessions = [
-  { title: "CLOSING CEREMONY", count: 8, offset: 0 },
+  { title: "CLOSING CEREMONY", count: closingCeremonyPhotos.length, offset: 0, customPhotos: closingCeremonyPhotos },
   { title: "Final Session", count: finalSessionPhotos.length, offset: 4, customPhotos: finalSessionPhotos },
   { title: "OPENING CEREMONY", count: openingCeremonyPhotos.length, offset: 2, customPhotos: openingCeremonyPhotos },
   { title: "SECOND PRACTICE SESSION", count: 10, offset: 1 },
