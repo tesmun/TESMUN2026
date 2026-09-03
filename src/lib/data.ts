@@ -395,7 +395,7 @@ export const contactInfo = {
   mapEmbed:
     "https://maps.google.com/maps?q=The%20Excelsior%20School%20Swoyambhu%20Kathmandu&t=&z=16&ie=UTF8&iwloc=&output=embed",
   socials: [
-    { label: "YouTube", href: "https://www.youtube.com/@TheExcelsiorSchool" },
+    { label: "YouTube", href: "https://www.youtube.com/@tes_mun" },
     { label: "Facebook", href: "https://www.facebook.com/TheExcelsiorSchool/" },
   ],
 };
