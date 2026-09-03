@@ -13,6 +13,7 @@ import NotFound from "@/pages/NotFound";
 import OurTeam from "@/pages/OurTeam";
 import Press from "@/pages/Press";
 import PressConference from "@/pages/PressConference";
+import PressConferenceTwo from "@/pages/PressConferenceTwo";
 import PressSection from "@/pages/PressSection";
 import SheetalRanaInterview from "@/pages/SheetalRanaInterview";
 import Editorial from "@/pages/Editorial";
@@ -34,12 +35,14 @@ export default function App() {
           <Route path="/our-team/:slug" element={<TeamMember />} />
           <Route path="/press" element={<Press />} />
           <Route path="/press/conference" element={<PressConference />} />
+          <Route path="/press/conference-2" element={<PressConferenceTwo />} />
+          <Route path="/podcasts" element={<Navigate to="/press/podcast" replace />} />
           <Route path="/press/editorial" element={<Editorial />} />
           <Route path="/news" element={<Newspaper />} />
           <Route path="/news/:session/:day/:article" element={<NewsDispatch />} />
           <Route path="/press/news" element={<Navigate to="/news" replace />} />
           <Route path="/press/news/:articleSlug" element={<NewsArticle />} />
-          <Route path="/press/interviews/episode-14" element={<SheetalRanaInterview />} />
+          <Route path="/press/interviews/episode-15" element={<SheetalRanaInterview />} />
           <Route path="/press/:slug" element={<PressSection />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/resources" element={<Resources />} />

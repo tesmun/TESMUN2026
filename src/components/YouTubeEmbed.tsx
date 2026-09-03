@@ -23,10 +23,12 @@ export default function YouTubeEmbed({
   return (
     <div className="aspect-video w-full overflow-hidden bg-navy-deep">
       <iframe
-        src={`https://www.youtube.com/embed/${id}`}
+        src={`https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
+        loading="lazy"
+        referrerPolicy="strict-origin-when-cross-origin"
         className="h-full w-full border-0"
       />
     </div>
