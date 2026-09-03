@@ -14,6 +14,7 @@ import OurTeam from "@/pages/OurTeam";
 import Press from "@/pages/Press";
 import PressConference from "@/pages/PressConference";
 import PressSection from "@/pages/PressSection";
+import SheetalRanaInterview from "@/pages/SheetalRanaInterview";
 import Editorial from "@/pages/Editorial";
 import Resources from "@/pages/Resources";
 import TeamMember from "@/pages/TeamMember";
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/news/:session/:day/:article" element={<NewsDispatch />} />
           <Route path="/press/news" element={<Navigate to="/news" replace />} />
           <Route path="/press/news/:articleSlug" element={<NewsArticle />} />
+          <Route path="/press/interviews/episode-14" element={<SheetalRanaInterview />} />
           <Route path="/press/:slug" element={<PressSection />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/resources" element={<Resources />} />

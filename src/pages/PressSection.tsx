@@ -5,8 +5,11 @@ import { ChevronDown, X } from "lucide-react";
 import { pressSections, opEdContributors, cartoons } from "@/lib/press-data";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 
-const video = "https://www.youtube.com/watch?v=vxpm8OZRH30";
-const podcastEpisodes = [{ title: "Rujal, Saksham A, Diya, Rudraksh and Dechen", url: "https://youtu.be/CwUKSr0yKv0" }, { title: "Podcast episode 02", url: video }];
+const podcastEpisodes = [
+  { title: "Episode 01 · Rujal, Saksham A, Diya, Rudraksh and Dechen", url: "https://youtu.be/CwUKSr0yKv0" },
+  { title: "Episode 02 · Unnat, Prasanna, Aayushma and Aakarshi", url: "https://www.youtube.com/watch?v=HFOKOMUbvQY" },
+  { title: "Episode 03 · Sankalpa, Kunjal, Timothy, Swastik and Alisa", url: "https://www.youtube.com/watch?v=_Vpofc2r-vs" },
+];
 const voxTeamOne = [
   { name: "Harshid Bhetwal", role: "Second floor incharge", answer: "Unity", photo: "/images/our-team/logistics/harshid.png" },
   { name: "Renesha Maharjan", role: "Deputy Editor", answer: "Public Speaking", photo: "/images/our-team/press/renesha.png" },
@@ -109,6 +112,10 @@ const interviewSubjects = [
   { title: "EPISODE 09", subject: "Saksham Thapaliya", url: "https://www.youtube.com/watch?v=MIswbwENbYM" },
   { title: "EPISODE 10", subject: "Jitendra Basnet", url: "https://www.youtube.com/watch?v=WT9LbKX2PFI" },
   { title: "EPISODE 11", subject: "Dhiki Khando Lama", url: "https://www.youtube.com/watch?v=Unr_HnUKVcc" },
+  { title: "EPISODE 12", subject: "Ram Basnet", url: "https://www.youtube.com/watch?v=tlt8hGq0VPA" },
+  { title: "EPISODE 13", subject: "Prateek Bhattarai", url: "https://www.youtube.com/watch?v=X6XQgzLTboA" },
+  { title: "EPISODE 14", subject: "Sheetal Rana", transcript: true },
+  { title: "EPISODE 15", subject: "Dipendra Silwal", url: "https://www.youtube.com/watch?v=KOjDXIhPhyo" },
 ];
 
 function VoxPopTeams() {
@@ -135,7 +142,7 @@ export default function PressSection() {
   const { slug = "" } = useParams(); const section = pressSections[slug as keyof typeof pressSections]; const [open, setOpen] = useState(0); const [lightbox, setLightbox] = useState<number | null>(null);
   if (!section || slug === "news") return <main className="min-h-screen bg-navy-deep px-6 py-40 text-center text-warm"><h1 className="font-display text-4xl">Section not found</h1><Link to="/press" className="mt-6 inline-block text-sm uppercase tracking-[0.14em] text-gold">← Press hub</Link></main>;
   return <main className="min-h-screen bg-[linear-gradient(135deg,#071a33,#123b72)] px-5 pb-24 pt-28 text-warm sm:px-8 md:px-10 md:pt-40"><div className="mx-auto max-w-6xl"><Link to="/press" className="text-[11px] uppercase tracking-[0.16em] text-silver hover:text-gold">← Press hub</Link><p className="mt-12 text-[11px] uppercase tracking-[0.18em] text-gold">Press Desk</p><h1 className="font-display mt-4 text-5xl leading-[0.92] sm:text-7xl">{section.title}</h1><p className="mt-6 max-w-xl text-base leading-8 text-silver/80">{section.intro}</p>
-  {slug === "interviews" && <section className="mt-14 grid gap-7 lg:grid-cols-2">{interviewSubjects.map((item) => <article key={item.title} className="border border-white/10 bg-navy p-5 shadow-2xl"><div className="mb-5 aspect-video bg-navy-deep"><YouTubeEmbed url={item.url} title={`${item.title} — ${item.subject}`}/></div><p className="text-[10px] uppercase tracking-[0.16em] text-gold">Interview</p><h2 className="mt-2 font-display text-3xl">{item.title} — {item.subject}</h2></article>)}</section>}
+  {slug === "interviews" && <section className="mt-14 grid gap-7 lg:grid-cols-2">{interviewSubjects.map((item) => <article key={item.title} className="border border-white/10 bg-navy p-5 shadow-2xl">{item.transcript ? <Link to="/press/interviews/episode-14" className="group block"><div className="mb-5 flex aspect-video items-center justify-center bg-navy-deep px-8 text-center"><span className="font-display text-4xl text-gold transition group-hover:text-warm">Read the transcript</span></div></Link> : <div className="mb-5 aspect-video bg-navy-deep"><YouTubeEmbed url={item.url} title={`${item.title} — ${item.subject}`}/></div>}<p className="text-[10px] uppercase tracking-[0.16em] text-gold">Interview</p><h2 className="mt-2 font-display text-3xl">{item.title} — {item.subject}</h2></article>)}</section>}
   {slug === "podcast" && <section className="mt-14 grid max-w-4xl gap-6 sm:grid-cols-2">{podcastEpisodes.map((episode) => <article key={episode.url} className="border border-white/10 bg-navy p-5"><div className="aspect-video bg-navy-deep"><YouTubeEmbed url={episode.url} title={episode.title}/></div><h2 className="mt-4 font-display text-3xl">{episode.title}</h2></article>)}</section>}
   {slug === "speeches" && <section className="mt-14 max-w-5xl divide-y divide-white/15 border-y border-white/15">{speechRoster.map((speech, i) => <div key={speech.speaker}><button type="button" onClick={() => setOpen(open === i ? -1 : i)} className="flex w-full items-center justify-between gap-5 py-8 text-left"><span className="flex items-center gap-6"><img src={speech.photo} alt={`${speech.speaker} portrait`} className="h-24 w-24 shrink-0 rounded-full border border-gold/30 object-cover sm:h-32 sm:w-32" /><span><span className="text-[10px] uppercase tracking-[0.16em] text-gold">{speech.committee} · {speech.role}</span><span className="mt-2 block font-display text-3xl sm:text-4xl">{speech.speaker}</span></span></span><ChevronDown className={`shrink-0 transition ${open === i ? "rotate-180 text-gold" : ""}`} /></button>{open === i && <div className="pb-8 pl-0 text-base leading-8 text-silver/80 sm:pl-36">Speech text will be added to this archive after the conference record is supplied.</div>}</div>)}</section>}
   {slug === "vox-pop" && <VoxPopTeams />}
