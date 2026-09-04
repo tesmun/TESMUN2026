@@ -32,6 +32,12 @@ const closingCeremonyPhotos = [
   "/images/gallery/closing-ceremony-07.jpeg",
 ];
 const finalSessionPhotos = [
+  "/images/gallery/final-session/01.jpg",
+  "/images/gallery/final-session/02.png",
+  "/images/gallery/final-session/03.jpg",
+  "/images/gallery/final-session/04.jpg",
+  "/images/gallery/final-session/05.jpg",
+  "/images/gallery/final-session/06.jpg",
   "/images/gallery/final-session/006A9365.jpg",
   "/images/gallery/final-session/006A9235.jpg",
   "/images/gallery/final-session/006A9237.jpg",
@@ -93,7 +99,7 @@ const sessions = [
 
 function PhotoGrid({ offset, count, onSelect, circular = false, customPhotos, customAlt }: { offset: number; count: number; onSelect: (photo: { src: string; alt: string }) => void; circular?: boolean; customPhotos?: string[]; customAlt?: string }) {
   const items = photos(offset, count, customPhotos, customAlt);
-  return <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 ${circular ? "lg:grid-cols-3" : ""}`}>{items.map((photo, index) => { const blank = !customPhotos && blankCeremony.has(customAlt ?? ""); return <button key={`${photo.src}-${index}`} type="button" onClick={() => !blank && onSelect(photo)} aria-label={blank ? `${customAlt} photograph placeholder` : photo.alt} className={`group relative aspect-[4/3] overflow-hidden ${blank ? "bg-slate-700/60" : "bg-navy-deep"}`}>{!blank && <img src={photo.src} alt={photo.alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />} {!blank && <span className="absolute inset-0 bg-navy-deep/0 transition group-hover:bg-navy-deep/20" />}</button>; })}</div>;
+  return <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 ${circular ? "lg:grid-cols-3" : ""}`}>{items.map((photo, index) => { const blank = !customPhotos && blankCeremony.has(customAlt ?? ""); return <button key={`${photo.src}-${index}`} type="button" onClick={() => !blank && onSelect(photo)} aria-label={blank ? `${customAlt} photograph placeholder` : photo.alt} className={`group relative aspect-[4/3] overflow-hidden ${blank ? "bg-slate-700/60" : "bg-navy-deep"}`}>{!blank && <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />} {!blank && <span className="absolute inset-0 bg-navy-deep/0 transition group-hover:bg-navy-deep/20" />}</button>; })}</div>;
 }
 
 export default function Gallery() {
