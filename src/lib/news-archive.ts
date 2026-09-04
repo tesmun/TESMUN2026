@@ -8,12 +8,12 @@ import finalSessionDay2Verbatim from "../content/final-session-day-2.txt?raw";
 
 export type ArchiveArticle = {
   session: NewsSession; day: NewsDay; committee: string; committeeSlug: string; committeeLogo: string;
-  headline: string; summary: string; body: string[]; author: string; image?: string; imageAlt: string; date: string;
+  headline: string; summary: string; body: string[]; author: string; image?: string; extraImages?: { src: string; alt: string; caption?: string }[]; imageAlt: string; date: string;
 };
 export type ArchiveDay = { session: NewsSession; day: NewsDay; articles: ArchiveArticle[] };
 
 const committeeMeta = {
-  OPENING: ["opening", "/images/committees/visuals/munlogo.svg", "Opening Ceremony"],
+  OPENING: ["opening", "/images/committees/visuals/munlogo.svg", "Opening Ceremony"], CLOSING: ["closing", "/images/committees/visuals/munlogo.svg", "Closing Ceremony"],
   LP1: ["lp1", "/images/committees/visuals/committee-lp.png", "LP I"], LP2: ["lp2", "/images/committees/visuals/committee-lp.png", "LP II"], LP3: ["lp3", "/images/committees/visuals/committee-lp.png", "LP III"],
   DISEC: ["disec", "/images/committees/visuals/committee-disec.webp", "DISEC"], HRC: ["hrc", "/images/committees/visuals/committee-hrc.webp", "HRC"], ECOSOC: ["ecosoc", "/images/committees/visuals/committee-ecosoc.webp", "ECOSOC"], UNEP: ["unep", "/images/committees/visuals/committee-unep.webp", "UNEP"],
 } as const;
@@ -54,14 +54,15 @@ const fallbackBody = ["This dispatch records the committee’s work as the sessi
 const cleanAuthor = (author: string) => author.replace(/^[-–—]\s*/, "").replace(/\s*[·|,-]?\s*(?:Kathmandu\s*,?\s*)?(?:August\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,?\s*2026)?|\d{1,2}(?:st|nd|rd|th)?\s+August(?:\s*,?\s*2026)?)/gi, "").replace(/\s+2026\b/gi, "").replace(/\s{2,}/g, " ").replace(/[ ,·|-]+$/, "").trim();
 const finalSessionDay1Committee = (headline: string) => {
   if (/SEVEN COMMITTEES|INAUGURATED/i.test(headline)) return "OPENING";
-  if (/QUESTIONS GO UNANSWERED|GSL HEATS UP/i.test(headline)) return "HRC";
+  if (/QUESTIONS GO UNANSWERED/i.test(headline)) return "LP1";
+  if (/GSL HEATS UP/i.test(headline)) return "HRC";
   if (/ANTI-CORRUPTION|INDEPENDENCE OF ANTI-CORRUPTION/i.test(headline)) return "LP2";
   if (/NO PARTY SPARED/i.test(headline)) return "LP3";
   if (/CHEMICAL WEAPONS/i.test(headline)) return "DISEC";
   if (/FUEL ON FIRE/i.test(headline)) return "ECOSOC";
   return "UNEP";
 };
-const finalSessionDay1Images: Record<string, string> = { OPENING: "opening.jpg", LP1: "lp1.jpg", LP2: "lp2.jpg", LP3: "lp3.jpg", DISEC: "disec.jpg", HRC: "hrc.jpg", ECOSOC: "ecosoc.jpg", UNEP: "unep.jpg" };
+const finalSessionDay1Images: Record<string, string> = { OPENING: "opening.jpg", LP1: "lp1.png", LP2: "lp2.jpg", LP3: "lp3.jpg", DISEC: "disec.jpg", HRC: "hrc.jpg", ECOSOC: "ecosoc.jpg", UNEP: "unep.jpg" };
 const session2Day2Committee = (headline: string) => {
   if (/12 BILLION|GOVERNMENT DEMANDS/i.test(headline)) return "LP1";
   if (/2\.1 BILLION|RSP DIVIDED/i.test(headline)) return "LP2";
@@ -118,9 +119,27 @@ const session2Day1Committee = (headline: string) => {
   if (/SANCTIONS|ECOSOC/i.test(headline)) return "ECOSOC";
   return "UNEP";
 };
+const closingCeremonyArticle = {
+  committee: "CLOSING",
+  headline: "THE LAST GAVEL: TESMUN 2026 CLOSES WITH A ROOM FULL OF POSSIBILITY",
+  author: "The Editorial Board (TESMUN PRESS)",
+  summary: "TESMUN 2026 concluded with a closing ceremony that gathered delegates, chairs and the wider school community to mark three days of debate, learning and shared work.",
+  body: [
+    "The final gathering of TESMUN 2026 brought the conference back to one room: delegates, chairs, press members and the people who made the fourteenth edition possible.",
+    "Beneath the words CLOSING CEREMONY, the dais reflected the breadth of the programme. Across three days, students had argued policy, tested assumptions and discovered that diplomacy is built as much through listening as through speaking.",
+    "The ceremony was also a moment of recognition. Certificates and applause turned the energy of the committee rooms outward, celebrating the work that is often invisible in a conference: the research, the late revisions, the careful questions and the courage to raise a placard.",
+    "TESMUN closes, but its central exercise remains unfinished. The habits learned here — to challenge ideas without diminishing people, to make room for another voice and to keep working after disagreement — belong beyond the hall.",
+  ],
+  image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-pGDI4mw6FYeTKNPZZ96gtflzGngcm2.png",
+  extraImages: [
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-emAyPBWPIOmf5UrnwTCj1oTb7VFml3.png", alt: "Delegates seated beneath the Closing Ceremony screen", caption: "The dais gathers for the final ceremony." },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-H8WPnHH4gjTHbLYZ51dqJCaWXWfkBT.png", alt: "The auditorium watching the Closing Ceremony", caption: "A full room marks the end of the conference." },
+  ],
+};
+
 export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) => days.map((day) => {
   const custom = session === 1 && (day === 1 || day === 2) ? undefined : overrides[`${session}-${day}`];
-  const list = custom ?? (session === 3 && day === 2 ? finalSessionDay2VerbatimArticles.map((article) => { const committee = finalSessionDay2Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-3/day-2/${finalSessionDay2Images[committee]}` }; }) : session === 3 && day === 1 ? finalSessionDay1VerbatimArticles.map((article) => { const committee = finalSessionDay1Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-3/day-1/${finalSessionDay1Images[committee]}` }; }).filter((article, index, articles) => article.committee !== "OPENING" || articles.findIndex((item) => item.committee === "OPENING") === index) : session === 1 && day === 1 ? session1Day1VerbatimArticles.map((article, index) => ({ ...article, committee: session1Day1Committee(article.headline), image: `/images/press/news/session-1/day-1/page-${index < 3 ? "1" : "2"}-${String(index % 4 + 1).padStart(2, "0")}.webp` })) : session === 1 && day === 2 ? session1Day2VerbatimArticles.map((article, index) => ({ ...article, committee: session1Day2Committee(article.headline), image: `/images/press/news/session-1/day-2/${session1Day2Images[index] ?? "page-2-04.webp"}` })) : session === 2 && day === 1 ? session2VerbatimArticles.map((article) => { const committee = session2Day1Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-2/day-1/${session2Day1Images[committee]}` }; }) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index, articles) => { const committee = session2Day2Committee(article.headline); const occurrence = articles.slice(0, index).filter((item) => session2Day2Committee(item.headline) === committee).length; const imageName = session2Day2ImagesByCommittee[committee]?.[occurrence]; return { ...article, committee, image: imageName ? `/images/press/news/session-2/day-2/${imageName}` : undefined }; }) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody, image: undefined })));
+  const list = session === 3 && day === 3 ? [closingCeremonyArticle] : custom ?? (session === 3 && day === 2 ? finalSessionDay2VerbatimArticles.map((article) => { const committee = finalSessionDay2Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-3/day-2/${finalSessionDay2Images[committee]}` }; }) : session === 3 && day === 1 ? finalSessionDay1VerbatimArticles.map((article) => { const committee = finalSessionDay1Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-3/day-1/${finalSessionDay1Images[committee]}`, body: article.headline.startsWith("QUESTIONS GO UNANSWERED") ? article.body.map((paragraph) => paragraph.replace("The TES MUN Human Rights Council session", "The TESMUN MP-I session")) : article.body }; }).filter((article, index, articles) => article.committee !== "OPENING" || articles.findIndex((item) => item.committee === "OPENING") === index) : session === 1 && day === 1 ? session1Day1VerbatimArticles.map((article, index) => ({ ...article, committee: session1Day1Committee(article.headline), image: `/images/press/news/session-1/day-1/page-${index < 3 ? "1" : "2"}-${String(index % 4 + 1).padStart(2, "0")}.webp` })) : session === 1 && day === 2 ? session1Day2VerbatimArticles.map((article, index) => ({ ...article, committee: session1Day2Committee(article.headline), image: `/images/press/news/session-1/day-2/${session1Day2Images[index] ?? "page-2-04.webp"}` })) : session === 2 && day === 1 ? session2VerbatimArticles.map((article) => { const committee = session2Day1Committee(article.headline); return { ...article, committee, image: `/images/press/news/session-2/day-1/${session2Day1Images[committee]}` }; }) : session === 2 && day === 2 ? session2Day2VerbatimArticles.map((article, index, articles) => { const committee = session2Day2Committee(article.headline); const occurrence = articles.slice(0, index).filter((item) => session2Day2Committee(item.headline) === committee).length; const imageName = session2Day2ImagesByCommittee[committee]?.[occurrence]; return { ...article, committee, image: imageName ? `/images/press/news/session-2/day-2/${imageName}` : undefined }; }) : defaultCommittees.map((committee) => ({ committee, headline: `${committee} dispatch from the floor`, author: "", summary: "A report from the committee floor, where delegates turn preparation into diplomacy.", body: fallbackBody, image: undefined })));
   return {
     session,
     day,
@@ -129,7 +148,7 @@ export const newsArchive: ArchiveDay[] = sessions.flatMap(({ session, days }) =>
       const page = index < 3 ? 1 : 2;
       const number = index < 3 ? index + 1 : index - 2;
       const displayCommittee = committeeDisplayName(item.committee);
-      return { session, day, committee: displayCommittee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: item.body, author: cleanAuthor(item.author), image: item.image ?? (session === 2 && day === 2 ? undefined : `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`), imageAlt: `${displayCommittee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : session === 2 ? `August ${day === 1 ? "25" : "26"}, 2026` : `September ${day === 1 ? "1" : "2"}, 2026` };
+      return { session, day, committee: displayCommittee, committeeSlug: `${slug}-${index + 1}`, committeeLogo: logo, headline: item.headline, summary: item.summary, body: item.body, author: cleanAuthor(item.author), image: item.image ?? (session === 2 && day === 2 ? undefined : `/images/press/news/session-${session}/day-${day}/page-${page}-${String(number).padStart(2, "0")}.webp`), extraImages: ("extraImages" in item ? item.extraImages : undefined) as ArchiveArticle["extraImages"], imageAlt: `${displayCommittee} delegates in session`, date: session === 1 ? `August ${day === 1 ? "17" : "18"}, 2026` : session === 2 ? `August ${day === 1 ? "25" : "26"}, 2026` : `September ${day === 1 ? "1" : day === 2 ? "2" : "3"}, 2026` };
     }),
   };
 }));

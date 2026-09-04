@@ -16,6 +16,7 @@ const slots = [
   { slug: "cartoons", layout: "square" as const },
   { slug: "editorial", layout: "square" as const },
   { slug: "conference", layout: "square" as const },
+  { slug: "conference-2", layout: "square" as const },
 ];
 
 export default function Press() {
@@ -41,11 +42,11 @@ export default function Press() {
 
           <div className="mt-14 grid gap-5 md:grid-cols-6">
             {slots.map((slot, i) => {
-              const section = slot.slug === "editorial" ? { label: "Editorial", intro: "The considered voice of the TESMUN Press Desk." } : slot.slug === "conference" ? { label: "Press Conference", intro: "A report from the TESMUN 2026 conference floor." } : pressSections[slot.slug as keyof typeof pressSections];
+              const section = slot.slug === "editorial" ? { label: "Editorial", intro: "The considered voice of the TESMUN Press Desk." } : slot.slug === "conference" ? { label: "Press Conference · August 31", intro: "The original TESMUN 2026 conference record." } : slot.slug === "conference-2" ? { label: "Press Conference #2 · September 2", intro: "A second report from the TESMUN 2026 conference floor." } : pressSections[slot.slug as keyof typeof pressSections];
               const span = slot.layout === "wide" ? "md:col-span-6" : slot.layout === "tall" ? "md:col-span-2" : "md:col-span-2";
               return (
                 <Reveal key={slot.slug} delay={i * 0.05} className={span}>
-                  <Link to={slot.slug === "news" ? "/news" : slot.slug === "editorial" ? "/press/editorial" : `/press/${slot.slug}`} className="group block h-full">
+                  <Link to={slot.slug === "news" ? "/news" : slot.slug === "editorial" ? "/press/editorial" : slot.slug === "conference-2" ? "/press/conference-2" : slot.slug === "conference" ? "/press/conference" : `/press/${slot.slug}`} className="group block h-full">
                     <BorderGlow
                       edgeSensitivity={30}
                       glowColor="40 80 80"
