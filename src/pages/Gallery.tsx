@@ -30,14 +30,14 @@ const closingCeremonyPhotos = [
   "/images/gallery/closing-ceremony-04.jpeg",
   "/images/gallery/closing-ceremony-06.jpeg",
   "/images/gallery/closing-ceremony-07.jpeg",
-];
-const finalSessionPhotos = [
   "/images/gallery/final-session/01.jpg",
   "/images/gallery/final-session/02.png",
   "/images/gallery/final-session/03.jpg",
   "/images/gallery/final-session/04.jpg",
   "/images/gallery/final-session/05.jpg",
   "/images/gallery/final-session/06.jpg",
+];
+const finalSessionPhotos = [
   "/images/gallery/final-session/006A9365.jpg",
   "/images/gallery/final-session/006A9235.jpg",
   "/images/gallery/final-session/006A9237.jpg",
