@@ -123,6 +123,9 @@ const interviewSubjects = [
   { title: "EPISODE 13", subject: "Prateek Bhattarai", url: "https://www.youtube.com/watch?v=X6XQgzLTboA" },
   { title: "EPISODE 14", subject: "Dipendra Silwal", url: "https://www.youtube.com/watch?v=KOjDXIhPhyo" },
   { title: "EPISODE 15", subject: "Sheetal Rana", transcript: true },
+  { title: "EPISODE 16", subject: "Alvin Maharjan", url: "https://www.youtube.com/watch?v=AIwAdNH15zY" },
+  { title: "EPISODE 17", subject: "Nischit Shrestha", url: "https://www.youtube.com/watch?v=QP9AP7MvpDM" },
+  { title: "EPISODE 18", subject: "Rujal Ojha", url: "https://www.youtube.com/watch?v=LvI-CP_y0GQ" },
 ];
 
 function VoxPopTeams() {
