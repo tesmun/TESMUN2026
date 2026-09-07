@@ -15,6 +15,10 @@ import principalSpeech from "@/content/principal-speech.txt?raw";
 import munAdvisorSpeech from "@/content/mun-advisor-speech.txt?raw";
 import committeeSpeeches from "@/content/committee-speeches.txt?raw";
 import pressSpeeches from "@/content/press-speeches.txt?raw";
+import lpIIChairSpeechRevised from "@/content/lp-ii-chair-speech-revised.txt?raw";
+import lpIIIChairSpeechRevised from "@/content/lp-iii-chair-speech-revised.txt?raw";
+import ecosocChairSpeechRevised from "@/content/ecosoc-chair-speech-revised.txt?raw";
+import pressHeadSpeechRevised from "@/content/press-head-speech-revised.txt?raw";
 
 const podcastEpisodes = [
   { title: "Episode 01 · Rujal, Saksham A, Diya, Rudraksh and Dechen", url: "https://youtu.be/CwUKSr0yKv0" },
@@ -112,16 +116,17 @@ const voxTeamTwoQ4 = [
 const chairPhotos: Record<string, string> = { "LP I": "/images/committees/executive-board/aakarshi.png", "LP II": "/images/committees/executive-board/sakshamthapaliya.png", "LP III": "/images/committees/executive-board/binayak.png", UNEP: "/images/committees/executive-board/rujal.png", DISEC: "/images/committees/executive-board/dhiki.png", ECOSOC: "/images/committees/executive-board/prateek.png", HRC: "/images/committees/executive-board/kinjal.png" };
 const speechRoster = [
   { speaker: "Prashant Rajak", role: "Principal", committee: "Opening Ceremony", photo: "/images/our-team/principal.jpg", transcript: principalSpeech },
+  { speaker: "Govinda Gautam", role: "MUN Advisor", committee: "Closing Ceremony", photo: "/images/our-team/muncoordinator.jpg", transcript: munAdvisorSpeech },
   { speaker: "Dibas Khadka", role: "Secretary General", committee: "Opening Ceremony", photo: "/images/our-team/secgen.png", transcript: secretaryGeneralSpeech },
   { speaker: "Aakarshi Paudel", role: "Committee Chair", committee: "LP I", photo: chairPhotos["LP I"], transcript: committeeSpeeches.split("ECOSOC Chair")[0].replace("LP I Chair — Aakarshi Paudel", "").trim() },
-  { speaker: "Saksham Thapaliya", role: "Committee Chair", committee: "LP II", photo: chairPhotos["LP II"], transcript: openingClosingSpeech },
-  { speaker: "Binayak Babu Rana", role: "Committee Chair", committee: "LP III", photo: chairPhotos["LP III"], transcript: committeeSpeeches.split("ECOSOC Chair")[0].replace(/^[\s\S]*?LP I Chair — Aakarshi Paudel[\s\S]*?Thank you, delegates, for making MP 1 a committee I will always remember\.\n\n/, "").trim() },
+  { speaker: "Saksham Thapaliya", role: "Committee Chair", committee: "LP II", photo: chairPhotos["LP II"], transcript: lpIIChairSpeechRevised },
+  { speaker: "Binayak Babu Rana", role: "Committee Chair", committee: "LP III", photo: chairPhotos["LP III"], transcript: lpIIIChairSpeechRevised },
   { speaker: "Rujal Ojha", role: "Committee Chair", committee: "UNEP", photo: chairPhotos.UNEP, transcript: pressSpeeches.split("HRC Chair")[0].replace("UNEP Chair", "").trim() },
-  { speaker: "Prateek Bhattarai", role: "Committee Chair", committee: "ECOSOC", photo: chairPhotos.ECOSOC, transcript: committeeSpeeches.split("ECOSOC Chair")[1].split("\n\n")[1] },
+  { speaker: "Prateek Bhattarai", role: "Committee Chair", committee: "ECOSOC", photo: chairPhotos.ECOSOC, transcript: ecosocChairSpeechRevised },
   { speaker: "Kinjal Timalsina", role: "Committee Chair", committee: "HRC", photo: chairPhotos.HRC, transcript: pressSpeeches.split("Head of Press")[0].split("HRC Chair")[1].trim() },
-  { speaker: "Dechen Hira Tamang", role: "Head of Press", committee: "Press", photo: "/images/our-team/press/dechen.png", transcript: pressSpeeches.split("Head of Press")[1].trim() },
-  { speaker: "Govinda Gautam", role: "MUN Advisor", committee: "Closing Ceremony", photo: "/images/our-team/muncoordinator.jpg", transcript: munAdvisorSpeech },
+  { speaker: "Head of DISEC", role: "Committee Chair", committee: "DISEC", photo: chairPhotos.DISEC, transcript: disecChairSpeech },
   { speaker: "Head of IT", role: "Head of IT", committee: "Information Technology", photo: "/images/our-team/it/yubin.png", transcript: itHeadSpeech },
+  { speaker: "Dechen Hira Tamang", role: "Head of Press", committee: "Press", photo: "/images/our-team/press/dechen.png", transcript: pressHeadSpeechRevised },
   { speaker: "Prasina Moktan", role: "Head of Logistics (Girl)", committee: "Logistics", photo: "/images/our-team/logistics/prasina.png", transcript: logisticsHeadSpeech },
 ];
 const interviewSubjects = [
