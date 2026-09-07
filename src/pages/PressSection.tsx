@@ -124,8 +124,8 @@ const speechRoster = [
   { speaker: "Rujal Ojha", role: "Committee Chair", committee: "UNEP", photo: chairPhotos.UNEP, transcript: pressSpeeches.split("HRC Chair")[0].replace("UNEP Chair", "").trim() },
   { speaker: "Prateek Bhattarai", role: "Committee Chair", committee: "ECOSOC", photo: chairPhotos.ECOSOC, transcript: ecosocChairSpeechRevised },
   { speaker: "Kinjal Timalsina", role: "Committee Chair", committee: "HRC", photo: chairPhotos.HRC, transcript: pressSpeeches.split("Head of Press")[0].split("HRC Chair")[1].trim() },
-  { speaker: "Head of DISEC", role: "Committee Chair", committee: "DISEC", photo: chairPhotos.DISEC, transcript: disecChairSpeech },
-  { speaker: "Head of IT", role: "Head of IT", committee: "Information Technology", photo: "/images/our-team/it/yubin.png", transcript: itHeadSpeech },
+  { speaker: "Dhiki Khando Lama", role: "Committee Chair", committee: "DISEC", photo: chairPhotos.DISEC, transcript: disecChairSpeech },
+  { speaker: "Yubin K.C", role: "Head of IT", committee: "Information Technology", photo: "/images/our-team/it/yubin.png", transcript: itHeadSpeech },
   { speaker: "Dechen Hira Tamang", role: "Head of Press", committee: "Press", photo: "/images/our-team/press/dechen.png", transcript: pressHeadSpeechRevised },
   { speaker: "Prasina Moktan", role: "Head of Logistics (Girl)", committee: "Logistics", photo: "/images/our-team/logistics/prasina.png", transcript: logisticsHeadSpeech },
 ];
