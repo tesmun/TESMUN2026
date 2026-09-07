@@ -228,8 +228,9 @@ export const speeches: Speech[] = [
 export const opEdContributors = [
   { name: "Dibas Khadka", role: "Secretary-General", pdf: "https://drive.google.com/file/d/1_K_fJxH1t3IidJKuqWotQ9SspnyWqCco/view?usp=sharing", photo: "/images/our-team/secgen.png" },
   { name: "Abhash Kunwar", role: "Deputy Secretary-General", pdf: "https://drive.google.com/file/d/1hZh1d1RQyxJgXvC9hCsoOSoj9CfeZnJ2/view?usp=sharing", photo: "/images/our-team/abhas.png" },
-  { name: "Shubham Shrestha", role: "Contributor", pdf: "https://drive.google.com/file/d/1DEBvcUbBWRebnBkUOS507vs4tAOEeH3v/view?usp=sharing" },
-  { name: "Prasanna Puri", role: "Contributor", pdf: "https://drive.google.com/file/d/1aHXzcpOQKO53KpuSHUxYtrbJehRmDov5/view?usp=sharing" },
+  { name: "Shubham Shrestha", role: "Contributor", pdf: "https://drive.google.com/file/d/1DEBvcUbBWRebnBkUOS507vs4tAOEeH3v/view?usp=sharing", photo: "/images/our-team/press/shubhamshrestha.png" },
+  { name: "Prasanna Puri", role: "Contributor", pdf: "https://drive.google.com/file/d/1aHXzcpOQKO53KpuSHUxYtrbJehRmDov5/view?usp=sharing", photo: "/images/press/vox-pop/bikas.png" },
+  { name: "Siddartha Basnet", role: "Contributor", pdf: "https://drive.google.com/file/d/1GTmrjniOR7mlvSWZxOvkWYjSUe_xxzUs/view?usp=sharing", photo: "/images/our-team/press/siddartha.png" },
 ];
 
 export const cartoons = [
