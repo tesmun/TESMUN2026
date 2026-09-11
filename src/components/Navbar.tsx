@@ -62,7 +62,10 @@ export default function Navbar() {
           </nav>
 
           <button
+            type="button"
             aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
             onClick={() => setOpen((o) => !o)}
             className="flex h-9 w-9 items-center justify-center text-silver transition-colors duration-200 hover:text-[#E3C46A] focus-visible:text-[#E3C46A] xl:hidden"
           >
@@ -77,6 +80,9 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            id="mobile-navigation"
+            role="dialog"
+            aria-label="Mobile navigation"
             className="fixed inset-0 z-40 flex flex-col justify-center bg-navy-deep px-8"
           >
             <nav className="flex flex-col gap-1">
